@@ -9,7 +9,7 @@
 /dist
 /tags
 *.mo
-
+.gitignore~
 # IDE and editor specific files #
 #################################
 /nbproject
