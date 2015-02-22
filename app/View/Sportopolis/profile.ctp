@@ -6,7 +6,7 @@
 <div class="profileLeftLargeContainer">
 
 <div class="profilePictureLeftLargeContainer"><img class="pictureLeftLargerContainer" src ="boss.png"></div>
-<div class="profileNameLeftLargeContainer">Hisham Ahmed</div>
+<div class="profileNameLeftLargeContainer"><?php echo $trainer['Trainer']['name']; ?></div>
 <div class="profileProfessionLeftLargeContainer">Tennis Coach</div>
 <div class="profileRankLeftLargeContainer"><img src="zerorank.png"></div>
 

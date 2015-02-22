@@ -4572,3 +4572,594 @@ Stack Trace:
 #1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
 #2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2015-02-22 19:34:02 Error: Fatal Error (1): Call to a member function findById() on null in [/opt/lampp/htdocs/sportopolis/app/Controller/SportopolisController.php, line 43]
+2015-02-22 19:34:02 Error: [FatalErrorException] Call to a member function findById() on null
+Request URL: /sportopolis/sportopolis/profile
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/opt/lampp/htdo...', 43)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/opt/lampp/htdo...', 43, Array)
+#2 /opt/lampp/htdocs/sportopolis/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/opt/lampp/htdo...', 43, Array)
+#3 /opt/lampp/htdocs/sportopolis/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-22 19:34:51 Error: Fatal Error (1): Call to a member function findById() on null in [/opt/lampp/htdocs/sportopolis/app/Controller/SportopolisController.php, line 43]
+2015-02-22 19:34:51 Error: [FatalErrorException] Call to a member function findById() on null
+Request URL: /sportopolis/sportopolis/profile
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/opt/lampp/htdo...', 43)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/opt/lampp/htdo...', 43, Array)
+#2 /opt/lampp/htdocs/sportopolis/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/opt/lampp/htdo...', 43, Array)
+#3 /opt/lampp/htdocs/sportopolis/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-22 19:34:58 Error: Fatal Error (1): Call to a member function findById() on null in [/opt/lampp/htdocs/sportopolis/app/Controller/SportopolisController.php, line 43]
+2015-02-22 19:34:58 Error: [FatalErrorException] Call to a member function findById() on null
+Request URL: /sportopolis/sportopolis/profile
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Error/ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/opt/lampp/htdo...', 43)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/opt/lampp/htdo...', 43, Array)
+#2 /opt/lampp/htdocs/sportopolis/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/opt/lampp/htdo...', 43, Array)
+#3 /opt/lampp/htdocs/sportopolis/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::boss.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'boss.png',
+)
+Request URL: /sportopolis/sportopolis/boss.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::linkedin3.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'linkedin3.png',
+)
+Request URL: /sportopolis/sportopolis/linkedin3.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::facebook.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'facebook.png',
+)
+Request URL: /sportopolis/sportopolis/facebook.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::twitter.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'twitter.png',
+)
+Request URL: /sportopolis/sportopolis/twitter.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::zerorank.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'zerorank.png',
+)
+Request URL: /sportopolis/sportopolis/zerorank.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::comment.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'comment.png',
+)
+Request URL: /sportopolis/sportopolis/comment.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::instagram2.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'instagram2.png',
+)
+Request URL: /sportopolis/sportopolis/instagram2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::views.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'views.png',
+)
+Request URL: /sportopolis/sportopolis/views.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::mob.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'mob.png',
+)
+Request URL: /sportopolis/sportopolis/mob.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::location.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'location.png',
+)
+Request URL: /sportopolis/sportopolis/location.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::mail.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'mail.png',
+)
+Request URL: /sportopolis/sportopolis/mail.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::emptyrank3.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank3.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank3.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::emptyrank1.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank1.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank1.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::emptyrank5.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank5.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank5.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::emptyrank4.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank4.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank4.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::emptyrank2.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank2.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:38:45 Error: [MissingActionException] Action SportopolisController::emptyrank.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::zerorank.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'zerorank.png',
+)
+Request URL: /sportopolis/sportopolis/zerorank.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::linkedin3.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'linkedin3.png',
+)
+Request URL: /sportopolis/sportopolis/linkedin3.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::boss.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'boss.png',
+)
+Request URL: /sportopolis/sportopolis/boss.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::views.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'views.png',
+)
+Request URL: /sportopolis/sportopolis/views.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::twitter.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'twitter.png',
+)
+Request URL: /sportopolis/sportopolis/twitter.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::comment.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'comment.png',
+)
+Request URL: /sportopolis/sportopolis/comment.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::facebook.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'facebook.png',
+)
+Request URL: /sportopolis/sportopolis/facebook.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::instagram2.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'instagram2.png',
+)
+Request URL: /sportopolis/sportopolis/instagram2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::mob.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'mob.png',
+)
+Request URL: /sportopolis/sportopolis/mob.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::location.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'location.png',
+)
+Request URL: /sportopolis/sportopolis/location.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::emptyrank2.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank2.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::mail.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'mail.png',
+)
+Request URL: /sportopolis/sportopolis/mail.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::emptyrank4.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank4.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank4.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::emptyrank5.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank5.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank5.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::emptyrank1.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank1.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank1.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::emptyrank3.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank3.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank3.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:39:18 Error: [MissingActionException] Action SportopolisController::emptyrank.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::views.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'views.png',
+)
+Request URL: /sportopolis/sportopolis/views.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::comment.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'comment.png',
+)
+Request URL: /sportopolis/sportopolis/comment.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::twitter.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'twitter.png',
+)
+Request URL: /sportopolis/sportopolis/twitter.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::boss.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'boss.png',
+)
+Request URL: /sportopolis/sportopolis/boss.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::instagram2.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'instagram2.png',
+)
+Request URL: /sportopolis/sportopolis/instagram2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::linkedin3.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'linkedin3.png',
+)
+Request URL: /sportopolis/sportopolis/linkedin3.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::facebook.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'facebook.png',
+)
+Request URL: /sportopolis/sportopolis/facebook.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::zerorank.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'zerorank.png',
+)
+Request URL: /sportopolis/sportopolis/zerorank.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::location.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'location.png',
+)
+Request URL: /sportopolis/sportopolis/location.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::mob.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'mob.png',
+)
+Request URL: /sportopolis/sportopolis/mob.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::mail.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'mail.png',
+)
+Request URL: /sportopolis/sportopolis/mail.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::emptyrank2.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank2.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank2.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::emptyrank4.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank4.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank4.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::emptyrank5.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank5.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank5.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::emptyrank1.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank1.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank1.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::emptyrank3.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank3.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank3.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 19:40:20 Error: [MissingActionException] Action SportopolisController::emptyrank.png() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'emptyrank.png',
+)
+Request URL: /sportopolis/sportopolis/emptyrank.png
+Stack Trace:
+#0 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

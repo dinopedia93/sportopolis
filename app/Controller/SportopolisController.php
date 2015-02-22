@@ -20,6 +20,7 @@
  */
 
 App::uses('Controller', 'Controller');
+App::uses('Model','Model');
 
 /**
  * Application Controller
@@ -31,7 +32,7 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class SportopolisController extends Controller {
-	
+
 	public function index() {
 		$this->layout = 'sportopolis';
 		$this->set('title_for_layout', 'SPORTOYA');
@@ -39,6 +40,8 @@ class SportopolisController extends Controller {
 
 	public function profile() {
 		$this->layout = 'sportopolis';
+		$this->loadModel('Trainer');
+		$this->set('trainer', $this->Trainer->findById('2'));
 		$this->set('title_for_layout', 'SPORTOYA');
 	}
 }
