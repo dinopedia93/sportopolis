@@ -1,0 +1,408 @@
+@media screen and (min-width: 651px) and (max-width: 1350px) {
+.mobile-menu-icon{
+float:left;
+display:none;
+}
+
+.logo{
+float:left;
+margin-top:5px;
+color:red;
+}
+
+.large-nav{
+float:right;
+}
+
+.large-nav ul {
+}
+
+.large-nav ul li {
+display:inline;
+list-style-type:none;
+}
+
+
+.large-nav ul li a {
+text-decoration:none;
+padding:10px;
+}
+
+.content-wrapper{
+width:100%;
+height:auto;
+width: 1000px;
+min-width: 980px;
+max-width: 1100px;
+padding: 0 10px;
+position: relative;
+margin: 0 auto;
+}
+
+.newlist{
+position:absolute;
+width:100%;
+height:auto;
+margin-top:60px;
+}
+
+.newleftList{
+background-color:white;
+margin:10px auto;
+width:35%;
+height:100%;
+float:left;
+border-radius: 5px;
+box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-moz-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-webkit-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+margin-bottom:50px;
+}
+
+.profileLeftLargeContainer{
+width:90%;
+height:100%;
+margin-left:5%;
+}
+
+.profilePictureLeftLargeContainer{
+width:100%;
+height:200px;
+}
+
+.pictureLeftLargerContainer{
+border: 2px solid #FFF;
+box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+background-size:60px 60px;
+margin-top:12px;
+height:160px;
+width:160px;
+border-radius:100%;
+overflow:hidden;
+margin-left:26%;
+margin-top:10%;
+}
+
+
+.profileNameLeftLargeContainer{
+width:100%;
+height:25px;
+text-align:center;
+font-family:helvetica world;
+color:grey;
+font-size:19px;
+}
+
+.profileProfessionLeftLargeContainer{
+width:100%;
+height:25px;
+text-align:center;
+font-family:helvetica world;
+color:#858585;
+font-size:15px;
+padding-top:3px;
+}
+
+.profileRankLeftLargeContainer{
+width:100%;
+height:40px;
+text-align:center;
+border-bottom:1px solid #e5e5e5;
+
+padding-top:5px;
+}
+
+.profileReviewsAndLikesLeftLargeContainer{
+width:100%;
+height:40px;
+border-bottom:1px solid #e5e5e5;
+}
+
+.profileLikesPictoLeftLargeContainer{
+width:20%;
+height:100%;
+float:left;
+text-align:center;
+padding-top:4%;
+}
+
+.profileLikesLeftLargeContainer{
+width:30%;
+height:100%;
+float:left;
+text-align:left;
+border-right:1px solid #e5e5e5;
+padding-left:5%;
+padding-top:4.5%;
+color:grey;
+font-family:helvetica world;
+}
+
+.profileReviewsPictoLeftLargeContainer{
+width:20%;
+height:100%;
+float:left;
+text-align:center;
+padding-top:4%;
+}
+
+.profileReviewsLeftLargeContainer{
+width:30%;
+height:100%;
+float:left;
+text-align:left;
+padding-left:5%;
+padding-top:4.5%;
+color:grey;
+font-family:helvetica world;
+}
+
+.bio{
+padding-top:15px;
+padding-bottom:15px;
+width:100%;
+height:auto;
+text-align:center;
+color:#858585;
+font-family:helvetica world;
+font-size:15px;
+line-height:18px;
+}
+
+
+.additionalInfo{
+width:100%;
+height:auto;
+padding-bottom:10px;
+}
+
+.additionalInfoTitle{
+height:35px;
+color:grey;
+font-family:helvetica world;
+line-height:35px;
+}
+
+.infoDiv{
+width:100%;
+height:35px;
+}
+
+.infoDivPicto{
+width:21px;
+height:100%;
+float:left;
+}
+
+.infoDivDetail{
+width:80%;
+height:100%;
+float:left;
+text-align: left;
+font-family: helvetica world;
+color: #858585;
+font-size: 15px;
+line-height:35px;
+padding-left:6%;
+}
+
+.profileSocialLeftLargeContainer{
+width:100%;
+height:65px;
+text-align:center;
+border-top:1px solid #e5e5e5;
+border-bottom:1px solid #e5e5e5;
+}
+
+.socialLogo{
+width:20%;
+height:100%;
+float:left;
+padding-top:5%;
+}
+
+
+.newRightList{
+width:63%;
+margin-left:2%;
+height:100%;
+float:left;
+}
+
+.profileRightLargeTOPContainer{
+width:100%;
+height:60px;
+background-color:white;
+border-radius: 3px;
+box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-moz-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-webkit-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+}
+
+.rightLargeNav{
+width:33.333%;
+height:100%;
+float:left;
+text-align:center;
+cursor:pointer;
+}
+
+.rightLargeNav:hover{
+border-bottom:4px solid #f26522;
+}
+
+.rightLargeNavTitle{
+color:#858585;
+height:30px;
+line-height:40px;
+font-size:14px;
+font-family:helvetica world;
+}
+
+.rightLargeNavCount{
+color:grey;
+height:30px;
+font-weight:bold;
+font-size:16px;
+line-height:18px;
+font-family:helvetica world;
+}
+
+
+.profileRightLargeBOTTOMContainer{
+margin-top:25px;
+width:100%;
+height:500px;
+background-color:white;
+border-radius: 3px;
+box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-moz-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-webkit-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+}
+
+.writeAReview{
+width:100%;
+height:60px;
+
+}
+
+.writeUser{
+float:left;
+width:10%;
+}
+
+.writerPicSpecs{
+border: 2px solid #FFF;
+box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+background-size:60px 60px;
+margin-top:12px;
+height:35px;
+width:35px;
+border-radius:100%;
+overflow:hidden;
+margin-left:30%;
+margin-top:18%;
+}
+
+.writeAReviewDiv{
+width:90%;
+float:left;
+
+}
+
+.reviewTextarea{
+width:93%;
+margin-top:2%;
+margin-left:4%;
+}
+
+.readReviews ul{
+width:100%;
+height:auto;
+}
+
+.readReviews ul li {
+width:100%;
+height:auto;
+border-top:1px solid #e5e5e5;
+min-height:100px;
+}
+
+.commenterPic{
+width:14%;
+height:auto;
+float:left;
+}
+
+.commenterPicSpecs{
+border: 2px solid #FFF;
+box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+background-size:60px 60px;
+margin-top:12px;
+height:55px;
+width:55px;
+border-radius:100%;
+overflow:hidden;
+margin-left:13%;
+margin-top:20%;
+}
+
+.commentInfo{
+width:86%;
+height:35px;
+float:left;
+}
+
+.commentInfoName{
+width:70%;
+height:100%;
+float:left;
+line-height:45px;
+font-weight:bold;
+font-family:helvetica world;
+font-size:16px;
+}
+
+.commentInfoDate{
+width:26%;
+height:100%;
+float:left;
+text-align:right;
+padding-right:2%;
+line-height:45px;
+font-family:helvetica world;
+font-size:15px;
+color:#c0bebe;
+}
+
+.commentText{
+width:88%;
+padding-top:6%;
+padding-bottom:3%;
+height:auto;
+margin-left:14%;
+font-family:helvetica world;
+font-size:15px;
+color:grey;
+padding-right:5%;
+}
+
+.deleteComment{
+float:left;
+padding-left:0.5%;
+width:4%;
+height:100%;
+line-height:40px;
+font-family:helvetica world;
+font-size:17px;
+color:#c0bebe;
+cursor:pointer;
+}
+
+.deleteComment:hover{
+color:grey;
+}
+
+
+
+}
