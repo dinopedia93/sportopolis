@@ -27,17 +27,13 @@ float:left;
 width:100%;
 height:auto;
 min-width:370px;
-margin-top:50px;
+padding-top:75px;
 min-height:500px;
 }
 
-.footer-wrapper{
-float:left;
-width:100%;
-height:auto;
-min-width:370px;
-background-color:red;
-}
+
+
+
 
 .mobile-menu-icon{
 
