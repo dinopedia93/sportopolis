@@ -1,7 +1,24 @@
+<div class="desktop-menu">
+
+<div class="leftListHeader">
+
+<div class="leftListHeaderTitle">Cycling</div>
+</div>
+
+<ul class="sportList">
+
+<li class="trainerPicto">Trainer</li>
+<li class="locationPicto">Location</li>
+<li class="storesPicto">Store</li>
+<li class="eventPicto">Event</li>
+
+</ul>
 
 
-<div class="list-head">
 
+</div>
+
+<div class="mobile-menu">
 <div class="search-list-head">
 <input class="textarea-search-list" type='text' placeholder='Search...'/>
 </div>
@@ -17,7 +34,6 @@
     <option>Article</option>
 </select>
 </div>
-
 </div>
 
 
@@ -35,21 +51,26 @@
 </div>
 
 <div class="list-accounts">
+<div class="leftListHeader">
 
+<div class="leftListHeaderTitle">All</div>
+</div>
 <ul class="attributeList">
 
 <li>
 <a href="#">
-<div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
+<div class="listPic"><img class="circleListPic" src ="boss.png"></div>
 <div class="listInfo">
 <div class="listName">Hisham Ahmed Al-Sayed</div>
-<div class="listRank"><?php echo $this->Html->image('zerorank1.png', array('class' => 'listRankPicto')); ?></div>
-<div class="listviews"><?php echo $this->Html->image('views.png', array('class' => 'listViewsPicto')); ?>200</div>
-<div class="listReviews"><?php echo $this->Html->image('comment.png', array('class' => 'listViewsPicto')); ?>200</div>
+<div class="listRank"><img class="listRankPicto" src="zerorank1.png"></div>
+<div class="listviews"><img class="listViewsPicto" src="views.png">200</div>
+<div class="listReviews"><img class="listViewsPicto" src="comment.png">200</div>
 </div>
-<div class="listArrow"><?php echo $this->Html->image('go.png', array('class' => 'listArrowPicto')); ?></div>
+<div class="listArrow"><img class="listArrowPicto" src="go.png"></div>
 </a>
 </li>
+
+
 
 
 
@@ -58,4 +79,3 @@
 
 
 </div>
-

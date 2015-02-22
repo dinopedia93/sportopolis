@@ -44,6 +44,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 
 <div class="header-wrapper">
+<div class="header-navigation">
 
 <div class="mobile-menu-icon">
 <?php echo $this->Html->image('menu.png')?>
@@ -55,16 +56,39 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 </div>
 </div>
 
-<div class="large-nav">
-<ul>
+<div class="desktop-nav">
+	<ul class="nav-ul"> 
+	
+	<li class="nav-li">
+	<a class="nav-li-a" href="#">Sports</a>
+	</li>
+	
+	<li class="nav-li">
+	<a class="nav-li-a" href="#">Events</a>
+	</li>	
 
-<li><a href="#">SPORTS</a></li>
-<li><a href="#">TENNIS</a></li>
-<li><a href="#">TENNIS</a></li>
+	</ul>
+	
+	<div class="account">
+	<div class="accountPhoto"><img class="circlePhoto" src="boss.png"></div>
+	
+	<ul class="accountMenu">
+					
+	<li><a class="accountName"  onmouseover="mopen('m3')" onmouseout="mclosetime()">Hisham Ahmed</a>
+	<div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+	<a href="#">Sign Out</a>						
+	</div>
+	</li>
+    </ul>
 
-</ul>
+	</div>
 </div>
 </div>
+
+</div>
+
+<div class="container">
+
 		<div class="content-wrapper">
 
 			<?php echo $this->Session->flash(); ?>
@@ -73,6 +97,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		
 		
 		</div>
+		</div>
+		
 			<div class="footer-wrapper">
 
 			<div class="footer-container">
