@@ -5163,3 +5163,47 @@ Stack Trace:
 #1 /opt/lampp/htdocs/sportopolis/lib/Cake/Routing/Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
 #2 /opt/lampp/htdocs/sportopolis/app/webroot/index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #3 {main}
+2015-02-22 20:14:10 Error: [MissingActionException] Action SportopolisController::menu.php() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'menu.php',
+)
+Request URL: /sportopolis/sportopolis/menu.php
+Stack Trace:
+#0 C:\xampp\htdocs\sportopolis\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\sportopolis\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 C:\xampp\htdocs\sportopolis\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 20:14:29 Error: [MissingActionException] Action SportopolisController::profile.php() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'profile.php',
+)
+Request URL: /sportopolis/sportopolis/profile.php
+Stack Trace:
+#0 C:\xampp\htdocs\sportopolis\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\sportopolis\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 C:\xampp\htdocs\sportopolis\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 20:14:37 Error: [MissingActionException] Action SportopolisController::trainer.php() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'trainer.php',
+)
+Request URL: /sportopolis/sportopolis/trainer.php
+Stack Trace:
+#0 C:\xampp\htdocs\sportopolis\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\sportopolis\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 C:\xampp\htdocs\sportopolis\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-02-22 20:15:08 Error: [MissingActionException] Action SportopolisController::profile.ctp() could not be found.
+Exception Attributes: array (
+  'controller' => 'SportopolisController',
+  'action' => 'profile.ctp',
+)
+Request URL: /sportopolis/sportopolis/profile.ctp
+Stack Trace:
+#0 C:\xampp\htdocs\sportopolis\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\xampp\htdocs\sportopolis\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(SportopolisController), Object(CakeRequest))
+#2 C:\xampp\htdocs\sportopolis\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

@@ -145,7 +145,24 @@ This is Hisham Ahmed Al-Sayed,
 </div>
 
 
+
 <div class="readReviews">
+
+
+<div class="writeAReview">
+<div class="writeUser"><img class="writerPicSpecs" src ="boss.png"></div>
+<div class="writeAReviewDiv">
+<form>
+<textarea placeholder="Write your review... " class="reviewTextarea"></textarea>
+
+<div class="postBtn">POST</div>
+
+</form>
+</div>
+</div>
+
+
+
 <div class="userReviewsTitle">Users Reviews</div>
 
 <ul>
@@ -258,18 +275,6 @@ show more
 </div>
 
 
-<div class="writeAReview">
-<div class="writeUser"><img class="writerPicSpecs" src ="boss.png"></div>
-<div class="writeAReviewDiv">
-<form>
-<textarea placeholder="Write your review... " class="reviewTextarea"></textarea>
-
-<div class="postBtn">POST</div>
-
-</form>
-</div>
-</div>
-
 </div>
 
 
@@ -279,5 +284,10 @@ show more
 
 </div>
 
+
+
+
+</div>
+</div>
 
 
