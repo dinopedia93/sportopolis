@@ -40,13 +40,16 @@ class SportopolisController extends Controller {
 
 	public function menu() {
 		$this->layout = 'sportopolis';
+		$this->loadModel('Trainer');
+		$trainers = $this->Trainer->find('all');
+		$this->set('trainers', $trainers);
 		$this->set('title_for_layout', 'SPORTOYA');
 	}
 
-	public function profile() {
-		$this->layout = 'sportopolis';
-		$this->loadModel('Trainer');
-		$trainer = $this->Trainer->findById('2');
+	public function profile($id) {
+		$this->layout = 'sportopolis';	
+		$this->loadModel('Trainer');	
+		$trainer = $this->Trainer->findById($id);
 		$this->set('trainer', $trainer);
 		$this->set('title_for_layout', $trainer['Trainer']['name']."'s Profile");
 	}
