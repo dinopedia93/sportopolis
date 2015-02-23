@@ -5,15 +5,15 @@
 
 <div class="profileLeftLargeContainer">
 
-<div class="profilePictureLeftLargeContainer"><img class="pictureLeftLargerContainer" src ="boss.png"></div>
+<div class="profilePictureLeftLargeContainer"><?php echo $this->Html->image('boss.png', array('class' => 'pictureLeftLargerContainer')); ?></div>
 <div class="profileNameLeftLargeContainer"><?php echo $trainer['Trainer']['name']; ?></div>
 <div class="profileProfessionLeftLargeContainer">Tennis Coach</div>
-<div class="profileRankLeftLargeContainer"><img src="zerorank.png"></div>
+<div class="profileRankLeftLargeContainer"><?php echo $this->Html->image('zerorank.png'); ?></div>
 
 <div class="profileViewsReviews">
-<div class="profilePictoViewsReviews"><img src="views.png"></div>
+<div class="profilePictoViewsReviews"><?php echo $this->Html->image('views.png'); ?></div>
 <div class="profileNumViewsReviews">200</div>
-<div class="profilePictoViewsReviews2"><img src="comment.png"></div>
+<div class="profilePictoViewsReviews2"><?php echo $this->Html->image('comment.png'); ?></div>
 <div class="profileNumViewsReviews">200</div>
 </div>
 
@@ -38,10 +38,10 @@ This is Hisham Ahmed Al-Sayed,
 </div>
 
 <div class="profileSocialLeftLargeContainer">
-<a href="#" class="socialLogo"><img style="cursor:pointer" src="facebook.png"></a>
-<a href="#" class="socialLogo"><img style="cursor:pointer" src="linkedin3.png"></a>
-<a href="#" class="socialLogo"><img style="cursor:pointer" src="twitter.png"></a>
-<a href="#" class="socialLogo"><img style="cursor:pointer" src="instagram2.png"></a>
+<a href="#" class="socialLogo"><?php echo $this->Html->image('facebook.png', array('style' => 'cursor:pointer')); ?></a>
+<a href="#" class="socialLogo"><?php echo $this->Html->image('linkedin3.png', array('style' => 'cursor:pointer')); ?></a>
+<a href="#" class="socialLogo"><?php echo $this->Html->image('twitter.png', array('style' => 'cursor:pointer')); ?></a>
+<a href="#" class="socialLogo"><?php echo $this->Html->image('instagram2.png', array('style' => 'cursor:pointer')); ?></a>
 </div>
 
 
@@ -51,17 +51,17 @@ This is Hisham Ahmed Al-Sayed,
 <div class="additionalInfoTitle">Additional Info</div>
 
 <div class="infoDiv">
-<div class="infoDivPicto"><img src="mob.png"></div>
+<div class="infoDivPicto"><?php echo $this->Html->image('mob.png'); ?></div>
 <a href="tel:+201095034848" class="infoDivDetail">01095034848</a>
 </div>
 
 <div class="infoDiv">
-<div class="infoDivPicto"><img src="location.png"></div>
+<div class="infoDivPicto"><?php echo $this->Html->image('location.png'); ?></div>
 <div class="infoDivDetail">Cairo, Egypt</div>
 </div>
 
 <div class="infoDiv">
-<div class="infoDivPicto"><img src="mail.png"></div>
+<div class="infoDivPicto"><?php echo $this->Html->image('mail.png'); ?></div>
 <div class="infoDivDetail">Hisham.a.alsayed@gmail.com</div>
 </div>
 
@@ -100,37 +100,37 @@ This is Hisham Ahmed Al-Sayed,
 <div class="userRatingsBody">
 
 <div class="rateN">
-<div class="rate-pic"><img src="emptyrank5.png"></div>
+<div class="rate-pic"><?php echo $this->Html->image('emptyrank5.png'); ?></div>
 <div class="rate-meter">j</div>
 <div class="rate-num">20</div>
 </div>
 
 <div class="rateN">
-<div class="rate-pic"><img src="emptyrank4.png"></div>
+<div class="rate-pic"><?php echo $this->Html->image('emptyrank4.png'); ?></div>
 <div class="rate-meter">j</div>
 <div class="rate-num">20</div>
 </div>
 
 <div class="rateN">
-<div class="rate-pic"><img src="emptyrank3.png"></div>
+<div class="rate-pic"><?php echo $this->Html->image('emptyrank3.png'); ?></div>
 <div class="rate-meter">j</div>
 <div class="rate-num">20</div>
 </div>
 
 <div class="rateN">
-<div class="rate-pic"><img src="emptyrank2.png"></div>
+<div class="rate-pic"><?php echo $this->Html->image('emptyrank2.png'); ?></div>
 <div class="rate-meter">j</div>
 <div class="rate-num">20</div>
 </div>
 
 <div class="rateN">
-<div class="rate-pic"><img src="emptyrank1.png"></div>
+<div class="rate-pic"><?php echo $this->Html->image('emptyrank1.png'); ?></div>
 <div class="rate-meter">j</div>
 <div class="rate-num">20</div>
 </div>
 
 <div class="rateN">
-<div class="rate-pic"><img src="emptyrank.png"></div>
+<div class="rate-pic"><?php echo $this->Html->image('emptyrank.png'); ?></div>
 <div class="rate-meter">j</div>
 <div class="rate-num">20</div>
 </div>
@@ -150,7 +150,7 @@ This is Hisham Ahmed Al-Sayed,
 
 
 <div class="writeAReview">
-<div class="writeUser"><img class="writerPicSpecs" src ="boss.png"></div>
+<div class="writeUser"><?php echo $this->Html->image('boss.png', array('class' => 'writerPicSpecs')); ?></div>
 <div class="writeAReviewDiv">
 <form>
 <textarea placeholder="Write your review... " class="reviewTextarea"></textarea>
@@ -168,7 +168,7 @@ This is Hisham Ahmed Al-Sayed,
 <ul>
 
 <li>
-<div class="commenterPic"><img class="commenterPicSpecs" src ="boss.png"></div>
+<div class="commenterPic"><?php echo $this->Html->image('boss.png', array('class' => 'commenterPicSpecs')); ?></div>
 
 <div class="commentInfo">
 <div class="commentInfoName">Hisham Ahmed Al-Sayed</div>
@@ -207,7 +207,7 @@ He is a good trainer, he helped me alot
 </li>
 
 <li>
-<div class="commenterPic"><img class="commenterPicSpecs" src ="boss.png"></div>
+<div class="commenterPic"><?php echo $this->Html->image('boss.png', array('class' => 'commenterPicSpecs')); ?></div>
 
 <div class="commentInfo">
 <div class="commentInfoName">Hisham Ahmed Al-Sayed</div>
@@ -223,7 +223,7 @@ He is a good trainer, he helped me alot
 
 
 <li>
-<div class="commenterPic"><img class="commenterPicSpecs" src ="boss.png"></div>
+<div class="commenterPic"><?php echo $this->Html->image('boss.png', array('class' => 'commenterPicSpecs')); ?></div>
 
 <div class="commentInfo">
 <div class="commentInfoName">Hisham Ahmed Al-Sayed</div>
@@ -254,15 +254,15 @@ show more
 <div class="profilePhotosLargeBOTTOMContainer">
 
 <ul class="galleryUl">
-<li class= "galleryLi"><img class="galleryLiImg" src ="boss.png"><li>
-<li class= "galleryLi"><img class="galleryLiImg" src ="boss.png"><li>
-<li class= "galleryLi"><img class="galleryLiImg" src ="boss.png"><li>
-<li class= "galleryLi"><img class="galleryLiImg" src ="boss.png"><li>
-<li class= "galleryLi"><img class="galleryLiImg" src ="boss.png"><li>
-<li class= "galleryLi"><img class="galleryLiImg" src ="boss.png"><li>
-<li class= "galleryLi"><img class="galleryLiImg" src ="boss.png"><li>
-<li class= "galleryLi"><img class="galleryLiImg" src ="boss.png"><li>
-<li class= "galleryLi"><img class="galleryLiImg" src ="boss.png"><li>
+<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
+<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
+<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
+<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
+<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
+<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
+<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
+<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
+<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
 </ul>
 
 </div>

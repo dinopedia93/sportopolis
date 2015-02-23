@@ -70,7 +70,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</ul>
 	
 	<div class="account">
-	<div class="accountPhoto"><img class="circlePhoto" src="boss.png"></div>
+	<div class="accountPhoto"><?php echo $this->Html->image('boss.png', array('class' => 'circlePhoto')); ?></div>
 	
 	<ul class="accountMenu">
 					
