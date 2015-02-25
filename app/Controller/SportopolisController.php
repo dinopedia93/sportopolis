@@ -49,9 +49,18 @@ class SportopolisController extends Controller {
 	public function profile($id) {
 		$this->layout = 'sportopolis';	
 		$this->loadModel('Trainer');	
+		$this->loadModel('Sport');
+		$this->loadModel('TrainersHasReviews');
+		$this->loadModel('TrainersHasPhotos');
 		$trainer = $this->Trainer->findById($id);
 		$this->set('trainer', $trainer);
 		$this->set('title_for_layout', $trainer['Trainer']['name']."'s Profile");
+		$sport = $this->Sport->findById($trainer['Trainer']['sports_id']);
+		$this->set('sport', $sport);
+		$trainershasreviews = $this->TrainersHasReviews->find('count',array('conditions' => array('TrainersHasReviews.trainer_id' => $id)));
+		$this->set('trainershasreviews', $trainershasreviews);
+		$trainershasphotos = $this->TrainersHasPhotos->find('count',array('conditions' => array('TrainersHasPhotos.trainer_id' => $id)));
+		$this->set('trainershasphotos', $trainershasphotos);
 	}
 }
 

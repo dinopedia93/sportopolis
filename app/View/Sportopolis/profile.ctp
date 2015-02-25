@@ -7,7 +7,7 @@
 
 <div class="profilePictureLeftLargeContainer"><?php echo $this->Html->image('boss.png', array('class' => 'pictureLeftLargerContainer')); ?></div>
 <div class="profileNameLeftLargeContainer"><?php echo $trainer['Trainer']['name']; ?></div>
-<div class="profileProfessionLeftLargeContainer">Tennis Coach</div>
+<div class="profileProfessionLeftLargeContainer"><?php echo $sport['Sport']['name']; ?></div>
 <div class="profileRankLeftLargeContainer"><?php echo $this->Html->image('zerorank.png'); ?></div>
 
 <div class="profileViewsReviews">
@@ -26,16 +26,7 @@
 </div>
 
 <div class="info-detail">
-<div class="bio">
-This is Hisham Ahmed Al-Sayed,
- founder of sportopolis and front end developer
- This is Hisham Ahmed Al-Sayed,
- founder of sportopolis and front end developer
- This is Hisham Ahmed Al-Sayed,
- founder of sportopolis and front end developer
- This is Hisham Ahmed Al-Sayed,
- founder of sportopolis and front end developer
-</div>
+<div class="bio"><?php echo $trainer['Trainer']['biography']; ?></div>
 
 <div class="profileSocialLeftLargeContainer">
 <a href="#" class="socialLogo"><?php echo $this->Html->image('facebook.png', array('style' => 'cursor:pointer')); ?></a>
@@ -52,17 +43,17 @@ This is Hisham Ahmed Al-Sayed,
 
 <div class="infoDiv">
 <div class="infoDivPicto"><?php echo $this->Html->image('mob.png'); ?></div>
-<a href="tel:+201095034848" class="infoDivDetail">01095034848</a>
+<a href="tel:+201095034848" class="infoDivDetail"><?php echo 0 . $trainer['Trainer']['mobile']; ?></a>
 </div>
 
 <div class="infoDiv">
 <div class="infoDivPicto"><?php echo $this->Html->image('location.png'); ?></div>
-<div class="infoDivDetail">Cairo, Egypt</div>
+<div class="infoDivDetail"><?php echo $trainer['Trainer']['city'] . ' , '  .$trainer['Trainer']['country'] ; ?></div>
 </div>
 
 <div class="infoDiv">
 <div class="infoDivPicto"><?php echo $this->Html->image('mail.png'); ?></div>
-<div class="infoDivDetail">Hisham.a.alsayed@gmail.com</div>
+<div class="infoDivDetail"><?php echo $trainer['Trainer']['email']; ?> </div>
 </div>
 
 </div>
@@ -77,17 +68,17 @@ This is Hisham Ahmed Al-Sayed,
 
 <div class="rightLargeNav">
 <div class="rightLargeNavTitle">REVIEWS</div>
-<div class="rightLargeNavCount">200</div>
+<div class="rightLargeNavCount"><?php  echo $trainershasreviews?></div>
 </div>
 
 <div class="rightLargeNav">
 <div class="rightLargeNavTitle">PHOTOS</div>
-<div class="rightLargeNavCount">200</div>
+<div class="rightLargeNavCount"><?php  echo $trainershasphotos?></div>
 </div>
 
 <div class="rightLargeNav">
 <div class="rightLargeNavTitle">RANK</div>
-<div class="rightLargeNavCount">4.5</div>
+<div class="rightLargeNavCount"><?php echo $trainer['Trainer']['rank']; ?> </div>
 </div>
 
 </div>
