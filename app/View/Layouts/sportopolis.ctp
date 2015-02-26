@@ -20,6 +20,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <!DOCTYPE html>
 <html>
 <head>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<?php echo $this->Html->charset(); ?>
 	<title>
@@ -32,11 +33,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->css('skeleton');
 		echo $this->Html->css('LargeSkeleton');
 		echo $this->Html->css('mobileskeleton');
-
+		echo $this->Html->script('jquery'); 
+		
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+	
 </head>
 <body>
 	
