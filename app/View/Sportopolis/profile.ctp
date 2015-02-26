@@ -1,43 +1,36 @@
 <script type="text/javascript">
-	$(document).ready(function(){
-		$(".profilePhotosLargeBOTTOMContainer").hide();
-		$(".profileRankLargeBOTTOMContainer").hide();
-		$(".centerbtn").click(function(){
-			$(".profilePhotosLargeBOTTOMContainer").show();
-			$(".profileRankLargeBOTTOMContainer").hide();
-			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
- 				$(".info-detail").hide();
-			}
-			else
-			{
-				$(".readReviews").hide();
-			}
-			
-		});
-		$(".leftbtn").click(function(){
-			$(".profilePhotosLargeBOTTOMContainer").hide();
-			$(".profileRankLargeBOTTOMContainer").hide();
-			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
- 				$(".info-detail").show();
-			}
-			else
-			{
-				$(".readReviews").show();
-			}
-		});
-		$(".rightbtn").click(function(){
-			$(".profilePhotosLargeBOTTOMContainer").hide();
-			$(".profileRankLargeBOTTOMContainer").show();
-			if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
- 				$(".info-detail").hide();
-			}
-			else
-			{
-				$(".readReviews").hide();
-			}
-		});
-	});
-	
+$(document).ready(function() {
+    $(".profilePhotosLargeBOTTOMContainer").hide();
+    $(".profileRankLargeBOTTOMContainer").hide();
+    $(".centerbtn").click(function() {
+        $(".profilePhotosLargeBOTTOMContainer").show();
+        $(".profileRankLargeBOTTOMContainer").hide();
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            $(".info-detail").hide();
+        } else {
+            $(".readReviews").hide();
+        }
+
+    });
+    $(".leftbtn").click(function() {
+        $(".profilePhotosLargeBOTTOMContainer").hide();
+        $(".profileRankLargeBOTTOMContainer").hide();
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            $(".info-detail").show();
+        } else {
+            $(".readReviews").show();
+        }
+    });
+    $(".rightbtn").click(function() {
+        $(".profilePhotosLargeBOTTOMContainer").hide();
+        $(".profileRankLargeBOTTOMContainer").show();
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            $(".info-detail").hide();
+        } else {
+            $(".readReviews").hide();
+        }
+    });
+});
 </script>
 
 <div class="newlist">
