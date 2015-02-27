@@ -46,9 +46,9 @@ $(document).ready(function() {
 
 <div class="profileViewsReviews">
 <div class="profilePictoViewsReviews"><?php echo $this->Html->image('views.png'); ?></div>
-<div class="profileNumViewsReviews">200</div>
+<div class="profileNumViewsReviews"><?php  echo $trainershasviews?></div>
 <div class="profilePictoViewsReviews2"><?php echo $this->Html->image('comment.png'); ?></div>
-<div class="profileNumViewsReviews">200</div>
+<div class="profileNumViewsReviews"><?php  echo $reviewscount?></div>
 </div>
 
 
@@ -102,7 +102,7 @@ $(document).ready(function() {
 
 <div class="rightLargeNav leftbtn">
 <div class="rightLargeNavTitle">REVIEWS</div>
-<div class="rightLargeNavCount"><?php  echo $trainershasreviews?></div>
+<div class="rightLargeNavCount"><?php  echo $reviewscount?></div>
 </div>
 
 <div class="rightLargeNav centerbtn">
