@@ -52,18 +52,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 <!-- Sign up Modal -->
 
-<div class="container">
 
-
- 	<a class="initialism fade_open btn btn-success" href="#fade">Fade</a>
-
-</div>
 
 
 <!-- Set defaults -->
 <script>
 $(document).ready(function () {
-    $.fn.popup.defaults.pagecontainer = '.container'
+    $.fn.popup.defaults.pagecontainer = '.popup'
 });
 </script>
 
@@ -161,7 +156,12 @@ $(document).ready(function () {
     </ul>
 
 	</div>
+	
+<div class="popup">
 
+<a class="initialism fade_open btn btn-success" href="#fade">SIGN UP</a>
+
+</div>
 	
 
 	
