@@ -76,7 +76,7 @@ $(document).ready(function () {
 
 <div class="signupMidDiv">
 <ul>
-<li><a href="#">
+<li><a href="/sportopolis/sportopolis/signuptrainer">
 <?php echo $this->Html->image('TrainerSignUp.png'); ?>
 <div class="signupPictoText">Trainer</div>
 <div class="signupPictoDesc">Sign up as a trainer. You can</div></a>
