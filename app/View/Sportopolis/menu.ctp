@@ -67,7 +67,7 @@
 <div class="listName"><?php echo $trainer['Trainer']['name']; ?></div>
 <div class="listRank"><?php echo $this->Html->image('zerorank1.png', array('class' => 'listRankPicto')); ?></div>
 <div class="listviews"><?php echo $this->Html->image('views.png', array('class' => 'listViewsPicto')); ?>200</div>
-<div class="listReviews"><?php echo $this->Html->image('comment.png', array('class' => 'listViewsPicto')); ?>200</div>
+<div class="listReviews"><?php echo $this->Html->image('like.png', array('class' => 'listViewsPicto')); ?>200</div>
 </div>
 <div class="listArrow"><?php echo $this->Html->image('go.png', array('class' => 'listArrowPicto')); ?></div>
 </a>
