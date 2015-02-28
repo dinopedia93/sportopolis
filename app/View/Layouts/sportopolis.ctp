@@ -33,16 +33,17 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->css('skeleton');
 		echo $this->Html->css('LargeSkeleton');
 		echo $this->Html->css('mobileskeleton');
-		echo $this->Html->css('jquery-ui.min');
 
 		// JavaScripts
 		echo $this->Html->script('jquery');
-		echo $this->Html->script('jquery-ui.min'); 
-		
+
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
 		echo $this->fetch('script');
 	?>
+	
+	
+
 	
 </head>
 <body>
@@ -89,10 +90,16 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
     </ul>
 
 	</div>
+
+	
+
+	
+	
 </div>
 </div>
 
 </div>
+
 
 <div class="container">
 
@@ -133,5 +140,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		 
 	</div> 
 	<?php //echo $this->element('sql_dump'); ?>
+	
+	
 </body>
 </html>
