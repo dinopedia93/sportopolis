@@ -1010,7 +1010,7 @@ font-family:Helvetica World;
 
 
 .trainerPicto{
-background-image: url("coach.png");
+background-image: url("../img/coach.png");
 background-repeat: no-repeat;
 background-position:12% 55%;
 }
@@ -1020,12 +1020,12 @@ color:#f26522;
 background-color:#fff2ee;
 cursor:pointer;
 border-right:3px solid #f26522;
-background-image: url("coach2.png");
+background-image: url("../img/coach2.png");
 transition: background 0.4s ease;
 }
 
 .locationPicto{
-background-image: url("map.png");
+background-image: url("../img/map.png");
 background-repeat: no-repeat;
 background-position:12% 55%;
 }
@@ -1035,12 +1035,12 @@ color:#f26522;
 background-color:#fff2ee;
 cursor:pointer;
 border-right:3px solid #f26522;
-background-image: url("map2.png");
+background-image: url("../img/map2.png");
 transition: background 0.4s ease;
 }
 
 .storesPicto{
-background-image: url("cart.png");
+background-image: url("../img/cart.png");
 background-repeat: no-repeat;
 background-position:12% 52%;
 }
@@ -1051,11 +1051,11 @@ color:#f26522;
 background-color:#fff2ee;
 cursor:pointer;
 border-right:3px solid #f26522;
-background-image: url("cart2.png");
+background-image: url("../img/cart2.png");
 }
 
 .eventPicto{
-background-image: url("event.png");
+background-image: url("../img/event.png");
 background-repeat: no-repeat;
 background-position:12% 52%;
 }
@@ -1065,7 +1065,7 @@ color:#f26522;
 background-color:#fff2ee;
 cursor:pointer;
 border-right:3px solid #f26522;
-background-image: url("event2.png");
+background-image: url("../img/event2.png");
 transition: background 0.4s ease;
 }
 
