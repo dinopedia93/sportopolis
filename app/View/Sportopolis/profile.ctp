@@ -1,33 +1,63 @@
 <script type="text/javascript">
 $(document).ready(function() {
+    var isMobile = {
+        Android: function() {
+            return navigator.userAgent.match(/Android/i);
+        },
+        BlackBerry: function() {
+            return navigator.userAgent.match(/BlackBerry/i);
+        },
+        iOS: function() {
+            return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        },
+        Opera: function() {
+            return navigator.userAgent.match(/Opera Mini/i);
+        },
+        Windows: function() {
+            return navigator.userAgent.match(/IEMobile/i);
+        },
+        any: function() {
+            return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+        }
+    };
     $(".profilePhotosLargeBOTTOMContainer").hide();
-    $(".profileRankLargeBOTTOMContainer").hide();
+    $(".userRatings").hide();
+    if(isMobile.any())
+    {
+        $(".profileReviewLargeBOTTOMContainer").hide();
+    }
     $(".centerbtn").click(function() {
-        $(".profilePhotosLargeBOTTOMContainer").show();
-        $(".profileRankLargeBOTTOMContainer").hide();
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        if (isMobile.any()) {
             $(".info-detail").hide();
+            $(".profileReviewLargeBOTTOMContainer").show();
+            $(".profilePhotosLargeBOTTOMContainer").hide();
         } else {
             $(".readReviews").hide();
+            $(".profilePhotosLargeBOTTOMContainer").show();
+            $(".userRatings").hide();
         }
 
     });
     $(".leftbtn").click(function() {
-        $(".profilePhotosLargeBOTTOMContainer").hide();
-        $(".profileRankLargeBOTTOMContainer").hide();
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        if (isMobile.any()) {
             $(".info-detail").show();
+            $(".profileReviewLargeBOTTOMContainer").hide();
+            $(".profilePhotosLargeBOTTOMContainer").hide();
         } else {
             $(".readReviews").show();
+            $(".profilePhotosLargeBOTTOMContainer").hide();
+            $(".userRatings").hide();
         }
     });
     $(".rightbtn").click(function() {
-        $(".profilePhotosLargeBOTTOMContainer").hide();
-        $(".profileRankLargeBOTTOMContainer").show();
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        if (isMobile.any()) {
             $(".info-detail").hide();
+            $(".profileReviewLargeBOTTOMContainer").hide();
+            $(".profilePhotosLargeBOTTOMContainer").show();
         } else {
             $(".readReviews").hide();
+            $(".profilePhotosLargeBOTTOMContainer").hide();
+            $(".userRatings").show();
         }
     });
 });
@@ -53,9 +83,9 @@ $(document).ready(function() {
 
 
 <div class="mob-nav-menu">
-<div class="mobNav">Info</div>
-<div class="mobNavCenter">Reviews</div>
-<div class="mobNav">Photos</div>
+<div class="mobNav leftbtn">Info</div>
+<div class="mobNavCenter centerbtn">Reviews</div>
+<div class="mobNav rightbtn">Photos</div>
 </div>
 </div>
 
