@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 25, 2015 at 01:51 AM
+-- Generation Time: Feb 27, 2015 at 03:23 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -102,6 +102,17 @@ CREATE TABLE IF NOT EXISTS `events_has_reviews` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `events_has_views`
+--
+
+CREATE TABLE IF NOT EXISTS `events_has_views` (
+  `event_id` int(11) NOT NULL,
+  `view_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `likes`
 --
 
@@ -177,6 +188,17 @@ CREATE TABLE IF NOT EXISTS `locations_has_sports` (
   `location_id` int(11) NOT NULL,
   `sport_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `locations_has_views`
+--
+
+CREATE TABLE IF NOT EXISTS `locations_has_views` (
+  `location_id` int(11) NOT NULL,
+  `view_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -360,6 +382,17 @@ CREATE TABLE IF NOT EXISTS `stores_has_reviews` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `stores_has_views`
+--
+
+CREATE TABLE IF NOT EXISTS `stores_has_views` (
+  `store_id` int(11) NOT NULL,
+  `view_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `trainers`
 --
 
@@ -443,6 +476,28 @@ INSERT INTO `trainers_has_reviews` (`trainer_id`, `review_id`) VALUES
 (2, 1),
 (2, 2);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `trainers_has_views`
+--
+
+CREATE TABLE IF NOT EXISTS `trainers_has_views` (
+  `trainer_id` int(11) NOT NULL,
+  `view_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `views`
+--
+
+CREATE TABLE IF NOT EXISTS `views` (
+`id` int(11) NOT NULL,
+  `member_id` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
 --
 -- Indexes for dumped tables
 --
@@ -484,6 +539,12 @@ ALTER TABLE `events_has_reviews`
  ADD PRIMARY KEY (`event_id`,`review_id`), ADD KEY `fk_events_has_reviews_reviews1_idx` (`review_id`), ADD KEY `fk_events_has_reviews_events1_idx` (`event_id`);
 
 --
+-- Indexes for table `events_has_views`
+--
+ALTER TABLE `events_has_views`
+ ADD PRIMARY KEY (`event_id`,`view_id`), ADD KEY `fk_events_has_views_views1_idx` (`view_id`), ADD KEY `fk_events_has_views_events1_idx` (`event_id`);
+
+--
 -- Indexes for table `likes`
 --
 ALTER TABLE `likes`
@@ -518,6 +579,12 @@ ALTER TABLE `locations_has_reviews`
 --
 ALTER TABLE `locations_has_sports`
  ADD PRIMARY KEY (`location_id`,`sport_id`), ADD KEY `fk_locations_has_sports_sports1_idx` (`sport_id`), ADD KEY `fk_locations_has_sports_locations1_idx` (`location_id`);
+
+--
+-- Indexes for table `locations_has_views`
+--
+ALTER TABLE `locations_has_views`
+ ADD PRIMARY KEY (`location_id`,`view_id`), ADD KEY `fk_locations_has_views_views1_idx` (`view_id`), ADD KEY `fk_locations_has_views_locations1_idx` (`location_id`);
 
 --
 -- Indexes for table `members`
@@ -592,6 +659,12 @@ ALTER TABLE `stores_has_reviews`
  ADD PRIMARY KEY (`store_id`,`review_id`), ADD KEY `fk_stores_has_reviews_reviews1_idx` (`review_id`), ADD KEY `fk_stores_has_reviews_stores1_idx` (`store_id`);
 
 --
+-- Indexes for table `stores_has_views`
+--
+ALTER TABLE `stores_has_views`
+ ADD PRIMARY KEY (`store_id`,`view_id`), ADD KEY `fk_stores_has_views_views1_idx` (`view_id`), ADD KEY `fk_stores_has_views_stores1_idx` (`store_id`);
+
+--
 -- Indexes for table `trainers`
 --
 ALTER TABLE `trainers`
@@ -620,6 +693,18 @@ ALTER TABLE `trainers_has_photos`
 --
 ALTER TABLE `trainers_has_reviews`
  ADD PRIMARY KEY (`trainer_id`,`review_id`), ADD KEY `fk_trainers_has_reviews_reviews1_idx` (`review_id`), ADD KEY `fk_trainers_has_reviews_trainers1_idx` (`trainer_id`);
+
+--
+-- Indexes for table `trainers_has_views`
+--
+ALTER TABLE `trainers_has_views`
+ ADD PRIMARY KEY (`trainer_id`,`view_id`), ADD KEY `fk_trainers_has_views_views1_idx` (`view_id`), ADD KEY `fk_trainers_has_views_trainers1_idx` (`trainer_id`);
+
+--
+-- Indexes for table `views`
+--
+ALTER TABLE `views`
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`), ADD KEY `fk_views_members1_idx` (`member_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -686,6 +771,11 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `trainers`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
+-- AUTO_INCREMENT for table `views`
+--
+ALTER TABLE `views`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
 -- Constraints for dumped tables
 --
 
@@ -715,6 +805,13 @@ ADD CONSTRAINT `fk_events_has_photos_photos1` FOREIGN KEY (`photo_id`) REFERENCE
 ALTER TABLE `events_has_reviews`
 ADD CONSTRAINT `fk_events_has_reviews_events1` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 ADD CONSTRAINT `fk_events_has_reviews_reviews1` FOREIGN KEY (`review_id`) REFERENCES `reviews` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `events_has_views`
+--
+ALTER TABLE `events_has_views`
+ADD CONSTRAINT `fk_events_has_views_events1` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_events_has_views_views1` FOREIGN KEY (`view_id`) REFERENCES `views` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `likes`
@@ -749,6 +846,13 @@ ADD CONSTRAINT `fk_locations_has_reviews_reviews1` FOREIGN KEY (`review_id`) REF
 ALTER TABLE `locations_has_sports`
 ADD CONSTRAINT `fk_locations_has_sports_locations1` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 ADD CONSTRAINT `fk_locations_has_sports_sports1` FOREIGN KEY (`sport_id`) REFERENCES `sports` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `locations_has_views`
+--
+ALTER TABLE `locations_has_views`
+ADD CONSTRAINT `fk_locations_has_views_locations1` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_locations_has_views_views1` FOREIGN KEY (`view_id`) REFERENCES `views` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `messages`
@@ -798,6 +902,13 @@ ADD CONSTRAINT `fk_stores_has_reviews_reviews1` FOREIGN KEY (`review_id`) REFERE
 ADD CONSTRAINT `fk_stores_has_reviews_stores1` FOREIGN KEY (`store_id`) REFERENCES `stores` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `stores_has_views`
+--
+ALTER TABLE `stores_has_views`
+ADD CONSTRAINT `fk_stores_has_views_stores1` FOREIGN KEY (`store_id`) REFERENCES `stores` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_stores_has_views_views1` FOREIGN KEY (`view_id`) REFERENCES `views` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `trainers`
 --
 ALTER TABLE `trainers`
@@ -830,6 +941,19 @@ ADD CONSTRAINT `fk_trainers_has_photos_trainers1` FOREIGN KEY (`trainer_id`) REF
 ALTER TABLE `trainers_has_reviews`
 ADD CONSTRAINT `fk_trainers_has_reviews_reviews1` FOREIGN KEY (`review_id`) REFERENCES `reviews` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 ADD CONSTRAINT `fk_trainers_has_reviews_trainers1` FOREIGN KEY (`trainer_id`) REFERENCES `trainers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `trainers_has_views`
+--
+ALTER TABLE `trainers_has_views`
+ADD CONSTRAINT `fk_trainers_has_views_trainers1` FOREIGN KEY (`trainer_id`) REFERENCES `trainers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_trainers_has_views_views1` FOREIGN KEY (`view_id`) REFERENCES `views` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `views`
+--
+ALTER TABLE `views`
+ADD CONSTRAINT `fk_views_members1` FOREIGN KEY (`member_id`) REFERENCES `members` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
