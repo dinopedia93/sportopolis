@@ -29,11 +29,15 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	</title>
 	<?php
 		echo $this->Html->meta('icon');
-
+		// CSS files
 		echo $this->Html->css('skeleton');
 		echo $this->Html->css('LargeSkeleton');
 		echo $this->Html->css('mobileskeleton');
-		echo $this->Html->script('jquery'); 
+		echo $this->Html->css('jquery-ui.min');
+
+		// JavaScripts
+		echo $this->Html->script('jquery');
+		echo $this->Html->script('jquery-ui.min'); 
 		
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
