@@ -36,6 +36,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 		// JavaScripts
 		echo $this->Html->script('jquery');
+		echo $this->Html->script('jquery.popupoverlay');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -47,6 +48,76 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	
 </head>
 <body>
+
+
+<!-- Sign up Modal -->
+
+<div class="container">
+
+
+ 	<a class="initialism fade_open btn btn-success" href="#fade">Fade</a>
+
+</div>
+
+
+<!-- Set defaults -->
+<script>
+$(document).ready(function () {
+    $.fn.popup.defaults.pagecontainer = '.container'
+});
+</script>
+
+
+
+<!-- Fade -->
+
+<div id="fade" class="signupDiv">
+<div class="signupDivTitle">SIGN UP</div>
+
+<div class="signupMidDiv">
+<ul>
+<li><a href="#">
+<?php echo $this->Html->image('TrainerSignUp.png'); ?>
+<div class="signupPictoText">Trainer</div>
+<div class="signupPictoDesc">Sign up as a trainer. You can</div></a>
+</li>
+
+<li><a href="#">
+<?php echo $this->Html->image('locationSignUp.png'); ?>
+<div class="signupPictoText">Sport Location</div>
+<div class="signupPictoDesc">Sign up as a sport location. You can</div></a>
+</li>
+
+<li><a href="#">
+<?php echo $this->Html->image('storeSignUp.png'); ?>
+<div class="signupPictoText">Sport Store</div>
+<div class="signupPictoDesc">Sign up as a sport store. You can</div></a>
+</li>
+
+<li><a href="#">
+<?php echo $this->Html->image('ArticleSignUP.png'); ?>
+<div class="signupPictoText">Writer</div>
+<div class="signupPictoDesc">Sign up as a writer. You can</div></a>
+</li>
+
+</ul>
+</div>
+<div class="signIn">Sign In</div>
+
+</div>
+
+<script>
+$(document).ready(function () {
+
+    $('#fade').popup({
+      transition: 'all 0.3s',
+      scrolllock: true
+    });
+
+});
+</script>
+
+<!-- Sign up Modal -->
 	
 		<div class="wrapper">
 
