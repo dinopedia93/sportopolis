@@ -7,9 +7,7 @@
 <div class="signup-big">
 
 <div class="signup-header">
-<div class="signup-header-ai">Account Information</div>
-<div class="signup-header-bi">Basic Information</div>
-<div class="signup-header-ph">Edit Photos</div>
+<div class="signup-header-ai">Sign Up Trainer</div>
 </div>
 
 
@@ -25,8 +23,8 @@
 
 
 <div class="signup2">
-<div class="signup-title2">Or sign up with Email</div>
-<div class="signup-Desc">Please</div>
+<div class="signup-title2">Sign up with Email</div>
+<div class="signup-Desc">Please fill in your email address and password. ( A confirmation mail will be sent to you. )</div>
 
 <form class="signup-email" method="post" action="/sportopolis/sportopolis/RegisterTrainer">
 

@@ -3,15 +3,16 @@
 
 <div class="leftListHeader">
 
-<div class="leftListHeaderTitle">Cycling</div>
+<div class="leftListHeaderTitle">Sport Name</div>
 </div>
 
 <ul class="sportList">
 
-<li class="trainerPicto">Trainer</li>
-<li class="locationPicto">Location</li>
-<li class="storesPicto">Store</li>
-<li class="eventPicto">Event</li>
+<li class="eventPicto">Articles</li>
+<li class="trainerPicto">Trainers</li>
+<li class="locationPicto">Locations</li>
+<li class="storesPicto">Stores</li>
+<li class="eventPicto">Events</li>
 
 </ul>
 
@@ -29,10 +30,10 @@
 
 <div class="dropMenu-list-head">
 <select>
-    <option>Location</option>
-    <option>Trainer</option>
-    <option>Store</option>
-    <option>Article</option>
+    <option>Locations</option>
+    <option>Trainers</option>
+    <option>Stores</option>
+    <option>Articles</option>
 </select>
 </div>
 </div>
@@ -54,7 +55,7 @@
 <div class="list-accounts">
 <div class="leftListHeader">
 
-<div class="leftListHeaderTitle">All</div>
+<div class="leftListHeaderTitle">Trainers</div>
 </div>
 <ul class="attributeList">
 <?php foreach ($trainers as $trainer): ?>
