@@ -33,12 +33,14 @@ App::uses('Model','Model');
  */
 class SportopolisController extends Controller {
 
-	public function index() {
+	public function index() 
+	{
 		$this->layout = 'sportopolis';
 		$this->set('title_for_layout', 'SPORTOYA');
 	}
 
-	public function menu() {
+	public function menu() 
+	{
 		$this->layout = 'sportopolis';
 		$this->loadModel('Trainer');
 		$trainers = $this->Trainer->find('all');
@@ -46,7 +48,8 @@ class SportopolisController extends Controller {
 		$this->set('title_for_layout', 'SPORTOYA');
 	}
 
-	public function profile($id) {
+	public function profile($id) 
+	{
 		$this->layout = 'sportopolis';	
 		$this->loadModel('Trainer');	
 		$this->loadModel('Sport');
@@ -64,6 +67,23 @@ class SportopolisController extends Controller {
 		$this->set('trainershasphotos', $trainershasphotos);
 		$trainershasviews = $this->TrainersHasViews->find('count',array('conditions' => array('TrainersHasViews.trainer_id' => $id)));
 		$this->set('trainershasviews', $trainershasviews);
+	}
+
+	public function signuptrainer()
+	{
+		$this->layout = 'sportopolis';
+	}
+
+	public function RegisterTrainer()
+	{
+		$this->loadModel('Trainer');	
+		if ($this->request->is('post')) {
+            $this->Trainer->create();
+            if ($this->Trainer->save($this->request->data)) {
+            	$link = 'profile'.$this->Trainer->id;
+                return $this->redirect(array('action' => $link));
+            }
+        }
 	}
 }
 
