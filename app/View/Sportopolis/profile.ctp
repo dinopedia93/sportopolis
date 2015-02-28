@@ -77,7 +77,7 @@ $(document).ready(function() {
 <div class="profileViewsReviews">
 <div class="profilePictoViewsReviews"><?php echo $this->Html->image('views.png'); ?></div>
 <div class="profileNumViewsReviews"><?php  echo $trainershasviews?></div>
-<div class="profilePictoViewsReviews2"><?php echo $this->Html->image('comment.png'); ?></div>
+<div class="profilePictoViewsReviews2"><?php echo $this->Html->image('like.png'); ?></div>
 <div class="profileNumViewsReviews"><?php  echo $reviewscount?></div>
 </div>
 
