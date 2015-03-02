@@ -41,21 +41,26 @@ class SportopolisController extends Controller {
 
 	public function menu() 
 	{
-		$this->layout = 'sportopolis';
+		
 		$this->loadModel('Trainer');
+
 		$trainers = $this->Trainer->find('all');
+
 		$this->set('trainers', $trainers);
 		$this->set('title_for_layout', 'SPORTOYA');
+
+		$this->layout = 'sportopolis';
 	}
 
 	public function profile($id) 
 	{
-		$this->layout = 'sportopolis';	
+		
 		$this->loadModel('Trainer');	
 		$this->loadModel('Sport');
 		$this->loadModel('TrainersHasReviews');
 		$this->loadModel('TrainersHasViews');
 		$this->loadModel('TrainersHasPhotos');
+
 		$trainer = $this->Trainer->findById($id);
 		$this->set('trainer', $trainer);
 		$this->set('title_for_layout', $trainer['Trainer']['name']."'s Profile");
@@ -67,6 +72,8 @@ class SportopolisController extends Controller {
 		$this->set('trainershasphotos', $trainershasphotos);
 		$trainershasviews = $this->TrainersHasViews->find('count',array('conditions' => array('TrainersHasViews.trainer_id' => $id)));
 		$this->set('trainershasviews', $trainershasviews);
+
+		$this->layout = 'sportopolis';	
 	}
 
 	public function signuptrainer($error)
@@ -76,13 +83,48 @@ class SportopolisController extends Controller {
 			$this->set('error', json_decode($error));
 	}
 
+	public function edittrainer($id)
+	{
+		$this->loadModel('Sport');
+		$this->loadModel('Trainer');
+
+		$sports = $this->Sport->find('all');
+		$trainer = $this->Trainer->findById($id);
+
+		$this->set('sports',$sports);
+		$this->set('trainer',$trainer);
+
+		$this->layout = 'sportopolis';
+	}
+
 	public function RegisterTrainer()
 	{
 		$this->loadModel('Trainer');
+
 		$this->Trainer->set($this->request->data);	
 		if ($this->Trainer->validates()) 
 		{
             $this->Trainer->create();
+            if ($this->Trainer->save($this->request->data)) 
+            {
+            	$link = 'profile/'.$this->Trainer->id;
+                return $this->redirect(array('action' => $link));
+            }
+        }
+        else
+        {
+        	return $this->redirect(array('action' => 'signuptrainer/'.json_encode($this->Trainer->validationErrors)));
+        }
+	}
+
+	public function UpdateTrainerProfile($id)
+	{
+		$this->loadModel('Trainer');
+
+		$this->Trainer->set($this->request->data);	
+		if ($this->Trainer->validates() || true) 
+		{
+            $this->Trainer->id = $id;
             if ($this->Trainer->save($this->request->data)) 
             {
             	$link = 'profile/'.$this->Trainer->id;

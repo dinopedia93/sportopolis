@@ -4,19 +4,25 @@
 
 <div class="profileSignUpToLeft">
 
-<form>
-
+<form method="post" action="/sportopolis/sportopolis/UpdateTrainerProfile/<?php echo $trainer['Trainer']['id']; ?>">
 <div class="profilePictureLeftLargeContainer"><img class="pictureLeftLargerContainer" src ="boss.png"></div>
-<input class="textboxStandardLeft" type="text" name="fname" placeholder="First name">
-<input class="textboxStandardLeft" type="text" name="lname" placeholder="Last name">
+<input class="textboxStandardLeft" type="text" name="name" placeholder="name" value="<?php echo $trainer['Trainer']['name']; ?>">
 
 <select class="select-sport" name ="sport">
-<option selected="selected" disabled="disabled">Select Sport</option>
-<option>Cycling</option>
-<option>Fitness</option>
-<option>Fishing</option>
-<option>Football</option>
-<option>Tennis</option>
+<option disabled="disabled">Select Sport</option>
+<?php
+	foreach ($sports as $sport) {
+		if($sport['Sport']['id'] == $trainer['Trainer']['sports_id'])
+		{
+			echo "<option selected='selected' value="."'".$sport['Sport']['id']."'>".$sport['Sport']['name']."</option>";
+		}
+		else
+		{
+			echo "<option value='".$sport['Sport']['id']."'>".$sport['Sport']['name']."</option>";
+		}
+		
+	}
+?>
 </select>
 
 </div>
@@ -50,17 +56,18 @@ populateCountries("country", "state");
 <div class="SignUpTitle">Personal Information</div>
 
 <div class="personalInfo">
-<input class="textboxStandardRight" type="text" name="telephoneNum" placeholder="Mobile num.">
+<input class="textboxStandardRight" type="text" name="mobile" placeholder="Mobile num." value="<?php echo $trainer['Trainer']['mobile']; ?>">
 <!-- bellow should be replaced by selectable div jquery -->
-<input class="textboxStandardRight2" type="text" name="telephoneNum" placeholder="male or female">
+<input class="textboxStandardRight2" type="text" name="gender" placeholder="male or female" value="<?php echo $trainer['Trainer']['gender']; ?>">
 <!-- bellow should be replaced by birth date div jquery -->
-<input class="textboxStandardRight" type="text" name="telephoneNum" placeholder="Birth date">
-<input class="textboxStandardRight2" type="text" name="telephoneNum" placeholder="Working Location">
+<input class="textboxStandardRight" type="text" name="birthdate" placeholder="Birth date" value="<?php echo $trainer['Trainer']['birthdate']; ?>">
+<input class="textboxStandardRight2" type="text" name="location" placeholder="Working Location" value="<?php echo $trainer['Trainer']['location']; ?>">
 
 </div>
 
 <div class="SignUpTitle">Biography</div>
-<textarea class="textareaSignUp" placeholder="Please, write your biography here ...">
+<textarea name="biography" class="textareaSignUp" placeholder="Please, write your biography here ...">
+<?php echo $trainer['Trainer']['biography']; ?>
 </textarea>
 
 <div class="SignUpTitle">Social Media</div>
