@@ -69,20 +69,29 @@ class SportopolisController extends Controller {
 		$this->set('trainershasviews', $trainershasviews);
 	}
 
-	public function signuptrainer()
+	public function signuptrainer($error)
 	{
 		$this->layout = 'sportopolis';
+		if($error != null)
+			$this->set('error', json_decode($error));
 	}
 
 	public function RegisterTrainer()
 	{
-		$this->loadModel('Trainer');	
-		if ($this->request->is('post')) {
+		$this->loadModel('Trainer');
+		$this->Trainer->set($this->request->data);	
+		if ($this->Trainer->validates()) 
+		{
             $this->Trainer->create();
-            if ($this->Trainer->save($this->request->data)) {
-            	$link = 'profile'.$this->Trainer->id;
+            if ($this->Trainer->save($this->request->data)) 
+            {
+            	$link = 'profile/'.$this->Trainer->id;
                 return $this->redirect(array('action' => $link));
             }
+        }
+        else
+        {
+        	return $this->redirect(array('action' => 'signuptrainer/'.json_encode($this->Trainer->validationErrors)));
         }
 	}
 }
