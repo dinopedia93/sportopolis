@@ -135,6 +135,22 @@ $(document).ready(function () {
 	
 	<li class="nav-li">
 	<a class="nav-li-a" href="#">Sports</a>
+	
+<!--	
+
+Note: please, when i click on sports, the ul bellow should appear
+Example: http://jsfiddle.net/euantor/WsRkv/light/
+
+<ul>
+<li><a href="#">Fitness</a></li>
+<li><a href="#">Football</a></li>
+<li><a href="#">Fishing</a></li>
+<li><a href="#">Tennis</a></li>
+</ul>
+	
+-->
+	
+	
 	</li>
 	
 	<li class="nav-li">
@@ -167,6 +183,29 @@ $(document).ready(function () {
 	
 	
 </div>
+
+
+
+<!-- mobile navigation menu
+
+Note: when i click the menu icon in the mobile version, this ul should appear
+
+<div class="mobile-nav-wrapper">
+
+<ul>
+<li>Sports</li>
+<li><a href="#">Fitness</a></li>
+<li><a href="#">Football</a></li>
+<li><a href="#">Fishing</a></li>
+<li><a href="#">Tennis</a></li>
+</ul>
+
+</div>
+
+
+-->
+
+
 </div>
 
 </div>
