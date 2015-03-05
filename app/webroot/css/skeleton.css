@@ -18,7 +18,7 @@ height:50px;
 margin-bottom: 0;
 background: white;
 float:left;
-z-index: 200;
+z-index: 1000;
 box-shadow: 0 1px 5px #f26522, inset 0 -1px 0 rgba(0, 0, 0, 0.01);
 }
 

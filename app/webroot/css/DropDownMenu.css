@@ -1,22 +1,12 @@
 .dropDownHook {
-    -webkit-border-radius:3px;
-    -moz-border-radius:3px;
-    border-radius:3px;
-    border:1px solid #e1e1e1;
-    -webkit-box-shadow:inset 0 0 0 1px #ffffff;
-    -moz-box-shadow:inset 0 0 0 1px #ffffff;
-    box-shadow:inset 0 0 0 1px #ffffff;
-    color:#8d8d8d;
-    text-shadow:1px 1px 0px #ffffff;
-    background:#eeeeee;
-    padding:4px;
-    font:13px/1.231 sans-serif;
+    color:#f26522;
     display:inline-block;
-    position:relative;
     width:200px;
-    height:22px;
+    height:50px;
     line-height:22px;
-    vertical-align:middle;
+	font-size:19px;
+	padding-top:18px;
+	z-index:1;
 }
 
 
@@ -29,14 +19,79 @@
 }
 
 .dropDownHook .dropDownContent{
-    position:absolute;
-    left:-1px;
-    top:30px;
-    background:#e1e1e1;
-    padding:4px;
-    -webkit-border-radius:0 3px 3px 3px;
-    -moz-border-radius:0 3px 3px 3px;
-    border-radius:0 3px 3px 3px;
-    min-width:100%;
-    text-shadow:none;
+width: 1280px;
+height:auto;
+background-color: #fbfbfb;
+left: -348px;
+position: relative;
+top: 12px;
+box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-moz-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-webkit-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+z-index:1;
 }
+
+.dropDownUl{
+width:80%;
+margin-left:11%;
+height:100%;
+list-style-type: none;
+}
+
+.dropDownUl li{
+display:inline-block;
+width:200px;
+margin:15px;
+height:90px;
+border-radius:4px;
+cursor:pointer;
+border:1px solid grey;
+}
+
+.cyclingLink{
+background-image: url("../img/cyclingG.png");
+background-repeat: no-repeat;
+transition: background 0.4s ease;
+-moz-transition:background 0.4s ease;
+-webkit-transition:background 0.4s ease;
+}
+
+.cyclingLink:hover{
+background-image: url("../img/cyclingO.png");
+background-repeat: no-repeat;
+}
+
+.tennisLink{
+background-image: url("../img/tennisG.png");
+background-repeat: no-repeat;
+transition: background 0.4s ease;
+}
+
+.tennisLink:hover{
+background-image: url("../img/tennisO.png");
+background-repeat: no-repeat;
+}
+
+.fitnessLink{
+background-image: url("../img/fitnessG.png");
+background-repeat: no-repeat;
+transition: background 0.4s ease;
+}
+
+.fitnessLink:hover{
+background-image: url("../img/fitnessO.png");
+background-repeat: no-repeat;
+}
+
+.fishingLink{
+background-image: url("../img/fishingG.png");
+background-repeat: no-repeat;
+transition: background 0.4s ease;
+}
+
+.fishingLink:hover{
+background-image: url("../img/fishingO.png");
+background-repeat: no-repeat;
+}
+
+

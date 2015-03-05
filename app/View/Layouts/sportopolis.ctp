@@ -128,14 +128,14 @@ $(document).ready(function () {
 
 <div class="desktop-nav">
 <div class="dropDownHook">
-    <span>Open Dropdown</span>
-    <div class="dropDownContent">
-        <ul>
-<li>Sports</li>
-<li><a href="#">Fitness</a></li>
-<li><a href="#">Football</a></li>
-<li><a href="#">Fishing</a></li>
-<li><a href="#">Tennis</a></li>
+<span>Sports</span>
+<div class="dropDownContent">
+<ul class="dropDownUl">
+<li class="cyclingLink"><a href="#"></a></li>
+<li class="tennisLink"><a href="#"></a></li>
+<li class="fitnessLink"><a href="#"></a></li>
+<li class="fishingLink"><a href="#"></a></li>
+
 </ul>
     </div>
 </div>
