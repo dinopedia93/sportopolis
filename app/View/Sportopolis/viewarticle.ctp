@@ -4,6 +4,36 @@
 
 <div class="article-main-photo"><img src=""></div>
 
+<div class="author-info">
+<div class="author-pic"><img class="author-prof-pic" src ="boss.png"></div>
+<div class="author-name">Hisham Ahmed</div>
+<div class="author-Author">Published:</div>
+<div class="article-date">Mar 2, 2015</div>
+</div>
+
+
+<div class="article-adv">
+<div class="article-adv-top">Views</div>
+<div class="article-adv-bellow">200</div>
+</div>
+
+<div class="article-adv">
+<div class="article-adv-top">Likes</div>
+<div class="article-adv-bellow">4.5</div>
+</div>
+
+<div class="article-adv">
+<div class="article-adv-top">Shares</div>
+<div class="article-adv-bellow">200</div>
+</div>
+
+<div class="article-adv">
+<div class="article-adv-top">Rates</div>
+<div class="article-adv-bellow">4.5</div>
+</div>
+
+
+
 <div class="article-main-body">
 Rafael Nadal is back with a vengeance.
 
@@ -58,35 +88,22 @@ A win in France would cement his legacy forever, and we get the feeling he will 
 
 <div class="article-info-right">
 
-<div class="article-info-title">Article Information</div>
+<div class="article-info-title">Featured Articles</div>
 
-<div class="author-info">
-<div class="author-pic"><img class="author-prof-pic" src ="boss.png"></div>
-<div class="author-name">Hisham Ahmed Al-Sayed</div>
-<div class="author-Author">Author</div>
+
+<div class="article-mini-info">
+This is another articleThis is another article
 </div>
 
 <div class="article-mini-info">
-<div class="article-mini-info-left">Published in:</div>
-<div class="article-mini-info-right">13/13/2013</div>
+
 </div>
 
 <div class="article-mini-info">
-<div class="article-mini-info-left">Shares:</div>
-<div class="article-mini-info-right">100</div>
+
 </div>
 
-<div class="article-mini-info">
-<div class="article-mini-info-left">Rating:</div>
-<div class="article-mini-info-right">4.3</div>
-</div>
 
-<div class="article-mini-info2">
-<div class="article-mini-info2-views"><img src="views.png"></div>
-<div class="article-mini-info2-num">200</div>
-<div class="article-mini-info2-views2"><img src="like.png"></div>
-<div class="article-mini-info2-num">200</div>
-</div>
 
 
 </div>
@@ -96,6 +113,8 @@ A win in France would cement his legacy forever, and we get the feeling he will 
 <div class="Article-share-twitter">Tweet</div>
 <div class="Article-share-Email">Email</div>
 </div>	
+
+
 
 <div class="article-reviews">
 
@@ -144,3 +163,4 @@ show more
 
 </ul>
 </div>
+

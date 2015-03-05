@@ -17,6 +17,29 @@
 </ul>
 
 
+<ul class="menu-filter-in">
+
+<li class="menu-filter-in-li1">Filter in</li>
+
+<!--Should be set by default to current location-->
+
+<li>
+<select class="filter-select" id="country" name ="country"></select>
+</li>
+
+<li>
+<select class="filter-select" name ="state" id ="state"></select>
+</li>
+
+<li>
+<select class="filter-select" name ="district" id ="district"></select>
+</li>
+
+<script language="javascript">
+populateCountries("country", "state");
+ </script>
+
+</ul>
 
 </div>
 
@@ -40,7 +63,7 @@
 
 
 
-<div class="list-sort">
+<div class="mobile-list-sort">
 
 <ul>
 
@@ -53,10 +76,20 @@
 </div>
 
 <div class="list-accounts">
-<div class="leftListHeader">
+<div class="leftMenuHeader">
 
-<div class="leftListHeaderTitle">Trainers</div>
+<!--search results should appear as i enter any letter-->
+<input class="textarea-search-menu" type='text' placeholder='Search in trainers...'/>
+
+<ul class="desktop-sort">
+<li><a href="#">Views</a></li>
+<li><a href="#">Ranks</a></li>
+<li><a href="#">Nearest</a></li>
+</ul>
+
 </div>
+
+
 <ul class="attributeList">
 <?php foreach ($trainers as $trainer): ?>
 <li>

@@ -37,6 +37,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		// JavaScripts
 		echo $this->Html->script('jquery');
 		echo $this->Html->script('jquery.popupoverlay');
+		echo $this->Html->script('countries');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -191,7 +192,6 @@ Example: http://jsfiddle.net/euantor/WsRkv/light/
 Note: when i click the menu icon in the mobile version, this ul should appear
 
 <div class="mobile-nav-wrapper">
-
 <ul>
 <li>Sports</li>
 <li><a href="#">Fitness</a></li>
@@ -199,7 +199,6 @@ Note: when i click the menu icon in the mobile version, this ul should appear
 <li><a href="#">Fishing</a></li>
 <li><a href="#">Tennis</a></li>
 </ul>
-
 </div>
 
 
