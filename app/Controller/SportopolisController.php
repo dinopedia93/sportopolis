@@ -122,7 +122,7 @@ class SportopolisController extends Controller {
 		$this->loadModel('Trainer');
 
 		$this->Trainer->set($this->request->data);	
-		if ($this->Trainer->validates() || true) 
+		if ($this->Trainer->validates()) 
 		{
             $this->Trainer->id = $id;
             if ($this->Trainer->save($this->request->data)) 

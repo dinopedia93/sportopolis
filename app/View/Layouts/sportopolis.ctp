@@ -33,11 +33,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->css('skeleton');
 		echo $this->Html->css('LargeSkeleton');
 		echo $this->Html->css('mobileskeleton');
+		echo $this->Html->css('DropDownMenu');
 
 		// JavaScripts
 		echo $this->Html->script('jquery');
 		echo $this->Html->script('jquery.popupoverlay');
 		echo $this->Html->script('countries');
+		echo $this->Html->script('DropDownMenu');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -55,13 +57,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 
 
-
-<!-- Set defaults -->
-<script>
-$(document).ready(function () {
-    $.fn.popup.defaults.pagecontainer = '.popup'
-});
-</script>
 
 
 
@@ -104,7 +99,7 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function () {
-
+	$.fn.popup.defaults.pagecontainer = '.popup'
     $('#fade').popup({
       transition: 'all 0.3s',
       scrolllock: true
@@ -132,33 +127,18 @@ $(document).ready(function () {
 </div>
 
 <div class="desktop-nav">
-	<ul class="nav-ul"> 
-	
-	<li class="nav-li">
-	<a class="nav-li-a" href="#">Sports</a>
-	
-<!--	
-
-Note: please, when i click on sports, the ul bellow should appear
-Example: http://jsfiddle.net/euantor/WsRkv/light/
-
-<ul>
+<div class="dropDownHook">
+    <span>Open Dropdown</span>
+    <div class="dropDownContent">
+        <ul>
+<li>Sports</li>
 <li><a href="#">Fitness</a></li>
 <li><a href="#">Football</a></li>
 <li><a href="#">Fishing</a></li>
 <li><a href="#">Tennis</a></li>
 </ul>
-	
--->
-	
-	
-	</li>
-	
-	<li class="nav-li">
-	<a class="nav-li-a" href="#">Events</a>
-	</li>	
-
-	</ul>
+    </div>
+</div>
 	
 	<div class="account">
 	<div class="accountPhoto"><?php echo $this->Html->image('boss.png', array('class' => 'circlePhoto')); ?></div>
