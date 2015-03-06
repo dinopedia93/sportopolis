@@ -1,3 +1,17 @@
+<script type="text/javascript">
+	$(document).ready(function() {
+    $('#locations').hide();
+    $('#trainers').show();
+    $('.locationPicto').click(function() {
+        $('#locations').show();
+        $('#trainers').hide();
+    });
+    $('.trainerPicto').click(function() {
+        $('#locations').hide();
+        $('#trainers').show();
+    });
+});
+</script>
 <?php $url = " http://localhost/sportopolis/sportopolis/profile/" ?>
 <div class="desktop-menu">
 
@@ -90,7 +104,7 @@ populateCountries("country", "state");
 </div>
 
 
-<ul class="attributeList">
+<ul id='trainers' class="attributeList">
 <?php foreach ($trainers as $trainer): ?>
 <li>
 <a href="<?php echo $url.$trainer['Trainer']['id']; ?>">
@@ -99,6 +113,30 @@ populateCountries("country", "state");
 <div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
 <div class="listInfo">
 <div class="listName"><?php echo $trainer['Trainer']['name']; ?></div>
+<div class="listRank"><?php echo $this->Html->image('zerorank1.png', array('class' => 'listRankPicto')); ?></div>
+<div class="listviews"><?php echo $this->Html->image('views.png', array('class' => 'listViewsPicto')); ?>200</div>
+<div class="listReviews"><?php echo $this->Html->image('like.png', array('class' => 'listViewsPicto')); ?>200</div>
+</div>
+<div class="listArrow"><?php echo $this->Html->image('go.png', array('class' => 'listArrowPicto')); ?></div>
+</a>
+</li>
+
+
+<?php endforeach; ?>
+
+
+
+</ul>
+
+<ul id='locations' class="attributeList">
+<?php foreach ($locations as $location): ?>
+<li>
+<a href="<?php echo $url.$trainer['Trainer']['id']; ?>">
+
+
+<div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
+<div class="listInfo">
+<div class="listName"><?php echo $location['Location']['name']; ?></div>
 <div class="listRank"><?php echo $this->Html->image('zerorank1.png', array('class' => 'listRankPicto')); ?></div>
 <div class="listviews"><?php echo $this->Html->image('views.png', array('class' => 'listViewsPicto')); ?>200</div>
 <div class="listReviews"><?php echo $this->Html->image('like.png', array('class' => 'listViewsPicto')); ?>200</div>

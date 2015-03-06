@@ -43,10 +43,13 @@ class SportopolisController extends Controller {
 	{
 		
 		$this->loadModel('Trainer');
+		$this->loadModel('Location');
 
 		$trainers = $this->Trainer->find('all');
+		$locations = $this->Location->find('all');
 
 		$this->set('trainers', $trainers);
+		$this->set('locations',$locations);
 		$this->set('title_for_layout', 'SPORTOYA');
 
 		$this->layout = 'sportopolis';
