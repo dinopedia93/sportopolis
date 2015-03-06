@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 06, 2015 at 02:38 PM
+-- Generation Time: Mar 06, 2015 at 04:14 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -49,6 +49,17 @@ CREATE TABLE IF NOT EXISTS `advertisements` (
   `sponsors_id` int(11) NOT NULL,
   `content` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `articles`
+--
+
+CREATE TABLE IF NOT EXISTS `articles` (
+`id` int(11) NOT NULL,
+  `name` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -531,6 +542,12 @@ ALTER TABLE `advertisements`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`), ADD KEY `fk_advertisements_sponsors1_idx` (`sponsors_id`);
 
 --
+-- Indexes for table `articles`
+--
+ALTER TABLE `articles`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `events`
 --
 ALTER TABLE `events`
@@ -735,6 +752,11 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `advertisements`
 --
 ALTER TABLE `advertisements`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `articles`
+--
+ALTER TABLE `articles`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `events`
