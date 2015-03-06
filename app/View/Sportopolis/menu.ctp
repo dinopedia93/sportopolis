@@ -1,14 +1,44 @@
 <script type="text/javascript">
-	$(document).ready(function() {
+	$(document).ready(function() {		
+    $('#articles').show();
     $('#locations').hide();
-    $('#trainers').show();
+    $('#trainers').hide();
+    $('#events').hide();
+    $('#stores').hide();
     $('.locationPicto').click(function() {
         $('#locations').show();
         $('#trainers').hide();
+        $('#articles').hide();
+        $('#events').hide();
+        $('#stores').hide();
     });
-    $('.trainerPicto').click(function() {
-        $('#locations').hide();
+    $('.trainerPicto').click(function() {    	
         $('#trainers').show();
+        $('#locations').hide();
+        $('#articles').hide();
+        $('#events').hide();
+        $('#stores').hide();
+    });
+    $('.articlePicto').click(function() {
+        $('#articles').show();
+        $('#locations').hide();
+        $('#trainers').hide();
+        $('#events').hide();
+        $('#stores').hide();
+    });
+    $('.eventPicto').click(function() {
+        $('#events').show();
+        $('#locations').hide();
+        $('#trainers').hide();
+        $('#articles').hide();
+        $('#stores').hide();
+    });
+     $('.storesPicto').click(function() {
+        $('#stores').show();
+        $('#locations').hide();
+        $('#trainers').hide();
+        $('#articles').hide();
+        $('#events').hide();
     });
 });
 </script>
@@ -22,7 +52,7 @@
 
 <ul class="sportList">
 
-<li class="eventPicto">Articles</li>
+<li class="articlePicto">Articles</li>
 <li class="trainerPicto">Trainers</li>
 <li class="locationPicto">Locations</li>
 <li class="storesPicto">Stores</li>
@@ -104,7 +134,35 @@ populateCountries("country", "state");
 </div>
 
 
+<ul id='articles' class="attributeList">
+<?php if(count($articles) > 0){ ?>
+<?php foreach ($articles as $article): ?>
+<li>
+<a href="<?php echo $url.$trainer['Trainer']['id']; ?>">
+
+
+<div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
+<div class="listInfo">
+<div class="listName"><?php echo $article['Article']['name']; ?></div>
+<div class="listRank"><?php echo $this->Html->image('zerorank1.png', array('class' => 'listRankPicto')); ?></div>
+<div class="listviews"><?php echo $this->Html->image('views.png', array('class' => 'listViewsPicto')); ?>200</div>
+<div class="listReviews"><?php echo $this->Html->image('like.png', array('class' => 'listViewsPicto')); ?>200</div>
+</div>
+<div class="listArrow"><?php echo $this->Html->image('go.png', array('class' => 'listArrowPicto')); ?></div>
+</a>
+</li>
+
+
+<?php endforeach; 
+}else {?>
+no articles to display
+<?php }?>
+
+</ul>
+
+
 <ul id='trainers' class="attributeList">
+<?php if(count($trainers) > 0){ ?>
 <?php foreach ($trainers as $trainer): ?>
 <li>
 <a href="<?php echo $url.$trainer['Trainer']['id']; ?>">
@@ -122,13 +180,16 @@ populateCountries("country", "state");
 </li>
 
 
-<?php endforeach; ?>
-
-
+<?php endforeach; 
+}else {?>
+no trainers to display
+<?php }?>
 
 </ul>
 
+
 <ul id='locations' class="attributeList">
+<?php if(count($locations) > 0 ){ ?>
 <?php foreach ($locations as $location): ?>
 <li>
 <a href="<?php echo $url.$trainer['Trainer']['id']; ?>">
@@ -146,11 +207,70 @@ populateCountries("country", "state");
 </li>
 
 
-<?php endforeach; ?>
+<?php endforeach; 
+}else {?>
+no locations to display
+<?php }?>
 
 
 
 </ul>
 
+
+
+<ul id='events' class="attributeList">
+<?php if(count($events) > 0 ){ ?>
+<?php foreach ($events as $event): ?>
+<li>
+<a href="<?php echo $url.$trainer['Trainer']['id']; ?>">
+
+
+<div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
+<div class="listInfo">
+<div class="listName"><?php echo $event['Event']['name']; ?></div>
+<div class="listRank"><?php echo $this->Html->image('zerorank1.png', array('class' => 'listRankPicto')); ?></div>
+<div class="listviews"><?php echo $this->Html->image('views.png', array('class' => 'listViewsPicto')); ?>200</div>
+<div class="listReviews"><?php echo $this->Html->image('like.png', array('class' => 'listViewsPicto')); ?>200</div>
+</div>
+<div class="listArrow"><?php echo $this->Html->image('go.png', array('class' => 'listArrowPicto')); ?></div>
+</a>
+</li>
+
+
+<?php endforeach; 
+}else {?>
+no events to display
+<?php }?>
+
+</ul>
+
+
+<ul id='stores' class="attributeList">
+<?php if(count($stores) > 0 ){ ?>
+<?php foreach ($stores as $store): ?>
+<li>
+<a href="<?php echo $url.$trainer['Trainer']['id']; ?>">
+
+
+<div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
+<div class="listInfo">
+<div class="listName"><?php echo $store['Store']['name']; ?></div>
+<div class="listRank"><?php echo $this->Html->image('zerorank1.png', array('class' => 'listRankPicto')); ?></div>
+<div class="listviews"><?php echo $this->Html->image('views.png', array('class' => 'listViewsPicto')); ?>200</div>
+<div class="listReviews"><?php echo $this->Html->image('like.png', array('class' => 'listViewsPicto')); ?>200</div>
+</div>
+<div class="listArrow"><?php echo $this->Html->image('go.png', array('class' => 'listArrowPicto')); ?></div>
+</a>
+</li>
+
+
+<?php endforeach; 
+}else {?>
+no stores to display
+<?php }?>
+
+
+
+</ul>
 
 </div>

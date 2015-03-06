@@ -44,12 +44,21 @@ class SportopolisController extends Controller {
 		
 		$this->loadModel('Trainer');
 		$this->loadModel('Location');
+		$this->loadModel('Article');
+		$this->loadModel('Event');
+		$this->loadModel('Store');
 
 		$trainers = $this->Trainer->find('all');
 		$locations = $this->Location->find('all');
+		$articles = $this->Article->find('all');
+		$events = $this->Event->find('all');
+		$stores = $this->Store->find('all');
 
 		$this->set('trainers', $trainers);
 		$this->set('locations',$locations);
+		$this->set('articles',$articles);
+		$this->set('events',$events);
+		$this->set('stores',$stores);
 		$this->set('title_for_layout', 'SPORTOYA');
 
 		$this->layout = 'sportopolis';
@@ -97,6 +106,16 @@ class SportopolisController extends Controller {
 		$this->set('sports',$sports);
 		$this->set('trainer',$trainer);
 
+		$this->layout = 'sportopolis';
+	}
+
+	public function createarticle($id)
+	{
+		$this->layout = 'sportopolis';
+	}
+
+	public function viewarticle($id)
+	{
 		$this->layout = 'sportopolis';
 	}
 
