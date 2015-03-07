@@ -1,5 +1,7 @@
+<?php echo $this->Html->script('jquery.barrating.min'); ?>
 <script type="text/javascript">
 $(document).ready(function() {
+    $('#example').barrating();
     var isMobile = {
         Android: function() {
             return navigator.userAgent.match(/Android/i);
@@ -195,6 +197,18 @@ $(document).ready(function() {
 <div class="rank-and-review">
 <div class="rank-and-review-left">Rank Me</div>
 <div class="rank-and-review-right">Write a Review</div>
+</div>
+
+<!-- rating plugin -->
+<div class="userRatingsTitle">Your opinion for this trainer</div>
+<div class="rating-a">
+  <select id="example">
+     <option value="1">1</option>
+     <option value="2">2</option>
+     <option value="3">3</option>
+     <option value="4">4</option>
+     <option value="5">5</option>
+  </select>
 </div>
 
 </div>

@@ -42,6 +42,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->script('countries');
 		echo $this->Html->script('DropDownMenu');
 		echo $this->Html->script('sliding-menu');
+		echo $this->Html->script('jquery.barrating');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
