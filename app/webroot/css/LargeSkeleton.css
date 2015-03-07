@@ -2190,6 +2190,366 @@ font-family:helvetica world;
 text-decoration:underline;
 }
 
+.feed{
+width:60%;
+height:50px;
+float:left;
+}
+
+.feed ul li{
+width:100%;
+height:auto;
+background-color:white;
+border-radius: 5px;
+box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-moz-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-webkit-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+margin-bottom:25px;
+}
+
+.feed-head{
+width:100%;
+height:300px;
+}
+
+.feed-li-pic{
+max-width:100% !important;
+display:block;
+border-top-right-radius:5px;
+border-top-left-radius:5px;
+z-index:10;
+min-height:200px;
+background-size:300px 35px;
+height:300px;
+width:100%;
+}
+
+.feed-body{
+width:100%;
+min-height:129px;
+z-index:100;
+padding:10px;
+
+}
+
+.article-index-title{
+height:auto;
+width:100%;
+}
+
+.article-index-title a{
+text-align:left;
+color:black;
+font-size:19px;
+font-family:helvetica world;
+text-decoration:none;
+}
+
+.article-index-title a:hover{
+text-decoration:underline;
+}
+
+.article-index-desc{
+height:auto;
+padding-top:5px;
+padding-bottom:10px;
+width:100%;
+text-align:left;
+color:grey;
+font-size:15px;
+font-family:helvetica world;
+
+}
+
+.article-index-info{
+min-height:50px;
+width:90%;
+float:left;
+}
+
+.Article-index-writer-div{
+width:12%;
+height:100%;
+float:left;
+}
+
+.Article-index-writer-pic{
+border: 2px solid #FFF;
+box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+background-size:35px 35px;
+margin:6px auto;
+height:50px;
+width:50px;
+border-radius:100%;
+overflow:hidden;
+display:block;
+}
+
+.Article-index-writer-name{
+text-align:left;
+padding-top:10px;
+padding-left:70px;
+height:35px;
+width:100%;
+}
+
+.Article-index-writer-name a{
+color:#f26522;
+text-decoration:none;
+}
+
+.Article-index-writer-name a:hover{
+color:#f26522;
+text-decoration:underline;
+}
+
+.Article-index-Views{
+width:15%;
+height:20px;
+float:left;
+text-align:left;
+color:grey;
+font-size:16px;
+font-family:helvetica world;
+
+}
+
+.Article-index-reviews{
+width:15%;
+height:20px;
+float:left;
+text-align:left;
+color:grey;
+font-size:16px;
+font-family:helvetica world;
+}
+
+.Article-index-date{
+width:20%;
+height:20px;
+float:left;
+text-align:left;
+color:grey;
+font-size:16px;
+font-family:helvetica world;
+}
+
+
+.article-index-Picto{
+float:left;
+padding-left:5px;
+}
+
+.article-adv2{
+width:10%;
+height:53px;
+float:left;
+padding-top:10px;
+}
+
+.article-adv-top2{
+width:100%;
+height:20px;
+text-align:center;
+font-size:15px;
+font-family:helvetica world;
+color:grey;
+padding-top:9px;
+}
+
+.article-adv-bellow2{
+width:100%;
+height:30px;
+text-align:center;
+font-size:15px;
+font-family:helvetica world;
+color:grey;
+padding-top:2px;
+
+}
+
+.right-feed{
+position:fixed;
+left:60%;
+float:left;
+width:29%;
+height:600px;
+}
+
+.featured-div{
+width:100%;
+}
+
+.UpcommingEvents-div{
+width:100%;
+margin-top:25px;
+}
+
+.index-title{
+width:100%;
+height:28px;
+border-bottom:2px solid #f26522;
+color:#f26522;
+font-family:helvetica world;
+font-size:17px;
+padding-left:10px;
+}
+
+.featured-ul li{
+height:60px;
+width:100%;
+border-bottom:1px solid #d9d9d9;
+}
+
+.featured-ul li:last-child{
+border-bottom:0px solid #d9d9d9;
+}
+
+
+.featured-ul li:hover{
+background-color: #efefef;
+}
+
+.featured-pic{
+width:18%;
+height:100%;
+float:left;
+}
+
+.featured-circlePic{
+border: 2px solid #FFF;
+box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+background-size:35px 35px;
+margin:3px auto;
+height:50px;
+width:50px;
+border-radius:100%;
+overflow:hidden;
+display:block;
+}
+
+.featured-Info{
+width:70%;
+height:100%;
+float:left;
+}
+
+.featured-Name{
+width:100%;
+height:27px;
+line-height:32px;
+padding-left:5px;
+font-size:16px;
+font-family:Helvetica World;
+color:#f26522;
+
+}
+
+.featured-profession{
+width:100%;
+height:20px;
+margin-bottom:6px;
+padding-left:5px;
+font-size:15px;
+font-family:Helvetica World;
+color:grey;
+padding-top:5px;
+}
+
+.featured-Arrow{
+width:10%;
+height:100%;
+float:left;
+}
+
+.featured-Arrow-picto{
+margin:15px auto;
+display:block;
+}
+
+
+.UpcommingEvents-div{
+width:100%;
+margin-top:30px;
+}
+
+.sportoya-stat-div{
+width:100%;
+margin-top:140px;
+}
+
+
+.UpcommingEvents-div-mini{
+width:100%;
+height:38px;
+}
+
+.orange-index-count{
+background-color:#f26522;
+color:white;
+font-family:helvetica world;
+font-size:16px;
+line-height:22px;
+text-align:right;
+width:26%;
+height:30px;
+padding:4px;
+float:right;
+border-radius:5px;
+white-space: nowrap;
+padding-right:10px;
+}
+
+.yellow-index-count{
+font-size:16px;
+line-height:22px;
+background-color:#f2992e;
+color:white;
+font-family:helvetica world;
+text-align:right;
+height:30px;
+float:right;
+height:30px;
+padding:4px;
+width:30%;
+border-radius:5px;
+white-space: nowrap;
+padding-right:10px;
+}
+
+.green-index-count{
+font-size:16px;
+line-height:22px;
+background-color:#56bc8a;
+color:white;
+font-family:helvetica world;
+text-align:right;
+height:30px;
+float:right;
+height:30px;
+padding:4px;
+width:35%;
+border-radius:5px;
+white-space: nowrap;
+padding-right:10px;
+}
+
+.blue-index-count{
+font-size:16px;
+line-height:22px;
+background-color:#529ecc;
+color:white;
+font-family:helvetica world;
+text-align:right;
+width:42%;
+float:right;
+height:30px;
+padding:4px;
+border-radius:5px;
+white-space: nowrap;
+padding-right:10px;
+}
+
 
 
 

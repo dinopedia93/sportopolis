@@ -1392,7 +1392,9 @@ text-decoration:underline;
 line-height:60px;
 }
 
-
+.right-feed{
+display:none;
+}
 
 
 
