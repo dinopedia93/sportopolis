@@ -1396,6 +1396,45 @@ line-height:60px;
 display:none;
 }
 
+.mobile-nav-wrapper{
+width:60%;
+height:200px;
+background-color:white;
+border-right:2px solid #efefef;
+z-index:10000;
+}
+
+.mobile-nav-wrapper ul a{
+text-decoration:none;
+border-bottom:1px solid #efefef;
+}
+
+.mobile-nav-wrapper ul li{
+width:100%;
+height:50px;
+padding:20px;
+color:#f26522;
+font-family:helvetica world;
+font-size:17px;
+text-decoration:none;
+}
+
+.mobile-nav-wrapper ul li:first-child{
+width:100%;
+height:50px;
+border-bottom:1px solid #efefef;
+padding:20px;
+color:#f26522;
+font-family:helvetica world;
+font-size:17px;
+text-decoration:none;
+}
+
+
+
+
+
+
 
 
 }

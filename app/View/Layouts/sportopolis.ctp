@@ -115,12 +115,14 @@ $(document).ready(function () {
 <!-- Sign up Modal -->
 <div id="sliding-menu" class="mobile-nav-wrapper">
 <ul>
-<li>Sports</li>
-<li><a href="#">Fitness</a></li>
-<li><a href="#">Football</a></li>
-<li><a href="#">Fishing</a></li>
-<li><a href="#">Tennis</a></li>
+<a href=""><li>Sports</li></a>
+<a href=""><li>Cycling</li></a>
+<a href=""><li>Tennis</li></a>
+<a href=""><li>Fitness</li></a>
+<a href=""><li>Fishing</li></a>
 </ul>
+
+
 </div>
 	
 		<div id="content" class="wrapper">
