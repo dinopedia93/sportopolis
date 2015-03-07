@@ -1,0 +1,9 @@
+#sliding-menu{
+	position: fixed;
+	height: 100%;
+}
+#content{
+	position: relative;
+	overflow-y: scroll;
+	left: 0px;
+}

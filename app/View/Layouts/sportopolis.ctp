@@ -34,12 +34,14 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->css('LargeSkeleton');
 		echo $this->Html->css('mobileskeleton');
 		echo $this->Html->css('DropDownMenu');
+		echo $this->Html->css('sliding-menu');
 
 		// JavaScripts
 		echo $this->Html->script('jquery');
 		echo $this->Html->script('jquery.popupoverlay');
 		echo $this->Html->script('countries');
 		echo $this->Html->script('DropDownMenu');
+		echo $this->Html->script('sliding-menu');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -109,14 +111,23 @@ $(document).ready(function () {
 </script>
 
 <!-- Sign up Modal -->
+<div id="sliding-menu" class="mobile-nav-wrapper">
+<ul>
+<li>Sports</li>
+<li><a href="#">Fitness</a></li>
+<li><a href="#">Football</a></li>
+<li><a href="#">Fishing</a></li>
+<li><a href="#">Tennis</a></li>
+</ul>
+</div>
 	
-		<div class="wrapper">
+		<div id="content" class="wrapper">
 
 
 <div class="header-wrapper">
 <div class="header-navigation">
 
-<div class="mobile-menu-icon">
+<div id="toggle-button" class="mobile-menu-icon">
 <?php echo $this->Html->image('menu.png')?>
 </div>
 
@@ -170,27 +181,19 @@ $(document).ready(function () {
 <!-- mobile navigation menu
 
 Note: when i click the menu icon in the mobile version, this ul should appear
-
-<div class="mobile-nav-wrapper">
-<ul>
-<li>Sports</li>
-<li><a href="#">Fitness</a></li>
-<li><a href="#">Football</a></li>
-<li><a href="#">Fishing</a></li>
-<li><a href="#">Tennis</a></li>
-</ul>
-</div>
-
-
 -->
 
 
-</div>
+
+
+
 
 </div>
 
+</div>
 
-<div class="container">
+
+<div  class="container">
 
 		<div class="content-wrapper">
 
