@@ -75,10 +75,6 @@
 <select class="filter-select" name ="state" id ="state"></select>
 </li>
 
-<li>
-<select class="filter-select" name ="district" id ="district"></select>
-</li>
-
 <script language="javascript">
 populateCountries("country", "state");
  </script>
