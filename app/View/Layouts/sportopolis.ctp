@@ -35,6 +35,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->css('mobileskeleton');
 		echo $this->Html->css('DropDownMenu');
 		echo $this->Html->css('sliding-menu');
+		echo $this->Html->css('barrating');
 
 		// JavaScripts
 		echo $this->Html->script('jquery');

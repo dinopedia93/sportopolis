@@ -201,7 +201,7 @@ $(document).ready(function() {
 
 <!-- rating plugin -->
 <div class="userRatingsTitle">Your opinion for this trainer</div>
-<div class="rating-a">
+<div class="rating-f">
   <select id="example">
      <option value="1">1</option>
      <option value="2">2</option>
