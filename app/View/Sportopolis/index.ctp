@@ -3,6 +3,9 @@
 <ul>
 
 
+
+<!--could be new article-->
+
 <li>
 <div class="feed-head">
 <a href="#">
@@ -18,14 +21,53 @@
 <div class="article-index-info">
 <div class="Article-index-writer-div"><?php echo $this->Html->image('boss.png', array('class' => 'Article-index-writer-pic')); ?></div>
 <div class="Article-index-writer-name"><a href="">Hisham Ahmed</a></div>
-<div class="Article-index-Views"><img class="article-index-Picto" src="views.png">200</div>
-<div class="Article-index-reviews"><img class="article-index-Picto" src="like.png">200</div>
-<div class="Article-index-date"><img class="article-index-Picto" src="date.png">3d</div>
+<div class="Article-index-Views"><?php echo $this->Html->image('views.png', array('class' => 'article-index-Picto')); ?>200</div>
+<div class="Article-index-reviews"><?php echo $this->Html->image('like.png', array('class' => 'article-index-Picto')); ?>200</div>
+<div class="Article-index-date"><?php echo $this->Html->image('date.png', array('class' => 'article-index-Picto')); ?>3d</div>
 </div>
 
 </div>
 
 </li>
+
+
+<!--could be new location, new trainer, new store-->
+
+<li>
+<div class="index-mini-box">
+<div class="index-mini-box-left"><a href="#"><?php echo $this->Html->image('tenniscourt.jpg', array('class' => 'index-mini-box-img')); ?></a></div>
+<a href="#">
+<div class="index-mini-box-right">
+<div class="index-mini-box-name">Smash Tennis Court</div>
+<div class="index-mini-box-profession">Tennis Location</div>
+<div class="index-mini-box-info">
+<div class="Article-index-Views"><?php echo $this->Html->image('views.png', array('class' => 'article-index-Picto')); ?>200</div>
+<div class="Article-index-reviews"><?php echo $this->Html->image('like.png', array('class' => 'article-index-Picto')); ?>200</div>
+</div>
+</div>
+</a>
+</li>
+
+
+
+<li>
+<div class="index-mini-box">
+<div class="index-mini-box-left"><a href="#"><?php echo $this->Html->image('fishingstore.jpg', array('class' => 'index-mini-box-img')); ?></a></div>
+<a href="#">
+<div class="index-mini-box-right">
+<div class="index-mini-box-name">Hamour Fishing Tools</div>
+<div class="index-mini-box-profession">Fishing Store</div>
+<div class="index-mini-box-info">
+<div class="Article-index-Views"><?php echo $this->Html->image('views.png', array('class' => 'article-index-Picto')); ?>200</div>
+<div class="Article-index-reviews"><?php echo $this->Html->image('like.png', array('class' => 'article-index-Picto')); ?>200</div>
+</div>
+</div>
+</a>
+</li>
+
+
+
+
 
 
 <li>
@@ -53,6 +95,27 @@
 </div>
 
 </li>	
+
+
+<li>
+<div class="index-mini-box">
+<div class="index-mini-box-left"><a href="#"><?php echo $this->Html->image('tenniscourt.jpg', array('class' => 'index-mini-box-img')); ?></a></div>
+<a href="#">
+<div class="index-mini-box-right">
+<div class="index-mini-box-name">Ahmed El-Missiry</div>
+<div class="index-mini-box-profession">Tennis Trainer</div>
+<div class="index-mini-box-info">
+<div class="Article-index-Views"><?php echo $this->Html->image('views.png', array('class' => 'article-index-Picto')); ?>200</div>
+<div class="Article-index-reviews"><?php echo $this->Html->image('like.png', array('class' => 'article-index-Picto')); ?>200</div>
+</div>
+</div>
+</a>
+</li>
+
+
+
+
+
 
 
 </ul>
