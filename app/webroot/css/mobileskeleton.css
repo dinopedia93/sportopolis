@@ -1,5 +1,18 @@
 @media screen and (max-width: 650px) {
 
+body{
+overflow:none;
+}
+
+
+.content-wrapper{
+width:100%;
+height:auto;
+min-width:370px;
+padding-top:52px;
+min-height:610px;
+}
+
 .desktop-nav{
 display:none;
 }
