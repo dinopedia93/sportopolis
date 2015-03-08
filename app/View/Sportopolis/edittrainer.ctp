@@ -33,9 +33,6 @@
 <select class="select-country" id="country" name ="country"></select>
 <select class="select-city" name ="state" id ="state"></select>
 
-<!-- district need to be done as autocomplete -->
-<select class="select-district" name ="district" id ="district"></select>
-
 <script language="javascript">
 populateCountries("country", "state");
  </script>
