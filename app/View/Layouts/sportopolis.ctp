@@ -74,32 +74,43 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <li><a href="/sportopolis/sportopolis/signuptrainer">
 <?php echo $this->Html->image('TrainerSignUp.png'); ?>
 <div class="signupPictoText">Trainer</div>
-<div class="signupPictoDesc">Sign up as a trainer. You can</div></a>
+<div class="signupPictoDesc">Sign up as a trainer.</div></a>
 </li>
 
 <li><a href="#">
 <?php echo $this->Html->image('locationSignUp.png'); ?>
 <div class="signupPictoText">Sport Location</div>
-<div class="signupPictoDesc">Sign up as a sport location. You can</div></a>
+<div class="signupPictoDesc">Sign up as a sport location.</div></a>
 </li>
 
 <li><a href="#">
 <?php echo $this->Html->image('storeSignUp.png'); ?>
 <div class="signupPictoText">Sport Store</div>
-<div class="signupPictoDesc">Sign up as a sport store. You can</div></a>
+<div class="signupPictoDesc">Sign up as a sport store.</div></a>
 </li>
 
 <li><a href="#">
 <?php echo $this->Html->image('ArticleSignUP.png'); ?>
-<div class="signupPictoText">Writer</div>
-<div class="signupPictoDesc">Sign up as a writer. You can</div></a>
+<div class="signupPictoText">Normal User</div>
+<div class="signupPictoDesc">Sign up as a writer.</div></a>
 </li>
 
 </ul>
 </div>
-<div class="signIn">Sign In</div>
-
 </div>
+
+
+<!--
+<div id="fade2" class="signupDiv">
+<div class="signupDivTitle">Login</div>
+
+
+</ul>
+</div>
+</div>
+-->
+
+
 
 <script>
 $(document).ready(function () {
@@ -110,6 +121,8 @@ $(document).ready(function () {
     });
 
 });
+
+
 </script>
 
 <!-- Sign up Modal -->
@@ -169,12 +182,15 @@ $(document).ready(function () {
 
 	</div>
 	
-<div class="popup">
 
-<a class="initialism fade_open btn btn-success" href="#fade">SIGN UP</a>
-
-</div>
 	
+<div class="popup-signup">
+<a class="initialism fade_open btn btn-success" href="#fade1">SIGN UP</a>
+</div>
+
+	<div class="popup-Login">
+<a class="initialism fade_open btn btn-success" href="#fade2">LOGIN</a>
+</div>
 
 	
 	

@@ -68,7 +68,7 @@ margin-right:40px;
 color:#e69771;
 }
 
-.popup{
+.popup-signup{
 width:80px;
 height:33px;
 float:right;
@@ -83,12 +83,12 @@ outline:none;
 z-index:1000;
 }
 
-.popup:hover{
+.popup-signup:hover{
 background-color:#fde0d2;
 transition: background 0.8s ease;
 }
 
-.popup a{
+.popup-signup a{
 line-height:25px;
 text-decoration:none;
 color:#f26522;
@@ -97,7 +97,7 @@ font-size:13px;
 font-weight:bold;
 }
 
-.popup a:hover{
+.popup-signup a:hover{
 text-decoration:none;
 color:#f26522;
 font-family:helvetica world;
@@ -173,24 +173,6 @@ text-align:center;
 font-family:helvetica world;
 font-size:14px;
 color:grey;
-}
-
-.signIn{
-width:100%;
-margin:0px auto;
-display:block;
-height:50px;
-text-align:center;
-font-family:helvetica world;
-font-size:16px;
-color:grey;
-padding-top:20px;
-border-top:1px solid #efefef;
-cursor:pointer;
-}
-
-.signIn:hover{
-color:black;
 }
 
 .signupMidDiv{
@@ -2644,6 +2626,55 @@ height:30px;
 padding-top:10px;
 padding-left:15px;
 }
+
+.popup-Login{
+width:80px;
+height:33px;
+float:right;
+text-align:center;
+padding:3px;
+border:2px solid grey;
+border-radius:5px;
+margin-top:8px;
+cursor:pointer;
+background-color:white;
+outline:none;
+z-index:1000;
+margin-right:15px;
+}
+
+.popup-Login:hover{
+background-color:#efefef;
+transition: background 0.8s ease;
+}
+
+.popup-Login a{
+line-height:25px;
+text-decoration:none;
+color:grey;
+font-family:helvetica world;
+font-size:13px;
+font-weight:bold;
+}
+
+.popup-Login a:hover{
+text-decoration:none;
+color:grey;
+font-family:helvetica world;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

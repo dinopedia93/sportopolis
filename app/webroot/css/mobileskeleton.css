@@ -886,12 +886,12 @@ height:200px;
 }
 
 .feed-li-pic{
-max-width:100% !important;
+max-width:100%;
 display:block;
 border-top-right-radius:5px;
 border-top-left-radius:5px;
 z-index:10;
-min-height:200px;
+height:auto;
 }
 
 .feed-body{
@@ -1476,6 +1476,7 @@ border-top-left-radius:5px;
 width:72%;
 height:100%;
 float:left;
+
 }
 
 .index-mini-box-img{
