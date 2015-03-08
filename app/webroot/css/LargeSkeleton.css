@@ -1010,6 +1010,20 @@ padding-left:30%;
 font-family:Helvetica World;
 }
 
+.articlePicto{
+background-image: url("../img/pen2.png");
+background-repeat: no-repeat;
+background-position:12% 55%;
+}
+
+.articlePicto:hover{
+color:#f26522;
+background-color:#fff2ee;
+cursor:pointer;
+border-right:3px solid #f26522;
+background-image: url("../img/pen.png");
+transition: background 0.4s ease;
+}
 
 .trainerPicto{
 background-image: url("../img/coach.png");
