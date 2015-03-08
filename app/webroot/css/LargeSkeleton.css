@@ -2706,7 +2706,13 @@ color:grey;
 font-family:helvetica world;
 }
 
-
+.no-entry{
+width:100%;
+height:120px;
+text-align:center;
+color:grey;
+padding:50px;
+}
 
 
 

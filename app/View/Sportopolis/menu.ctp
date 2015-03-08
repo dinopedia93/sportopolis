@@ -151,7 +151,7 @@ populateCountries("country", "state");
 
 <?php endforeach; 
 }else {?>
-no articles to display
+<div class="no-entry">:( <br><br>Sorry, no Articles available now. Help us and write an article</div>
 <?php }?>
 
 </ul>
@@ -178,7 +178,7 @@ no articles to display
 
 <?php endforeach; 
 }else {?>
-no trainers to display
+<div class="no-entry">:( <br><br>Sorry, no Trainers available now. We still collecting data</div>
 <?php }?>
 
 </ul>
@@ -205,8 +205,7 @@ no trainers to display
 
 <?php endforeach; 
 }else {?>
-no locations to display
-<?php }?>
+<div class="no-entry">:( <br><br>Sorry, no Locations available now. We still collecting data</div><?php }?>
 
 
 
@@ -235,7 +234,9 @@ no locations to display
 
 <?php endforeach; 
 }else {?>
-no events to display
+
+<div class="no-entry">:( <br><br>Sorry, no Events available now.</div>
+
 <?php }?>
 
 </ul>
@@ -262,7 +263,7 @@ no events to display
 
 <?php endforeach; 
 }else {?>
-no stores to display
+<div class="no-entry">:( <br><br>Sorry, no Stores available now. We still collecting data</div>
 <?php }?>
 
 
