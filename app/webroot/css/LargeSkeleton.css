@@ -1509,11 +1509,16 @@ border:1px solid #d5d5d5;
 color:grey;
 margin-top:20px;
 margin-bottom:20px;
+padding-left:10px;
 background: url("../img/new_arrow.png") no-repeat right;
 -webkit-appearance: none;
 -moz-appearance:none;
 -webkit-appearance:none;
 cursor:pointer;
+}
+
+.select-sport::-ms-expand {
+    display: none;
 }
 
 
@@ -1641,6 +1646,7 @@ border:1px solid #d5d5d5;
 color:grey;
 padding:0;
 margin:20px auto;
+padding-left:10px;
 display:block;
 -webkit-appearance: none;
 -moz-appearance:none;
@@ -1648,6 +1654,11 @@ display:block;
 background: url("../img/new_arrow.png") no-repeat right;
 cursor:pointer;
 }
+
+.select-country::-ms-expand {
+    display: none;
+}
+
 
 .select-city{
 width:90%;
@@ -1661,6 +1672,7 @@ border-radius:5px;
 border:1px solid #d5d5d5;
 color:grey;
 margin:20px auto;
+padding-left:10px;
 display:block;
 -webkit-appearance: none;
 -moz-appearance:none;
@@ -1669,19 +1681,10 @@ background: url("../img/new_arrow.png") no-repeat right;
 cursor:pointer;
 }
 
-.select-district{
-width:90%;
-height:40px;
-outline:none;
-font-family:helvetica world;
-font-size:16px;
-border-radius:5px;
-border:1px solid #d5d5d5;
-color:grey;
-margin:20px auto;
-display:block;
-margin-bottom:20px;
+.select-city::-ms-expand {
+    display: none;
 }
+
 
 .SignUpTitle{
 width:100%;
@@ -2133,6 +2136,10 @@ margin-top:10px;
 -webkit-appearance:none;
 }
 
+.menu-filter-in li select::-ms-expand {
+    display: none;
+}
+
 .menu-filter-in-li1{
 color:#f26522;
 padding-left:15px;
@@ -2148,6 +2155,7 @@ border-radius:5px;
 border:1px solid #d5d5d5;
 color:grey;
 padding:0;
+padding-left:5px;
 margin:20px auto;
 display:block;
 cursor:pointer;
