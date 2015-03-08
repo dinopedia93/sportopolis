@@ -98,6 +98,9 @@ $(document).ready(function() {
 <div class="like-and-rate">
 <div class="like-and-rate-left">
 <div class="like-and-rate-title">Like</div>
+
+<!-- http://jsfiddle.net/fedmich/DTAbj/ -->
+
 </div>
 
 <div class="like-and-rate-right">
