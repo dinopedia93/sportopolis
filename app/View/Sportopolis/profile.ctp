@@ -94,6 +94,30 @@ $(document).ready(function() {
 <div class="info-detail">
 <div class="bio"><?php echo $trainer['Trainer']['biography']; ?></div>
 
+
+<div class="like-and-rate">
+<div class="like-and-rate-left">
+<div class="like-and-rate-title">Like</div>
+</div>
+
+<div class="like-and-rate-right">
+<div class="like-and-rate-title">Rate Me</div>
+<!-- rating plugin -->
+<div class="rating-f">
+  <select id="example">
+     <option value="1"></option>
+     <option value="2"></option>
+     <option value="3"></option>
+     <option value="4"></option>
+     <option value="5"></option>
+  </select>
+</div>
+
+
+</div>
+</div>
+
+
 <div class="profileSocialLeftLargeContainer">
 <a href="#" class="socialLogo"><?php echo $this->Html->image('facebook.png', array('style' => 'cursor:pointer')); ?></a>
 <a href="#" class="socialLogo"><?php echo $this->Html->image('linkedin3.png', array('style' => 'cursor:pointer')); ?></a>
@@ -143,7 +167,7 @@ $(document).ready(function() {
 </div>
 
 <div class="rightLargeNav rightbtn">
-<div class="rightLargeNavTitle">RANK</div>
+<div class="rightLargeNavTitle">ARTICLES</div>
 <div class="rightLargeNavCount"><?php echo $trainer['Trainer']['rank']; ?> </div>
 </div>
 
@@ -199,17 +223,7 @@ $(document).ready(function() {
 <div class="rank-and-review-right">Write a Review</div>
 </div>
 
-<!-- rating plugin -->
-<div class="userRatingsTitle">Your opinion for this trainer</div>
-<div class="rating-f">
-  <select id="example">
-     <option value="1">1</option>
-     <option value="2">2</option>
-     <option value="3">3</option>
-     <option value="4">4</option>
-     <option value="5">5</option>
-  </select>
-</div>
+
 
 </div>
 

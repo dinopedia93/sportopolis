@@ -115,6 +115,7 @@ button.blue-pill.deactivated:hover {
 
 .rating-b .br-widget {
     height: 25px;
+
 }
 
 .rating-b .br-widget a {
@@ -176,6 +177,13 @@ button.blue-pill.deactivated:hover {
     height: 52px;
 }
 
+.rating-f .br-widget {
+height: 24px;
+padding-left: 15%;
+padding-top: 4px;
+}
+
+
 .rating-d .br-widget a {
     display: block;
     width: 40px;
@@ -230,9 +238,7 @@ button.blue-pill.deactivated:hover {
 
 /******* EXAMPLE F *******/
 
-.rating-f .br-widget {
-    height: 24px;
-}
+
 
 .rating-f .br-widget a {
     background: url('../img/star.png');
