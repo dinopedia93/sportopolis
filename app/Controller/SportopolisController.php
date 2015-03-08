@@ -39,6 +39,12 @@ class SportopolisController extends Controller {
 		$this->set('title_for_layout', 'SPORTOYA');
 	}
 
+	public function signin() 
+	{
+		$this->layout = 'sportopolis';
+		$this->set('title_for_layout', 'SPORTOYA');
+	}
+
 	public function menu() 
 	{
 		
@@ -88,7 +94,7 @@ class SportopolisController extends Controller {
 		$this->layout = 'sportopolis';	
 	}
 
-	public function signuptrainer($error)
+	public function signuptrainer($error = null)
 	{
 		$this->layout = 'sportopolis';
 		if($error != null)

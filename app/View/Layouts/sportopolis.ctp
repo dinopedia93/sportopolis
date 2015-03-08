@@ -185,11 +185,11 @@ $(document).ready(function () {
 
 	
 <div class="popup-signup">
-<a class="initialism fade_open btn btn-success" href="#fade1">SIGN UP</a>
+<a class="initialism fade_open btn btn-success">SIGN UP</a>
 </div>
 
 	<div class="popup-Login">
-<a class="initialism fade_open btn btn-success" href="#fade2">LOGIN</a>
+<a class="initialism btn btn-success" href='/sportopolis/sportopolis/signin'>LOGIN</a>
 </div>
 
 	
