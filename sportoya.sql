@@ -2,8 +2,8 @@
 -- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Mar 06, 2015 at 04:14 PM
+-- Host: 127.0.0.1
+-- Generation Time: Mar 09, 2015 at 06:56 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -58,8 +58,12 @@ CREATE TABLE IF NOT EXISTS `advertisements` (
 
 CREATE TABLE IF NOT EXISTS `articles` (
 `id` int(11) NOT NULL,
-  `name` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `name` varchar(45) COLLATE utf8_bin NOT NULL,
+  `article_date` date NOT NULL,
+  `article_time` time NOT NULL,
+  `member_id` int(11) NOT NULL,
+  `article_content` longtext COLLATE utf8_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -140,7 +144,7 @@ CREATE TABLE IF NOT EXISTS `likes` (
 --
 
 CREATE TABLE IF NOT EXISTS `locations` (
-`id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `name` varchar(45) COLLATE utf8_bin NOT NULL,
   `country` varchar(45) COLLATE utf8_bin NOT NULL,
   `city` varchar(45) COLLATE utf8_bin NOT NULL,
@@ -154,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `locations` (
   `mobile` decimal(10,0) DEFAULT NULL,
   `email` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `website` text COLLATE utf8_bin
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `locations`
@@ -321,18 +325,14 @@ CREATE TABLE IF NOT EXISTS `sports` (
 `id` int(11) NOT NULL,
   `name` varchar(45) NOT NULL,
   `sport_type` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `sports`
 --
 
 INSERT INTO `sports` (`id`, `name`, `sport_type`) VALUES
-(1, 'Football', 'Team'),
-(2, 'Tennis', 'Individual'),
-(3, 'Fitness', 'Individual'),
-(4, 'Cycling', 'Individual'),
-(5, 'Fishing', 'Individual');
+(1, 'Football', 'Team');
 
 -- --------------------------------------------------------
 
@@ -421,8 +421,6 @@ CREATE TABLE IF NOT EXISTS `stores_has_views` (
 CREATE TABLE IF NOT EXISTS `trainers` (
 `id` int(11) NOT NULL,
   `name` varchar(45) COLLATE utf8_bin NOT NULL,
-  `birthdate` date NOT NULL,
-  `gender` varchar(10) COLLATE utf8_bin NOT NULL,
   `country` varchar(45) COLLATE utf8_bin NOT NULL,
   `city` varchar(45) COLLATE utf8_bin NOT NULL,
   `district` varchar(45) COLLATE utf8_bin NOT NULL,
@@ -436,20 +434,17 @@ CREATE TABLE IF NOT EXISTS `trainers` (
   `mobile` decimal(11,0) NOT NULL,
   `email` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `website` text COLLATE utf8_bin,
-  `sports_id` int(11) DEFAULT NULL,
-  `biography` text COLLATE utf8_bin,
-  `password` varchar(300) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+  `sports_id` int(11) NOT NULL,
+  `biography` text COLLATE utf8_bin
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `trainers`
 --
 
-INSERT INTO `trainers` (`id`, `name`, `birthdate`, `gender`, `country`, `city`, `district`, `location`, `training_days`, `time`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `biography`, `password`) VALUES
-(2, 'Khaled Hegazy', '1992-02-19', 'male', 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 1, 'I am Khaled Hegazy el shaheer bi hegarz a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.', ''),
-(3, 'Abdallah Khaled', '0000-00-00', '', 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 1, 'Dizo Gamed Fash5', ''),
-(5, '', '0000-00-00', '', '', '', '', '', '', NULL, '0', 0, NULL, NULL, '2423423', 'aka_dino@live.com', NULL, NULL, NULL, 'a'),
-(10, '', '0000-00-00', '', '', '', '', '', '', NULL, '0', 0, NULL, NULL, '0', 'dinope223@gmail.com', NULL, NULL, NULL, 'a');
+INSERT INTO `trainers` (`id`, `name`, `country`, `city`, `district`, `location`, `training_days`, `time`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `biography`) VALUES
+(2, 'Khaled Hegazy', 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 1, 'I am Khaled Hegazy a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.'),
+(3, 'Abdallah Khaled', 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 1, 'Dizo Gamed Fash5');
 
 -- --------------------------------------------------------
 
@@ -545,7 +540,7 @@ ALTER TABLE `advertisements`
 -- Indexes for table `articles`
 --
 ALTER TABLE `articles`
- ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `fk_articles_members1_idx` (`member_id`);
 
 --
 -- Indexes for table `events`
@@ -769,11 +764,6 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `likes`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `locations`
---
-ALTER TABLE `locations`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
---
 -- AUTO_INCREMENT for table `members`
 --
 ALTER TABLE `members`
@@ -802,7 +792,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `sports`
 --
 ALTER TABLE `sports`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `stores`
 --
@@ -812,7 +802,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `trainers`
 --
 ALTER TABLE `trainers`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `views`
 --
@@ -827,6 +817,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 ALTER TABLE `advertisements`
 ADD CONSTRAINT `fk_advertisements_sponsors1` FOREIGN KEY (`sponsors_id`) REFERENCES `sponsors` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `articles`
+--
+ALTER TABLE `articles`
+ADD CONSTRAINT `fk_articles_members1` FOREIGN KEY (`member_id`) REFERENCES `members` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `events_has_likes`

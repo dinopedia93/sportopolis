@@ -74,7 +74,9 @@ class SportopolisController extends Controller {
 	{
 		
 		$this->loadModel('Trainer');	
+		$this->loadModel('Member');	
 		$this->loadModel('Sport');
+		$this->loadModel('Review');
 		$this->loadModel('TrainersHasReviews');
 		$this->loadModel('TrainersHasViews');
 		$this->loadModel('TrainersHasPhotos');
@@ -86,6 +88,10 @@ class SportopolisController extends Controller {
 		$this->set('sport', $sport);
 		$reviewscount = $this->TrainersHasReviews->find('count',array('conditions' => array('TrainersHasReviews.trainer_id' => $id)));
 		$this->set('reviewscount', $reviewscount);
+		$allreviews = $this->Review->find('all');
+		$this->set('allreviews', $allreviews);
+		
+		
 		$trainershasphotos = $this->TrainersHasPhotos->find('count',array('conditions' => array('TrainersHasPhotos.trainer_id' => $id)));
 		$this->set('trainershasphotos', $trainershasphotos);
 		$trainershasviews = $this->TrainersHasViews->find('count',array('conditions' => array('TrainersHasViews.trainer_id' => $id)));

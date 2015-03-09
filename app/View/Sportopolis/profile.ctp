@@ -253,81 +253,28 @@ $(document).ready(function() {
 
 <ul>
 
+<?php if(count($allreviews) > 0){ ?>
+<?php foreach ($allreviews as $allreview): ?>
 <li>
 <div class="commenterPic"><?php echo $this->Html->image('boss.png', array('class' => 'commenterPicSpecs')); ?></div>
 
 <div class="commentInfo">
-<div class="commentInfoName">Hisham Ahmed Al-Sayed</div>
-<div class="commentInfoDate">13/13/2013</div>
+<div class="commentInfoName"><?php echo $allreview['Review']['member_id']; ?></div>
+<div class="commentInfoDate"><?php echo $allreview['Review']['date']; ?></div>
 <div class="deleteComment">x</div>
 </div>
 
 <div class="commentText">
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alotHe is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alotHe is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alotHe is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-</div>
-
-</li>
-
-<li>
-<div class="commenterPic"><?php echo $this->Html->image('boss.png', array('class' => 'commenterPicSpecs')); ?></div>
-
-<div class="commentInfo">
-<div class="commentInfoName">Hisham Ahmed Al-Sayed</div>
-<div class="commentInfoDate">13/13/2013</div>
-<div class="deleteComment">x</div>
-</div>
-
-<div class="commentText">
-He is a good trainer, he helped me alot
+<?php echo $allreview['Review']['review']; ?>
 </div>
 
 </li>
 
 
-<li>
-<div class="commenterPic"><?php echo $this->Html->image('boss.png', array('class' => 'commenterPicSpecs')); ?></div>
-
-<div class="commentInfo">
-<div class="commentInfoName">Hisham Ahmed Al-Sayed</div>
-<div class="commentInfoDate">13/13/2013</div>
-<div class="deleteComment">x</div>
-</div>
-
-<div class="commentText">
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-He is a good trainer, he helped me alot
-</div>
-</li>
-
+<?php endforeach; 
+}else {?>
+<div class="no-entry">:( <br><br>Sorry, no Trainers available now. We still collecting data</div>
+<?php }?>
 <li>
 show more
 </li>
