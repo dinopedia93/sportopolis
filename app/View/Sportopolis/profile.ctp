@@ -252,14 +252,13 @@ $(document).ready(function() {
 <div class="userReviewsTitle">Users Reviews</div>
 
 <ul>
-
 <?php if(count($allreviews) > 0){ ?>
-<?php foreach ($allreviews as $allreview): ?>
+<?php foreach ($allreviews as $index => $allreview): ?>
 <li>
 <div class="commenterPic"><?php echo $this->Html->image('boss.png', array('class' => 'commenterPicSpecs')); ?></div>
 
 <div class="commentInfo">
-<div class="commentInfoName"><?php echo $allreview['Review']['member_id']; ?></div>
+<div class="commentInfoName"><?php echo $allreviewwriters[$index]['Member']['name']; ?></div>
 <div class="commentInfoDate"><?php echo $allreview['Review']['date']; ?></div>
 <div class="deleteComment">x</div>
 </div>
@@ -273,7 +272,7 @@ $(document).ready(function() {
 
 <?php endforeach; 
 }else {?>
-<div class="no-entry">:( <br><br>Sorry, no Trainers available now. We still collecting data</div>
+<div class="no-entry">:( <br><br>Sorry, no Trainers available now. We are still collecting data</div>
 <?php }?>
 <li>
 show more

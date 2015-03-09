@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2015 at 06:56 AM
+-- Generation Time: Mar 09, 2015 at 11:00 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -278,7 +278,7 @@ CREATE TABLE IF NOT EXISTS `reviews` (
   `time` time NOT NULL,
   `review` text COLLATE utf8_bin NOT NULL,
   `member_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `reviews`
@@ -286,7 +286,8 @@ CREATE TABLE IF NOT EXISTS `reviews` (
 
 INSERT INTO `reviews` (`id`, `date`, `time`, `review`, `member_id`) VALUES
 (1, '2015-02-25', '06:00:00', 'He is a great coach. I am very lucky to get to know him.', 1),
-(2, '2015-02-25', '11:00:00', 'Dzdz Dzdooooooooooooooz', 1);
+(2, '2015-02-25', '11:00:00', 'Dzdz Dzdooooooooooooooz', 1),
+(3, '2015-03-09', '10:00:00', 'Yarab tzbot', 1);
 
 -- --------------------------------------------------------
 
@@ -496,7 +497,8 @@ CREATE TABLE IF NOT EXISTS `trainers_has_reviews` (
 
 INSERT INTO `trainers_has_reviews` (`trainer_id`, `review_id`) VALUES
 (2, 1),
-(2, 2);
+(2, 2),
+(3, 3);
 
 -- --------------------------------------------------------
 
@@ -782,7 +784,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `sponsors`
 --

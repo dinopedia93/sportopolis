@@ -88,7 +88,13 @@ class SportopolisController extends Controller {
 		$this->set('sport', $sport);
 		$reviewscount = $this->TrainersHasReviews->find('count',array('conditions' => array('TrainersHasReviews.trainer_id' => $id)));
 		$this->set('reviewscount', $reviewscount);
-		$allreviews = $this->Review->find('all');
+		
+		
+		$allreviews = $this->Review->query("SELECT * FROM reviews AS Review WHERE id IN (SELECT review_id FROM trainers_has_reviews WHERE trainer_id = " .$id.")");
+		$allreviewwriters = $this->Member->query("SELECT * FROM members AS Member WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM trainers_has_reviews WHERE trainer_id = " .$id."))");
+		
+		$this->set('allreviewwriters', $allreviewwriters);
+		
 		$this->set('allreviews', $allreviews);
 		
 		
