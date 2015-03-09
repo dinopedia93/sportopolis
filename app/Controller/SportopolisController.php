@@ -83,7 +83,7 @@ class SportopolisController extends Controller {
 
 		$trainer = $this->Trainer->findById($id);
 		$this->set('trainer', $trainer);
-		$this->set('title_for_layout', $trainer['Trainer']['name']."'s Profile");
+		$this->set('title_for_layout', $trainer['Trainer']['first_name']." ".$trainer['Trainer']['last_name']."'s Profile");
 		$sport = $this->Sport->findById($trainer['Trainer']['sports_id']);
 		$this->set('sport', $sport);
 		$reviewscount = $this->TrainersHasReviews->find('count',array('conditions' => array('TrainersHasReviews.trainer_id' => $id)));

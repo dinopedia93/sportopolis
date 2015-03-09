@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2015 at 11:00 PM
+-- Generation Time: Mar 09, 2015 at 11:32 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -28,7 +28,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `admin_contacts` (
 `id` int(11) NOT NULL,
-  `name` varchar(45) NOT NULL,
+  `first_name` varchar(45) NOT NULL,
+  `last_name` varchar(45) NOT NULL,
+  `gender` varchar(10) NOT NULL,
   `mobile` decimal(11,0) NOT NULL,
   `email` varchar(45) NOT NULL,
   `facebook_acc` varchar(100) NOT NULL,
@@ -230,15 +232,17 @@ CREATE TABLE IF NOT EXISTS `locations_has_views` (
 
 CREATE TABLE IF NOT EXISTS `members` (
 `id` int(11) NOT NULL,
-  `name` varchar(45) NOT NULL
+  `first_name` varchar(45) NOT NULL,
+  `last_name` varchar(45) NOT NULL,
+  `gender` varchar(10) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `members`
 --
 
-INSERT INTO `members` (`id`, `name`) VALUES
-(1, 'Hisham El-Sayed');
+INSERT INTO `members` (`id`, `first_name`, `last_name`, `gender`) VALUES
+(1, 'Hisham', ' El-Sayed', 'male');
 
 -- --------------------------------------------------------
 
@@ -421,7 +425,9 @@ CREATE TABLE IF NOT EXISTS `stores_has_views` (
 
 CREATE TABLE IF NOT EXISTS `trainers` (
 `id` int(11) NOT NULL,
-  `name` varchar(45) COLLATE utf8_bin NOT NULL,
+  `first_name` varchar(45) COLLATE utf8_bin NOT NULL,
+  `last_name` varchar(45) COLLATE utf8_bin NOT NULL,
+  `gender` varchar(10) COLLATE utf8_bin NOT NULL,
   `country` varchar(45) COLLATE utf8_bin NOT NULL,
   `city` varchar(45) COLLATE utf8_bin NOT NULL,
   `district` varchar(45) COLLATE utf8_bin NOT NULL,
@@ -443,9 +449,9 @@ CREATE TABLE IF NOT EXISTS `trainers` (
 -- Dumping data for table `trainers`
 --
 
-INSERT INTO `trainers` (`id`, `name`, `country`, `city`, `district`, `location`, `training_days`, `time`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `biography`) VALUES
-(2, 'Khaled Hegazy', 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 1, 'I am Khaled Hegazy a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.'),
-(3, 'Abdallah Khaled', 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 1, 'Dizo Gamed Fash5');
+INSERT INTO `trainers` (`id`, `first_name`, `last_name`, `gender`, `country`, `city`, `district`, `location`, `training_days`, `time`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `biography`) VALUES
+(2, 'Khaled', 'Hegazy', 'male', 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 1, 'I am Khaled Hegazy a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.'),
+(3, 'Abdallah', 'Khaled', 'male', 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 1, 'Dizo Gamed Fash5');
 
 -- --------------------------------------------------------
 

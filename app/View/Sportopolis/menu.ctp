@@ -166,7 +166,7 @@ populateCountries("country", "state");
 
 <div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
 <div class="listInfo">
-<div class="listName"><?php echo $trainer['Trainer']['name']; ?></div>
+<div class="listName"><?php echo $trainer['Trainer']['first_name']." ".$trainer['Trainer']['last_name']; ?></div>
 <div class="listRank"><?php echo $this->Html->image('zerorank1.png', array('class' => 'listRankPicto')); ?></div>
 <div class="listviews"><?php echo $this->Html->image('views.png', array('class' => 'listViewsPicto')); ?>200</div>
 <div class="listReviews"><?php echo $this->Html->image('like.png', array('class' => 'listViewsPicto')); ?>200</div>

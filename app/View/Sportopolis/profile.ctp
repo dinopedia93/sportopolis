@@ -72,7 +72,7 @@ $(document).ready(function() {
 <div class="profileLeftLargeContainer">
 
 <div class="profilePictureLeftLargeContainer"><?php echo $this->Html->image('boss.png', array('class' => 'pictureLeftLargerContainer')); ?></div>
-<div class="profileNameLeftLargeContainer"><?php echo $trainer['Trainer']['name']; ?></div>
+<div class="profileNameLeftLargeContainer"><?php echo $trainer['Trainer']['first_name']." ".$trainer['Trainer']['last_name']; ?></div>
 <div class="profileProfessionLeftLargeContainer"><?php echo $sport['Sport']['name']; ?></div>
 <div class="profileRankLeftLargeContainer"><?php echo $this->Html->image('zerorank.png'); ?></div>
 
@@ -258,7 +258,7 @@ $(document).ready(function() {
 <div class="commenterPic"><?php echo $this->Html->image('boss.png', array('class' => 'commenterPicSpecs')); ?></div>
 
 <div class="commentInfo">
-<div class="commentInfoName"><?php echo $allreviewwriters[$index]['Member']['name']; ?></div>
+<div class="commentInfoName"><?php echo $allreviewwriters[$index]['Member']['first_name']." ".$allreviewwriters[$index]['Member']['last_name']; ?></div>
 <div class="commentInfoDate"><?php echo $allreview['Review']['date']; ?></div>
 <div class="deleteComment">x</div>
 </div>
