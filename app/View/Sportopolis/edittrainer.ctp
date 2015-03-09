@@ -6,7 +6,7 @@
 
 <form method="post" action="/sportopolis/sportopolis/UpdateTrainerProfile/<?php echo $trainer['Trainer']['id']; ?>">
 <div class="profilePictureLeftLargeContainer"><img class="pictureLeftLargerContainer" src ="boss.png"></div>
-<input class="textboxStandardLeft" type="text" name="name" placeholder="name" value="<?php echo $trainer['Trainer']['name']; ?>">
+<input class="textboxStandardLeft" type="text" name="name" placeholder="name" value="<?php echo $trainer['Trainer']['first_name']." ".$trainer['Trainer']['last_name']; ?>">
 
 <select class="select-sport" name ="sport">
 <option disabled="disabled">Select Sport</option>
