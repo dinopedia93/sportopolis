@@ -179,45 +179,29 @@ $(document).ready(function() {
 <div class="profileReviewLargeBOTTOMContainer">
 
 <div class="userRatings">
-<div class="userRatingsTitle">Users Ratings</div>
+<div class="userRatingsTitle">Articles</div>
 
-<div class="userRatingsBody">
+<div class="userArticlesBody">
 
-<div class="rateN">
-<div class="rate-pic"><?php echo $this->Html->image('emptyrank5.png'); ?></div>
-<div class="rate-meter">j</div>
-<div class="rate-num">20</div>
+<ul>
+<li>
+<div class="userArticlesBody-mini-box">
+<div class="userArticlesBody-mini-box-left"><a href="#"><?php echo $this->Html->image('tenniscourt.jpg', array('class' => 'index-mini-box-img')); ?></a></div>
+<a href="#">
+<div class="userArticlesBody-mini-box-right">
+<div class="userArticlesBody-mini-box-name">How to build 6 aps in 1 day </div>
+<div class="userArticlesBody-mini-box-profession">Tennis Article</div>
+<div class="userArticlesBody-mini-box-info">
+<div class="userArticlesBody-index-Views"><?php echo $this->Html->image('views.png', array('class' => 'article-index-Picto')); ?>200</div>
+<div class="userArticlesBody-index-reviews"><?php echo $this->Html->image('like.png', array('class' => 'article-index-Picto')); ?>200</div>
 </div>
-
-<div class="rateN">
-<div class="rate-pic"><?php echo $this->Html->image('emptyrank4.png'); ?></div>
-<div class="rate-meter">j</div>
-<div class="rate-num">20</div>
 </div>
+</a>
+</li>
 
-<div class="rateN">
-<div class="rate-pic"><?php echo $this->Html->image('emptyrank3.png'); ?></div>
-<div class="rate-meter">j</div>
-<div class="rate-num">20</div>
-</div>
 
-<div class="rateN">
-<div class="rate-pic"><?php echo $this->Html->image('emptyrank2.png'); ?></div>
-<div class="rate-meter">j</div>
-<div class="rate-num">20</div>
-</div>
 
-<div class="rateN">
-<div class="rate-pic"><?php echo $this->Html->image('emptyrank1.png'); ?></div>
-<div class="rate-meter">j</div>
-<div class="rate-num">20</div>
-</div>
-
-<div class="rateN">
-<div class="rate-pic"><?php echo $this->Html->image('emptyrank.png'); ?></div>
-<div class="rate-meter">j</div>
-<div class="rate-num">20</div>
-</div>
+</ul>
 
 </div>
 

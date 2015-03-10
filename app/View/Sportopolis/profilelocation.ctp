@@ -170,7 +170,7 @@ $(document).ready(function() {
 </div>
 
 <div class="rightLargeNav rightbtn">
-<div class="rightLargeNavTitle">ARTICLES</div>
+<div class="rightLargeNavTitle">Locations</div>
 <div class="rightLargeNavCount"><?php echo $location['Location']['rank']; ?> </div>
 </div>
 
@@ -179,47 +179,29 @@ $(document).ready(function() {
 <div class="profileReviewLargeBOTTOMContainer">
 
 <div class="userRatings">
-<div class="userRatingsTitle">Users Ratings</div>
+<div class="userRatingsTitle">Location</div>
 
-<div class="userRatingsBody">
-
-<div class="rateN">
-<div class="rate-pic"><?php echo $this->Html->image('emptyrank5.png'); ?></div>
-<div class="rate-meter">j</div>
-<div class="rate-num">20</div>
-</div>
-
-<div class="rateN">
-<div class="rate-pic"><?php echo $this->Html->image('emptyrank4.png'); ?></div>
-<div class="rate-meter">j</div>
-<div class="rate-num">20</div>
-</div>
-
-<div class="rateN">
-<div class="rate-pic"><?php echo $this->Html->image('emptyrank3.png'); ?></div>
-<div class="rate-meter">j</div>
-<div class="rate-num">20</div>
-</div>
-
-<div class="rateN">
-<div class="rate-pic"><?php echo $this->Html->image('emptyrank2.png'); ?></div>
-<div class="rate-meter">j</div>
-<div class="rate-num">20</div>
-</div>
-
-<div class="rateN">
-<div class="rate-pic"><?php echo $this->Html->image('emptyrank1.png'); ?></div>
-<div class="rate-meter">j</div>
-<div class="rate-num">20</div>
-</div>
-
-<div class="rateN">
-<div class="rate-pic"><?php echo $this->Html->image('emptyrank.png'); ?></div>
-<div class="rate-meter">j</div>
-<div class="rate-num">20</div>
-</div>
+<div class="userLocationBody">
 
 </div>
+
+<div class="userOtherLocationsBody">
+<div class="userRatingsTitle">Other Locations</div>
+<ul>
+
+<a href="#">
+<li>
+<div class="userOtherLocationsBody-name">EL DAWLI STADIUM</div>
+<div class="userOtherLocationsBody-address">Egypt, Cairo, Maadi</div>
+</li>
+</a>
+
+
+
+</ul>
+</div>
+
+
 
 <div class="rank-and-review">
 <div class="rank-and-review-left">Rank Me</div>
