@@ -106,6 +106,42 @@ class SportopolisController extends Controller {
 		$this->layout = 'sportopolis';	
 	}
 
+	public function profilelocation($id) 
+	{
+		
+		$this->loadModel('Location');	
+		$this->loadModel('Member');	
+		$this->loadModel('Sport');
+		$this->loadModel('Review');
+		$this->loadModel('LocationsHasReviews');
+		$this->loadModel('LocationsHasViews');
+		$this->loadModel('LocationsHasPhotos');
+
+		$location = $this->Location->findById($id);
+		$this->set('location', $location);
+		$this->set('title_for_layout', $location['Location']['name']."'s Profile");
+		$reviewscount = $this->LocationsHasReviews->find('count',array('conditions' => array('LocationsHasReviews.location_id' => $id)));
+		$this->set('reviewscount', $reviewscount);
+		
+		
+		$allreviews = $this->Review->query("SELECT * FROM reviews AS Review WHERE id IN (SELECT review_id FROM locations_has_reviews WHERE location_id = " .$id.")");
+		$allreviewwriters = $this->Member->query("SELECT * FROM members AS Member WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM locations_has_reviews WHERE location_id = " .$id."))");
+		
+		$this->set('allreviewwriters', $allreviewwriters);
+		
+		$this->set('allreviews', $allreviews);
+		
+		
+		$locationshasphotos = $this->LocationsHasPhotos->find('count',array('conditions' => array('LocationsHasPhotos.location_id' => $id)));
+		$this->set('locationshasphotos', $locationshasphotos);
+		$locationshasviews = $this->LocationsHasViews->find('count',array('conditions' => array('LocationsHasViews.location_id' => $id)));
+		$this->set('locationshasviews', $locationshasviews);
+
+		$this->layout = 'sportopolis';	
+	}
+	
+	
+	
 	public function signuptrainer($error = null)
 	{
 		$this->layout = 'sportopolis';

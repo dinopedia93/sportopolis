@@ -42,7 +42,9 @@
     });
 });
 </script>
-<?php $url = " http://localhost/sportopolis/sportopolis/profile/" ?>
+<?php $trainerurl = " http://localhost/sportopolis/sportopolis/profile/" ?>
+<?php $locationurl = " http://localhost/sportopolis/sportopolis/profilelocation/" ?>
+<?php $storeurl = " http://localhost/sportopolis/sportopolis/profilestore/" ?>
 <div class="desktop-menu">
 
 <div class="leftListHeader">
@@ -134,7 +136,7 @@ populateCountries("country", "state");
 <?php if(count($articles) > 0){ ?>
 <?php foreach ($articles as $article): ?>
 <li>
-<a href="<?php echo $url.$trainer['Trainer']['id']; ?>">
+<a href="<?php echo $trainerurl.$trainer['Trainer']['id']; ?>">
 
 
 <div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
@@ -161,7 +163,7 @@ populateCountries("country", "state");
 <?php if(count($trainers) > 0){ ?>
 <?php foreach ($trainers as $trainer): ?>
 <li>
-<a href="<?php echo $url.$trainer['Trainer']['id']; ?>">
+<a href="<?php echo $trainerurl.$trainer['Trainer']['id']; ?>">
 
 
 <div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
@@ -188,7 +190,7 @@ populateCountries("country", "state");
 <?php if(count($locations) > 0 ){ ?>
 <?php foreach ($locations as $location): ?>
 <li>
-<a href="<?php echo $url.$trainer['Trainer']['id']; ?>">
+<a href="<?php echo $locationurl.$location['Location']['id']; ?>">
 
 
 <div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
@@ -217,7 +219,7 @@ populateCountries("country", "state");
 <?php if(count($events) > 0 ){ ?>
 <?php foreach ($events as $event): ?>
 <li>
-<a href="<?php echo $url.$trainer['Trainer']['id']; ?>">
+<a href="<?php echo $trainerurl.$trainer['Trainer']['id']; ?>">
 
 
 <div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
@@ -246,7 +248,7 @@ populateCountries("country", "state");
 <?php if(count($stores) > 0 ){ ?>
 <?php foreach ($stores as $store): ?>
 <li>
-<a href="<?php echo $url.$trainer['Trainer']['id']; ?>">
+<a href="<?php echo $trainerurl.$trainer['Trainer']['id']; ?>">
 
 
 <div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
