@@ -1,7 +1,6 @@
 <?php
 class Article extends AppModel {
-	/* */
-	// public $hasMany = array(
-	// 			'TrainersHasReviews','TrainersHasPhotos','TrainersHasViews'
-	// 		);
+	/*public $hasMany = array(
+				'ArticlesHasReviews','ArticlesHasPhotos','ArticlesHasViews'
+			);*/
 }

@@ -142,6 +142,42 @@ class SportopolisController extends Controller {
 	
 	
 	
+	public function profilestore($id) 
+	{
+		
+		$this->loadModel('Store');	
+		$this->loadModel('Member');	
+		$this->loadModel('Sport');
+		$this->loadModel('Review');
+		$this->loadModel('StoresHasReviews');
+		$this->loadModel('StoresHasViews');
+		$this->loadModel('StoresHasPhotos');
+
+		$store = $this->Store->findById($id);
+		$this->set('store', $store);
+		$this->set('title_for_layout', $store['Store']['name']."'s Profile");
+		$reviewscount = $this->StoresHasReviews->find('count',array('conditions' => array('StoresHasReviews.store_id' => $id)));
+		$this->set('reviewscount', $reviewscount);
+		
+		
+		$allreviews = $this->Review->query("SELECT * FROM reviews AS Review WHERE id IN (SELECT review_id FROM stores_has_reviews WHERE store_id = " .$id.")");
+		$allreviewwriters = $this->Member->query("SELECT * FROM members AS Member WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM stores_has_reviews WHERE store_id = " .$id."))");
+		
+		$this->set('allreviewwriters', $allreviewwriters);
+		
+		$this->set('allreviews', $allreviews);
+		
+		
+		$storeshasphotos = $this->StoresHasPhotos->find('count',array('conditions' => array('StoresHasPhotos.store_id' => $id)));
+		$this->set('storeshasphotos', $storeshasphotos);
+		$storeshasviews = $this->StoresHasViews->find('count',array('conditions' => array('StoresHasViews.store_id' => $id)));
+		$this->set('storeshasviews', $storeshasviews);
+
+		$this->layout = 'sportopolis';	
+	}
+	
+	
+	
 	public function signuptrainer($error = null)
 	{
 		$this->layout = 'sportopolis';

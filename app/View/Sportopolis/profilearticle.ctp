@@ -72,13 +72,13 @@ $(document).ready(function() {
 <div class="profileLeftLargeContainer">
 
 <div class="profilePictureLeftLargeContainer"><?php echo $this->Html->image('boss.png', array('class' => 'pictureLeftLargerContainer')); ?></div>
-<div class="profileNameLeftLargeContainer"><?php echo $store['Store']['name']; ?></div>
+<div class="profileNameLeftLargeContainer"><?php echo $article['Article']['name']; ?></div>
 <div class="profileProfessionLeftLargeContainer"></div>
 <div class="profileRankLeftLargeContainer"><?php echo $this->Html->image('zerorank.png'); ?></div>
 
 <div class="profileViewsReviews">
 <div class="profilePictoViewsReviews"><?php echo $this->Html->image('views.png'); ?></div>
-<div class="profileNumViewsReviews"><?php  echo $storeshasviews?></div>
+<div class="profileNumViewsReviews"><?php  echo $articleshasviews?></div>
 <div class="profilePictoViewsReviews2"><?php echo $this->Html->image('like.png'); ?></div>
 <div class="profileNumViewsReviews"><?php  echo $reviewscount?></div>
 </div>
@@ -92,7 +92,8 @@ $(document).ready(function() {
 </div>
 
 <div class="info-detail">
-<div class="bio"><?php echo $store['Store']['website']; ?></div>
+<div class="bio"><?php #echo $article['Article']['website']; 
+?></div>
 
 
 <div class="like-and-rate">
@@ -136,17 +137,17 @@ $(document).ready(function() {
 
 <div class="infoDiv">
 <div class="infoDivPicto"><?php echo $this->Html->image('mob.png'); ?></div>
-<a href="tel:+201095034848" class="infoDivDetail"><?php echo 0 . $store['Store']['mobile']; ?></a>
+<a href="tel:+201095034848" class="infoDivDetail"><?php #echo 0 . $article['Article']['mobile']; ?></a>
 </div>
 
 <div class="infoDiv">
 <div class="infoDivPicto"><?php echo $this->Html->image('location.png'); ?></div>
-<div class="infoDivDetail"><?php echo $store['Store']['city'] . ' , '  .$store['Store']['country'] ; ?></div>
+<div class="infoDivDetail"><?php #echo $article['Article']['city'] . ' , '  .$article['Article']['country'] ; ?></div>
 </div>
 
 <div class="infoDiv">
 <div class="infoDivPicto"><?php echo $this->Html->image('mail.png'); ?></div>
-<div class="infoDivDetail"><?php echo $store['Store']['email']; ?> </div>
+<div class="infoDivDetail"><?php #echo $article['Article']['email']; ?> </div>
 </div>
 
 </div>
@@ -166,12 +167,12 @@ $(document).ready(function() {
 
 <div class="rightLargeNav centerbtn">
 <div class="rightLargeNavTitle" >PHOTOS</div>
-<div class="rightLargeNavCount"><?php  echo $storeshasphotos?></div>
+<div class="rightLargeNavCount"><?php  echo $articleshasphotos?></div>
 </div>
 
 <div class="rightLargeNav rightbtn">
 <div class="rightLargeNavTitle">Locations</div>
-<div class="rightLargeNavCount"><?php echo $store['Store']['rank']; ?> </div>
+<div class="rightLargeNavCount"><?php echo $article['Article']['rank']; ?> </div>
 </div>
 
 </div>
@@ -237,7 +238,7 @@ $(document).ready(function() {
 
 <?php endforeach; 
 }else {?>
-<div class="no-entry">:( <br><br>Sorry, no Stores available now. We are still collecting data</div>
+<div class="no-entry">:( <br><br>Sorry, no Articles available now. We are still collecting data</div>
 <?php }?>
 <li>
 show more
