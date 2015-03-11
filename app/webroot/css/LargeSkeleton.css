@@ -1774,10 +1774,19 @@ color:grey;
 font-family:helvetica world;
 }
 
+.article-main-body2{
+width:100%;
+height:auto;
+padding:20px;
+padding-bottom:50px;
+color:grey;
+font-family:helvetica world;
+}
+
 .article-info-right{
 width:37.5%;
 margin-left:2.5%;
-height:auto;
+height:200px;
 background-color:white;
 border-radius: 3px;
 box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
@@ -1802,6 +1811,14 @@ border-bottom:1px solid #efefef;
 padding-left:10px;
 }
 
+.author-info2{
+width:100%;
+height:80px;
+float:left;
+padding-left:10px;
+}
+
+
 .article-adv{
 width:13%;
 height:80px;
@@ -1817,8 +1834,13 @@ font-size:15px;
 font-family:helvetica world;
 color:#f26522;
 padding-top:15px;
-
 }
+
+.Article-share-social-desc{
+color:grey;
+margin-bottom:20px;
+}
+
 
 .article-adv-bellow{
 width:100%;
@@ -1860,12 +1882,23 @@ font-size:17px;
 font-family:helvetica world;
 }
 
+.author-name{
+width:75%;
+float:left;
+height:40px;
+text-align:left;
+padding-top:15px;
+color:#f26522;
+font-size:17px;
+font-family:helvetica world;
+}
+
 .author-Author{
 width:30%;
 float:left;
 height:30px;
 text-align:left;
-padding-left:5px;
+
 color:grey;
 font-size:16px;
 font-family:helvetica world;
@@ -1878,7 +1911,7 @@ float:left;
 height:30px;
 text-align:left;
 padding-left:5px;
-color:#f26522;
+color:grey;
 font-size:16px;
 font-family:helvetica world;
 padding-top:4px;

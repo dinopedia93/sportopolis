@@ -8,7 +8,7 @@
 
 <div class="article-main-photo"><img src=""></div>
 
-<div class="article-main-body">
+<div class="article-main-body2">
 <textarea class="article-textarea" placeholder="Please, write your biography here ...">
 </textarea>
 <!-- The above textarea should be replaced by second textarea in http://www.nicedit.com/demos.php-->
@@ -20,9 +20,9 @@
 
 <div class="article-info-title">Article Information</div>
 
-<div class="author-info">
+<div class="author-info2">
 <div class="author-pic"><img class="author-prof-pic" src ="boss.png"></div>
-<div class="author-name">Hisham Ahmed Al-Sayed</div>
+<div class="author-name">Hisham Ahmed</div>
 <div class="author-Author">Author</div>
 </div>
 
@@ -40,6 +40,9 @@
 </div>
 
 <div class="Article-share-social">
+
+<div class="Article-share-social-desc">Saving:<br><br>By pressing save button, you can save your Articles and continue later on</div>
 <div class="save-article">Save Article</div>
+<div class="Article-share-social-desc">Publishing:<br><br>By presing Publish button, your article will be reviewed, you will receive and email when it is published</div>
 <div class="publish-article">Publish Article</div>
 </div>	

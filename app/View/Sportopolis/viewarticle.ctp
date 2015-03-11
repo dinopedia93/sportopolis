@@ -7,7 +7,6 @@
 <div class="author-info">
 <div class="author-pic"><img class="author-prof-pic" src ="boss.png"></div>
 <div class="author-name">Hisham Ahmed</div>
-<div class="author-Author">Published:</div>
 <div class="article-date">Mar 2, 2015</div>
 </div>
 
