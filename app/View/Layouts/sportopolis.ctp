@@ -168,6 +168,19 @@ $(document).ready(function () {
     </div>
 </div>
 	
+
+	
+
+<?php if($this->Session->read('Auth.User') == null){ ?>	
+<div class="popup-signup">
+<a class="initialism fade_open btn btn-success">SIGN UP</a>
+</div>
+
+	<div class="popup-Login">
+<a class="initialism btn btn-success" href='/sportopolis/users/login'>LOGIN</a>
+</div>
+
+<?php } else {?>
 	<div class="account">
 	<div class="accountPhoto"><?php echo $this->Html->image('boss.png', array('class' => 'circlePhoto')); ?></div>
 	
@@ -181,18 +194,7 @@ $(document).ready(function () {
     </ul>
 
 	</div>
-	
-
-	
-<div class="popup-signup">
-<a class="initialism fade_open btn btn-success">SIGN UP</a>
-</div>
-
-	<div class="popup-Login">
-<a class="initialism btn btn-success" href='/sportopolis/users/login'>LOGIN</a>
-</div>
-
-	
+<?php } ?>	
 	
 </div>
 
