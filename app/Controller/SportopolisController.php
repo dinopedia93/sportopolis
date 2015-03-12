@@ -33,6 +33,24 @@ App::uses('Model','Model');
  */
 class SportopolisController extends Controller {
 
+	public $components = array(
+		'Session',
+		'Auth' => array(
+			'loginRedirect' => array('controller' => 'sportopolis' , 'action' => 'index'),
+			'logoutRedirect' => array('controller' => 'sportopolis' , 'action' => 'index'),
+			'authError' => "You can't access that page",
+			'authorize' => array('Controller')
+		)
+	);
+	
+	public function isAuthorized($user){
+		return true;
+	}
+	
+	public function beforeFilter(){
+		$this->Auth->allow('menu' , 'view');
+	}
+
 	public function index() 
 	{
 		$this->layout = 'sportopolis';
@@ -74,7 +92,7 @@ class SportopolisController extends Controller {
 	{
 		
 		$this->loadModel('Trainer');	
-		$this->loadModel('Member');	
+		$this->loadModel('User');	
 		$this->loadModel('Sport');
 		$this->loadModel('Review');
 		$this->loadModel('TrainersHasReviews');
@@ -91,7 +109,7 @@ class SportopolisController extends Controller {
 		
 		
 		$allreviews = $this->Review->query("SELECT * FROM reviews AS Review WHERE id IN (SELECT review_id FROM trainers_has_reviews WHERE trainer_id = " .$id.")");
-		$allreviewwriters = $this->Member->query("SELECT * FROM members AS Member WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM trainers_has_reviews WHERE trainer_id = " .$id."))");
+		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM trainers_has_reviews WHERE trainer_id = " .$id."))");
 		
 		$this->set('allreviewwriters', $allreviewwriters);
 		
@@ -110,7 +128,7 @@ class SportopolisController extends Controller {
 	{
 		
 		$this->loadModel('Location');	
-		$this->loadModel('Member');	
+		$this->loadModel('User');	
 		$this->loadModel('Sport');
 		$this->loadModel('Review');
 		$this->loadModel('LocationsHasReviews');
@@ -125,7 +143,7 @@ class SportopolisController extends Controller {
 		
 		
 		$allreviews = $this->Review->query("SELECT * FROM reviews AS Review WHERE id IN (SELECT review_id FROM locations_has_reviews WHERE location_id = " .$id.")");
-		$allreviewwriters = $this->Member->query("SELECT * FROM members AS Member WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM locations_has_reviews WHERE location_id = " .$id."))");
+		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM locations_has_reviews WHERE location_id = " .$id."))");
 		
 		$this->set('allreviewwriters', $allreviewwriters);
 		
@@ -146,7 +164,7 @@ class SportopolisController extends Controller {
 	{
 		
 		$this->loadModel('Store');	
-		$this->loadModel('Member');	
+		$this->loadModel('User');	
 		$this->loadModel('Sport');
 		$this->loadModel('Review');
 		$this->loadModel('StoresHasReviews');
@@ -161,7 +179,7 @@ class SportopolisController extends Controller {
 		
 		
 		$allreviews = $this->Review->query("SELECT * FROM reviews AS Review WHERE id IN (SELECT review_id FROM stores_has_reviews WHERE store_id = " .$id.")");
-		$allreviewwriters = $this->Member->query("SELECT * FROM members AS Member WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM stores_has_reviews WHERE store_id = " .$id."))");
+		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM stores_has_reviews WHERE store_id = " .$id."))");
 		
 		$this->set('allreviewwriters', $allreviewwriters);
 		

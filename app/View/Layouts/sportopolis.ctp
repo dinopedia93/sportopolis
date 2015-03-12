@@ -189,7 +189,7 @@ $(document).ready(function () {
 </div>
 
 	<div class="popup-Login">
-<a class="initialism btn btn-success" href='/sportopolis/sportopolis/signin'>LOGIN</a>
+<a class="initialism btn btn-success" href='/sportopolis/users/login'>LOGIN</a>
 </div>
 
 	
