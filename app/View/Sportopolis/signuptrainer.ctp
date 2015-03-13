@@ -26,11 +26,11 @@
 <div class="signup-title2">Sign up with Email</div>
 <div class="signup-Desc">Please fill in your email address and password. ( A confirmation mail will be sent to you. )</div>
 
-<form class="signup-email" method="post" action="/sportopolis/sportopolis/RegisterTrainer">
-
+<form class="signup-email" method="post" action="/sportopolis/sportopolis/RegisterUser">
+<input type="hidden" name="user_type" value="1">
 <input class="textboxStandard" type="text" name="email" placeholder="Email">
 <input class="textboxStandard" type="password" name="password" placeholder="Password">
-<input class="textboxStandard" type="password" name="confirmPassword" placeholder="Confirm Password">
+<input class="textboxStandard" type="password" name="password_confirmation" placeholder="Confirm Password">
 
 <input class="signupSubmitBTN" type="submit" value="Sign up">
 

@@ -227,23 +227,23 @@ class SportopolisController extends Controller {
 		$this->layout = 'sportopolis';
 	}
 
-	public function RegisterTrainer()
+	public function RegisterUser()
 	{
-		$this->loadModel('Trainer');
+		$this->loadModel('User');
 
-		$this->Trainer->set($this->request->data);	
-		if ($this->Trainer->validates()) 
+		$this->User->set($this->request->data);	
+		if ($this->User->validates()) 
 		{
-            $this->Trainer->create();
-            if ($this->Trainer->save($this->request->data)) 
+            $this->User->create();
+            if ($this->User->save($this->request->data)) 
             {
-            	$link = 'profile/'.$this->Trainer->id;
+            	$link = 'index';
                 return $this->redirect(array('action' => $link));
             }
         }
         else
         {
-        	return $this->redirect(array('action' => 'signuptrainer/'.json_encode($this->Trainer->validationErrors)));
+        	return $this->redirect(array('action' => 'signuptrainer/'.json_encode($this->User->validationErrors)));
         }
 	}
 
