@@ -4,15 +4,20 @@
 
 <div class="profileSignUpToLeft">
 
-<form method="post" action="/sportopolis/sportopolis/UpdateTrainerProfile/<?php echo $trainer['Trainer']['id']; ?>">
+<form method="post" action="/sportopolis/sportopolis/UpdateTrainerProfile/<?php if($trainer!=null) echo $trainer['Trainer']['id']; else echo -1?>">
+
+
 <div class="profilePictureLeftLargeContainer"><img class="pictureLeftLargerContainer" src ="boss.png"></div>
-<input class="textboxStandardLeft" type="text" name="name" placeholder="name" value="<?php echo $trainer['Trainer']['first_name']." ".$trainer['Trainer']['last_name']; ?>">
+<input class="textboxStandardLeft" type="text"  placeholder="first name" value="<?php echo $user_primary_data['User']['first_name']; ?>" name="first_name">
+
+<input class="textboxStandardLeft" type="text"  placeholder="last_name" value="<?php echo $user_primary_data['User']['last_name']; ?>" name="last_name">
 
 <select class="select-sport" name ="sport">
 <option disabled="disabled">Select Sport</option>
 <?php
 	foreach ($sports as $sport) {
-		if($sport['Sport']['id'] == $trainer['Trainer']['sports_id'])
+
+		if($trainer!=null && $sport['Sport']['id'] == $trainer['Trainer']['sports_id'])
 		{
 			echo "<option selected='selected' value="."'".$sport['Sport']['id']."'>".$sport['Sport']['name']."</option>";
 		}
@@ -53,18 +58,18 @@ populateCountries("country", "state");
 <div class="SignUpTitle">Personal Information</div>
 
 <div class="personalInfo">
-<input class="textboxStandardRight" type="text" name="mobile" placeholder="Mobile num." value="<?php echo $trainer['Trainer']['mobile']; ?>">
+<input class="textboxStandardRight" type="text" name="mobile" placeholder="Mobile num." value="<?php if($trainer!=null) echo $trainer['Trainer']['mobile']; ?>">
 <!-- bellow should be replaced by selectable div jquery -->
-<input class="textboxStandardRight2" type="text" name="gender" placeholder="male or female" value="<?php echo $trainer['Trainer']['gender']; ?>">
+<input class="textboxStandardRight2" type="text" name="gender" placeholder="male or female" value="<?php if($trainer!=null) echo $trainer['Trainer']['gender']; ?>">
 <!-- bellow should be replaced by birth date div jquery -->
-<input class="textboxStandardRight" type="text" name="birthdate" placeholder="Birth date" value="<?php echo $trainer['Trainer']['birthdate']; ?>">
-<input class="textboxStandardRight2" type="text" name="location" placeholder="Working Location" value="<?php echo $trainer['Trainer']['location']; ?>">
+<input class="textboxStandardRight" type="text" name="birthdate" placeholder="Birth date" value="<?php if($trainer!=null) echo $trainer['Trainer']['birthdate']; ?>">
+<input class="textboxStandardRight2" type="text" name="location" placeholder="Working Location" value="<?php if($trainer!=null) echo $trainer['Trainer']['location']; ?>">
 
 </div>
 
 <div class="SignUpTitle">Biography</div>
 <textarea name="biography" class="textareaSignUp" placeholder="Please, write your biography here ...">
-<?php echo $trainer['Trainer']['biography']; ?>
+<?php if($trainer!=null) echo $trainer['Trainer']['biography']; ?>
 </textarea>
 
 <div class="SignUpTitle">Social Media</div>

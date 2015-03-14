@@ -207,12 +207,15 @@ class SportopolisController extends Controller {
 	{
 		$this->loadModel('Sport');
 		$this->loadModel('Trainer');
+		$this->loadModel('User');
 
-		$sports = $this->Sport->find('all');
-		$trainer = $this->Trainer->findById($id);
+		$sports = $this->Sport->find('all');		
+		$user_primary_data = $this->User->findById($id);
+		$trainer = $this->Trainer->find( 'first' , array('conditions' => array('Trainer.user_id' => $id)) );
 
 		$this->set('sports',$sports);
 		$this->set('trainer',$trainer);
+		$this->set('user_primary_data',$user_primary_data);
 
 		$this->layout = 'sportopolis';
 	}
@@ -227,9 +230,10 @@ class SportopolisController extends Controller {
 		$this->layout = 'sportopolis';
 	}
 
-	public function RegisterUser()
+	public function RegisterTrainer()
 	{
 		$this->loadModel('User');
+		$this->loadModel('Trainer');
 
 		$this->User->set($this->request->data);	
 		if ($this->User->validates()) 
@@ -237,7 +241,10 @@ class SportopolisController extends Controller {
             $this->User->create();
             if ($this->User->save($this->request->data)) 
             {
-            	$link = 'index';
+            	$data['Trainer']['user_id'] = $this->User->id;
+            	$this->Trainer->create();
+            	$this->Trainer->save($data);
+            	$link = 'index';            	
                 return $this->redirect(array('action' => $link));
             }
         }
@@ -250,14 +257,25 @@ class SportopolisController extends Controller {
 	public function UpdateTrainerProfile($id)
 	{
 		$this->loadModel('Trainer');
+		$this->loadModel('User');
 
 		$this->Trainer->set($this->request->data);	
 		if ($this->Trainer->validates()) 
 		{
             $this->Trainer->id = $id;
-            if ($this->Trainer->save($this->request->data)) 
+            if ($this->Trainer->save($this->request->data))
             {
-            	$link = 'profile/'.$this->Trainer->id;
+
+            	$trainer = $this->Trainer->findById($id);
+
+            	/* Adding a small hack to enter the first name and last name data because updateAll does not support database type recognition */
+            	$fname = $this->request->data['first_name'];
+				$lname = $this->request->data['last_name'];
+            	$this->Trainer->User->updateAll( 
+                array('User.first_name' => "'$fname'" , 'User.last_name' =>  "'$lname'"),                
+            	array('User.id' => $trainer['Trainer']['user_id'])
+        		); 
+            	
                 return $this->redirect(array('action' => $link));
             }
         }
