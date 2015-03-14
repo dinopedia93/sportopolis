@@ -36,6 +36,11 @@ class SportopolisController extends Controller {
 	public $components = array(
 		'Session',
 		'Auth' => array(
+			'authenticate' => array(
+				'Form' => array(
+					'fields' => array(
+						'email' => 'email',
+						'password' => 'password'))),
 			'loginRedirect' => array('controller' => 'sportopolis' , 'action' => 'index'),
 			'logoutRedirect' => array('controller' => 'sportopolis' , 'action' => 'index'),
 			'authError' => "You can't access that page",
@@ -49,6 +54,12 @@ class SportopolisController extends Controller {
 	
 	public function beforeFilter(){
 		$this->Auth->allow('menu' , 'view');
+		//$this->Auth->allow('index' , 'view');
+		$this->Auth->allow('signuptrainer' , 'view');
+		$this->Auth->allow('profile' , 'view');
+		$this->Auth->allow('profilelocation' , 'view');
+		$this->Auth->allow('profilestore' , 'view');
+		$this->Auth->allow('profilearticle' , 'view');
 	}
 
 	public function index() 
