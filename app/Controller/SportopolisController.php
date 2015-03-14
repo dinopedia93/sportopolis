@@ -39,7 +39,7 @@ class SportopolisController extends Controller {
 			'authenticate' => array(
 				'Form' => array(
 					'fields' => array(
-						'email' => 'email',
+						'username' => 'email',
 						'password' => 'password'))),
 			'loginRedirect' => array('controller' => 'sportopolis' , 'action' => 'index'),
 			'logoutRedirect' => array('controller' => 'sportopolis' , 'action' => 'index'),

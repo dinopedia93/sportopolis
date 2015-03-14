@@ -42,7 +42,7 @@ class UsersController extends SportopolisController {
 	
 	public function login(){
 		if($this->request->is('post')){
-			if($this->Auth->login($this->request->data)){
+			if($this->Auth->login()){
 				CakeSession::write('signed_in', True);
 				$this->redirect($this->Auth->redirect());
 			} else {
