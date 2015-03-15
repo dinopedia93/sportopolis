@@ -265,8 +265,9 @@ class SportopolisController extends Controller {
         }
 	}
 
-	public function UpdateTrainerProfile($id)
+	public function UpdateTrainerProfile($id = 0)
 	{
+		
 		$this->loadModel('Trainer');
 		$this->loadModel('User');
 
@@ -289,12 +290,17 @@ class SportopolisController extends Controller {
             	
                 return $this->redirect(array('action' => $link));
             }
+			else
+			{
+				return $this->redirect(array('action' => 'edittrainer/'.$id));
+			}
         }
         else
         {
-        	return $this->redirect(array('action' => 'signuptrainer/'.json_encode($this->Trainer->validationErrors)));
+        	return $this->redirect(array('action' => 'edittrainer/'.$id));
         }
-	}
+    }
+	
 }
 
 ?>
