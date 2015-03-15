@@ -41,6 +41,8 @@ class UsersController extends SportopolisController {
 	}
 	
 	public function login(){
+		
+		$this->layout = 'sportopolis';
 		if($this->request->is('post')){
 			if($this->Auth->login()){
 				CakeSession::write('signed_in', True);
