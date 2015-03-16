@@ -99,7 +99,7 @@ class SportopolisController extends Controller {
 		$this->layout = 'sportopolis';
 	}
 
-	public function profile($id) 
+	public function trainerprofile($id) 
 	{
 		
 		$this->loadModel('Trainer');	
@@ -111,8 +111,10 @@ class SportopolisController extends Controller {
 		$this->loadModel('TrainersHasPhotos');
 
 		$trainer = $this->Trainer->findById($id);
+		$user = $this->User->findById($trainer['Trainer']['user_id']);
 		$this->set('trainer', $trainer);
-		$this->set('title_for_layout', $trainer['Trainer']['first_name']." ".$trainer['Trainer']['last_name']."'s Profile");
+		$this->set('user',$user);
+		$this->set('title_for_layout', $user['User']['first_name']." ".$user['User']['last_name']."'s Profile");
 		$sport = $this->Sport->findById($trainer['Trainer']['sports_id']);
 		$this->set('sport', $sport);
 		$reviewscount = $this->TrainersHasReviews->find('count',array('conditions' => array('TrainersHasReviews.trainer_id' => $id)));
@@ -288,16 +290,16 @@ class SportopolisController extends Controller {
             	array('User.id' => $trainer['Trainer']['user_id'])
         		); 
             	
-                return $this->redirect(array('action' => $link));
+                return $this->redirect(array('action' => 'profile/'.$id));
             }
 			else
 			{
-				return $this->redirect(array('action' => 'edittrainer/'.$id));
+				return $this->redirect(array('action' => 'edittrainer/'.$trainer['Trainer']['user_id']));
 			}
         }
         else
         {
-        	return $this->redirect(array('action' => 'edittrainer/'.$id));
+        	return $this->redirect(array('action' => 'edittrainer/'.$trainer['Trainer']['user_id']));
         }
     }
 	

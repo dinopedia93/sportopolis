@@ -72,7 +72,7 @@ $(document).ready(function() {
 <div class="profileLeftLargeContainer">
 
 <div class="profilePictureLeftLargeContainer"><?php echo $this->Html->image('boss.png', array('class' => 'pictureLeftLargerContainer')); ?></div>
-<div class="profileNameLeftLargeContainer"><?php echo $trainer['Trainer']['first_name']." ".$trainer['Trainer']['last_name']; ?></div>
+<div class="profileNameLeftLargeContainer"><?php echo $user['User']['first_name']." ".$user['User']['last_name']; ?></div>
 <div class="profileProfessionLeftLargeContainer"><?php echo $sport['Sport']['name']; ?></div>
 <div class="profileRankLeftLargeContainer"><?php echo $this->Html->image('zerorank.png'); ?></div>
 
