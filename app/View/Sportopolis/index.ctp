@@ -187,10 +187,24 @@
 
 
 <div class="sportoya-stat-div">
+
+<div class="sportoya-stat-div-left">
+<ul>
+<li class="index-social-links-fb"><a href="http://www.facebook.com/sportoya"></a></li>
+<li class="index-social-links-t"><a href="http://twitter.com/Sportoya"></a></li>
+<li class="index-social-links-insta"><a href="http://instagram.com/sportoya/"></a></li>
+</ul>
+</div>
+
+<div class="sportoya-stat-div-right">
 <div class="UpcommingEvents-div-mini"><div class="orange-index-count">200 Article</div></div>
 <div class="UpcommingEvents-div-mini"><div class="yellow-index-count">200 Trainer</div></div>
 <div class="UpcommingEvents-div-mini"><div class="green-index-count">200 Sport Store</div></div>
 <div class="UpcommingEvents-div-mini"><div class="blue-index-count">200 Sport Location</div></div>
+</div>
+
+
+
 </div>
 
 
