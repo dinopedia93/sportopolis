@@ -44,6 +44,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->script('DropDownMenu');
 		echo $this->Html->script('sliding-menu');
 		echo $this->Html->script('jquery.barrating');
+		echo $this->Html->script('menu');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -167,7 +168,8 @@ $(document).ready(function () {
 </ul>
     </div>
 </div>
-	
+
+<div class="write-header"><a href="#">Write</a></div>	
 
 	
 
@@ -188,6 +190,7 @@ $(document).ready(function () {
 					
 	<li><a class="accountName"  onmouseover="mopen('m3')" onmouseout="mclosetime()">Hisham Ahmed</a>
 	<div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+	<a href="#">Edit Profile</a>						
 	<a href="#">Sign Out</a>						
 	</div>
 	</li>

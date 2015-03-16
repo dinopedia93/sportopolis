@@ -1,12 +1,13 @@
 .dropDownHook {
     color:#f26522;
     display:inline-block;
-    width:200px;
+    width: 17%;
     height:50px;
     line-height:22px;
 	font-size:19px;
 	padding-top:18px;
 	z-index:1;
+	float:left;
 }
 
 

@@ -7,7 +7,11 @@
 <form method="post" action="/sportopolis/sportopolis/UpdateTrainerProfile/<?php if($trainer!=null) echo $trainer['Trainer']['id']; else echo -1?>">
 
 
-<div class="profilePictureLeftLargeContainer"><img class="pictureLeftLargerContainer" src ="boss.png"></div>
+<div class="profilePictureLeftLargeContainer">
+<img class="pictureLeftLargerContainer" src ="boss.png">
+<!-- here profile picture should be installed -->
+</div>
+
 <input class="textboxStandardLeft" type="text"  placeholder="first name" value="<?php echo $user_primary_data['User']['first_name']; ?>" name="first_name">
 
 <input class="textboxStandardLeft" type="text"  placeholder="last_name" value="<?php echo $user_primary_data['User']['last_name']; ?>" name="last_name">
@@ -87,6 +91,10 @@ populateCountries("country", "state");
 <li class= "galleryLi"><img class="galleryLiImg" src ="boss.png"><li>
 <li class= "galleryLi"><img class="galleryLiImg" src ="boss.png"><li>
 </ul>
+
+
+<!-- here upload picture should be installed -->
+
 
 </div>
 
