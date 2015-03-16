@@ -42,9 +42,9 @@
     });
 });
 </script>
-<?php $trainerurl = " http://localhost/sportopolis/sportopolis/profile/" ?>
-<?php $locationurl = " http://localhost/sportopolis/sportopolis/profilelocation/" ?>
-<?php $storeurl = " http://localhost/sportopolis/sportopolis/profilestore/" ?>
+<?php $trainerurl = " http://localhost/sportopolis/sportopolis/trainerprofile/" ?>
+<?php $locationurl = " http://localhost/sportopolis/sportopolis/locationprofile/" ?>
+<?php $storeurl = " http://localhost/sportopolis/sportopolis/storeprofile/" ?>
 <div class="desktop-menu">
 
 <div class="leftListHeader">
@@ -163,12 +163,11 @@ populateCountries("country", "state");
 <?php if(count($trainers) > 0){ ?>
 <?php foreach ($trainers as $trainer): ?>
 <li>
-<a href="<?php echo $trainerurl.$trainer['Trainer']['id']; ?>">
-
+<a href="<?php echo $trainerurl.$trainer['trainers']['id']; ?>">
 
 <div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
 <div class="listInfo">
-<div class="listName"><?php echo $trainer['Trainer']['first_name']." ".$trainer['Trainer']['last_name']; ?></div>
+<div class="listName"><?php echo $trainer['users']['first_name']." ".$trainer['users']['last_name']; ?></div>
 <div class="listRank"><?php echo $this->Html->image('zerorank1.png', array('class' => 'listRankPicto')); ?></div>
 <div class="listviews"><?php echo $this->Html->image('views.png', array('class' => 'listViewsPicto')); ?>200</div>
 <div class="listReviews"><?php echo $this->Html->image('like.png', array('class' => 'listViewsPicto')); ?>200</div>

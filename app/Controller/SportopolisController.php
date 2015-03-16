@@ -82,8 +82,9 @@ class SportopolisController extends Controller {
 		$this->loadModel('Article');
 		$this->loadModel('Event');
 		$this->loadModel('Store');
+		$this->loadModel('User');
 
-		$trainers = $this->Trainer->find('all');
+		$trainers = $this->Trainer->query("SELECT * FROM trainers INNER JOIN users ON trainers.user_id = users.id");
 		$locations = $this->Location->find('all');
 		$articles = $this->Article->find('all');
 		$events = $this->Event->find('all');
@@ -137,7 +138,7 @@ class SportopolisController extends Controller {
 		$this->layout = 'sportopolis';	
 	}
 
-	public function profilelocation($id) 
+	public function locationprofile($id) 
 	{
 		
 		$this->loadModel('Location');	
@@ -173,7 +174,7 @@ class SportopolisController extends Controller {
 	
 	
 	
-	public function profilestore($id) 
+	public function storeprofile($id) 
 	{
 		
 		$this->loadModel('Store');	
