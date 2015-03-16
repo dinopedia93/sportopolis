@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 14, 2015 at 10:36 AM
+-- Generation Time: Mar 16, 2015 at 08:27 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -422,7 +422,7 @@ CREATE TABLE IF NOT EXISTS `trainers` (
 INSERT INTO `trainers` (`id`, `gender`, `country`, `city`, `district`, `location`, `training_days`, `time`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `biography`, `user_id`) VALUES
 (2, 'male', 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 1, 'I am Khaled Hegazy a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.', 13),
 (3, 'male', 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 1, 'Dizo Gamed Fash5', 15),
-(6, 'gay', '-1', '', '', '', '', NULL, '0', 0, NULL, NULL, '0', NULL, NULL, NULL, '', 23);
+(6, 'Male', '-1', '', '', 'Fa5ayda', '', NULL, '0', 0, NULL, NULL, '1232144656', NULL, NULL, 1, 'Youssef 5ory', 23);
 
 -- --------------------------------------------------------
 
@@ -499,12 +499,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `user_type`) VALUES
-(13, 'khaled', 'hegazy', 'khaled-hegazy92@hotmail.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 3),
-(15, '', '', 'dinopedia93@gmail.com', '2db7e9f1bc905c83630d097815eb5091e01678e4', 1),
-(16, '', '', 'aka_dino@live.com', '251c0037f5a39ad0709e876023add22d4be3b552', 1),
-(17, '', '', 'mm@gg.com', 'a5918e02c01a01db242f67faa65097bc9d15b8c3', 1),
-(18, '', '', 'dfmm@gg.com', '3f48e0a72538546c80bbe5717431413184095cfb', 1),
-(23, 'new', 'trainer', 'aka@gfail.com', 'fcfa68164162b0988c41faf7f2aedfb2af54ee31', 1);
+(13, 'Khaled', 'Hegazy', 'khaled-hegazy92@hotmail.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 3),
+(15, 'Abdallah', 'Khaled', 'dinopedia93@gmail.com', '2db7e9f1bc905c83630d097815eb5091e01678e4', 1),
+(23, 'youssef', '5ory', 'aka@gfail.com', 'fcfa68164162b0988c41faf7f2aedfb2af54ee31', 1);
 
 -- --------------------------------------------------------
 
