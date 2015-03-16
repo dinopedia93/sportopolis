@@ -2567,6 +2567,62 @@ width:100%;
 margin-top:160px;
 }
 
+.sportoya-stat-div-left{
+width:40%;
+float:left;
+}
+
+.sportoya-stat-div-left ul{
+width:100%;
+margin-top:63%;
+}
+
+.sportoya-stat-div-left ul li{
+width:30px;
+height:30px;
+float:left;
+margin-right:9%;
+}
+
+.index-social-links-fb{
+background-image: url("../img/indexsocialfb.png");
+cursor:pointer;
+}
+
+.index-social-links-fb:hover{
+background-image: url("../img/indexsocialfbB.png");
+transition: background 0.8s ease;
+}
+
+.index-social-links-t{
+background-image: url("../img/indexsocialtw.png");
+cursor:pointer;
+}
+
+.index-social-links-t:hover{
+background-image: url("../img/indexsocialtwB.png");
+transition: background 0.8s ease;
+}
+
+.index-social-links-insta{
+background-image: url("../img/indexsocialinstaG.png");
+cursor:pointer;
+}
+
+.index-social-links-insta:hover{
+background-image: url("../img/indexsocialinstaB.png");
+transition: background 0.8s ease;
+}
+
+
+
+
+
+.sportoya-stat-div-right{
+width:60%;
+float:right;
+}
+
 
 .UpcommingEvents-div-mini{
 width:100%;
@@ -2580,7 +2636,7 @@ font-family:helvetica world;
 font-size:16px;
 line-height:20px;
 text-align:right;
-width:26%;
+width:44%;
 height:25px;
 padding:4px;
 float:right;
@@ -2600,7 +2656,7 @@ height:25px;
 float:right;
 height:25px;
 padding:4px;
-width:30%;
+width:50%;
 border-radius:5px;
 white-space: nowrap;
 padding-right:10px;
@@ -2617,7 +2673,7 @@ height:25px;
 float:right;
 height:25px;
 padding:4px;
-width:35%;
+width:59%;
 border-radius:5px;
 white-space: nowrap;
 padding-right:10px;
@@ -2630,7 +2686,7 @@ background-color:#529ecc;
 color:white;
 font-family:helvetica world;
 text-align:right;
-width:42%;
+width:69%;
 float:right;
 height:25px;
 padding:4px;
