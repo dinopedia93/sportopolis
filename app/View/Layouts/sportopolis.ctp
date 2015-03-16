@@ -191,7 +191,7 @@ $(document).ready(function () {
 	<li><a class="accountName"  onmouseover="mopen('m3')" onmouseout="mclosetime()">Hisham Ahmed</a>
 	<div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
 	<a href="#">Edit Profile</a>						
-	<a href="#">Sign Out</a>						
+	<a href="/sportopolis/users/logout">Sign Out</a>						
 	</div>
 	</li>
     </ul>
