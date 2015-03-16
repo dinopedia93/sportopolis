@@ -42,9 +42,10 @@
     });
 });
 </script>
-<?php $trainerurl = " http://localhost/sportopolis/sportopolis/trainerprofile/" ?>
-<?php $locationurl = " http://localhost/sportopolis/sportopolis/locationprofile/" ?>
-<?php $storeurl = " http://localhost/sportopolis/sportopolis/storeprofile/" ?>
+<?php $trainerurl = "http://localhost/sportopolis/sportopolis/trainerprofile/" ?>
+<?php $locationurl = "http://localhost/sportopolis/sportopolis/locationprofile/" ?>
+<?php $storeurl = "http://localhost/sportopolis/sportopolis/storeprofile/" ?>
+
 <div class="desktop-menu">
 
 <div class="leftListHeader">

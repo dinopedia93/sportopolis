@@ -74,12 +74,11 @@ $(document).ready(function() {
 <div class="profilePictureLeftLargeContainer"><?php echo $this->Html->image('boss.png', array('class' => 'pictureLeftLargerContainer')); ?></div>
 <div class="profileNameLeftLargeContainer"><?php echo $user['User']['first_name']." ".$user['User']['last_name']; ?></div>
 <div class="profileProfessionLeftLargeContainer"><?php echo $sport['Sport']['name']; ?></div>
-<div class="profileRankLeftLargeContainer"><?php echo $this->Html->image('zerorank.png'); ?></div>
 
 <div class="profileViewsReviews">
 <div class="profilePictoViewsReviews"><?php echo $this->Html->image('views.png'); ?></div>
 <div class="profileNumViewsReviews"><?php  echo $trainershasviews?></div>
-<div class="profilePictoViewsReviews2"><?php echo $this->Html->image('like.png'); ?></div>
+<div class="profilePictoViewsReviews2"><?php echo $this->Html->image('rating.png'); ?></div>
 <div class="profileNumViewsReviews"><?php  echo $reviewscount?></div>
 </div>
 
@@ -96,16 +95,11 @@ $(document).ready(function() {
 
 
 <div class="like-and-rate">
-<div class="like-and-rate-left">
-<div class="like-and-rate-title">Like</div>
 
-<!-- http://jsfiddle.net/fedmich/DTAbj/ -->
 
-</div>
-
-<div class="like-and-rate-right">
 <div class="like-and-rate-title">Rate Me</div>
 <!-- rating plugin -->
+<div class="like-and-rate-right">
 <div class="rating-f">
   <select id="example">
      <option value="1"></option>
@@ -115,9 +109,9 @@ $(document).ready(function() {
      <option value="5"></option>
   </select>
 </div>
-
-
 </div>
+
+
 </div>
 
 

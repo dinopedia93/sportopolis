@@ -170,7 +170,7 @@ $(document).ready(function() {
 </div>
 
 <div class="rightLargeNav rightbtn">
-<div class="rightLargeNavTitle">Locations</div>
+<div class="rightLargeNavTitle">LOCATIONS</div>
 <div class="rightLargeNavCount"><?php echo $location['Location']['rank']; ?> </div>
 </div>
 
