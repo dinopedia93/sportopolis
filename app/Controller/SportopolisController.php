@@ -56,7 +56,7 @@ class SportopolisController extends Controller {
 		$this->Auth->allow('menu' , 'view');
 		//$this->Auth->allow('index' , 'view');
 		$this->Auth->allow('signuptrainer' , 'view');
-		$this->Auth->allow('profile' , 'view');
+		$this->Auth->allow('trainerprofile' , 'view');
 		$this->Auth->allow('profilelocation' , 'view');
 		$this->Auth->allow('profilestore' , 'view');
 		$this->Auth->allow('profilearticle' , 'view');
@@ -73,6 +73,17 @@ class SportopolisController extends Controller {
 		$this->layout = 'sportopolis';
 		$this->set('title_for_layout', 'SPORTOYA');
 	}
+	
+	/*function getGeoData()
+    {
+        $address = $this->data["ModelName"]["address"];
+        $coords = NULL;
+        if($address)
+        {
+			$coords = $this->Googlegeocode->getCoords($address);
+        }
+        $this->set("coords", $coords);
+    }*/
 
 	public function menu() 
 	{
@@ -111,10 +122,8 @@ class SportopolisController extends Controller {
 		$this->loadModel('TrainersHasPhotos');
 
 		$trainer = $this->Trainer->findById($id);
-		$user = $this->User->findById($trainer['Trainer']['user_id']);
 		$this->set('trainer', $trainer);
-		$this->set('user',$user);
-		$this->set('title_for_layout', $user['User']['first_name']." ".$user['User']['last_name']."'s Profile");
+		$this->set('title_for_layout', $trainer['Trainer']['first_name']." ".$trainer['Trainer']['last_name']."'s Profile");
 		$sport = $this->Sport->findById($trainer['Trainer']['sports_id']);
 		$this->set('sport', $sport);
 		$reviewscount = $this->TrainersHasReviews->find('count',array('conditions' => array('TrainersHasReviews.trainer_id' => $id)));
