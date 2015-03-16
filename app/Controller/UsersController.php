@@ -35,12 +35,14 @@ class UsersController extends SportopolisController {
 	public $name = 'users';
 	var $uses = array('User');
 	
-	public function beforeFilter(){
+	public function beforeFilter()
+	{
 		parent::beforeFilter();
 		$this->Auth->allow('action' , 'add');
 	}
 	
-	public function login(){
+	public function login()
+	{
 		
 		$this->layout = 'sportopolis';
 		if($this->request->is('post')){
@@ -53,16 +55,19 @@ class UsersController extends SportopolisController {
 		}
 	}
 	
-	public function logout(){
+	public function logout()
+	{
 		$this->redirect($this->Auth->logout());
 	}
 	
-	public function index(){
+	public function index()
+	{
 		$this->User->recursive = 0;
 		$this->set('users' , $this->User->find('all'));
 	}
 	
-	public function view($id = null){
+	public function view($id = null)
+	{
 		$this->User->id = $id;
 		if(!$this->User->exists()){
 			throw new NotFoundException('Invalid User');
@@ -77,18 +82,21 @@ class UsersController extends SportopolisController {
 	}
 	
 	
-	public function add() {
-    if ($this->request->is('post')) {
-        $this->User->create();
-        // hash the password coming in from the form using Authcomponent::password       
-        if ($this->User->save($this->request->data)) {
-            $this->Session->setFlash(__('The user has been saved.'));
-            return $this->redirect(array('action' => 'index'));
-        } else {
-            $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
-        }
-    }
-}
+	public function add() 
+	{
+	    if ($this->request->is('post')) {
+	        $this->User->create();
+	        // hash the password coming in from the form using Authcomponent::password       
+	        if ($this->User->save($this->request->data)) {
+	            $this->Session->setFlash(__('The user has been saved.'));
+	            return $this->redirect(array('action' => 'index'));
+	        } else {
+	            $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+	        }
+	    }
+
+
+	}
 	
 }
 
