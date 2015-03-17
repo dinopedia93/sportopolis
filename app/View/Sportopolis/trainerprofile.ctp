@@ -95,7 +95,7 @@ $(document).ready(function() {
 
 <div class="like-and-rate">
 
-<?php if( $this->Session->read('Auth.User.id') != $trainer['trainers']['user_id'] ) {?>
+<?php if( ($this->Session->read('Auth.User') != null) && ($this->Session->read('Auth.User.id') != $trainer['trainers']['user_id']) ) {?>
 <div class="like-and-rate-title">Rate Me</div>
 <!-- rating plugin -->
 <div class="like-and-rate-right">
