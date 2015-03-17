@@ -64,7 +64,6 @@ $(document).ready(function() {
     });
 });
 </script>
-
 <div class="newlist">
 
 <div class="newleftList">
@@ -72,7 +71,7 @@ $(document).ready(function() {
 <div class="profileLeftLargeContainer">
 
 <div class="profilePictureLeftLargeContainer"><?php echo $this->Html->image('boss.png', array('class' => 'pictureLeftLargerContainer')); ?></div>
-<div class="profileNameLeftLargeContainer"><?php echo $user['User']['first_name']." ".$user['User']['last_name']; ?></div>
+<div class="profileNameLeftLargeContainer"><?php echo $trainer['users']['first_name']." ".$trainer['users']['last_name']; ?></div>
 <div class="profileProfessionLeftLargeContainer"><?php echo $sport['Sport']['name']; ?></div>
 
 <div class="profileViewsReviews">
@@ -91,7 +90,7 @@ $(document).ready(function() {
 </div>
 
 <div class="info-detail">
-<div class="bio"><?php echo $trainer['Trainer']['biography']; ?></div>
+<div class="bio"><?php echo $trainer['trainers']['biography']; ?></div>
 
 
 <div class="like-and-rate">
@@ -130,17 +129,17 @@ $(document).ready(function() {
 
 <div class="infoDiv">
 <div class="infoDivPicto"><?php echo $this->Html->image('mob.png'); ?></div>
-<a href="tel:+201095034848" class="infoDivDetail"><?php echo 0 . $trainer['Trainer']['mobile']; ?></a>
+<a href="tel:+201095034848" class="infoDivDetail"><?php echo 0 . $trainer['trainers']['mobile']; ?></a>
 </div>
 
 <div class="infoDiv">
 <div class="infoDivPicto"><?php echo $this->Html->image('location.png'); ?></div>
-<div class="infoDivDetail"><?php echo $trainer['Trainer']['city'] . ' , '  .$trainer['Trainer']['country'] ; ?></div>
+<div class="infoDivDetail"><?php echo $trainer['trainers']['city'] . ' , '  .$trainer['trainers']['country'] ; ?></div>
 </div>
 
 <div class="infoDiv">
 <div class="infoDivPicto"><?php echo $this->Html->image('mail.png'); ?></div>
-<div class="infoDivDetail"><?php echo $trainer['Trainer']['email']; ?> </div>
+<div class="infoDivDetail"><?php echo $trainer['users']['email']; ?> </div>
 </div>
 
 </div>
@@ -165,7 +164,7 @@ $(document).ready(function() {
 
 <div class="rightLargeNav rightbtn">
 <div class="rightLargeNavTitle">ARTICLES</div>
-<div class="rightLargeNavCount"><?php echo $trainer['Trainer']['rank']; ?> </div>
+<div class="rightLargeNavCount"><?php echo $trainer['trainers']['rank']; ?> </div>
 </div>
 
 </div>

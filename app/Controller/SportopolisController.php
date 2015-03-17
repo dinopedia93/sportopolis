@@ -122,10 +122,12 @@ class SportopolisController extends Controller {
 		$this->loadModel('TrainersHasViews');
 		$this->loadModel('TrainersHasPhotos');
 
-		$trainer = $this->Trainer->findById($id);
+		$trainers = $this->Trainer->query("SELECT * FROM trainers INNER JOIN users ON trainers.user_id = users.id WHERE trainers.id = $id");
+		// little trick because the result is returned in 3D array
+		$trainer = $trainers[0];
 		$this->set('trainer', $trainer);
-		$this->set('title_for_layout', $trainer['Trainer']['first_name']." ".$trainer['Trainer']['last_name']."'s Profile");
-		$sport = $this->Sport->findById($trainer['Trainer']['sports_id']);
+		$this->set('title_for_layout', $trainer['users']['first_name']." ".$trainer['users']['last_name']."'s Profile");
+		$sport = $this->Sport->findById($trainer['trainers']['sports_id']);
 		$this->set('sport', $sport);
 		$reviewscount = $this->TrainersHasReviews->find('count',array('conditions' => array('TrainersHasReviews.trainer_id' => $id)));
 		$this->set('reviewscount', $reviewscount);
