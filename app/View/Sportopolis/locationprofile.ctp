@@ -182,6 +182,28 @@ $(document).ready(function() {
 <div class="userRatingsTitle">Location</div>
 
 <div class="userLocationBody">
+   <?= $this->Html->script("http://maps.google.com/maps/api/js?sensor=false", false); ?>
+ 
+    <?php
+      $map_options = array( 'id' => 'map_canvas', 
+	  'width' => '500px', 
+	  'height' => '200px', 
+	  'style' => '', 
+	  'zoom' => 7, 
+	  'type' => 'HYBRID', 
+	  'custom' => null, 
+	  'localize' => false, 
+	  'latitude' => 29.9602841, 
+	  'longitude' => 31.1563495, 
+	  'address' => '1 Infinite Loop, Cupertino', 
+	  'marker' => true, 
+	  'markerTitle' => 'This is my position', 
+	  'markerIcon' => 'http://google-maps-icons.googlecode.com/files/home.png', 
+	  'markerShadow' => 'http://google-maps-icons.googlecode.com/files/shadow.png', 
+	  'infoWindow' => false, 
+	  'windowText' => 'El-Dawly Stadium' );
+    ?>
+    <?= $this->GoogleMap->map($map_options); ?>
 
 </div>
 

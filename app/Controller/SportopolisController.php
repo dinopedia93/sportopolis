@@ -33,6 +33,9 @@ App::uses('Model','Model');
  */
 class SportopolisController extends Controller {
 
+	public $helpers = array('GoogleMap'); 
+	
+
 	public $components = array(
 		'Session',
 		'Auth' => array(
