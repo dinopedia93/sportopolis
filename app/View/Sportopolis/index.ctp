@@ -9,7 +9,7 @@
 <li>
 <div class="feed-head">
 <a href="#">
-<?php echo $this->Html->image('dimaria.jpg', array('class' => 'feed-li-pic')); ?>
+<?php echo $this->Html->image('DiMaria.jpg', array('class' => 'feed-li-pic')); ?>
 </a>
 </div>
 
