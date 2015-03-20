@@ -112,8 +112,10 @@ font-family:helvetica world;
 }
 
 .signupDiv{
-width:500px;
-height:600px;
+min-height:500px;
+min-width:500px;
+width:40%;
+height:70%;
 background-color:white;
 border-radius:5px;
 }
@@ -182,6 +184,7 @@ font-family:helvetica world;
 font-size:14px;
 color:grey;
 }
+
 
 .signupMidDiv{
 height:470px;
@@ -1139,18 +1142,6 @@ display:block;
 width:62%;
 height:100%;
 float:left;
-
-}
-
-.listName{
-width:100%;
-height:30px;
-line-height:45px;
-margin-bottom:6px;
-padding-left:5px;
-font-size:17px;
-font-family:Helvetica World;
-color:#f26522;
 }
 
 .listviews{
@@ -1176,11 +1167,25 @@ color:#808080;
 padding-top:1px;
 }
 
+.listName{
+width:100%;
+height:35px;
+padding-top:5%;
+margin-bottom:6px;
+padding-left:5px;
+font-size:17px;
+font-family:Helvetica World;
+color:#f26522;
+}
+
 .listRank{
 width:100%;
 height:25px;
 float:left;
-margin-left:2px;
+margin-left:5px;
+color:grey;
+font-size:15px;
+padding-top:1%;
 }
 
 .listArrow{

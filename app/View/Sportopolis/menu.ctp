@@ -265,9 +265,9 @@ populateCountries("country", "state");
 <div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
 <div class="listInfo">
 <div class="listName"><?php echo $trainer['users']['first_name']." ".$trainer['users']['last_name']; ?></div>
-<div class="listRank"><?php echo $this->Html->image('zerorank1.png', array('class' => 'listRankPicto')); ?></div>
+<div class="listRank">Egypt, Cairo</div>
 <div class="listviews"><?php echo $this->Html->image('views.png', array('class' => 'listViewsPicto')); ?>200</div>
-<div class="listReviews"><?php echo $this->Html->image('like.png', array('class' => 'listViewsPicto')); ?>200</div>
+<div class="listReviews"><?php echo $this->Html->image('rating.png', array('class' => 'listViewsPicto')); ?>4.8</div>
 </div>
 <div class="listArrow"><?php echo $this->Html->image('go.png', array('class' => 'listArrowPicto')); ?></div>
 </a>
@@ -292,9 +292,9 @@ populateCountries("country", "state");
 <div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
 <div class="listInfo">
 <div class="listName"><?php echo $location['Location']['name']; ?></div>
-<div class="listRank"><?php echo $this->Html->image('zerorank1.png', array('class' => 'listRankPicto')); ?></div>
+<div class="listRank">Egypt, Cairo</div>
 <div class="listviews"><?php echo $this->Html->image('views.png', array('class' => 'listViewsPicto')); ?>200</div>
-<div class="listReviews"><?php echo $this->Html->image('like.png', array('class' => 'listViewsPicto')); ?>200</div>
+<div class="listReviews"><?php echo $this->Html->image('rating.png', array('class' => 'listViewsPicto')); ?>200</div>
 </div>
 <div class="listArrow"><?php echo $this->Html->image('go.png', array('class' => 'listArrowPicto')); ?></div>
 </a>
