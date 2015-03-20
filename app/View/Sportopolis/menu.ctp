@@ -51,6 +51,50 @@
         $('#events').hide();
     });
 
+     $('.dropMenu-list-head').on('change', function() {
+       if( $( ".dropMenu-list-head option:selected" ).text() == "Locations" )
+       {
+            $('#locations').show();
+            $('#trainers').hide();
+            $('#articles').hide();
+            $('#events').hide();
+            $('#stores').hide();
+       }
+       else if ( $( ".dropMenu-list-head option:selected" ).text() == "Trainers" )
+       {
+            $('#trainers').show();
+            $('#locations').hide();
+            $('#articles').hide();
+            $('#events').hide();
+            $('#stores').hide();
+       }
+       else if (  $( ".dropMenu-list-head option:selected" ).text() == "Articles" ) 
+       {
+            $('#articles').show();
+            $('#locations').hide();
+            $('#trainers').hide();
+            $('#events').hide();
+            $('#stores').hide();
+       }
+       else if( $( ".dropMenu-list-head option:selected" ).text() == "Stores" )
+       {
+            $('#stores').show();
+            $('#locations').hide();
+            $('#trainers').hide();
+            $('#articles').hide();
+            $('#events').hide();
+       }
+       else if(  $( ".dropMenu-list-head option:selected" ).text() == "Events"  )
+       {
+            $('#events').show();
+            $('#locations').hide();
+            $('#trainers').hide();
+            $('#articles').hide();
+            $('#stores').hide();
+       }
+    });
+
+
     function activateDiv(divname)
     {
         var divs = [".locationPicto", ".trainerPicto", ".articlePicto" , ".eventPicto" , ".storesPicto"];
@@ -70,7 +114,7 @@
             $(divname).css('background-image','url("../img/map2.png")');
 
         for (var i = 0; i < divs.length; i++) {
-            
+
             if(divs[i] != divname)
             {
                 $(divs[i]).css('color','#808080');
