@@ -10,33 +10,37 @@ class User extends AppModel {
 	 public $validate = array (
 		'first_name' => array(
 			'Please enter the first name. ' => array(
-				'rule' => array('between' , 5 , 15),
-				'message' => 'First name must be between 5 to 15 characters.'
+				'rule' => array('between' , 2 , 15),
+				'message' => 'First name must be between 2 to 15 characters.'
 			)
 		),'last_name' => array(
 			'Please enter the last name. ' => array(
-				'rule' => array('between' , 5 , 15),
-				'message' => 'Last name must be between 5 to 15 characters.'
+				'rule' => array('between' , 2 , 15),
+				'message' => 'Last name must be between 2 to 15 characters.'
 			)
 		),'email' => array(
 			'Valid Email' => array(
 				'rule' => array('email'),
+				'on' => 'create',
 				'message' => 'Please enter a valid email address'
 			)
 		),
 		'password' => array(
 				'Not Empty' => array(
 					'rule' => 'notEmpty',
+					'on' => 'create',
 					'message'=>'Please enter your password'
 				),
 				'Match passwords' => array(
 					'rule' => 'matchPasswords',
+					'on' => 'create',
 					'message' => 'Passwords do not match'
 				)
 		),
 		'password_confirmation' => array(
 				'Not Empty' => array(
 					'rule' => 'notEmpty',
+					'on' => 'create',
 					'message'=>'Please confirm your password'
 				)
 		)

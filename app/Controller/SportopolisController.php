@@ -248,7 +248,7 @@ class SportopolisController extends Controller {
 		$this->layout = 'sportopolis';
 	}
 
-	public function createarticle($id)
+	public function createarticle()
 	{
 		$this->layout = 'sportopolis';
 	}
@@ -288,7 +288,10 @@ class SportopolisController extends Controller {
 		$this->loadModel('Trainer');
 		$this->loadModel('User');
 
-		$this->Trainer->set($this->request->data);	
+
+
+		$this->Trainer->set($this->request->data);
+		$temp = $this->request->data;
 		if ($this->Trainer->validates()) 
 		{
             $this->Trainer->id = $id;
@@ -296,16 +299,16 @@ class SportopolisController extends Controller {
             {
 
             	$trainer = $this->Trainer->findById($id);
-
-            	/* Adding a small hack to enter the first name and last name data because updateAll does not support database type recognition */
-            	$fname = $this->request->data['first_name'];
-				$lname = $this->request->data['last_name'];
-            	$this->Trainer->User->updateAll( 
-                array('User.first_name' => "'$fname'" , 'User.last_name' =>  "'$lname'"),                
-            	array('User.id' => $trainer['Trainer']['user_id'])
-        		); 
+            	$this->User->set(array(
+				    'first_name' => $this->request->data['first_name'],
+				    'last_name' => $this->request->data['last_name'],
+				    'gender' => $this->request->data['gender'],
+				    'birthdate' => $this->request->data['birthdate']
+				));
+            	$this->User->id = $this->request->data['user_id'];
+            	$this->User->save();
             	
-                return $this->redirect(array('action' => 'profile/'.$id));
+                return $this->redirect(array('action' => 'trainerprofile/'.$id));
             }
 			else
 			{
