@@ -73,8 +73,7 @@ $(document).ready(function() {
 
 <div class="profilePictureLeftLargeContainer"><?php echo $this->Html->image('boss.png', array('class' => 'pictureLeftLargerContainer')); ?></div>
 <div class="profileNameLeftLargeContainer"><?php echo $store['Store']['name']; ?></div>
-<div class="profileProfessionLeftLargeContainer"></div>
-<div class="profileRankLeftLargeContainer"><?php echo $this->Html->image('zerorank.png'); ?></div>
+<div class="profileProfessionLeftLargeContainer">ay store</div>
 
 <div class="profileViewsReviews">
 <div class="profilePictoViewsReviews"><?php echo $this->Html->image('views.png'); ?></div>
@@ -96,12 +95,6 @@ $(document).ready(function() {
 
 
 <div class="like-and-rate">
-<div class="like-and-rate-left">
-<div class="like-and-rate-title">Like</div>
-
-<!-- http://jsfiddle.net/fedmich/DTAbj/ -->
-
-</div>
 
 <div class="like-and-rate-right">
 <div class="like-and-rate-title">Rate Me</div>

@@ -67,7 +67,7 @@ class SportopolisController extends Controller {
 
 	public function index() 
 	{
-		$this->layout = 'sportopolis';
+		$this->layout = 'index';
 		$this->set('title_for_layout', 'SPORTOYA');
 	}
 
