@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 18, 2015 at 07:52 PM
+-- Generation Time: Mar 20, 2015 at 04:20 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -159,15 +159,16 @@ CREATE TABLE IF NOT EXISTS `locations` (
   `tel` decimal(10,0) DEFAULT NULL,
   `mobile` decimal(10,0) DEFAULT NULL,
   `email` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `website` text COLLATE utf8_bin
+  `website` text COLLATE utf8_bin,
+  `sports_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `locations`
 --
 
-INSERT INTO `locations` (`id`, `name`, `country`, `city`, `district`, `address`, `google_map`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`) VALUES
-(1, 'El Dawli Stadium', 'Egypt', 'Giza', 'Haram', 'Mansoriya', '', 0, 0, NULL, '9999999999', '1132344', '3awad@gmail.com', NULL);
+INSERT INTO `locations` (`id`, `name`, `country`, `city`, `district`, `address`, `google_map`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`) VALUES
+(1, 'El Dawli Stadium', 'Egypt', 'Giza', 'Haram', 'Mansoriya', '', 0, 0, NULL, '9999999999', '1132344', '3awad@gmail.com', NULL, 4);
 
 -- --------------------------------------------------------
 
@@ -396,7 +397,6 @@ CREATE TABLE IF NOT EXISTS `stores_has_views` (
 
 CREATE TABLE IF NOT EXISTS `trainers` (
 `id` int(11) NOT NULL,
-  `gender` varchar(10) COLLATE utf8_bin NOT NULL,
   `country` varchar(45) COLLATE utf8_bin NOT NULL,
   `city` varchar(45) COLLATE utf8_bin NOT NULL,
   `district` varchar(45) COLLATE utf8_bin NOT NULL,
@@ -419,11 +419,11 @@ CREATE TABLE IF NOT EXISTS `trainers` (
 -- Dumping data for table `trainers`
 --
 
-INSERT INTO `trainers` (`id`, `gender`, `country`, `city`, `district`, `location`, `training_days`, `time`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `biography`, `user_id`) VALUES
-(2, 'male', 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 1, 'I am Khaled Hegazy a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.', 13),
-(3, 'male', 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 1, 'Dizo Gamed Fash5', 15),
-(6, 'Male', '-1', '', '', 'Fa5ayda', '', NULL, '0', 0, NULL, NULL, '1232144656', NULL, NULL, 1, 'Youssef 5ory', 23),
-(7, '', '', '', '', '', '', NULL, '0', 0, NULL, NULL, '0', NULL, NULL, NULL, NULL, 24);
+INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `location`, `training_days`, `time`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `biography`, `user_id`) VALUES
+(2, 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 1, 'I am Khaled Hegazy a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.', 13),
+(3, 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 1, 'Dizo Gamed Fash5', 15),
+(6, 'Egypt', '', '', 'Fa5ayda', '', NULL, '0', 0, NULL, NULL, '1232144656', NULL, NULL, 1, 'Beyombroblo el masal.....', 23),
+(7, '', '', '', '', '', NULL, '0', 0, NULL, NULL, '0', NULL, NULL, NULL, NULL, 24);
 
 -- --------------------------------------------------------
 
@@ -490,6 +490,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 `id` int(11) NOT NULL,
   `first_name` varchar(45) CHARACTER SET latin1 NOT NULL,
   `last_name` varchar(45) CHARACTER SET latin1 NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `birthdate` date NOT NULL,
   `email` varchar(45) CHARACTER SET latin1 NOT NULL,
   `password` varchar(128) CHARACTER SET latin1 NOT NULL,
   `user_type` int(11) NOT NULL
@@ -499,11 +501,11 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `email`, `password`, `user_type`) VALUES
-(13, 'Khaled', 'Hegazy', 'khaled-hegazy92@hotmail.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 3),
-(15, 'Abdallah', 'Khaled', 'dinopedia93@gmail.com', '2db7e9f1bc905c83630d097815eb5091e01678e4', 1),
-(23, 'youssef', '5ory', 'aka@gfail.com', 'fcfa68164162b0988c41faf7f2aedfb2af54ee31', 1),
-(24, '', '', 'new@new.com', '477c5714202f60f75133dd941607074a11bb4ce2', 1);
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `birthdate`, `email`, `password`, `user_type`) VALUES
+(13, 'Khaled', 'Hegazy', 'Male', '1990-12-10', 'khaled-hegazy92@hotmail.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 3),
+(15, 'Abdallah', 'Khaled', 'Male', '1990-12-10', 'dinopedia93@gmail.com', '2db7e9f1bc905c83630d097815eb5091e01678e4', 1),
+(23, 'youssef', 'Khory', 'Male', '1990-12-11', 'aka@gfail.com', 'fcfa68164162b0988c41faf7f2aedfb2af54ee31', 1),
+(24, '', '', 'Male', '1990-12-10', 'new@new.com', '477c5714202f60f75133dd941607074a11bb4ce2', 1);
 
 -- --------------------------------------------------------
 
@@ -612,7 +614,7 @@ ALTER TABLE `likes`
 -- Indexes for table `locations`
 --
 ALTER TABLE `locations`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`), ADD UNIQUE KEY `name_UNIQUE` (`name`), ADD UNIQUE KEY `address_UNIQUE` (`address`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`), ADD UNIQUE KEY `name_UNIQUE` (`name`), ADD UNIQUE KEY `address_UNIQUE` (`address`), ADD KEY `sports_id` (`sports_id`);
 
 --
 -- Indexes for table `locations_has_likes`
