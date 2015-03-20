@@ -6,13 +6,17 @@
     $('#events').hide();
     $('#stores').hide();
     $('.locationPicto').click(function() {
+        activateDiv(".locationPicto");
+
         $('#locations').show();
         $('#trainers').hide();
         $('#articles').hide();
         $('#events').hide();
         $('#stores').hide();
     });
-    $('.trainerPicto').click(function() {    	
+    $('.trainerPicto').click(function() {
+        activateDiv(".trainerPicto");
+
         $('#trainers').show();
         $('#locations').hide();
         $('#articles').hide();
@@ -20,6 +24,8 @@
         $('#stores').hide();
     });
     $('.articlePicto').click(function() {
+        activateDiv('.articlePicto');
+
         $('#articles').show();
         $('#locations').hide();
         $('#trainers').hide();
@@ -27,6 +33,8 @@
         $('#stores').hide();
     });
     $('.eventPicto').click(function() {
+        activateDiv('.eventPicto');
+
         $('#events').show();
         $('#locations').hide();
         $('#trainers').hide();
@@ -34,12 +42,56 @@
         $('#stores').hide();
     });
      $('.storesPicto').click(function() {
+        activateDiv('.storesPicto');
+
         $('#stores').show();
         $('#locations').hide();
         $('#trainers').hide();
         $('#articles').hide();
         $('#events').hide();
     });
+
+    function activateDiv(divname)
+    {
+        var divs = [".locationPicto", ".trainerPicto", ".articlePicto" , ".eventPicto" , ".storesPicto"];
+
+        $(divname).css('color','#f26522');
+        $(divname).css('background-color','#fff2ee');
+        $(divname).css('border-right','3px solid #f26522');
+        if(divname == ".articlePicto")
+            $(divname).css('background-image','url("../img/pen.png")');
+        else if(divname == ".storesPicto")
+            $(divname).css('background-image','url("../img/cart2.png")');
+        else if(divname == ".eventPicto")
+            $(divname).css('background-image','url("../img/event2.png")');
+        else if(divname == ".trainerPicto")
+            $(divname).css('background-image','url("../img/coach2.png")');
+        else if(divname == ".locationPicto")
+            $(divname).css('background-image','url("../img/map2.png")');
+
+        for (var i = 0; i < divs.length; i++) {
+            
+            if(divs[i] != divname)
+            {
+                $(divs[i]).css('color','#808080');
+                $(divs[i]).css('background-color','white');
+                $(divs[i]).css('border-right','3px solid white');
+                if(divs[i] == ".articlePicto")
+                    $(divs[i]).css('background-image','url("../img/pen2.png")');
+                else if(divs[i] == ".storesPicto")
+                    $(divs[i]).css('background-image','url("../img/cart.png")');
+                else if(divs[i] == ".eventPicto")
+                    $(divs[i]).css('background-image','url("../img/event.png")');
+                else if(divs[i] == ".trainerPicto")
+                    $(divs[i]).css('background-image','url("../img/coach.png")');
+                else if(divs[i] == ".locationPicto")
+                    $(divs[i]).css('background-image','url("../img/map.png")');
+            }
+        };
+
+    }
+
+
 });
 </script>
 <?php $trainerurl = "http://localhost/sportopolis/sportopolis/trainerprofile/" ?>

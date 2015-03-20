@@ -29,6 +29,11 @@ $(document).ready(function() {
         $(".profileReviewLargeBOTTOMContainer").hide();
     }
     $(".centerbtn").click(function() {
+
+        $(".centerbtn").css("border-bottom","4px solid #f26522");
+        $(".leftbtn").css("border-bottom","4px solid white");
+        $(".rightbtn").css("border-bottom","4px solid white");
+
         if (isMobile.any()) {
             $(".info-detail").hide();
             $(".profileReviewLargeBOTTOMContainer").show();
@@ -41,6 +46,11 @@ $(document).ready(function() {
 
     });
     $(".leftbtn").click(function() {
+
+        $(".leftbtn").css("border-bottom","4px solid #f26522");
+        $(".centerbtn").css("border-bottom","4px solid white");
+        $(".rightbtn").css("border-bottom","4px solid white");
+
         if (isMobile.any()) {
             $(".info-detail").show();
             $(".profileReviewLargeBOTTOMContainer").hide();
@@ -52,6 +62,11 @@ $(document).ready(function() {
         }
     });
     $(".rightbtn").click(function() {
+
+        $(".rightbtn").css("border-bottom","4px solid #f26522");
+        $(".leftbtn").css("border-bottom","4px solid white");
+        $(".centerbtn").css("border-bottom","4px solid white");
+        
         if (isMobile.any()) {
             $(".info-detail").hide();
             $(".profileReviewLargeBOTTOMContainer").hide();
