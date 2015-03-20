@@ -1555,6 +1555,268 @@ color:grey;
 padding:35px;
 }
 
+.profileSignUpToLeft{
+width:90%;
+height:100%;
+margin:0px auto;
+border-bottom:1px solid #efefef;
+}
+
+.textboxStandardLeft{
+width:100%;
+height:40px;
+margin-top:20px;
+border:1px solid #d5d5d5;
+color:grey;
+outline:none;
+font-family:helvetica world;
+font-size:16px;
+padding:15px;
+padding-left:20px;
+}
+
+.select-sport{
+width:100%;
+height:35px;
+outline:none;
+font-family:helvetica world;
+font-size:16px;
+border-radius:5px;
+border:1px solid #d5d5d5;
+color:grey;
+margin-top:20px;
+margin-bottom:20px;
+padding-left:10px;
+background: url("../img/new_arrow.png") no-repeat right;
+-webkit-appearance: none;
+-moz-appearance:none;
+-webkit-appearance:none;
+cursor:pointer;
+}
+
+.select-sport::-ms-expand {
+    display: none;
+}
+
+.select-country{
+width:90%;
+height:35px;
+outline:none;
+font-family:helvetica world;
+font-size:16px;
+border-radius:5px;
+border:1px solid #d5d5d5;
+color:grey;
+padding:0;
+margin:20px auto;
+padding-left:10px;
+display:block;
+-webkit-appearance: none;
+-moz-appearance:none;
+-webkit-appearance:none;
+background: url("../img/new_arrow.png") no-repeat right;
+cursor:pointer;
+}
+
+.select-country::-ms-expand {
+    display: none;
+}
+
+
+.select-city{
+width:90%;
+height:35px;
+outline:none;
+font-family:helvetica world;
+font-size:16px;
+margin-left:1%;
+margin-right:1%;
+border-radius:5px;
+border:1px solid #d5d5d5;
+color:grey;
+margin:20px auto;
+padding-left:10px;
+display:block;
+-webkit-appearance: none;
+-moz-appearance:none;
+-webkit-appearance:none;
+background: url("../img/new_arrow.png") no-repeat right;
+cursor:pointer;
+}
+
+.select-city::-ms-expand {
+    display: none;
+}
+
+.rightSignUpLargeNav{
+width:50%;
+height:100%;
+float:left;
+text-align:center;
+cursor:pointer;
+color:grey;
+padding-top:20px;
+font-size:17px;
+font-family:helvetica world;
+}
+
+.rightSignUpLargeNav:hover{
+border-bottom:4px solid #f26522;
+}
+
+.SignUpAdditionalInfo{
+margin-top:20px;
+width:100%;
+height:700px;
+background-color:white;
+border-radius: 3px;
+box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-moz-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-webkit-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+}
+
+.SignUpTitle{
+width:100%;
+height:50px;
+color:grey;
+padding-left:30px;
+font-family:helvetica world;
+font-size:16px;
+line-height:60px;
+}
+
+.personalInfo{
+width:90%;
+margin:0px auto;
+height:110px;
+}
+
+.textboxStandardRight{
+width:100%;
+height:40px;
+margin-top:10px;
+border:1px solid #d5d5d5;
+color:grey;
+outline:none;
+font-family:helvetica world;
+font-size:16px;
+padding:15px;
+float:left;
+}
+
+.textboxStandardRight2{
+width:100%;
+height:40px;
+margin-top:10px;
+border:1px solid #d5d5d5;
+color:grey;
+outline:none;
+font-family:helvetica world;
+font-size:16px;
+padding:15px;
+float:right;
+}
+
+.textareaSignUp{
+width:90%;
+display:block;
+margin:20px auto;
+height:280px;
+border:1px solid #d5d5d5;
+color:grey;	
+outline:none;
+font-family:helvetica world;
+font-size:16px;
+padding:10px;
+}
+
+.fbtextboxLeftSignUpMini{
+width:90%;
+height:40px;
+margin:20px auto;
+display:block;
+border:1px solid #d5d5d5;
+color:grey;	
+outline:none;
+font-family:helvetica world;
+font-size:16px;
+padding:15px;
+padding-left:50px;
+background-image: url("../img/facebook.png");
+background-repeat:no-repeat;
+background-size:27px 27px;
+background-position: 10px 6px; 
+}
+
+.TtextboxLeftSignUpMini{
+width:90%;
+height:40px;
+margin:20px auto;
+display:block;
+border:1px solid #d5d5d5;
+color:grey;	
+outline:none;
+font-family:helvetica world;
+font-size:16px;
+padding:15px;
+padding-left:50px;
+background-image: url("../img/twitter.png");
+background-repeat:no-repeat;
+background-size:27px 27px;
+background-position: 10px 6px; 
+}
+
+.ItextboxLeftSignUpMini{
+width:90%;
+height:40px;
+margin:20px auto;
+display:block;
+border:1px solid #d5d5d5;
+color:grey;	
+outline:none;
+font-family:helvetica world;
+font-size:16px;
+padding:15px;
+padding-left:50px;
+background-image: url("../img/instagram.png");
+background-repeat:no-repeat;
+background-size:27px 27px;
+background-position: 10px 6px; 
+}
+
+.LtextboxLeftSignUpMini{
+width:90%;
+height:40px;
+margin:20px auto;
+display:block;
+border:1px solid #d5d5d5;
+color:grey;	
+outline:none;
+font-family:helvetica world;
+font-size:16px;
+padding:15px;
+padding-left:50px;
+background-image: url("../img/linkedin.png");
+background-repeat:no-repeat;
+background-size:27px 27px;
+background-position: 10px 6px; 
+padding-bottom:20px;
+}
+
+.saveBTN{
+width: 200px;
+height: 33px;
+float: right;
+text-align: center;
+border: 2px solid #f26522;
+border-radius: 5px;
+color: #f26522;
+font-family: helvetica world;
+font-size: 15px;
+cursor: pointer;
+background-color:white;
+}
+
 
 
 
