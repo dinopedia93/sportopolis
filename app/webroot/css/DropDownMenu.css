@@ -50,7 +50,7 @@ border:1px solid grey;
 }
 
 .cyclingLink{
-background-image: url("../img/cyclingG.png");
+background-image: url("../img/CyclingG.png");
 background-repeat: no-repeat;
 transition: background 0.4s ease;
 -moz-transition:background 0.4s ease;
@@ -58,7 +58,7 @@ transition: background 0.4s ease;
 }
 
 .cyclingLink:hover{
-background-image: url("../img/cyclingO.png");
+background-image: url("../img/CyclingO.png");
 background-repeat: no-repeat;
 }
 
