@@ -5,7 +5,7 @@
 <div class="profileSignUpToLeft">
 
 <form method="post" action="/sportopolis/sportopolis/UpdateTrainerProfile/<?php if($trainer!=null) echo $trainer['Trainer']['id']; else echo -1?>">
-
+<input type="text" name="user_id" value="<?php echo $trainer['Trainer']['user_id']; ?>" hidden>
 
 <div class="profilePictureLeftLargeContainer">
 <img class="pictureLeftLargerContainer" src ="boss.png">
@@ -16,7 +16,7 @@
 
 <input class="textboxStandardLeft" type="text"  placeholder="last_name" value="<?php echo $user_primary_data['User']['last_name']; ?>" name="last_name">
 
-<select class="select-sport" name ="sport">
+<select class="select-sport" name ="sports_id">
 <option disabled="disabled">Select Sport</option>
 <?php
 	foreach ($sports as $sport) {
@@ -64,9 +64,9 @@ populateCountries("country", "state");
 <div class="personalInfo">
 <input class="textboxStandardRight" type="text" name="mobile" placeholder="Mobile num." value="<?php if($trainer!=null) echo $trainer['Trainer']['mobile']; ?>">
 <!-- bellow should be replaced by selectable div jquery -->
-<input class="textboxStandardRight2" type="text" name="gender" placeholder="male or female" value="<?php if($trainer!=null) echo $trainer['Trainer']['gender']; ?>">
+<input class="textboxStandardRight2" type="text" name="gender" placeholder="male or female" value="<?php if($trainer!=null) echo $user_primary_data['User']['gender']; ?>">
 <!-- bellow should be replaced by birth date div jquery -->
-<input class="textboxStandardRight" type="text" name="birthdate" placeholder="Birth date" value="<?php if($trainer!=null) echo $trainer['Trainer']['birthdate']; ?>">
+<input class="textboxStandardRight" type="text" name="birthdate" placeholder="Birth date" value="<?php if($trainer!=null) echo $user_primary_data['User']['birthdate']; ?>">
 <input class="textboxStandardRight2" type="text" name="location" placeholder="Working Location" value="<?php if($trainer!=null) echo $trainer['Trainer']['location']; ?>">
 
 </div>

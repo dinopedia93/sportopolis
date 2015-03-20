@@ -151,7 +151,7 @@ $(document).ready(function () {
 
 <div class="logo">
 <div class="logo-link">
-<a href="#"><?php echo $this->Html->image('logo2.png', array('class' => 'logo-pic'))?></a>
+<a href="/sportopolis/sportopolis/index"><?php echo $this->Html->image('logo2.png', array('class' => 'logo-pic'))?></a>
 </div>
 </div>
 
@@ -169,7 +169,7 @@ $(document).ready(function () {
     </div>
 </div>
 
-<div class="write-header"><a href="#">Write</a></div>	
+<div class="write-header"><a href="/sportopolis/sportopolis/createarticle">Write</a></div>	
 
 	
 
