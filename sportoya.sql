@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Mar 20, 2015 at 04:20 PM
+-- Generation Time: Mar 21, 2015 at 09:14 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -119,17 +119,6 @@ CREATE TABLE IF NOT EXISTS `events_has_reviews` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `events_has_views`
---
-
-CREATE TABLE IF NOT EXISTS `events_has_views` (
-  `event_id` int(11) NOT NULL,
-  `view_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `likes`
 --
 
@@ -160,15 +149,16 @@ CREATE TABLE IF NOT EXISTS `locations` (
   `mobile` decimal(10,0) DEFAULT NULL,
   `email` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `website` text COLLATE utf8_bin,
-  `sports_id` int(11) NOT NULL
+  `sports_id` int(11) NOT NULL,
+  `views` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `locations`
 --
 
-INSERT INTO `locations` (`id`, `name`, `country`, `city`, `district`, `address`, `google_map`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`) VALUES
-(1, 'El Dawli Stadium', 'Egypt', 'Giza', 'Haram', 'Mansoriya', '', 0, 0, NULL, '9999999999', '1132344', '3awad@gmail.com', NULL, 4);
+INSERT INTO `locations` (`id`, `name`, `country`, `city`, `district`, `address`, `google_map`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `views`) VALUES
+(1, 'El Dawli Stadium', 'Egypt', 'Giza', 'Haram', 'Mansoriya', '', 0, 0, NULL, '9999999999', '1132344', '3awad@gmail.com', NULL, 4, 0);
 
 -- --------------------------------------------------------
 
@@ -213,17 +203,6 @@ CREATE TABLE IF NOT EXISTS `locations_has_sports` (
   `location_id` int(11) NOT NULL,
   `sport_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `locations_has_views`
---
-
-CREATE TABLE IF NOT EXISTS `locations_has_views` (
-  `location_id` int(11) NOT NULL,
-  `view_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -342,7 +321,8 @@ CREATE TABLE IF NOT EXISTS `stores` (
   `tel` decimal(10,0) DEFAULT NULL,
   `mobile` decimal(10,0) DEFAULT NULL,
   `email` varchar(45) COLLATE utf8_bin DEFAULT NULL,
-  `website` text COLLATE utf8_bin
+  `website` text COLLATE utf8_bin,
+  `views` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -381,17 +361,6 @@ CREATE TABLE IF NOT EXISTS `stores_has_reviews` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `stores_has_views`
---
-
-CREATE TABLE IF NOT EXISTS `stores_has_views` (
-  `store_id` int(11) NOT NULL,
-  `view_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `trainers`
 --
 
@@ -412,18 +381,19 @@ CREATE TABLE IF NOT EXISTS `trainers` (
   `website` text COLLATE utf8_bin,
   `sports_id` int(11) DEFAULT NULL,
   `biography` text COLLATE utf8_bin,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `views` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `trainers`
 --
 
-INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `location`, `training_days`, `time`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `biography`, `user_id`) VALUES
-(2, 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 1, 'I am Khaled Hegazy a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.', 13),
-(3, 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 1, 'Dizo Gamed Fash5', 15),
-(6, 'Egypt', '', '', 'Fa5ayda', '', NULL, '0', 0, NULL, NULL, '1232144656', NULL, NULL, 1, 'Beyombroblo el masal.....', 23),
-(7, '', '', '', '', '', NULL, '0', 0, NULL, NULL, '0', NULL, NULL, NULL, NULL, 24);
+INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `location`, `training_days`, `time`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `biography`, `user_id`, `views`) VALUES
+(2, 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 1, 'I am Khaled Hegazy a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.', 13, 0),
+(3, 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 1, 'Dizo Gamed Fash5', 15, 0),
+(6, '-1', '', '', 'Fa5ayda', '', NULL, '0', 0, NULL, NULL, '123214465', NULL, NULL, 1, 'Beyombroblo el masal', 23, 0),
+(7, '', '', '', '', '', NULL, '0', 0, NULL, NULL, '0', NULL, NULL, NULL, NULL, 24, 0);
 
 -- --------------------------------------------------------
 
@@ -467,17 +437,6 @@ CREATE TABLE IF NOT EXISTS `trainers_has_photos` (
 CREATE TABLE IF NOT EXISTS `trainers_has_reviews` (
   `trainer_id` int(11) NOT NULL,
   `review_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `trainers_has_views`
---
-
-CREATE TABLE IF NOT EXISTS `trainers_has_views` (
-  `trainer_id` int(11) NOT NULL,
-  `view_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -541,17 +500,6 @@ INSERT INTO `user_types` (`id`, `user_type`) VALUES
 (3, 'Normal'),
 (4, 'Location');
 
--- --------------------------------------------------------
-
---
--- Table structure for table `views`
---
-
-CREATE TABLE IF NOT EXISTS `views` (
-`id` int(11) NOT NULL,
-  `member_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
 --
 -- Indexes for dumped tables
 --
@@ -599,12 +547,6 @@ ALTER TABLE `events_has_reviews`
  ADD PRIMARY KEY (`event_id`,`review_id`), ADD KEY `fk_events_has_reviews_reviews1_idx` (`review_id`), ADD KEY `fk_events_has_reviews_events1_idx` (`event_id`);
 
 --
--- Indexes for table `events_has_views`
---
-ALTER TABLE `events_has_views`
- ADD PRIMARY KEY (`event_id`,`view_id`), ADD KEY `fk_events_has_views_views1_idx` (`view_id`), ADD KEY `fk_events_has_views_events1_idx` (`event_id`);
-
---
 -- Indexes for table `likes`
 --
 ALTER TABLE `likes`
@@ -639,12 +581,6 @@ ALTER TABLE `locations_has_reviews`
 --
 ALTER TABLE `locations_has_sports`
  ADD PRIMARY KEY (`location_id`,`sport_id`), ADD KEY `fk_locations_has_sports_sports1_idx` (`sport_id`), ADD KEY `fk_locations_has_sports_locations1_idx` (`location_id`);
-
---
--- Indexes for table `locations_has_views`
---
-ALTER TABLE `locations_has_views`
- ADD PRIMARY KEY (`location_id`,`view_id`), ADD KEY `fk_locations_has_views_views1_idx` (`view_id`), ADD KEY `fk_locations_has_views_locations1_idx` (`location_id`);
 
 --
 -- Indexes for table `messages`
@@ -713,12 +649,6 @@ ALTER TABLE `stores_has_reviews`
  ADD PRIMARY KEY (`store_id`,`review_id`), ADD KEY `fk_stores_has_reviews_reviews1_idx` (`review_id`), ADD KEY `fk_stores_has_reviews_stores1_idx` (`store_id`);
 
 --
--- Indexes for table `stores_has_views`
---
-ALTER TABLE `stores_has_views`
- ADD PRIMARY KEY (`store_id`,`view_id`), ADD KEY `fk_stores_has_views_views1_idx` (`view_id`), ADD KEY `fk_stores_has_views_stores1_idx` (`store_id`);
-
---
 -- Indexes for table `trainers`
 --
 ALTER TABLE `trainers`
@@ -749,12 +679,6 @@ ALTER TABLE `trainers_has_reviews`
  ADD PRIMARY KEY (`trainer_id`,`review_id`), ADD KEY `fk_trainers_has_reviews_reviews1_idx` (`review_id`), ADD KEY `fk_trainers_has_reviews_trainers1_idx` (`trainer_id`);
 
 --
--- Indexes for table `trainers_has_views`
---
-ALTER TABLE `trainers_has_views`
- ADD PRIMARY KEY (`trainer_id`,`view_id`), ADD KEY `fk_trainers_has_views_views1_idx` (`view_id`), ADD KEY `fk_trainers_has_views_trainers1_idx` (`trainer_id`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -771,12 +695,6 @@ ALTER TABLE `users_rating_trainer`
 --
 ALTER TABLE `user_types`
  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `views`
---
-ALTER TABLE `views`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`), ADD KEY `fk_views_members1_idx` (`member_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -858,11 +776,6 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `user_types`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT for table `views`
---
-ALTER TABLE `views`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- Constraints for dumped tables
 --
 
@@ -900,13 +813,6 @@ ADD CONSTRAINT `fk_events_has_reviews_events1` FOREIGN KEY (`event_id`) REFERENC
 ADD CONSTRAINT `fk_events_has_reviews_reviews1` FOREIGN KEY (`review_id`) REFERENCES `reviews` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `events_has_views`
---
-ALTER TABLE `events_has_views`
-ADD CONSTRAINT `fk_events_has_views_events1` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `fk_events_has_views_views1` FOREIGN KEY (`view_id`) REFERENCES `views` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `likes`
 --
 ALTER TABLE `likes`
@@ -939,13 +845,6 @@ ADD CONSTRAINT `fk_locations_has_reviews_reviews1` FOREIGN KEY (`review_id`) REF
 ALTER TABLE `locations_has_sports`
 ADD CONSTRAINT `fk_locations_has_sports_locations1` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 ADD CONSTRAINT `fk_locations_has_sports_sports1` FOREIGN KEY (`sport_id`) REFERENCES `sports` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `locations_has_views`
---
-ALTER TABLE `locations_has_views`
-ADD CONSTRAINT `fk_locations_has_views_locations1` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `fk_locations_has_views_views1` FOREIGN KEY (`view_id`) REFERENCES `views` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `messages`
@@ -995,13 +894,6 @@ ADD CONSTRAINT `fk_stores_has_reviews_reviews1` FOREIGN KEY (`review_id`) REFERE
 ADD CONSTRAINT `fk_stores_has_reviews_stores1` FOREIGN KEY (`store_id`) REFERENCES `stores` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `stores_has_views`
---
-ALTER TABLE `stores_has_views`
-ADD CONSTRAINT `fk_stores_has_views_stores1` FOREIGN KEY (`store_id`) REFERENCES `stores` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `fk_stores_has_views_views1` FOREIGN KEY (`view_id`) REFERENCES `views` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `trainers`
 --
 ALTER TABLE `trainers`
@@ -1037,23 +929,10 @@ ADD CONSTRAINT `fk_trainers_has_reviews_reviews1` FOREIGN KEY (`review_id`) REFE
 ADD CONSTRAINT `fk_trainers_has_reviews_trainers1` FOREIGN KEY (`trainer_id`) REFERENCES `trainers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `trainers_has_views`
---
-ALTER TABLE `trainers_has_views`
-ADD CONSTRAINT `fk_trainers_has_views_trainers1` FOREIGN KEY (`trainer_id`) REFERENCES `trainers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `fk_trainers_has_views_views1` FOREIGN KEY (`view_id`) REFERENCES `views` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `users`
 --
 ALTER TABLE `users`
 ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`user_type`) REFERENCES `user_types` (`id`);
-
---
--- Constraints for table `views`
---
-ALTER TABLE `views`
-ADD CONSTRAINT `fk_views_members1` FOREIGN KEY (`member_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
