@@ -50,7 +50,8 @@ class UsersController extends SportopolisController {
 				CakeSession::write('signed_in', True);
 				$this->redirect($this->Auth->redirect());
 			} else {
-				$this->Session->setFlash('Incorrect credentials');
+				$incorrect = "The username or password are incorrect. Please try again.";
+				echo "<script type='text/javascript'>alert('$incorrect');</script>";
 			}
 		}
 	}

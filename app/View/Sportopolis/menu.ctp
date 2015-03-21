@@ -218,7 +218,60 @@ populateCountries("country", "state");
 <div class="leftMenuHeader">
 
 <!--search results should appear as i enter any letter-->
-<input class="textarea-search-menu" type='text' placeholder='Search in trainers...'/>
+<!--<input class="textarea-search-menu" value="" name="searchwords" type='text' placeholder='Search in trainers...'/>-->
+<form name="searching" method="POST" action="#">
+      <input name="searchwords" type="text" placeholder='Search in trainers...' value="">
+</form>
+<?php if((isset($_POST['searchwords'])) && (strcmp($_POST['searchwords'] , ""))){
+	if(count($articles) > 0){
+		foreach($articles as $key => $article):
+			if (stripos($article['Article']['name'],$_POST['searchwords']) !== false)
+			{
+			}
+			else
+			{
+				unset($articles[$key]);
+			}
+		endforeach;
+	}
+	
+	if(count($trainers) > 0){
+		foreach($trainers as $key => $trainer):
+			if ((stripos($trainer['users']['first_name'],$_POST['searchwords']) !== false) || (stripos($trainer['users']['last_name'],$_POST['searchwords']) !== false))
+			{
+			}
+			else
+			{
+				unset($trainers[$key]);
+			}
+		endforeach;
+	}
+	
+	if(count($locations) > 0){
+		foreach($locations as $key => $location):
+			if (stripos($location['Location']['name'],$_POST['searchwords']) !== false)
+			{
+			}
+			else
+			{
+				unset($locations[$key]);
+			}
+		endforeach;
+	}
+	
+	if(count($events) > 0){
+		foreach($events as $key => $event):
+			if (stripos($event['Event']['name'],$_POST['searchwords']) !== false)
+			{
+			}
+			else
+			{
+				unset($events[$key]);
+			}
+		endforeach;
+	}
+}?>
+
 
 <ul class="desktop-sort">
 <li><a href="#">Views</a></li>
