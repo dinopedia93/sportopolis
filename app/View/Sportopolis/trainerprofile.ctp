@@ -1,6 +1,7 @@
 <?php echo $this->Html->script('jquery.barrating.min'); ?>
 <script type="text/javascript">
 $(document).ready(function() {
+
     $('#example').barrating();
     var isMobile = {
         Android: function() {
@@ -77,6 +78,15 @@ $(document).ready(function() {
             $(".userRatings").show();
         }
     });
+    $.ajax({
+            dataType: "html",
+            type: "post",
+            url: "<?php echo Router::url(array('controller'=>'sportopolis','action'=>'IncreaseTrainerViews'));?>",
+            data: {id : <?php echo $trainer['trainers']['id']; ?>},
+            error: function(xhr, status, error) {
+              alert(error);
+           }
+    });
 });
 </script>
 <div class="newlist">
@@ -91,7 +101,7 @@ $(document).ready(function() {
 
 <div class="profileViewsReviews">
 <div class="profilePictoViewsReviews"><?php echo $this->Html->image('views.png'); ?></div>
-<div class="profileNumViewsReviews"><?php  echo $trainershasviews?></div>
+<div class="profileNumViewsReviews"><?php  echo $trainer['trainers']['views']; ?></div>
 <div class="profilePictoViewsReviews2"><?php echo $this->Html->image('rating.png'); ?></div>
 <div class="profileNumViewsReviews"><?php  echo $reviewscount?></div>
 </div>

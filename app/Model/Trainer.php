@@ -1,12 +1,12 @@
 <?php
 class Trainer extends AppModel {
 	public $hasMany = array(
-				'TrainersHasReviews','TrainersHasPhotos','TrainersHasViews'
+				'TrainersHasReviews','TrainersHasPhotos'
 			);
-	// public $hasOne = array(
- //        'User' => array(
- //            'className' => 'User',
- //            'primaryKey' => 'id'
- //        )
- //    );
+
+	public function IncrementViews($id)
+	{
+		$this->query("UPDATE `trainers` SET `views` = `views` + 1  WHERE `id` = $id");
+	}
+
 }

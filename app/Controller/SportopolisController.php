@@ -122,7 +122,6 @@ class SportopolisController extends Controller {
 		$this->loadModel('Sport');
 		$this->loadModel('Review');
 		$this->loadModel('TrainersHasReviews');
-		$this->loadModel('TrainersHasViews');
 		$this->loadModel('TrainersHasPhotos');
 
 		$trainers = $this->Trainer->query("SELECT * FROM trainers INNER JOIN users ON trainers.user_id = users.id WHERE trainers.id = $id");
@@ -146,8 +145,6 @@ class SportopolisController extends Controller {
 		
 		$trainershasphotos = $this->TrainersHasPhotos->find('count',array('conditions' => array('TrainersHasPhotos.trainer_id' => $id)));
 		$this->set('trainershasphotos', $trainershasphotos);
-		$trainershasviews = $this->TrainersHasViews->find('count',array('conditions' => array('TrainersHasViews.trainer_id' => $id)));
-		$this->set('trainershasviews', $trainershasviews);
 
 		$this->layout = 'sportopolis';	
 	}
@@ -319,6 +316,15 @@ class SportopolisController extends Controller {
         {
         	return $this->redirect(array('action' => 'edittrainer/'.$trainer['Trainer']['user_id']));
         }
+    }
+
+    public function IncreaseTrainerViews()
+    {
+    	$this->loadModel('Trainer');
+    	$this->Trainer->IncrementViews($this->request->data['id']);
+    	$this->autoRender = false;
+    	return $this->request->data['id'];
+    	
     }
 	
 }
