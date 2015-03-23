@@ -87,6 +87,26 @@ $(document).ready(function() {
               alert(error);
            }
     });
+    $("#rateBtn").click(function() {
+        <?php if($this->Session->read('Auth.User') != null) { ?>
+             $.ajax({
+                    dataType: "html",
+                    type: "post",
+                    url: "<?php echo Router::url(array('controller'=>'sportopolis','action'=>'RateTrainer'));?>",
+                    data: {user_id : <?php echo $this->Session->read('Auth.User.id'); ?> , trainer_id : <?php echo $trainer['trainers']['id']; ?> , new_rating : $( "#example option:selected" ).val() },
+                    error: function(xhr, status, error) {
+                      alert(error);
+                   },
+                   success: function( data,  textStatus,  jqXHR )
+                   {
+                        alert(data);
+                   }
+            });
+        <?php } else { ?>
+            alert('You must login in order to rate a trainer');
+        <?php } ?>
+    });
+    
 });
 </script>
 <div class="newlist">
@@ -120,7 +140,7 @@ $(document).ready(function() {
 
 <div class="like-and-rate">
 
-<?php if( ($this->Session->read('Auth.User') != null) && ($this->Session->read('Auth.User.id') != $trainer['trainers']['user_id']) ) {?>
+<?php if( ($this->Session->read('Auth.User.id') != $trainer['trainers']['user_id']) ) {?>
 <div class="like-and-rate-title">Rate Me</div>
 <!-- rating plugin -->
 <div class="like-and-rate-right">
@@ -133,6 +153,7 @@ $(document).ready(function() {
      <option value="5"></option>
   </select>
 </div>
+<button id='rateBtn'>Rate</button>
 </div>
 
 <?php } ?>

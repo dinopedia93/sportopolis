@@ -8,5 +8,4 @@ class Trainer extends AppModel {
 	{
 		$this->query("UPDATE `trainers` SET `views` = `views` + 1  WHERE `id` = $id");
 	}
-
 }

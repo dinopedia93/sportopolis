@@ -320,11 +320,19 @@ class SportopolisController extends Controller {
 
     public function IncreaseTrainerViews()
     {
+    	$this->autoRender = false;
     	$this->loadModel('Trainer');
     	$this->Trainer->IncrementViews($this->request->data['id']);
-    	$this->autoRender = false;
+    	
     	return $this->request->data['id'];
     	
+    }
+
+    public function RateTrainer()
+    {
+    	$this->autoRender = false;
+    	$this->loadModel('UsersRatingTrainer');
+    	return $this->UsersRatingTrainer->RateTrainer($this->request->data['trainer_id'],$this->request->data['user_id'],$this->request->data['new_rating']);    	    	
     }
 	
 }
