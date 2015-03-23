@@ -146,7 +146,7 @@
 
 <div class="leftListHeader">
 
-<div class="leftListHeaderTitle">Sport Name</div>
+<div class="leftListHeaderTitle"><?php echo $sport['Sport']['name']; ?></div>
 </div>
 
 <ul class="sportList">

@@ -96,6 +96,7 @@ class SportopolisController extends Controller {
 		$this->loadModel('Article');
 		$this->loadModel('Event');
 		$this->loadModel('Store');
+		$this->loadModel('Sport');
 		$this->loadModel('User');
 
 		$trainers = $this->Trainer->query("SELECT * FROM trainers INNER JOIN users ON trainers.user_id = users.id WHERE sports_id = ".$id);
@@ -103,7 +104,9 @@ class SportopolisController extends Controller {
 		$articles = $this->Article->find('all' , array('conditions' => array('Article.sport_id' => $id)));
 		$events = $this->Event->find('all');
 		$stores = $this->Store->find('all');
-
+		$sport = $this->Sport->findById($id);
+		
+		$this->set('sport', $sport);
 		$this->set('trainers', $trainers);
 		$this->set('locations',$locations);
 		$this->set('articles',$articles);
@@ -242,6 +245,20 @@ class SportopolisController extends Controller {
 
 		$this->layout = 'sportopolis';
 	}
+	
+	public function editlocation($id)
+	{
+		$this->loadModel('Sport');
+		$this->loadModel('Location');
+
+		$sports = $this->Sport->find('all');		
+		$location = $this->Location->findById($id);
+
+		$this->set('sports',$sports);
+		$this->set('location',$location);
+
+		$this->layout = 'sportopolis';
+	}
 
 	public function createarticle()
 	{
@@ -313,6 +330,40 @@ class SportopolisController extends Controller {
         else
         {
         	return $this->redirect(array('action' => 'edittrainer/'.$trainer['Trainer']['user_id']));
+        }
+    }
+	
+	public function UpdateLocationProfile($id = 0)
+	{
+		
+		$this->loadModel('Location');
+
+		$this->Location->set($this->request->data);
+		$temp = $this->request->data;
+		if ($this->Location->validates()) 
+		{
+            $this->Location->id = $id;
+            if ($this->Location->save($this->request->data))
+            {
+            	$this->Location->set(array(
+				    'name' => $this->request->data['name'],
+				    'mobile' => $this->request->data['mobile'],
+				    'tel' => $this->request->data['tel'],
+				    'email' => $this->request->data['email'],
+				    'website' => $this->request->data['website']
+				));
+            	$this->Location->save();
+            	
+                return $this->redirect(array('action' => 'locationprofile/'.$id));
+            }
+			else
+			{
+				return $this->redirect(array('action' => 'editlocation/'.$location['Location']['id']));
+			}
+        }
+        else
+        {
+        	return $this->redirect(array('action' => 'editlocation/'.$location['Location']['id']));
         }
     }
 
