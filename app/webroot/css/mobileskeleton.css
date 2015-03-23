@@ -83,6 +83,17 @@ width:90%;
 height:100%;
 }
 
+.newleftList2{
+margin:0px auto;
+width:90%;
+height:100%;
+border-radius: 5px;
+background-color:white;
+box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-moz-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-webkit-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+}
+
 .profileLeftLargeContainer{
 width:100%;
 border-radius: 5px;
@@ -229,6 +240,11 @@ background-color:white;
 box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
 -moz-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
 -webkit-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+}
+
+.info-detail2{
+margin-top:20px;
+width:100%;
 }
 
 .bio{
@@ -1720,6 +1736,19 @@ float:right;
 }
 
 .textareaSignUp{
+width:90%;
+display:block;
+margin:20px auto;
+height:280px;
+border:1px solid #d5d5d5;
+color:grey;	
+outline:none;
+font-family:helvetica world;
+font-size:16px;
+padding:10px;
+}
+
+.textareaSignUp2{
 width:90%;
 display:block;
 margin:20px auto;

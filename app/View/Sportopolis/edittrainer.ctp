@@ -1,6 +1,6 @@
 <div class="newlist">
 
-<div class="newleftList">
+<div class="newleftList2">
 
 <div class="profileSignUpToLeft">
 
@@ -36,7 +36,7 @@
 
 </div>
 
-<div class="info-detail">
+<div class="info-detail2">
 
 
 <select class="select-country" id="country" name ="country"></select>
@@ -72,7 +72,7 @@ populateCountries("country", "state");
 </div>
 
 <div class="SignUpTitle">Biography</div>
-<textarea name="biography" class="textareaSignUp" placeholder="Please, write your biography here ...">
+<textarea name="biography" class="textareaSignUp2" placeholder="Please, write your biography here ...">
 <?php if($trainer!=null) echo $trainer['Trainer']['biography']; ?>
 </textarea>
 
