@@ -130,10 +130,10 @@ $(document).ready(function () {
 <div id="sliding-menu" class="mobile-nav-wrapper">
 <ul>
 <a href="#"><li>Sports</li></a>
-<a href="#"><li>Cycling</li></a>
-<a href="#"><li>Tennis</li></a>
-<a href="#"><li>Fitness</li></a>
-<a href="#"><li>Fishing</li></a>
+<a href="/sportopolis/sportopolis/menu/2"><li>Cycling</li></a>
+<a href="/sportopolis/sportopolis/menu/3"><li>Tennis</li></a>
+<a href="/sportopolis/sportopolis/menu/4"><li>Fitness</li></a>
+<a href="/sportopolis/sportopolis/menu/5"><li>Fishing</li></a>
 </ul>
 
 
@@ -160,10 +160,10 @@ $(document).ready(function () {
 <span>Sports</span>
 <div class="dropDownContent">
 <ul class="dropDownUl">
-<a href="#"><li class="cyclingLink"></li></a>
-<a href="#"><li class="tennisLink"></li></a>
-<a href="#"><li class="fitnessLink"></li></a>
-<a href="#"><li class="fishingLink"></li></a>
+<a href="/sportopolis/sportopolis/menu/2"><li class="cyclingLink"></li></a>
+<a href="/sportopolis/sportopolis/menu/3"><li class="tennisLink"></li></a>
+<a href="/sportopolis/sportopolis/menu/4"><li class="fitnessLink"></li></a>
+<a href="/sportopolis/sportopolis/menu/5"><li class="fishingLink"></li></a>
 
 </ul>
     </div>
