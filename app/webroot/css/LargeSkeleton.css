@@ -141,6 +141,38 @@ height:276px;
 background-color:green;
 }
 
+.newleftList2{
+background-color:white;
+margin:0px auto;
+width:35%;
+height:100%;
+float:left;
+border-radius: 5px;
+box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-moz-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-webkit-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+margin-bottom:50px;
+}
+
+.info-detail2{
+margin-top:20px;
+width:100%;
+
+}
+
+.textareaSignUp2{
+width:90%;
+display:block;
+margin:20px auto;
+height:280px;
+border:1px solid #d5d5d5;
+color:grey;	
+outline:none;
+font-family:helvetica world;
+font-size:16px;
+padding:10px;
+}
+
 .signupMidDiv ul li{
 width:50%;
 float:left;

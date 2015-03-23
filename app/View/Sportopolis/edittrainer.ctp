@@ -72,7 +72,7 @@ populateCountries("country", "state");
 </div>
 
 <div class="SignUpTitle">Biography</div>
-<textarea name="biography" class="textareaSignUp2" placeholder="Please, write your biography here ...">
+<textarea name="biography" class="textareaSignUp" placeholder="Please, write your biography here ...">
 <?php if($trainer!=null) echo $trainer['Trainer']['biography']; ?>
 </textarea>
 
