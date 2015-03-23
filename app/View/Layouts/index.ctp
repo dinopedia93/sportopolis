@@ -151,7 +151,7 @@ $(document).ready(function () {
 
 <div class="logo">
 <div class="logo-link">
-<a href="#"><?php echo $this->Html->image('logo2.png', array('class' => 'logo-pic'))?></a>
+<a href="/sportopolis/sportopolis/index"><?php echo $this->Html->image('logo2.png', array('class' => 'logo-pic'))?></a>
 </div>
 </div>
 
@@ -169,7 +169,7 @@ $(document).ready(function () {
     </div>
 </div>
 
-<div class="write-header"><a href="#">Write</a></div>	
+<div class="write-header"><a href="/sportopolis/sportopolis/createarticle">Write</a></div>	
 
 	
 
@@ -230,30 +230,7 @@ Note: when i click the menu icon in the mobile version, this ul should appear
 		</div>
 		</div>
 		
-			<div class="footer-wrapper">
 
-			<div class="footer-container">
-
-			<div class="sponsor-container"></div>
-
-			<div class="copyrights">Copyright © 2015 SPORTOYA. All rights reserved</div>
-
-			<div class="site-map">
-
-			<ul>
-
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About-us</a></li>
-			<li><a href="#">Contact-us</a></li>
-
-
-			</ul>
-
-			</div>
-
-
-			</div>
-		</div>
 		 
 	</div> 
 	<?php //echo $this->element('sql_dump'); ?>
