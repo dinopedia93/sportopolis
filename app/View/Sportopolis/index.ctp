@@ -133,34 +133,35 @@
 
 <li>
 <a href="#">
-<div class="featured-pic"><img class="featured-circlePic" src ="boss.png"></div>
+<div class="featured-pic"><?php echo $this->Html->image('boss.png', array('class' => 'featured-circlePic')); ?></div>
+
 <div class="featured-Info">
 <div class="featured-Name">Ahmed El-Missiry</div>
 <div class="featured-profession">Tennis Trainer</div>
 </div>
-<div class="featured-Arrow"><img class="featured-Arrow-picto" src="go.png"></div>
+<div class="featured-Arrow"><?php echo $this->Html->image('go.png', array('class' => 'featured-Arrow-picto')); ?></div>
 </a>
 </li>	
 
 <li>
 <a href="#">
-<div class="featured-pic"><img class="featured-circlePic" src ="boss.png"></div>
+<div class="featured-pic"><?php echo $this->Html->image('boss.png', array('class' => 'featured-circlePic')); ?></div>
 <div class="featured-Info">
 <div class="featured-Name">Province</div>
 <div class="featured-profession">Football Location</div>
 </div>
-<div class="featured-Arrow"><img class="featured-Arrow-picto" src="go.png"></div>
+<div class="featured-Arrow"><?php echo $this->Html->image('go.png', array('class' => 'featured-Arrow-picto')); ?></div>
 </a>
 </li>
 
 <li>
 <a href="#">
-<div class="featured-pic"><img class="featured-circlePic" src ="boss.png"></div>
+<div class="featured-pic"><?php echo $this->Html->image('boss.png', array('class' => 'featured-circlePic')); ?></div>
 <div class="featured-Info">
 <div class="featured-Name">El-Gabalawy</div>
 <div class="featured-profession">Fishing Store</div>
 </div>
-<div class="featured-Arrow"><img class="featured-Arrow-picto" src="go.png"></div>
+<div class="featured-Arrow"><?php echo $this->Html->image('go.png', array('class' => 'featured-Arrow-picto')); ?></div>
 </a>
 </li>
 
@@ -174,12 +175,12 @@
 
 <li>
 <a href="#">
-<div class="featured-pic"><img class="featured-circlePic" src ="boss.png"></div>
+<div class="featured-pic"><?php echo $this->Html->image('boss.png', array('class' => 'featured-circlePic')); ?></div>
 <div class="featured-Info">
 <div class="featured-Name">Cairo Runners</div>
 <div class="featured-profession">Egypt, Cairo</div>
 </div>
-<div class="featured-Arrow"><img class="featured-Arrow-picto" src="go.png"></div>
+<div class="featured-Arrow"><?php echo $this->Html->image('go.png', array('class' => 'featured-Arrow-picto')); ?></div>
 </a>
 </li>	
 </ul>

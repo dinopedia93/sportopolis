@@ -129,12 +129,15 @@ $(document).ready(function () {
 <!-- Sign up Modal -->
 <div id="sliding-menu" class="mobile-nav-wrapper">
 <ul>
-<a href=""><li>Sports</li></a>
-<a href=""><li>Cycling</li></a>
-<a href=""><li>Tennis</li></a>
-<a href=""><li>Fitness</li></a>
-<a href=""><li>Fishing</li></a>
+<a href="#"><li>Sports</li></a>
+<a href="/sportopolis/sportopolis/menu/2"><li>Cycling</li></a>
+<a href="/sportopolis/sportopolis/menu/3"><li>Tennis</li></a>
+<a href="/sportopolis/sportopolis/menu/4"><li>Fitness</li></a>
+<a href="/sportopolis/sportopolis/menu/5"><li>Fishing</li></a>
 </ul>
+
+
+
 
 
 </div>
@@ -151,7 +154,7 @@ $(document).ready(function () {
 
 <div class="logo">
 <div class="logo-link">
-<a href="#"><?php echo $this->Html->image('logo2.png', array('class' => 'logo-pic'))?></a>
+<a href="/sportopolis/sportopolis/index"><?php echo $this->Html->image('logo2.png', array('class' => 'logo-pic'))?></a>
 </div>
 </div>
 
@@ -160,16 +163,16 @@ $(document).ready(function () {
 <span>Sports</span>
 <div class="dropDownContent">
 <ul class="dropDownUl">
-<li class="cyclingLink"><a href="#"></a></li>
-<li class="tennisLink"><a href="#"></a></li>
-<li class="fitnessLink"><a href="#"></a></li>
-<li class="fishingLink"><a href="#"></a></li>
+<a href="/sportopolis/sportopolis/menu/2"><li class="cyclingLink"></li></a>
+<a href="/sportopolis/sportopolis/menu/3"><li class="tennisLink"></li></a>
+<a href="/sportopolis/sportopolis/menu/4"><li class="fitnessLink"></li></a>
+<a href="/sportopolis/sportopolis/menu/5"><li class="fishingLink"></li></a>
 
 </ul>
     </div>
 </div>
 
-<div class="write-header"><a href="#">Write</a></div>	
+<div class="write-header"><a href="/sportopolis/sportopolis/createarticle">Write</a></div>	
 
 	
 
@@ -230,30 +233,7 @@ Note: when i click the menu icon in the mobile version, this ul should appear
 		</div>
 		</div>
 		
-			<div class="footer-wrapper">
 
-			<div class="footer-container">
-
-			<div class="sponsor-container"></div>
-
-			<div class="copyrights">Copyright © 2015 SPORTOYA. All rights reserved</div>
-
-			<div class="site-map">
-
-			<ul>
-
-			<li><a href="#">Home</a></li>
-			<li><a href="#">About-us</a></li>
-			<li><a href="#">Contact-us</a></li>
-
-
-			</ul>
-
-			</div>
-
-
-			</div>
-		</div>
 		 
 	</div> 
 	<?php //echo $this->element('sql_dump'); ?>

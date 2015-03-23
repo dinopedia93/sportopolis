@@ -1,6 +1,6 @@
 <div class="newlist">
 
-<div class="newleftList">
+<div class="newleftList2">
 
 <div class="profileSignUpToLeft">
 
@@ -36,7 +36,7 @@
 
 </div>
 
-<div class="info-detail">
+<div class="info-detail2">
 
 
 <select class="select-country" id="country" name ="country"></select>

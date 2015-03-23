@@ -88,7 +88,7 @@ class SportopolisController extends Controller {
         $this->set("coords", $coords);
     }*/
 
-	public function menu() 
+	public function menu($id) 
 	{
 		
 		$this->loadModel('Trainer');
@@ -98,9 +98,9 @@ class SportopolisController extends Controller {
 		$this->loadModel('Store');
 		$this->loadModel('User');
 
-		$trainers = $this->Trainer->query("SELECT * FROM trainers INNER JOIN users ON trainers.user_id = users.id");
-		$locations = $this->Location->find('all');
-		$articles = $this->Article->find('all');
+		$trainers = $this->Trainer->query("SELECT * FROM trainers INNER JOIN users ON trainers.user_id = users.id WHERE sports_id = ".$id);
+		$locations = $this->Location->find('all' , array('conditions' => array('Location.sports_id' => $id)));
+		$articles = $this->Article->find('all' , array('conditions' => array('Article.sport_id' => $id)));
 		$events = $this->Event->find('all');
 		$stores = $this->Store->find('all');
 
@@ -157,7 +157,6 @@ class SportopolisController extends Controller {
 		$this->loadModel('Sport');
 		$this->loadModel('Review');
 		$this->loadModel('LocationsHasReviews');
-		$this->loadModel('LocationsHasViews');
 		$this->loadModel('LocationsHasPhotos');
 
 		$location = $this->Location->findById($id);
@@ -177,8 +176,7 @@ class SportopolisController extends Controller {
 		
 		$locationshasphotos = $this->LocationsHasPhotos->find('count',array('conditions' => array('LocationsHasPhotos.location_id' => $id)));
 		$this->set('locationshasphotos', $locationshasphotos);
-		$locationshasviews = $this->LocationsHasViews->find('count',array('conditions' => array('LocationsHasViews.location_id' => $id)));
-		$this->set('locationshasviews', $locationshasviews);
+	
 
 		$this->layout = 'sportopolis';	
 	}

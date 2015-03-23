@@ -220,7 +220,7 @@ populateCountries("country", "state");
 <!--search results should appear as i enter any letter-->
 <!--<input class="textarea-search-menu" value="" name="searchwords" type='text' placeholder='Search in trainers...'/>-->
 <form name="searching" method="POST" action="#">
-      <input name="searchwords" type="text" placeholder='Search in trainers...' value="">
+      <input class="textarea-search-menu" name="searchwords" type="text" placeholder='Search in trainers...' value="">
 </form>
 <?php if((isset($_POST['searchwords'])) && (strcmp($_POST['searchwords'] , ""))){
 	if(count($articles) > 0){

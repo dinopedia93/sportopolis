@@ -2,8 +2,8 @@
 -- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Mar 21, 2015 at 09:14 PM
+-- Host: 127.0.0.1
+-- Generation Time: Mar 23, 2015 at 04:03 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -45,7 +45,6 @@ CREATE TABLE IF NOT EXISTS `admin_contacts` (
 
 CREATE TABLE IF NOT EXISTS `advertisements` (
 `id` int(11) NOT NULL,
-  `sponsor` varchar(45) NOT NULL,
   `from_day` date NOT NULL,
   `to_day` date NOT NULL,
   `sponsors_id` int(11) NOT NULL,
@@ -64,7 +63,8 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `article_date` date NOT NULL,
   `article_time` time NOT NULL,
   `member_id` int(11) NOT NULL,
-  `article_content` longtext COLLATE utf8_bin NOT NULL
+  `article_content` longtext COLLATE utf8_bin NOT NULL,
+  `sport_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -281,14 +281,18 @@ CREATE TABLE IF NOT EXISTS `sports` (
 `id` int(11) NOT NULL,
   `name` varchar(45) NOT NULL,
   `sport_type` varchar(45) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `sports`
 --
 
 INSERT INTO `sports` (`id`, `name`, `sport_type`) VALUES
-(1, 'Football', 'Team');
+(1, 'Football', 'Team'),
+(2, 'Cycling', 'Individual'),
+(3, 'Tennis', 'Both'),
+(4, 'Fitness', 'Individual'),
+(5, 'Fishing', 'Individual');
 
 -- --------------------------------------------------------
 
@@ -390,10 +394,9 @@ CREATE TABLE IF NOT EXISTS `trainers` (
 --
 
 INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `location`, `training_days`, `time`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `biography`, `user_id`, `views`) VALUES
-(2, 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 1, 'I am Khaled Hegazy a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.', 13, 0),
-(3, 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 1, 'Dizo Gamed Fash5', 15, 0),
-(6, '-1', '', '', 'Fa5ayda', '', NULL, '0', 0, NULL, NULL, '123214465', NULL, NULL, 1, 'Beyombroblo el masal', 23, 0),
-(7, '', '', '', '', '', NULL, '0', 0, NULL, NULL, '0', NULL, NULL, NULL, NULL, 24, 0);
+(2, 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 2, 'I am Khaled Hegazy a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.', 13, 6),
+(3, 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 3, 'Dizo Gamed Fash5', 15, 1),
+(6, '-1', '', '', 'Fa5ayda', '', NULL, '0', 0, NULL, NULL, '123214465', NULL, NULL, 1, 'Beyombroblo el masal', 23, 0);
 
 -- --------------------------------------------------------
 
@@ -520,7 +523,7 @@ ALTER TABLE `advertisements`
 -- Indexes for table `articles`
 --
 ALTER TABLE `articles`
- ADD PRIMARY KEY (`id`), ADD KEY `fk_articles_members1_idx` (`member_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `fk_articles_members1_idx` (`member_id`), ADD KEY `fk_Articles_sports1_idx` (`sport_id`);
 
 --
 -- Indexes for table `events`
@@ -749,7 +752,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `sports`
 --
 ALTER TABLE `sports`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `stores`
 --
@@ -789,7 +792,8 @@ ADD CONSTRAINT `fk_advertisements_sponsors1` FOREIGN KEY (`sponsors_id`) REFEREN
 -- Constraints for table `articles`
 --
 ALTER TABLE `articles`
-ADD CONSTRAINT `fk_articles_members1` FOREIGN KEY (`member_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `fk_articles_members1` FOREIGN KEY (`member_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_articles_sports1` FOREIGN KEY (`sport_id`) REFERENCES `sports` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `events_has_likes`
