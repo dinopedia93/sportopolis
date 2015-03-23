@@ -160,10 +160,10 @@ $(document).ready(function () {
 <span>Sports</span>
 <div class="dropDownContent">
 <ul class="dropDownUl">
-<li class="cyclingLink"><a href="#"></a></li>
-<li class="tennisLink"><a href="#"></a></li>
-<li class="fitnessLink"><a href="#"></a></li>
-<li class="fishingLink"><a href="#"></a></li>
+<a href="#"><li class="cyclingLink"></li></a>
+<a href="#"><li class="tennisLink"></li></a>
+<a href="#"><li class="fitnessLink"></li></a>
+<a href="#"><li class="fishingLink"></li></a>
 
 </ul>
     </div>

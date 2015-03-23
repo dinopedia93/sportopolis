@@ -78,7 +78,6 @@ $(document).ready(function() {
 
 <div class="profileViewsReviews">
 <div class="profilePictoViewsReviews"><?php echo $this->Html->image('views.png'); ?></div>
-<div class="profileNumViewsReviews"><?php  echo $locationshasviews?></div>
 <div class="profilePictoViewsReviews2"><?php echo $this->Html->image('like.png'); ?></div>
 <div class="profileNumViewsReviews"><?php  echo $reviewscount?></div>
 </div>
@@ -180,8 +179,8 @@ $(document).ready(function() {
  
     <?php
       $map_options = array( 'id' => 'map_canvas', 
-	  'width' => '500px', 
-	  'height' => '200px', 
+	  'width' => '100%', 
+	  'height' => '100%', 
 	  'style' => '', 
 	  'zoom' => 7, 
 	  'type' => 'HYBRID', 

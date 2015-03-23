@@ -157,7 +157,6 @@ class SportopolisController extends Controller {
 		$this->loadModel('Sport');
 		$this->loadModel('Review');
 		$this->loadModel('LocationsHasReviews');
-		$this->loadModel('LocationsHasViews');
 		$this->loadModel('LocationsHasPhotos');
 
 		$location = $this->Location->findById($id);
@@ -177,8 +176,7 @@ class SportopolisController extends Controller {
 		
 		$locationshasphotos = $this->LocationsHasPhotos->find('count',array('conditions' => array('LocationsHasPhotos.location_id' => $id)));
 		$this->set('locationshasphotos', $locationshasphotos);
-		$locationshasviews = $this->LocationsHasViews->find('count',array('conditions' => array('LocationsHasViews.location_id' => $id)));
-		$this->set('locationshasviews', $locationshasviews);
+	
 
 		$this->layout = 'sportopolis';	
 	}
