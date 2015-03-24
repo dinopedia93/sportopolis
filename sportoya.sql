@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2015 at 04:03 PM
+-- Generation Time: Mar 23, 2015 at 08:38 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -158,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `locations` (
 --
 
 INSERT INTO `locations` (`id`, `name`, `country`, `city`, `district`, `address`, `google_map`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `views`) VALUES
-(1, 'El Dawli Stadium', 'Egypt', 'Giza', 'Haram', 'Mansoriya', '', 0, 0, NULL, '9999999999', '1132344', '3awad@gmail.com', NULL, 4, 0);
+(1, 'El Dawly Stadium', 'Egypt', 'Giza', 'Haram', 'Mansoriya', '', 0, 0, NULL, '1231412', '32412', 'Awad123@Gmail.com', '', 4, 0);
 
 -- --------------------------------------------------------
 
@@ -394,7 +394,7 @@ CREATE TABLE IF NOT EXISTS `trainers` (
 --
 
 INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `location`, `training_days`, `time`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `biography`, `user_id`, `views`) VALUES
-(2, 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 2, 'I am Khaled Hegazy a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.', 13, 6),
+(2, 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 2, 'I am Khaled Hegazy a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.', 13, 8),
 (3, 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 3, 'Dizo Gamed Fash5', 15, 1),
 (6, '-1', '', '', 'Fa5ayda', '', NULL, '0', 0, NULL, NULL, '123214465', NULL, NULL, 1, 'Beyombroblo el masal', 23, 0);
 
