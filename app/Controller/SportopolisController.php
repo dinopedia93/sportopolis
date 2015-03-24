@@ -98,9 +98,10 @@ class SportopolisController extends Controller {
 		$this->loadModel('Store');
 		$this->loadModel('Sport');
 		$this->loadModel('User');
+		$this->loadModel('LocationsHasSports');
 
 		$trainers = $this->Trainer->query("SELECT * FROM trainers INNER JOIN users ON trainers.user_id = users.id WHERE sports_id = ".$id);
-		$locations = $this->Location->find('all' , array('conditions' => array('Location.sports_id' => $id)));
+		$locations = $this->Location->query("SELECT * FROM locations AS Location WHERE id IN (SELECT location_id FROM locations_has_sports WHERE sport_id = " .$id.")");
 		$articles = $this->Article->find('all' /*, array('conditions' => array('Article.sport_id' => $id))*/);
 		$events = $this->Event->find('all');
 		$stores = $this->Store->find('all');
