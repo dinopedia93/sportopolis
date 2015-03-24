@@ -100,7 +100,7 @@ class SportopolisController extends Controller {
 
 		$trainers = $this->Trainer->query("SELECT * FROM trainers INNER JOIN users ON trainers.user_id = users.id WHERE sports_id = ".$id);
 		$locations = $this->Location->find('all' , array('conditions' => array('Location.sports_id' => $id)));
-		$articles = $this->Article->find('all' , array('conditions' => array('Article.sport_id' => $id)));
+		$articles = $this->Article->find('all' /*, array('conditions' => array('Article.sport_id' => $id))*/);
 		$events = $this->Event->find('all');
 		$stores = $this->Store->find('all');
 
@@ -142,6 +142,14 @@ class SportopolisController extends Controller {
 		
 		$this->set('allreviews', $allreviews);
 		
+		// Loading Rating
+		if($this->Session->read('Auth.User') != null)
+		{
+			$this->loadModel('UsersRatingTrainer');
+
+			$rating = $this->UsersRatingTrainer->find('first', array('fields' => array('UsersRatingTrainer.rating'),'conditions' => array('UsersRatingTrainer.trainer_id' => $id, 'UsersRatingTrainer.user_id' => $this->Session->read('Auth.User.id'))));
+			$this->set('rating', $rating);
+		}
 		
 		$trainershasphotos = $this->TrainersHasPhotos->find('count',array('conditions' => array('TrainersHasPhotos.trainer_id' => $id)));
 		$this->set('trainershasphotos', $trainershasphotos);
