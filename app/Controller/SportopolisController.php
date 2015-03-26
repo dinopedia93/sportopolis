@@ -102,7 +102,7 @@ class SportopolisController extends Controller {
 
 		$trainers = $this->Trainer->query("SELECT * FROM trainers INNER JOIN users ON trainers.user_id = users.id WHERE sports_id = ".$id);
 		$locations = $this->Location->query("SELECT * FROM locations AS Location WHERE id IN (SELECT location_id FROM locations_has_sports WHERE sport_id = " .$id.")");
-		$articles = $this->Article->find('all' /*, array('conditions' => array('Article.sport_id' => $id))*/);
+		$articles = $this->Article->find('all' , array('conditions' => array('Article.sport_id' => $id)));
 		$events = $this->Event->find('all');
 		$stores = $this->Store->find('all');
 		$sport = $this->Sport->findById($id);
@@ -276,6 +276,28 @@ class SportopolisController extends Controller {
 
 	public function viewarticle($id)
 	{
+		$this->loadModel('Article');
+		$this->loadModel('User');
+		$this->loadModel('Review');
+		$this->loadModel('ArticlesHasReviews');
+		$this->loadModel('ArticlesHasPhotos');
+		$article = $this->Article->findById($id);
+		$articlewriter = $this->User->findById($article['Article']['member_id']);
+		
+		
+		$reviewscount = $this->ArticlesHasReviews->find('count',array('conditions' => array('ArticlesHasReviews.article_id' => $id)));
+		$this->set('reviewscount', $reviewscount);
+		
+		
+		$allreviews = $this->Review->query("SELECT * FROM reviews AS Review WHERE id IN (SELECT review_id FROM articles_has_reviews WHERE article_id = " .$id.")");
+		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM articles_has_reviews WHERE article_id = " .$id."))");
+		
+		
+		$this->set('allreviewwriters', $allreviewwriters);
+		$this->set('allreviews', $allreviews);
+		$this->set('article', $article);
+		$this->set('articlewriter', $articlewriter);
+		$this->set('title_for_layout', $article['Article']['title']."'s Profile");
 		$this->layout = 'sportopolis';
 	}
 
