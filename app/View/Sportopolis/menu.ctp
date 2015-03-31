@@ -141,6 +141,7 @@
 <?php $trainerurl = "http://localhost/sportopolis/sportopolis/trainerprofile/" ?>
 <?php $locationurl = "http://localhost/sportopolis/sportopolis/locationprofile/" ?>
 <?php $storeurl = "http://localhost/sportopolis/sportopolis/storeprofile/" ?>
+<?php $articleurl = "http://localhost/sportopolis/sportopolis/viewarticle/" ?>
 
 <div class="desktop-menu">
 
@@ -286,12 +287,12 @@ populateCountries("country", "state");
 <?php if(count($articles) > 0){ ?>
 <?php foreach ($articles as $article): ?>
 <li>
-<a href="<?php echo $trainerurl.$trainer['Trainer']['id']; ?>">
+<a href="<?php echo $articleurl.$article['Article']['id']; ?>">
 
 
 <div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
 <div class="listInfo">
-<div class="listName"><?php echo $article['Article']['name']; ?></div>
+<div class="listName"><?php echo $article['Article']['title']; ?></div>
 <div class="listRank"><?php echo $this->Html->image('zerorank1.png', array('class' => 'listRankPicto')); ?></div>
 <div class="listviews"><?php echo $this->Html->image('views.png', array('class' => 'listViewsPicto')); ?>200</div>
 <div class="listReviews"><?php echo $this->Html->image('like.png', array('class' => 'listViewsPicto')); ?>200</div>
