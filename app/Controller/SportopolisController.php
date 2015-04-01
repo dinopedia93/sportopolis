@@ -128,7 +128,7 @@ class SportopolisController extends Controller {
 		$this->loadModel('TrainersHasReviews');
 		$this->loadModel('TrainersHasPhotos');
 
-		$trainers = $this->Trainer->query("SELECT * FROM trainers INNER JOIN users ON trainers.user_id = users.id WHERE trainers.id = $id");
+		$trainers = $this->Trainer->GetTrainerData($id);
 		// little trick because the result is returned in 3D array
 		$trainer = $trainers[0];
 		$this->set('trainer', $trainer);
@@ -139,7 +139,7 @@ class SportopolisController extends Controller {
 		$this->set('reviewscount', $reviewscount);
 		
 		
-		$allreviews = $this->Review->query("SELECT * FROM reviews AS Review WHERE id IN (SELECT review_id FROM trainers_has_reviews WHERE trainer_id = " .$id.")");
+		$allreviews = $this->Review->GetTrainerReviews($id);
 		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM trainers_has_reviews WHERE trainer_id = " .$id."))");
 		
 		$this->set('allreviewwriters', $allreviewwriters);
@@ -178,7 +178,7 @@ class SportopolisController extends Controller {
 		$this->set('reviewscount', $reviewscount);
 		
 		
-		$allreviews = $this->Review->query("SELECT * FROM reviews AS Review WHERE id IN (SELECT review_id FROM locations_has_reviews WHERE location_id = " .$id.")");
+		$allreviews = $this->Review->GetLocationReviews($id);
 		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM locations_has_reviews WHERE location_id = " .$id."))");
 		
 		$this->set('allreviewwriters', $allreviewwriters);
@@ -213,7 +213,7 @@ class SportopolisController extends Controller {
 		$this->set('reviewscount', $reviewscount);
 		
 		
-		$allreviews = $this->Review->query("SELECT * FROM reviews AS Review WHERE id IN (SELECT review_id FROM stores_has_reviews WHERE store_id = " .$id.")");
+		$allreviews = $this->Review->GetStoreReviews($id);
 		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM stores_has_reviews WHERE store_id = " .$id."))");
 		
 		$this->set('allreviewwriters', $allreviewwriters);
@@ -289,7 +289,7 @@ class SportopolisController extends Controller {
 		$this->set('reviewscount', $reviewscount);
 		
 		
-		$allreviews = $this->Review->query("SELECT * FROM reviews AS Review WHERE id IN (SELECT review_id FROM articles_has_reviews WHERE article_id = " .$id.")");
+		$allreviews = $this->Review->GetArticleReviews($id);
 		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM articles_has_reviews WHERE article_id = " .$id."))");
 		
 		

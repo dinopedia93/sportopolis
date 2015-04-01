@@ -24,7 +24,6 @@ $(document).ready(function() {
         }
     };
     
-   // $("#example").val("<?php echo $rating['UsersRatingTrainer']['rating'] ?>");
 
     $(".profilePhotosLargeBOTTOMContainer").hide();
     $(".userRatings").hide();
