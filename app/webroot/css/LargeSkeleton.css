@@ -234,6 +234,18 @@ color:#f26522;
 }
 
 
+.write-header2 a{
+width:auto;
+height:100%;
+float:left;
+line-height: 22px;
+font-size: 19px;
+padding-top: 18px;
+text-decoration:none;
+color:#f26522;
+margin-left:10%;
+}
+
 .account{
 min-width:29%;
 width:auto;
@@ -2231,6 +2243,21 @@ height:148px;
 margin-top:10px;
 }
 
+.menu-filter-in2{
+width:100%;
+height:90px;
+margin-top:10px;
+}
+
+.menu-filter-in2 li select{
+-webkit-appearance: none;
+-moz-appearance:none;
+-webkit-appearance:none;
+}
+
+.menu-filter-in2 li select::-ms-expand {
+    display: none;
+}
 
 .menu-filter-in li select{
 -webkit-appearance: none;
@@ -3028,6 +3055,185 @@ padding:10px;
 float:left;
 }
 
+.createcompetition{
+width: 90%;
+display: block;
+margin: 0px auto;
+height: 38px;
+text-align: center;
+color: white;
+text-decoration:none;
+background-color: #00b034;
+border-radius: 3px;
+margin-bottom: 20px;
+line-height: 40px;
+cursor: pointer;
+}
+
+.createcompetition:hover{
+background-color:#02a231;
+}
+
+.upperCompetition{
+width:100%;
+height:280px;
+background-color:white;
+border-radius: 5px;
+box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-moz-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-webkit-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+}
+
+.lowerCompetition{
+width:100%;
+height:235px;
+background-color:white;
+border-radius: 5px;
+box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-moz-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+-webkit-box-shadow: 0px 0px 3px 0px rgba(119, 119, 119, 0.46);
+margin-top:25px;
+}
+
+.competitor{
+width:35%;
+height:auto;
+float:left;
+}
+
+.midcompetitor{
+width:30%;
+height:100%;
+border-left:1px solid #efefef;
+border-right:1px solid #efefef;
+float:left;
+}
+
+.profilePictureLeftLargeContainer2{
+width:100%;
+height:auto;
+}
+
+.pictureLeftLargerContainer2{
+border: 2px solid #FFF;
+box-shadow: 0 1px 2px rgba(0,0,0,0.4);
+background-size:60px 60px;
+height:150px;
+width:150px;
+border-radius:100%;
+overflow:hidden;
+display:block;
+margin:4% auto;
+margin-top:7%;
+}
+
+.CompetitorName{
+width:100%;
+height:25px;
+text-align:center;
+font-family:helvetica world;
+color:grey;
+font-size:19px;
+}
+
+.CompetitorScore{
+width:100%;
+height:22px;
+text-align:center;
+font-family:helvetica world;
+color:grey;
+font-size:15px;
+}
+
+
+.Competitorinfo{
+border-top:1px solid #efefef;
+height:43px;
+width:100%;
+}
+
+.vs{
+height:auto;
+width:auto;
+overflow:hidden;
+display:block;
+margin:15% auto;
+margin-top:27%;
+}
+
+.leftCompetitorinfo{
+height:100%;
+width:50%;
+float:left;
+border-right:1px solid #efefef;
+text-align:center;
+font-family:helvetica world;
+color:grey;
+font-size:15px;
+padding-top:4%;
+}
+
+.rightCompetitorinfo{
+height:100%;
+width:50%;
+float:left;
+text-align:center;
+font-family:helvetica world;
+color:grey;
+font-size:15px;
+padding-top:4%;
+}
+
+.leftlowerCompetition{
+width:50%;
+height:100%;
+border-right:1px solid #efefef;
+float:left;
+}
+
+.rightlowerCompetition{
+width:49%;
+height:100%;
+float:left;
+}
+
+.competitionTitle{
+text-align:left;
+font-family:helvetica world;
+color:#f26522;
+font-size:17px;
+padding-top:5%;
+padding-left:5%;
+}
+
+.competitionBody{
+text-align:left;
+font-family:helvetica world;
+color:grey;
+font-size:16px;
+padding-left:5%;
+padding-top:2%;
+}
+
+.challengeBtn{
+width:90%;
+height:35px;
+display: block;
+margin: 25px auto;
+height: 38px;
+text-align: center;
+color: white;
+text-decoration:none;
+background-color: #00b034;
+border-radius: 3px;
+margin-bottom: 20px;
+line-height: 40px;
+cursor: pointer;
+}
+
+.challengeBtn:hover{
+background-color:#02a231;
+}
 
 
 

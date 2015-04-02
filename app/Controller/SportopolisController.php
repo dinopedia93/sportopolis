@@ -274,6 +274,16 @@ class SportopolisController extends Controller {
 		$this->layout = 'sportopolis';
 	}
 
+		public function competemenu()
+	{
+		$this->layout = 'sportopolis';
+	}
+
+		public function createcompetition()
+	{
+		$this->layout = 'sportopolis';
+	}
+	
 	public function viewarticle($id)
 	{
 		$this->loadModel('Article');
