@@ -212,7 +212,6 @@ class SportopolisController extends Controller {
 		$this->loadModel('Sport');
 		$this->loadModel('Review');
 		$this->loadModel('StoresHasReviews');
-		$this->loadModel('StoresHasViews');
 		$this->loadModel('StoresHasPhotos');
 
 		$store = $this->Store->findById($id);
@@ -232,9 +231,7 @@ class SportopolisController extends Controller {
 		
 		$storeshasphotos = $this->StoresHasPhotos->find('count',array('conditions' => array('StoresHasPhotos.store_id' => $id)));
 		$this->set('storeshasphotos', $storeshasphotos);
-		$storeshasviews = $this->StoresHasViews->find('count',array('conditions' => array('StoresHasViews.store_id' => $id)));
-		$this->set('storeshasviews', $storeshasviews);
-
+		
 		$this->layout = 'sportopolis';	
 	}
 	
@@ -465,6 +462,13 @@ class SportopolisController extends Controller {
     	
     }
 
+    public function IncreaseStoreViews()
+    {
+    	$this->autoRender = false;
+    	$this->loadModel('Store');
+    	$this->Store->IncrementViews($this->request->data['id']);
+    }
+
     /* ---------------------------- Rating Functions ------------------------------------------- */
     public function RateTrainer()
     {
@@ -480,6 +484,10 @@ class SportopolisController extends Controller {
     	return $this->UsersRatingLocation->RateLocation($this->request->data['location_id'],$this->request->data['user_id'],$this->request->data['new_rating']);    	    	
     }
 
+    public function RateStore()
+    {
+
+    }
 
 	
 }

@@ -62,6 +62,16 @@ $(document).ready(function() {
             $(".userRatings").show();
         }
     });
+
+     $.ajax({
+            dataType: "html",
+            type: "post",
+            url: "<?php echo Router::url(array('controller'=>'sportopolis','action'=>'IncreaseStoreViews'));?>",
+            data: {id : <?php echo $store['Store']['id']; ?>},
+            error: function(xhr, status, error) {
+              alert(error);
+           }
+    });
 });
 </script>
 
@@ -77,7 +87,7 @@ $(document).ready(function() {
 
 <div class="profileViewsReviews">
 <div class="profilePictoViewsReviews"><?php echo $this->Html->image('views.png'); ?></div>
-<div class="profileNumViewsReviews"><?php  echo $storeshasviews?></div>
+<div class="profileNumViewsReviews"><?php echo $store['Store']['views']; ?></div>
 <div class="profilePictoViewsReviews2"><?php echo $this->Html->image('like.png'); ?></div>
 <div class="profileNumViewsReviews"><?php  echo $reviewscount?></div>
 </div>
