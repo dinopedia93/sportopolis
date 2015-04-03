@@ -5,7 +5,6 @@
 <div class="profileSignUpToLeft">
 
 <form method="post" action="/sportopolis/sportopolis/UpdateLocationProfile/<?php if($location!=null) echo $location['Location']['id']; else echo -1?>">
-<input type="text" name="user_id" value="<?php echo $location['Location']['id']; ?>" hidden>
 
 <div class="profilePictureLeftLargeContainer">
 <img class="pictureLeftLargerContainer" src ="boss.png">

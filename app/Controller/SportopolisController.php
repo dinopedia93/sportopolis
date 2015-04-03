@@ -276,9 +276,11 @@ class SportopolisController extends Controller {
 	{
 		$this->loadModel('Sport');
 		$this->loadModel('Location');
+		$this->loadModel('User');
 
-		$sports = $this->Sport->find('all');		
-		$location = $this->Location->findById($id);
+		$sports = $this->Sport->find('all');
+		$user_primary_data = $this->User->findById($id);		
+		$location = $this->Location->find( 'first' , array('conditions' => array('Location.user_id' => $id)) );
 
 		$this->set('sports',$sports);
 		$this->set('location',$location);
@@ -394,7 +396,8 @@ class SportopolisController extends Controller {
             if ($this->Trainer->save($this->request->data))
             {
 
-            	$trainer = $this->Trainer->findById($id);
+            	//$trainer = $this->Trainer->findById($id);
+            	// Update user-related data of the trainer
             	$this->User->set(array(
 				    'first_name' => $this->request->data['first_name'],
 				    'last_name' => $this->request->data['last_name'],
@@ -417,27 +420,17 @@ class SportopolisController extends Controller {
         }
     }
 	
-	public function UpdateLocationProfile($id = 0)
+	public function UpdateLocationProfile($id)
 	{
 		
 		$this->loadModel('Location');
 
 		$this->Location->set($this->request->data);
-		$temp = $this->request->data;
 		if ($this->Location->validates()) 
 		{
-            $this->Location->id = $id;
+            debug($this->Location->id = 1);
             if ($this->Location->save($this->request->data))
-            {
-            	$this->Location->set(array(
-				    'name' => $this->request->data['name'],
-				    'mobile' => $this->request->data['mobile'],
-				    'tel' => $this->request->data['tel'],
-				    'email' => $this->request->data['email'],
-				    'website' => $this->request->data['website']
-				));
-            	$this->Location->save();
-            	
+            {            	
                 return $this->redirect(array('action' => 'locationprofile/'.$id));
             }
 			else
