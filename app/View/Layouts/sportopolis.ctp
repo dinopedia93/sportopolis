@@ -169,7 +169,8 @@ $(document).ready(function () {
     </div>
 </div>
 
-<div class="write-header"><a href="/sportopolis/sportopolis/createarticle">Write</a></div>	
+<div class="write-header"><a href="/sportopolis/sportopolis/competemenu">Compete</a></div>	
+<div class="write-header2"><a href="/sportopolis/sportopolis/createarticle">Write</a></div>	
 
 	
 
