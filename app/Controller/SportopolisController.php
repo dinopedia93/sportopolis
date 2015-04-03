@@ -65,6 +65,7 @@ class SportopolisController extends Controller {
 		$this->Auth->allow('profilearticle' , 'view');
 	}
 
+	/* ---------------------------- Pages Functions ------------------------------------------- */
 	public function index() 
 	{
 		$this->layout = 'index';
@@ -319,6 +320,7 @@ class SportopolisController extends Controller {
 		$this->layout = 'sportopolis';
 	}
 
+ 	/* ---------------------------- Signup Functions ------------------------------------------- */
 	public function RegisterTrainer()
 	{
 		$this->loadModel('User');
@@ -343,6 +345,7 @@ class SportopolisController extends Controller {
         }
 	}
 
+	/* ---------------------------- Update Profile Functions ------------------------------------------- */
 	public function UpdateTrainerProfile($id = 0)
 	{
 		
@@ -416,6 +419,7 @@ class SportopolisController extends Controller {
         }
     }
 
+    /* ---------------------------- Number of views Functions ------------------------------------------- */
     public function IncreaseTrainerViews()
     {
     	$this->autoRender = false;
@@ -426,6 +430,17 @@ class SportopolisController extends Controller {
     	
     }
 
+    public function IncreaseLocationViews()
+    {
+    	$this->autoRender = false;
+    	$this->loadModel('Location');
+    	$this->Location->IncrementViews($this->request->data['id']);
+    	
+    	return $this->request->data['id'];
+    	
+    }
+
+    /* ---------------------------- Rating Functions ------------------------------------------- */
     public function RateTrainer()
     {
     	$this->autoRender = false;
@@ -439,6 +454,7 @@ class SportopolisController extends Controller {
     	$this->loadModel('UsersRatingLocation');
     	return $this->UsersRatingLocation->RateLocation($this->request->data['location_id'],$this->request->data['user_id'],$this->request->data['new_rating']);    	    	
     }
+
 	
 }
 
