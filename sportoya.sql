@@ -2,8 +2,8 @@
 -- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 26, 2015 at 04:56 AM
+-- Host: localhost
+-- Generation Time: Apr 01, 2015 at 08:50 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -444,7 +444,7 @@ CREATE TABLE IF NOT EXISTS `trainers` (
 INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `location`, `training_days`, `time`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `biography`, `user_id`, `views`) VALUES
 (2, 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 2, 'I am Khaled Hegazy a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.', 13, 8),
 (3, 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 3, 'Dizo Gamed Fash5', 15, 1),
-(6, '-1', '', '', 'Fa5ayda', '', NULL, '0', 0, NULL, NULL, '123214465', NULL, NULL, 1, 'Beyombroblo el masal', 23, 0),
+(6, '-1', '', '', 'Fa5ayda', '', NULL, '0', 0, NULL, NULL, '123214465', NULL, NULL, 1, 'Beyombroblo el masal', 23, 2),
 (7, '', '', '', '', '', NULL, '0', 0, NULL, NULL, '0', NULL, NULL, NULL, NULL, 25, 0);
 
 -- --------------------------------------------------------
@@ -522,15 +522,22 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `birthdate`, `em
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users_rating_trainer`
+-- Table structure for table `users_rating_trainers`
 --
 
-CREATE TABLE IF NOT EXISTS `users_rating_trainer` (
+CREATE TABLE IF NOT EXISTS `users_rating_trainers` (
 `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `rating` int(11) NOT NULL,
   `trainer_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users_rating_trainers`
+--
+
+INSERT INTO `users_rating_trainers` (`id`, `user_id`, `rating`, `trainer_id`) VALUES
+(1, 13, 4, 6);
 
 -- --------------------------------------------------------
 
@@ -756,9 +763,9 @@ ALTER TABLE `users`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`), ADD KEY `user_type` (`user_type`);
 
 --
--- Indexes for table `users_rating_trainer`
+-- Indexes for table `users_rating_trainers`
 --
-ALTER TABLE `users_rating_trainer`
+ALTER TABLE `users_rating_trainers`
  ADD PRIMARY KEY (`id`);
 
 --
@@ -837,10 +844,10 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 ALTER TABLE `users`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
 --
--- AUTO_INCREMENT for table `users_rating_trainer`
+-- AUTO_INCREMENT for table `users_rating_trainers`
 --
-ALTER TABLE `users_rating_trainer`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `users_rating_trainers`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `user_types`
 --

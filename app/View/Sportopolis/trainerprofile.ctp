@@ -148,11 +148,11 @@ $(document).ready(function() {
 <div class="like-and-rate-right">
 <div class="rating-f">
   <select id="example">
-     <option <?php if( ($this->Session->read('Auth.User') != null) && ($rating['UsersRatingTrainer']['rating'] == 1) )  { ?> selected <?php } ?> value="1"></option>
-     <option <?php if( ($this->Session->read('Auth.User') != null) && ($rating['UsersRatingTrainer']['rating'] == 2) )  { ?> selected <?php } ?> value="2"></option>
-     <option <?php if( ($this->Session->read('Auth.User') != null) && ($rating['UsersRatingTrainer']['rating'] == 3) )  { ?> selected <?php } ?> value="3"></option>
-     <option <?php if( ($this->Session->read('Auth.User') != null) && ($rating['UsersRatingTrainer']['rating'] == 4) )  { ?> selected <?php } ?> value="4"></option>
-     <option <?php if( ($this->Session->read('Auth.User') != null) && ($rating['UsersRatingTrainer']['rating'] == 5) )  { ?> selected <?php } ?> value="5"></option>
+     <option <?php if( ($rating != null) && ($this->Session->read('Auth.User') != null) && ($rating['UsersRatingTrainer']['rating'] == 1) )  { ?> selected <?php } ?> value="1"></option>
+     <option <?php if( ($rating != null) && ($this->Session->read('Auth.User') != null) && ($rating['UsersRatingTrainer']['rating'] == 2) )  { ?> selected <?php } ?> value="2"></option>
+     <option <?php if( ($rating != null) && ($this->Session->read('Auth.User') != null) && ($rating['UsersRatingTrainer']['rating'] == 3) )  { ?> selected <?php } ?> value="3"></option>
+     <option <?php if( ($rating != null) && ($this->Session->read('Auth.User') != null) && ($rating['UsersRatingTrainer']['rating'] == 4) )  { ?> selected <?php } ?> value="4"></option>
+     <option <?php if( ($rating != null) && ($this->Session->read('Auth.User') != null) && ($rating['UsersRatingTrainer']['rating'] == 5) )  { ?> selected <?php } ?> value="5"></option>
   </select>
 </div>
 <button id='rateBtn'>Rate</button>

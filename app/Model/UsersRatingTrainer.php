@@ -19,4 +19,9 @@ class UsersRatingTrainer extends AppModel {
 			));
 		}
 	}
+
+	function CalculateRating($trainer_id)
+	{
+		
+	}
 }
