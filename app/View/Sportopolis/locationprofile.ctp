@@ -62,6 +62,28 @@ $(document).ready(function() {
             $(".userRatings").show();
         }
     });
+
+    // TODO: add increase views for location
+
+    $("#rateBtn").click(function() {
+        <?php if($this->Session->read('Auth.User') != null) { ?>
+             $.ajax({
+                    dataType: "html",
+                    type: "post",
+                    url: "<?php echo Router::url(array('controller'=>'sportopolis','action'=>'RateLocation'));?>",
+                    data: {user_id : <?php echo $this->Session->read('Auth.User.id'); ?> , location_id : <?php echo $location['Location']['id']; ?> , new_rating : $( "#example option:selected" ).val() },
+                    error: function(xhr, status, error) {
+                      alert(error);
+                   },
+                   success: function( data,  textStatus,  jqXHR )
+                   {
+                        alert(data);
+                   }
+            });
+        <?php } else { ?>
+            alert('You must login in order to rate a location');
+        <?php } ?>
+    });
 });
 </script>
 
@@ -96,21 +118,23 @@ $(document).ready(function() {
 
 <div class="like-and-rate">
 
-<div class="like-and-rate-right">
+<?php if( true || ($this->Session->read('Auth.User.id') != $trainer['trainers']['user_id']) ) {?>
 <div class="like-and-rate-title">Rate Me</div>
 <!-- rating plugin -->
+<div class="like-and-rate-right">
 <div class="rating-f">
   <select id="example">
-     <option value="1"></option>
-     <option value="2"></option>
-     <option value="3"></option>
-     <option value="4"></option>
-     <option value="5"></option>
+     <option <?php if( ($rating != null) && ($this->Session->read('Auth.User') != null) && ($rating['UsersRatingLocation']['rating'] == 1) )  { ?> selected <?php } ?> value="1"></option>
+     <option <?php if( ($rating != null) && ($this->Session->read('Auth.User') != null) && ($rating['UsersRatingLocation']['rating'] == 2) )  { ?> selected <?php } ?> value="2"></option>
+     <option <?php if( ($rating != null) && ($this->Session->read('Auth.User') != null) && ($rating['UsersRatingLocation']['rating'] == 3) )  { ?> selected <?php } ?> value="3"></option>
+     <option <?php if( ($rating != null) && ($this->Session->read('Auth.User') != null) && ($rating['UsersRatingLocation']['rating'] == 4) )  { ?> selected <?php } ?> value="4"></option>
+     <option <?php if( ($rating != null) && ($this->Session->read('Auth.User') != null) && ($rating['UsersRatingLocation']['rating'] == 5) )  { ?> selected <?php } ?> value="5"></option>
   </select>
 </div>
-
-
+<button id='rateBtn'>Rate</button>
 </div>
+
+<?php } ?>
 </div>
 
 

@@ -185,6 +185,14 @@ class SportopolisController extends Controller {
 		
 		$this->set('allreviews', $allreviews);
 		
+		// Loading Rating
+		if($this->Session->read('Auth.User') != null)
+		{
+			$this->loadModel('UsersRatingLocation');
+
+			$rating = $this->UsersRatingLocation->find('first', array('fields' => array('UsersRatingLocation.rating'),'conditions' => array('UsersRatingLocation.location_id' => $id, 'UsersRatingLocation.user_id' => $this->Session->read('Auth.User.id'))));
+			$this->set('rating', $rating);
+		}
 		
 		$locationshasphotos = $this->LocationsHasPhotos->find('count',array('conditions' => array('LocationsHasPhotos.location_id' => $id)));
 		$this->set('locationshasphotos', $locationshasphotos);
@@ -423,6 +431,13 @@ class SportopolisController extends Controller {
     	$this->autoRender = false;
     	$this->loadModel('UsersRatingTrainer');
     	return $this->UsersRatingTrainer->RateTrainer($this->request->data['trainer_id'],$this->request->data['user_id'],$this->request->data['new_rating']);    	    	
+    }
+
+    public function RateLocation()
+    {
+    	$this->autoRender = false;
+    	$this->loadModel('UsersRatingLocation');
+    	return $this->UsersRatingLocation->RateLocation($this->request->data['location_id'],$this->request->data['user_id'],$this->request->data['new_rating']);    	    	
     }
 	
 }
