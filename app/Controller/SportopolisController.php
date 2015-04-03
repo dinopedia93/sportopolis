@@ -247,6 +247,14 @@ class SportopolisController extends Controller {
 			$this->set('error', json_decode($error));
 	}
 
+	public function signuplocation($error = null)
+	{
+		$this->layout = 'sportopolis';
+		if($error != null)
+			$this->set('error', json_decode($error));
+	}
+
+
 	public function edittrainer($id)
 	{
 		$this->loadModel('Sport');
@@ -335,6 +343,30 @@ class SportopolisController extends Controller {
             	$data['Trainer']['user_id'] = $this->User->id;
             	$this->Trainer->create();
             	$this->Trainer->save($data);
+            	$link = 'index';            	
+                return $this->redirect(array('action' => $link));
+            }
+        }
+        else
+        {
+        	return $this->redirect(array('action' => 'signuptrainer/'.json_encode($this->User->validationErrors)));
+        }
+	}
+
+	public function RegisterLocation()
+	{
+		$this->loadModel('User');
+		$this->loadModel('Location');
+
+		$this->User->set($this->request->data);	
+		if ($this->User->validates()) 
+		{
+            $this->User->create();
+            if ($this->User->save($this->request->data)) 
+            {
+            	$data['Location']['user_id'] = $this->User->id;
+            	$this->Location->create();
+            	$this->Location->save($data);
             	$link = 'index';            	
                 return $this->redirect(array('action' => $link));
             }
@@ -454,6 +486,7 @@ class SportopolisController extends Controller {
     	$this->loadModel('UsersRatingLocation');
     	return $this->UsersRatingLocation->RateLocation($this->request->data['location_id'],$this->request->data['user_id'],$this->request->data['new_rating']);    	    	
     }
+
 
 	
 }

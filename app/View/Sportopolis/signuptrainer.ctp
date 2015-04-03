@@ -7,7 +7,7 @@
 <div class="signup-big">
 
 <div class="signup-header">
-<div class="signup-header-ai">Sign Up Trainer</div>
+<div class="signup-header-ai">Sign Up  as a trainer</div>
 </div>
 
 
