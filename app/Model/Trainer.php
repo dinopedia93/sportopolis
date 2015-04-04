@@ -13,4 +13,13 @@ class Trainer extends AppModel {
 	{
 		return $this->query("SELECT * FROM trainers INNER JOIN users ON trainers.user_id = users.id WHERE trainers.id = $id");
 	}
+
+	public function SetRate($id,$rating)
+	{
+		$this->set(array(
+		    'rank' => $rating
+		));
+		$this->id = $id;
+		$this->save();
+	}
 }

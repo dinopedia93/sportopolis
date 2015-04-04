@@ -141,7 +141,7 @@ class SportopolisController extends Controller {
 		
 		
 		$allreviews = $this->Review->GetTrainerReviews($id);
-		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM trainers_has_reviews WHERE trainer_id = " .$id."))");
+		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT user_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM trainers_has_reviews WHERE trainer_id = " .$id."))");
 		
 		$this->set('allreviewwriters', $allreviewwriters);
 		
@@ -180,7 +180,7 @@ class SportopolisController extends Controller {
 		
 		
 		$allreviews = $this->Review->GetLocationReviews($id);
-		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM locations_has_reviews WHERE location_id = " .$id."))");
+		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT user_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM locations_has_reviews WHERE location_id = " .$id."))");
 		
 		$this->set('allreviewwriters', $allreviewwriters);
 		
@@ -222,7 +222,7 @@ class SportopolisController extends Controller {
 		
 		
 		$allreviews = $this->Review->GetStoreReviews($id);
-		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM stores_has_reviews WHERE store_id = " .$id."))");
+		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT user_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM stores_has_reviews WHERE store_id = " .$id."))");
 		
 		$this->set('allreviewwriters', $allreviewwriters);
 		
@@ -308,7 +308,7 @@ class SportopolisController extends Controller {
 		$this->loadModel('ArticlesHasReviews');
 		$this->loadModel('ArticlesHasPhotos');
 		$article = $this->Article->findById($id);
-		$articlewriter = $this->User->findById($article['Article']['member_id']);
+		$articlewriter = $this->User->findById($article['Article']['user_id']);
 		
 		
 		$reviewscount = $this->ArticlesHasReviews->find('count',array('conditions' => array('ArticlesHasReviews.article_id' => $id)));
@@ -316,7 +316,7 @@ class SportopolisController extends Controller {
 		
 		
 		$allreviews = $this->Review->GetArticleReviews($id);
-		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM articles_has_reviews WHERE article_id = " .$id."))");
+		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT user_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM articles_has_reviews WHERE article_id = " .$id."))");
 		
 		
 		$this->set('allreviewwriters', $allreviewwriters);
@@ -372,7 +372,7 @@ class SportopolisController extends Controller {
         }
         else
         {
-        	return $this->redirect(array('action' => 'signuptrainer/'.json_encode($this->User->validationErrors)));
+        	return $this->redirect(array('action' => 'signuplocation/'.json_encode($this->User->validationErrors)));
         }
 	}
 
@@ -474,19 +474,43 @@ class SportopolisController extends Controller {
     {
     	$this->autoRender = false;
     	$this->loadModel('UsersRatingTrainer');
-    	return $this->UsersRatingTrainer->RateTrainer($this->request->data['trainer_id'],$this->request->data['user_id'],$this->request->data['new_rating']);    	    	
+    	$this->loadModel('Trainer');
+    	return $this->Trainer->SetRate( $this->request->data['trainer_id'],$this->UsersRatingTrainer->RateTrainer($this->request->data['trainer_id'],$this->Session->read('Auth.User.id'),$this->request->data['new_rating']) );    	    	
     }
 
     public function RateLocation()
     {
     	$this->autoRender = false;
     	$this->loadModel('UsersRatingLocation');
-    	return $this->UsersRatingLocation->RateLocation($this->request->data['location_id'],$this->request->data['user_id'],$this->request->data['new_rating']);    	    	
+    	$this->loadModel('Location');
+    	return $this->Location->SetRate( $this->request->data['location_id'], $this->UsersRatingLocation->RateLocation($this->request->data['location_id'],$this->Session->read('Auth.User.id'),$this->request->data['new_rating']) );    	    	
     }
 
     public function RateStore()
     {
 
+    }
+
+    /* ---------------------------- Review Functions ------------------------------------------- */
+    public function ReviewTrainer()
+    {
+    	$this->autoRender = false;
+    	$this->loadModel('Review');
+    	$this->loadModel('TrainersHasReviews');
+
+		$this->Review->create();
+		$this->Review->save(array(
+		    'user_id' => $this->Session->read('Auth.User.id'),
+		    'date' => date('Y-m-d'),
+		    'time' => date('H:i:s'),
+		    'review' => $this->request->data['review']
+		));
+
+		$this->TrainersHasReviews->create();
+		$this->TrainersHasReviews->save(array(
+		    'trainer_id' => $this->request->data['trainer_id'],
+		    'review_id' => $this->Review->getInsertID()   // Get Id of the last inserted review
+		));
     }
 
 	

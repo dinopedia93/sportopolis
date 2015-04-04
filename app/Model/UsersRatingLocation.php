@@ -18,7 +18,7 @@ class UsersRatingLocation extends AppModel {
 			    'rating' => $new_rating
 			));
 		}
-		$this->CalculateRating($location_id);
+		return $this->CalculateRating($location_id);
 	}
 
 	private function CalculateRating($location_id)
@@ -31,13 +31,7 @@ class UsersRatingLocation extends AppModel {
 
 		$rating = ( ($rating_one_count) + (2 * $rating_two_count) + (3 * $rating_three_count) + (4 * $rating_four_count) + (5 * $rating_five_count))/($rating_one_count + $rating_two_count + $rating_three_count + $rating_four_count + $rating_five_count);
 		
-		// Load model in other model
-		$LocationModel = ClassRegistry::init('Location');
+		return $rating;
 
-		$LocationModel->set(array(
-		    'rank' => $rating
-		));
-		$LocationModel->id = $location_id;
-		$LocationModel->save();
 	}
 }

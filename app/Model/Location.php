@@ -8,4 +8,13 @@ class Location extends AppModel {
 	{
 		$this->query("UPDATE `locations` SET `views` = `views` + 1  WHERE `id` = $id");
 	}
+
+	public function SetRate($id,$rating)
+	{
+		$this->set(array(
+		    'rank' => $rating
+		));
+		$this->id = $id;
+		$this->save();
+	}
 }

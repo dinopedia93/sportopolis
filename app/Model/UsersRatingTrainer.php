@@ -18,7 +18,7 @@ class UsersRatingTrainer extends AppModel {
 			    'rating' => $new_rating
 			));
 		}
-		$this->CalculateRating($trainer_id);
+		return $this->CalculateRating($trainer_id);
 	}
 
 	private function CalculateRating($trainer_id)
@@ -31,13 +31,6 @@ class UsersRatingTrainer extends AppModel {
 
 		$rating = ( ($rating_one_count) + (2 * $rating_two_count) + (3 * $rating_three_count) + (4 * $rating_four_count) + (5 * $rating_five_count))/($rating_one_count + $rating_two_count + $rating_three_count + $rating_four_count + $rating_five_count);
 		
-		// Load model in other model
-		$TrainerModel = ClassRegistry::init('Trainer');
-
-		$TrainerModel->set(array(
-		    'rank' => $rating
-		));
-		$TrainerModel->id = $trainer_id;
-		$TrainerModel->save();
+		return $rating;		
 	}
 }

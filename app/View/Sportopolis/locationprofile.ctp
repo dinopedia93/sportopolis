@@ -79,7 +79,7 @@ $(document).ready(function() {
                     dataType: "html",
                     type: "post",
                     url: "<?php echo Router::url(array('controller'=>'sportopolis','action'=>'RateLocation'));?>",
-                    data: {user_id : <?php echo $this->Session->read('Auth.User.id'); ?> , location_id : <?php echo $location['Location']['id']; ?> , new_rating : $( "#example option:selected" ).val() },
+                    data: { location_id : <?php echo $location['Location']['id']; ?> , new_rating : $( "#example option:selected" ).val() },
                     error: function(xhr, status, error) {
                       alert(error);
                    },
