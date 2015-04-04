@@ -305,7 +305,9 @@ $(document).ready(function() {
 <div class="commentInfo">
 <div class="commentInfoName"><?php echo $allreviewwriters[$index]['User']['first_name']." ".$allreviewwriters[$index]['User']['last_name']; ?></div>
 <div class="commentInfoDate"><?php echo $allreview['Review']['date']; ?></div>
+<?php if( $allreviewwriters[$index]['User']['id'] == $this->Session->read('Auth.User.id') ) {?>
 <div class="deleteComment">x</div>
+<?php } ?>
 </div>
 
 <div class="commentText">
