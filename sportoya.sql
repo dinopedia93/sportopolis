@@ -2,8 +2,8 @@
 -- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Apr 03, 2015 at 06:19 PM
+-- Host: 127.0.0.1
+-- Generation Time: Apr 04, 2015 at 02:04 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -381,7 +381,7 @@ CREATE TABLE IF NOT EXISTS `trainers` (
   `biography` text COLLATE utf8_bin,
   `user_id` int(11) NOT NULL,
   `views` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `trainers`
@@ -389,9 +389,8 @@ CREATE TABLE IF NOT EXISTS `trainers` (
 
 INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `location`, `training_days`, `time`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `biography`, `user_id`, `views`) VALUES
 (2, 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 2, 'I am Khaled Hegazy a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.', 13, 8),
-(3, 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 3, 'Dizo Gamed Fash5', 15, 1),
-(6, '-1', '', '', 'Fa5ayda', '', NULL, '0', 4, NULL, NULL, '123214465', NULL, NULL, 1, 'Beyombroblo el masal', 23, 5),
-(7, '', '', '', '', '', NULL, '0', 0, NULL, NULL, '0', NULL, NULL, NULL, NULL, 25, 0);
+(3, 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 2, 'Dizo Gamed Fash5', 15, 1),
+(6, 'Egypt', 'Giza', 'Mohandseen', 'Fa5ayda', '', NULL, '0', 4, NULL, NULL, '123214465', NULL, NULL, 2, 'Beyombroblo el masal', 23, 5);
 
 -- --------------------------------------------------------
 
@@ -441,7 +440,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(45) CHARACTER SET latin1 NOT NULL,
   `password` varchar(128) CHARACTER SET latin1 NOT NULL,
   `user_type` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
@@ -451,9 +450,7 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `birthdate`, `em
 (13, 'Khaled', 'Hegazy', 'Male', '1990-12-10', 'khaled-hegazy92@hotmail.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 3),
 (15, 'Abdallah', 'Khaled', 'Male', '1990-12-10', 'dinopedia93@gmail.com', '2db7e9f1bc905c83630d097815eb5091e01678e4', 1),
 (23, 'youssef', 'Khory', 'Male', '1993-12-11', 'aka@gfail.com', 'fcfa68164162b0988c41faf7f2aedfb2af54ee31', 1),
-(24, '', '', 'Male', '1990-12-10', 'new@new.com', '477c5714202f60f75133dd941607074a11bb4ce2', 1),
-(25, '', '', '', '0000-00-00', 'k_h_57@hotmail.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 1),
-(27, '', '', '', '0000-00-00', 'se7s@gmail.com', '2c529d0ac7b0925ad42a3a9fb38bca87bb9f6590', 4);
+(36, 'Ahmed ', 'Abuzekry', 'Male', '1992-09-08', 'abouzekrys@hotmail.com', 'b1c76281bb95d06af628280c2b65cf154b6c4fb3', 3);
 
 -- --------------------------------------------------------
 
@@ -764,12 +761,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `trainers`
 --
 ALTER TABLE `trainers`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=37;
 --
 -- AUTO_INCREMENT for table `users_rating_trainers`
 --
@@ -824,12 +821,6 @@ ADD CONSTRAINT `fk_events_has_photos_photos1` FOREIGN KEY (`photo_id`) REFERENCE
 ALTER TABLE `events_has_reviews`
 ADD CONSTRAINT `fk_events_has_reviews_events1` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 ADD CONSTRAINT `fk_events_has_reviews_reviews1` FOREIGN KEY (`review_id`) REFERENCES `reviews` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `locations`
---
-ALTER TABLE `locations`
-ADD CONSTRAINT `fk_user_location` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `locations_has_photos`
@@ -931,7 +922,9 @@ ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`user_type`) REFERENCES `user_types` 
 --
 ALTER TABLE `users_rating_locations`
 ADD CONSTRAINT `fk_users_rating_locations_location` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`),
-ADD CONSTRAINT `fk_users_rating_locations_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+ADD CONSTRAINT `fk_users_rating_locations_locations1` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_users_rating_locations_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+ADD CONSTRAINT `fk_users_rating_locations_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -90,10 +90,10 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <div class="signupPictoDesc">Sign up as a sport store.</div></a>
 </li>
 
-<li><a href="#">
+<li><a href="/sportopolis/users/add">
 <?php echo $this->Html->image('ArticleSignUP.png'); ?>
 <div class="signupPictoText">Normal User</div>
-<div class="signupPictoDesc">Sign up as a writer.</div></a>
+<div class="signupPictoDesc">Sign up as a member.</div></a>
 </li>
 
 </ul>

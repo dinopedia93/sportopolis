@@ -18,6 +18,18 @@ class User extends AppModel {
 				'rule' => array('between' , 2 , 15),
 				'message' => 'Last name must be between 2 to 15 characters.'
 			)
+		),'gender' => array(
+			'Please select your gender. ' => array(
+				'rule' => 'notEmpty',
+				'on' => 'create',
+				'message' => 'Please select your gender.'
+			)
+		),'birthdate' => array(
+			'Please enter your birth date. ' => array(
+				'rule' => 'notEmpty',
+				'on' => 'create',
+				'message' => 'Last name must be between 2 to 15 characters.'
+			)
 		),'email' => array(
 			'Valid Email' => array(
 				'rule' => array('email'),
@@ -43,9 +55,7 @@ class User extends AppModel {
 					'on' => 'create',
 					'message'=>'Please confirm your password'
 				)
-		)
-		
-	 );
+		));
 	 
 	 public function matchPasswords($data){
 		 debug($data['password']);
