@@ -169,9 +169,10 @@ $(document).ready(function () {
     </div>
 </div>
 
-<div class="write-header"><a href="/sportopolis/sportopolis/competemenu">Compete</a></div>	
+<div class="write-header"><a href="/sportopolis/sportopolis/competemenu">Compete</a></div>
+<?php if($this->Session->read('Auth.User') != null){ ?>	
 <div class="write-header2"><a href="/sportopolis/sportopolis/createarticle">Write</a></div>	
-
+<?php } ?>
 	
 
 <?php if($this->Session->read('Auth.User') == null){ ?>	
