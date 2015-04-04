@@ -35,6 +35,11 @@ class User extends AppModel {
 				'rule' => array('email'),
 				'on' => 'create',
 				'message' => 'Please enter a valid email address'
+			),
+			'Check Availability' => array(
+				'rule' => 'checkAvailability',
+				'on' => 'create',
+				'message' => 'This email is already used. Please use a different email.'
 			)
 		),
 		'password' => array(
@@ -57,15 +62,23 @@ class User extends AppModel {
 				)
 		));
 	 
-	 public function matchPasswords($data){
-		 debug($data['password']);
-		 debug($this->data['User']['password_confirmation']);
+	public function matchPasswords($data){
+		debug($data['password']);
+		debug($this->data['User']['password_confirmation']);
 		if($data['password'] == $this->data['User']['password_confirmation']){
 			return true;
 		}
 		$this->invalidate('password_confirmation' , 'Passwords do not match');
 		return false;
-	 }
+	}
+	
+	public function checkAvailability($data){
+        $result = $this->find('first', array('conditions' => array('User.email' => $data['email'])));
+        if (isset($result['User'])){
+			return false;
+        }
+		return true;
+	}
 	 
 	 public function beforeSave($options = Array()){
 		if(isset($this->data['User']['password'])){

@@ -88,7 +88,6 @@ class UsersController extends SportopolisController {
 	    if ($this->request->is('post')) {
 	        $this->User->create();
 			$this->request->data['User']['user_type'] = '3';
-			debug($this->request->data);
 	        // hash the password coming in from the form using Authcomponent::password       
 	        if ($this->User->save($this->request->data)) {
 	            $this->Session->setFlash(__('The user has been saved.'));
