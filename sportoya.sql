@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2015 at 02:04 AM
+-- Generation Time: Apr 04, 2015 at 07:09 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -165,8 +165,8 @@ CREATE TABLE IF NOT EXISTS `locations` (
 --
 
 INSERT INTO `locations` (`id`, `name`, `country`, `city`, `district`, `address`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `views`, `user_id`, `google_map`) VALUES
-(1, '', '', '', '', '', 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 27, ''),
-(2, 'El Dawly Stadium', 'Egypt', 'Giza', 'Haram', 'Mansoriya', 0, 2.5, NULL, '1231412', '32412', 'Awad123@Gmail.com', '', 4, 25, '');
+(1, '', '', '', '', '', 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 13, ''),
+(2, 'El Dawly Stadium', 'Egypt', 'Giza', 'Haram', 'Mansoriya', 0, 2.5, NULL, '1231412', '32412', 'Awad123@Gmail.com', '', 4, 15, '');
 
 -- --------------------------------------------------------
 
@@ -331,7 +331,8 @@ CREATE TABLE IF NOT EXISTS `stores` (
   `mobile` decimal(10,0) DEFAULT NULL,
   `email` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `website` text COLLATE utf8_bin,
-  `views` int(11) NOT NULL
+  `views` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
@@ -381,7 +382,7 @@ CREATE TABLE IF NOT EXISTS `trainers` (
   `biography` text COLLATE utf8_bin,
   `user_id` int(11) NOT NULL,
   `views` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `trainers`
@@ -440,7 +441,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(45) CHARACTER SET latin1 NOT NULL,
   `password` varchar(128) CHARACTER SET latin1 NOT NULL,
   `user_type` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
@@ -450,7 +451,7 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `birthdate`, `em
 (13, 'Khaled', 'Hegazy', 'Male', '1990-12-10', 'khaled-hegazy92@hotmail.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 3),
 (15, 'Abdallah', 'Khaled', 'Male', '1990-12-10', 'dinopedia93@gmail.com', '2db7e9f1bc905c83630d097815eb5091e01678e4', 1),
 (23, 'youssef', 'Khory', 'Male', '1993-12-11', 'aka@gfail.com', 'fcfa68164162b0988c41faf7f2aedfb2af54ee31', 1),
-(36, 'Ahmed ', 'Abuzekry', 'Male', '1992-09-08', 'abouzekrys@hotmail.com', 'b1c76281bb95d06af628280c2b65cf154b6c4fb3', 3);
+(38, 'Ahmed ', 'Abuzekry', 'Male', '1992-09-08', 'abouzekrys@hotmail.com', 'b1c76281bb95d06af628280c2b65cf154b6c4fb3', 3);
 
 -- --------------------------------------------------------
 
@@ -636,7 +637,7 @@ ALTER TABLE `sports_has_stores`
 -- Indexes for table `stores`
 --
 ALTER TABLE `stores`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`), ADD UNIQUE KEY `name_UNIQUE` (`name`), ADD UNIQUE KEY `address_UNIQUE` (`address`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`), ADD UNIQUE KEY `name_UNIQUE` (`name`), ADD UNIQUE KEY `address_UNIQUE` (`address`), ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `stores_has_photos`
@@ -761,12 +762,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `trainers`
 --
 ALTER TABLE `trainers`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=37;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `users_rating_trainers`
 --
@@ -823,6 +824,12 @@ ADD CONSTRAINT `fk_events_has_reviews_events1` FOREIGN KEY (`event_id`) REFERENC
 ADD CONSTRAINT `fk_events_has_reviews_reviews1` FOREIGN KEY (`review_id`) REFERENCES `reviews` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `locations`
+--
+ALTER TABLE `locations`
+ADD CONSTRAINT `locations_fbs1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `locations_has_photos`
 --
 ALTER TABLE `locations_has_photos`
@@ -870,6 +877,12 @@ ADD CONSTRAINT `fk_sports_has_stores_sports1` FOREIGN KEY (`sport_id`) REFERENCE
 ADD CONSTRAINT `fk_sports_has_stores_stores1` FOREIGN KEY (`store_id`) REFERENCES `stores` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
+-- Constraints for table `stores`
+--
+ALTER TABLE `stores`
+ADD CONSTRAINT `stores_fbs1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Constraints for table `stores_has_photos`
 --
 ALTER TABLE `stores_has_photos`
@@ -888,7 +901,7 @@ ADD CONSTRAINT `fk_stores_has_reviews_stores1` FOREIGN KEY (`store_id`) REFERENC
 --
 ALTER TABLE `trainers`
 ADD CONSTRAINT `fk_trainers_sports1` FOREIGN KEY (`sports_id`) REFERENCES `sports` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `trainers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+ADD CONSTRAINT `trainers_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `trainers_has_locations`

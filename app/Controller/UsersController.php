@@ -85,6 +85,7 @@ class UsersController extends SportopolisController {
 	
 	public function add() 
 	{
+		$this->layout = 'sportopolis';
 	    if ($this->request->is('post')) {
 	        $this->User->create();
 			$this->request->data['User']['user_type'] = '3';

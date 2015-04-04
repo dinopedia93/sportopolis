@@ -24,8 +24,8 @@
 <form class="signup-email" action="/sportopolis/users/login" id="UserLoginForm" method="post" accept-charset="utf-8">
 <div style="display:none;"><input type="hidden" name="_method" value="POST"/>
 </div>
-<input class="textboxStandard" name="data[User][email]" maxlength="45" type="email" id="UserEmail" required="required"/>
-<input class="textboxStandard" name="data[User][password]" type="password" id="UserPassword" required="required"/>
+<input class="textboxStandard" name="data[User][email]" maxlength="45" type="email" id="UserEmail" required="required" placeholder="Email"/>
+<input class="textboxStandard" name="data[User][password]" type="password" id="UserPassword" required="required" placeholder="Password"/>
 
 <div class="submit"><input class="signupSubmitBTN" type="submit" value="Login"/>
 </div>
