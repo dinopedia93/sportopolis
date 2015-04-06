@@ -152,11 +152,11 @@
 
 <ul class="sportList">
 
-<li class="articlePicto">Articles</li>
-<li class="trainerPicto">Trainers</li>
-<li class="locationPicto">Locations</li>
-<li class="storesPicto">Stores</li>
-<li class="eventPicto">Events</li>
+<li class="articlePicto"><?php echo __('Articles');?></li>
+<li class="trainerPicto"><?php echo __('Trainers');?></li>
+<li class="locationPicto"><?php echo __('Locations');?></li>
+<li class="storesPicto"><?php echo __('Stores');?></li>
+<li class="eventPicto"><?php echo __('Events');?></li>
 
 </ul>
 

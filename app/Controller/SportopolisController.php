@@ -56,6 +56,9 @@ class SportopolisController extends Controller {
 	}
 	
 	public function beforeFilter(){
+        if ($this->Session->check('Config.language')) {
+            Configure::write('Config.language', $this->Session->read('Config.language'));
+        }
 		$this->Auth->allow('menu' , 'view');
 		//$this->Auth->allow('index' , 'view');
 		$this->Auth->allow('signuptrainer' , 'view');
@@ -65,6 +68,22 @@ class SportopolisController extends Controller {
 		$this->Auth->allow('profilearticle' , 'view');
 	}
 
+	
+	
+	public function changeLanguage($lang){
+        if(!empty($lang)){
+            if($lang == 'eng'){
+                $this->Session->write('Config.language', 'arabic');
+            }
+ 
+            else if($lang == 'arabic'){
+                $this->Session->write('Config.language', 'eng');
+            }
+ 
+            //in order to redirect the user to the page from which it was called
+            $this->redirect($this->referer());
+        }
+    }
 	/* ---------------------------- Pages Functions ------------------------------------------- */
 	public function index() 
 	{
