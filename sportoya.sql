@@ -2,8 +2,8 @@
 -- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Apr 04, 2015 at 09:16 PM
+-- Host: 127.0.0.1
+-- Generation Time: Apr 09, 2015 at 07:26 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `title` varchar(100) COLLATE utf8_bin NOT NULL,
   `article_date` date NOT NULL,
   `article_time` time NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `member_id` int(11) NOT NULL,
   `article_content` longtext COLLATE utf8_bin NOT NULL,
   `sport_id` int(11) NOT NULL,
   `status` varchar(10) COLLATE utf8_bin NOT NULL
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
 -- Dumping data for table `articles`
 --
 
-INSERT INTO `articles` (`id`, `title`, `article_date`, `article_time`, `user_id`, `article_content`, `sport_id`, `status`) VALUES
+INSERT INTO `articles` (`id`, `title`, `article_date`, `article_time`, `member_id`, `article_content`, `sport_id`, `status`) VALUES
 (1, 'Men who exercise more have better erectile and sexual function', '2015-03-26', '09:27:28', 23, 'Washington: A new study has examined that men who exercise more have better erectile and sexual function, regardless of race.\r\n\r\nThe study conducted at Cedars-Sinai Medical Center is the first to link the benefits of exercise in relation to improved erectile and sexual function in a racially diverse group of patients.\r\n\r\nNearly 300 study participants self-reported their activity levels, which researchers then categorized as sedentary, mildly active, moderately active or highly active. The subjects also self-reported their sexual function, including the ability to have erections, orgasms, the quality and frequency of erections and overall sexual function.\r\n\r\nResults found that men who reported more frequent exercise, a total of 18 metabolic equivalents, or METS, per week, had higher sexual function scores, regardless of race. MET hours reflect both the total time of exercise and the intensity of exercise. A total of 18 METS can be achieved by combining exercises with different intensities, but is the equivalent of two hours of strenuous exercise, such as running or swimming, 3.5 hours of moderate exercise, or six hours of light exercise.\r\n\r\nStephen Freedland, MD, co-author on the study and director of the Center for Integrated Research in Cancer and Lifestyle in the Cedars-Sinai Samuel Oschin Comprehensive Cancer Institute, cautions that exercise should be tailored for each individual.\r\n\r\nFreedland added that when it came to exercise, there was no one-size-fits-all approach, however, they were confident that even some degree of exercise, even if less intense, was better than no exercise at all.\r\n\r\nThe study is published in the Journal of Sexual Medicine', 4, 'accepted');
 
 -- --------------------------------------------------------
@@ -157,17 +157,15 @@ CREATE TABLE IF NOT EXISTS `locations` (
   `website` text COLLATE utf8_bin,
   `views` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
-  `google_map` text COLLATE utf8_bin NOT NULL,
-  `biography` text COLLATE utf8_bin NOT NULL
+  `google_map` text COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `locations`
 --
 
-INSERT INTO `locations` (`id`, `name`, `country`, `city`, `district`, `address`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `views`, `user_id`, `google_map`, `biography`) VALUES
-(1, '', '', '', '', '', 0, 3.5, NULL, NULL, NULL, NULL, NULL, 1, 13, '', ''),
-(2, 'El Dawly Stadium', 'Egypt', 'Giza', 'Haram', 'Mansoriya', 0, 3, NULL, '1231412', '32412', 'Awad123@Gmail.com', '', 5, 15, '', '');
+INSERT INTO `locations` (`id`, `name`, `country`, `city`, `district`, `address`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `views`, `user_id`, `google_map`) VALUES
+(2, 'El Dawly Stadium', 'Egypt', 'Giza', 'Haram', 'Mansoriya', 0, 2.5, NULL, '1231412', '32412', 'Awad123@Gmail.com', '', 4, 15, '');
 
 -- --------------------------------------------------------
 
@@ -201,14 +199,6 @@ CREATE TABLE IF NOT EXISTS `locations_has_sports` (
   `location_id` int(11) NOT NULL,
   `sport_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Dumping data for table `locations_has_sports`
---
-
-INSERT INTO `locations_has_sports` (`location_id`, `sport_id`) VALUES
-(1, 1),
-(1, 4);
 
 -- --------------------------------------------------------
 
@@ -247,16 +237,8 @@ CREATE TABLE IF NOT EXISTS `reviews` (
   `date` date NOT NULL,
   `time` time NOT NULL,
   `review` text COLLATE utf8_bin NOT NULL,
-  `user_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
---
--- Dumping data for table `reviews`
---
-
-INSERT INTO `reviews` (`id`, `date`, `time`, `review`, `user_id`) VALUES
-(3, '2015-04-04', '21:01:58', 'First Review', 13),
-(4, '2015-04-03', '10:18:31', 'Review ba2a we keda', 15);
+  `member_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -378,29 +360,25 @@ CREATE TABLE IF NOT EXISTS `trainers` (
   `city` varchar(45) COLLATE utf8_bin NOT NULL,
   `district` varchar(45) COLLATE utf8_bin NOT NULL,
   `location` varchar(45) COLLATE utf8_bin NOT NULL,
-  `training_days` varchar(45) COLLATE utf8_bin NOT NULL,
-  `time` time DEFAULT NULL,
   `likes_count` decimal(10,0) NOT NULL,
   `rank` float NOT NULL,
   `facebook` text COLLATE utf8_bin,
-  `tel` decimal(10,0) DEFAULT NULL,
   `mobile` decimal(11,0) NOT NULL,
-  `email` varchar(45) COLLATE utf8_bin DEFAULT NULL,
   `website` text COLLATE utf8_bin,
   `sports_id` int(11) DEFAULT NULL,
   `biography` text COLLATE utf8_bin,
   `user_id` int(11) NOT NULL,
   `views` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `trainers`
 --
 
-INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `location`, `training_days`, `time`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `sports_id`, `biography`, `user_id`, `views`) VALUES
-(2, 'Egypt', 'Giza', 'Dokki', '28-Refaa st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1014417474', 'khaled-hegazy92@hotmail.com', NULL, 2, 'I am Khaled Hegazy a dedicated football trainer seeking to improve the future of football in Egypt. Please contact me for more info.', 13, 8),
-(3, 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', 'Thursday', NULL, '0', 0, NULL, NULL, '1152892222', NULL, NULL, 2, 'Dizo Gamed Fash5', 15, 1),
-(6, 'Egypt', 'Giza', 'Mohandseen', 'Fa5ayda', '', NULL, '0', 3, NULL, NULL, '123214465', NULL, NULL, 2, 'Beyombroblo el masal', 23, 23);
+INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `location`, `likes_count`, `rank`, `facebook`, `mobile`, `website`, `sports_id`, `biography`, `user_id`, `views`) VALUES
+(3, 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', '0', 0, NULL, '1152892222', NULL, 2, 'Dizo Gamed Fash5', 15, 2),
+(6, 'Egypt', 'Giza', 'Mohandseen', 'Fa5ayda', '0', 4, NULL, '123214465', NULL, 2, 'Beyombroblo el masal', 23, 6),
+(13, 'Egypt', 'Giza', 'Dokki', '28 Refaa street', '0', 0, '', '1014417474', '', 2, 'Hello', 47, 0);
 
 -- --------------------------------------------------------
 
@@ -435,14 +413,6 @@ CREATE TABLE IF NOT EXISTS `trainers_has_reviews` (
   `review_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `trainers_has_reviews`
---
-
-INSERT INTO `trainers_has_reviews` (`trainer_id`, `review_id`) VALUES
-(6, 3),
-(6, 4);
-
 -- --------------------------------------------------------
 
 --
@@ -458,17 +428,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(45) CHARACTER SET latin1 NOT NULL,
   `password` varchar(128) CHARACTER SET latin1 NOT NULL,
   `user_type` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `birthdate`, `email`, `password`, `user_type`) VALUES
-(13, 'Khaled', 'Hegazy', 'Male', '1990-12-10', 'khaled-hegazy92@hotmail.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 3),
 (15, 'Abdallah', 'Khaled', 'Male', '1990-12-10', 'dinopedia93@gmail.com', '2db7e9f1bc905c83630d097815eb5091e01678e4', 1),
 (23, 'youssef', 'Khory', 'Male', '1993-12-11', 'aka@gfail.com', 'fcfa68164162b0988c41faf7f2aedfb2af54ee31', 1),
-(38, 'Ahmed ', 'Abuzekry', 'Male', '1992-09-08', 'abouzekrys@hotmail.com', 'b1c76281bb95d06af628280c2b65cf154b6c4fb3', 3);
+(38, 'Ahmed ', 'Abuzekry', 'Male', '1992-09-08', 'abouzekrys@hotmail.com', 'b1c76281bb95d06af628280c2b65cf154b6c4fb3', 3),
+(39, 'Mohamed', 'Hegazy', 'Male', '1986-05-19', 'moh.hegazy86@live.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 3),
+(47, 'Khaled', 'Hegazy', 'Male', '1992-02-19', 'khaled-hegazy92@hotmail.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 1);
 
 -- --------------------------------------------------------
 
@@ -488,9 +459,7 @@ CREATE TABLE IF NOT EXISTS `users_rating_locations` (
 --
 
 INSERT INTO `users_rating_locations` (`id`, `user_id`, `rating`, `location_id`) VALUES
-(1, 15, 3, 1),
-(0, 13, 4, 1),
-(0, 13, 3, 2);
+(1, 15, 3, 1);
 
 -- --------------------------------------------------------
 
@@ -504,13 +473,6 @@ CREATE TABLE IF NOT EXISTS `users_rating_trainers` (
   `rating` int(11) NOT NULL,
   `trainer_id` int(11) NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `users_rating_trainers`
---
-
-INSERT INTO `users_rating_trainers` (`id`, `user_id`, `rating`, `trainer_id`) VALUES
-(1, 13, 3, 6);
 
 -- --------------------------------------------------------
 
@@ -553,7 +515,7 @@ ALTER TABLE `advertisements`
 -- Indexes for table `articles`
 --
 ALTER TABLE `articles`
- ADD PRIMARY KEY (`id`), ADD KEY `fk_articles_members1_idx` (`user_id`), ADD KEY `fk_Articles_sports1_idx` (`sport_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `fk_articles_members1_idx` (`member_id`), ADD KEY `fk_Articles_sports1_idx` (`sport_id`);
 
 --
 -- Indexes for table `articles_has_photos`
@@ -625,7 +587,7 @@ ALTER TABLE `photos`
 -- Indexes for table `reviews`
 --
 ALTER TABLE `reviews`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`), ADD KEY `fk_reviews_members1_idx` (`user_id`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`), ADD KEY `fk_reviews_members1_idx` (`member_id`);
 
 --
 -- Indexes for table `sponsors`
@@ -703,13 +665,13 @@ ALTER TABLE `users`
 -- Indexes for table `users_rating_locations`
 --
 ALTER TABLE `users_rating_locations`
- ADD KEY `fk_users_rating_locations_user` (`user_id`), ADD KEY `fk_users_rating_locations_location` (`location_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `fk_users_rating_locations_user` (`user_id`), ADD KEY `fk_users_rating_locations_location` (`location_id`);
 
 --
 -- Indexes for table `users_rating_trainers`
 --
 ALTER TABLE `users_rating_trainers`
- ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `trainer_id` (`trainer_id`), ADD KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `user_types`
@@ -760,7 +722,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `sponsors`
 --
@@ -780,12 +742,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `trainers`
 --
 ALTER TABLE `trainers`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=48;
 --
 -- AUTO_INCREMENT for table `users_rating_trainers`
 --
@@ -810,8 +772,8 @@ ADD CONSTRAINT `fk_advertisements_sponsors1` FOREIGN KEY (`sponsors_id`) REFEREN
 -- Constraints for table `articles`
 --
 ALTER TABLE `articles`
-ADD CONSTRAINT `fk_articles_sports1` FOREIGN KEY (`sport_id`) REFERENCES `sports` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `fk_articles_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `fk_articles_members1` FOREIGN KEY (`member_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_articles_sports1` FOREIGN KEY (`sport_id`) REFERENCES `sports` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `articles_has_photos`
@@ -878,7 +840,7 @@ ADD CONSTRAINT `fk_messages_members` FOREIGN KEY (`members_id`) REFERENCES `user
 -- Constraints for table `reviews`
 --
 ALTER TABLE `reviews`
-ADD CONSTRAINT `fk_review_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `fk_reviews_members1` FOREIGN KEY (`member_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `sponsors_has_events`
@@ -952,10 +914,14 @@ ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`user_type`) REFERENCES `user_types` 
 -- Constraints for table `users_rating_locations`
 --
 ALTER TABLE `users_rating_locations`
-ADD CONSTRAINT `fk_users_rating_locations_location` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`),
-ADD CONSTRAINT `fk_users_rating_locations_locations1` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `fk_users_rating_locations_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
 ADD CONSTRAINT `fk_users_rating_locations_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `users_rating_trainers`
+--
+ALTER TABLE `users_rating_trainers`
+ADD CONSTRAINT `fk_trainers_users_rating_locations_1` FOREIGN KEY (`trainer_id`) REFERENCES `trainers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_users_users_rating_locations_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

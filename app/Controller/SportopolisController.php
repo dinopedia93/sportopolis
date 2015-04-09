@@ -160,7 +160,7 @@ class SportopolisController extends Controller {
 		
 		
 		$allreviews = $this->Review->GetTrainerReviews($id);
-		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT user_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM trainers_has_reviews WHERE trainer_id = " .$id."))");
+		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM trainers_has_reviews WHERE trainer_id = " .$id."))");
 		
 		$this->set('allreviewwriters', $allreviewwriters);
 		

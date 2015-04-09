@@ -30,10 +30,10 @@ App::uses('Model','Model');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
-class UsersController extends SportopolisController {
+class TrainersController extends SportopolisController {
  
-	public $name = 'users';
-	var $uses = array('User');
+	public $name = 'trainers';
+	var $uses = array('Trainer');
 	
 	public function beforeFilter()
 	{
@@ -61,48 +61,27 @@ class UsersController extends SportopolisController {
 		$this->redirect($this->Auth->logout());
 	}
 	
-	public function index()
-	{
-		$this->User->recursive = 0;
-		$this->set('users' , $this->User->find('all'));
-	}
-	
-	public function view($id = null)
-	{
-		$this->User->id = $id;
-		if(!$this->User->exists()){
-			throw new NotFoundException('Invalid User');
-		}
-		
-		if(!$id){
-			$this->Session->setFlash('Invalid User');
-			$this->redirect(array('action' => 'index'));
-		}
-		$this->set('user' , $this->User->read());
-		
-	}
-	
 	
 	public function add($id) 
 	{
 		$this->layout = 'sportopolis';
 	    if ($this->request->is('post')) {
-	        $this->User->create();
-			$this->request->data['User']['user_type'] = $id;
+	        $this->Trainer->create();
+			$this->request->data['Trainer']['user_id'] = $id;
+			$this->request->data['Trainer']['likes_count'] = 0;
+			$this->request->data['Trainer']['rank'] = 0;
+			$this->request->data['Trainer']['user_id'] = $id;
+			$this->request->data['Trainer']['facebook'] = "";
+			$this->request->data['Trainer']['website'] = "";
+			$this->request->data['Trainer']['sports_id'] = 2;
+			$this->request->data['Trainer']['biography'] = "Hello";
+			$this->request->data['Trainer']['views'] = 0;
 	        // hash the password coming in from the form using Authcomponent::password       
-	        if ($this->User->save($this->request->data)) {
-				if($id == 3)
-				{
-					$this->Session->setFlash(__('The user has been saved.'));
-					return $this->redirect(array('action' => 'index'));
-				}
-				else if($id == 1)
-				{
-					$userid = $this->User->id;
-					return $this->redirect(array('controller' => 'trainers' , 'action' => 'add' , $userid));
-				}
+	        if ($this->Trainer->save($this->request->data)) {
+				$this->Session->setFlash(__('The trainer has been saved.'));
+				return $this->redirect(array('controller' => 'sportopolis' , 'action' => 'index'));
 	        } else {
-	            $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
+	            $this->Session->setFlash(__('The trainer could not be saved. Please, try again.'));
 	        }
 	    }
 

@@ -72,7 +72,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 
 <div class="signupMidDiv">
 <ul>
-<li><a href="/sportopolis/sportopolis/signuptrainer">
+<li><a href="/sportopolis/users/add/1">
 <?php echo $this->Html->image('TrainerSignUp.png'); ?>
 <div class="signupPictoText">Trainer</div>
 <div class="signupPictoDesc">Sign up as a trainer.</div></a>
@@ -90,7 +90,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 <div class="signupPictoDesc">Sign up as a sport store.</div></a>
 </li>
 
-<li><a href="/sportopolis/users/add">
+<li><a href="/sportopolis/users/add/3">
 <?php echo $this->Html->image('ArticleSignUP.png'); ?>
 <div class="signupPictoText">Normal User</div>
 <div class="signupPictoDesc">Sign up as a member.</div></a>
