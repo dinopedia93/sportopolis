@@ -2,8 +2,8 @@
 -- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Apr 10, 2015 at 03:58 PM
+-- Host: 127.0.0.1
+-- Generation Time: Apr 10, 2015 at 04:55 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -23,16 +23,17 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin_contacts`
+-- Table structure for table `admins`
 --
 
-CREATE TABLE IF NOT EXISTS `admin_contacts` (
+CREATE TABLE IF NOT EXISTS `admins` (
 `id` int(11) NOT NULL,
   `first_name` varchar(45) NOT NULL,
   `last_name` varchar(45) NOT NULL,
   `gender` varchar(10) NOT NULL,
-  `mobile` decimal(11,0) NOT NULL,
+  `birthdate` date NOT NULL,
   `email` varchar(45) NOT NULL,
+  `password` varchar(128) CHARACTER SET latin1 NOT NULL,
   `facebook_acc` varchar(100) NOT NULL,
   `brief` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -376,7 +377,7 @@ CREATE TABLE IF NOT EXISTS `trainers` (
 --
 
 INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `working_area`, `likes_count`, `rank`, `facebook`, `mobile`, `website`, `sports_id`, `biography`, `user_id`, `views`) VALUES
-(3, 'Egypt', 'Giza', 'Haram', '', '0', 0, NULL, '1152892222', NULL, 2, 'Dizo Gamed Fash5', 15, 2),
+(3, 'Egypt', 'Giza', 'Haram', '', '0', 0, NULL, '1152892222', NULL, 2, 'Dizo Gamed Fash5', 15, 6),
 (6, 'Egypt', 'Giza', 'Mohandseen', '', '0', 4, NULL, '123214465', NULL, 2, 'Beyombroblo el masal', 23, 7),
 (38, 'Egypt', 'Al Qahirah', ' ', 'Maadi', '0', 0, '', '110011011', '', 1, 'El 3amid', 80, 0);
 
@@ -494,9 +495,9 @@ INSERT INTO `user_types` (`id`, `user_type`) VALUES
 --
 
 --
--- Indexes for table `admin_contacts`
+-- Indexes for table `admins`
 --
-ALTER TABLE `admin_contacts`
+ALTER TABLE `admins`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`);
 
 --
@@ -678,9 +679,9 @@ ALTER TABLE `user_types`
 --
 
 --
--- AUTO_INCREMENT for table `admin_contacts`
+-- AUTO_INCREMENT for table `admins`
 --
-ALTER TABLE `admin_contacts`
+ALTER TABLE `admins`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `advertisements`
