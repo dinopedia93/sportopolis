@@ -6,25 +6,19 @@ class Trainer extends AppModel {
 	 public $displayField = 'name';
 	 
 	public $validate = array (
-	'country' => array(
+	'data[Trainer][country]' => array(
 		'Please select your country. ' => array(
 			'rule' => 'notEmpty',
 			'on' => 'create',
 			'message' => 'Please select your country.'
 		)
-	),'city' => array(
+	),'data[Trainer][city]' => array(
 		'Please select your city. ' => array(
 			'rule' => 'notEmpty',
 			'on' => 'create',
 			'message' => 'Please select your city.'
 		)
-	),'district' => array(
-		'Please select your district. ' => array(
-			'rule' => 'notEmpty',
-			'on' => 'create',
-			'message' => 'Please select your district.'
-		)
-	),'location' => array(
+	),'working_area' => array(
 		'Please select your location. ' => array(
 			'rule' => 'notEmpty',
 			'on' => 'create',
@@ -36,7 +30,13 @@ class Trainer extends AppModel {
 			'on' => 'create',
 			'message' => 'Please enter your mobile number.'
 		)
-	));
+	),'sports_id' => array(
+			'Please select your sport. ' => array(
+				'rule' => 'notEmpty',
+				'on' => 'create',
+				'message' => 'Please select your sport.'
+			)
+		));
 	
 	public $hasMany = array(
 				'TrainersHasReviews','TrainersHasPhotos'

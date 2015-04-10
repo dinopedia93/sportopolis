@@ -87,23 +87,25 @@ class UsersController extends SportopolisController {
 	{
 		$this->layout = 'sportopolis';
 	    if ($this->request->is('post')) {
-	        $this->User->create();
-			$this->request->data['User']['user_type'] = $id;
-	        // hash the password coming in from the form using Authcomponent::password       
-	        if ($this->User->save($this->request->data)) {
-				if($id == 3)
-				{
+			if($id == 3)
+			{
+				$this->User->create();
+				$this->request->data['User']['user_type'] = $id;
+				if ($this->User->save($this->request->data)) {
 					$this->Session->setFlash(__('The user has been saved.'));
 					return $this->redirect(array('action' => 'index'));
-				}
-				else if($id == 1)
-				{
-					$userid = $this->User->id;
-					return $this->redirect(array('controller' => 'trainers' , 'action' => 'add' , $userid));
-				}
-	        } else {
+				} else {
 	            $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
-	        }
+				}
+			}
+			else if($id == 1)
+			{
+				$this->request->data['User']['user_type'] = $id;
+				$this->Session->write('theuserdata', $this->request->data);
+				return $this->redirect(array('controller' => 'trainers' , 'action' => 'add'));
+			}
+	        // hash the password coming in from the form using Authcomponent::password       
+	        
 	    }
 
 

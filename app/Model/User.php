@@ -63,8 +63,6 @@ class User extends AppModel {
 		));
 	 
 	public function matchPasswords($data){
-		debug($data['password']);
-		debug($this->data['User']['password_confirmation']);
 		if($data['password'] == $this->data['User']['password_confirmation']){
 			return true;
 		}

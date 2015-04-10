@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2015 at 07:26 PM
+-- Generation Time: Apr 10, 2015 at 02:51 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -359,7 +359,7 @@ CREATE TABLE IF NOT EXISTS `trainers` (
   `country` varchar(45) COLLATE utf8_bin NOT NULL,
   `city` varchar(45) COLLATE utf8_bin NOT NULL,
   `district` varchar(45) COLLATE utf8_bin NOT NULL,
-  `location` varchar(45) COLLATE utf8_bin NOT NULL,
+  `working_area` varchar(45) COLLATE utf8_bin NOT NULL,
   `likes_count` decimal(10,0) NOT NULL,
   `rank` float NOT NULL,
   `facebook` text COLLATE utf8_bin,
@@ -369,16 +369,15 @@ CREATE TABLE IF NOT EXISTS `trainers` (
   `biography` text COLLATE utf8_bin,
   `user_id` int(11) NOT NULL,
   `views` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `trainers`
 --
 
-INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `location`, `likes_count`, `rank`, `facebook`, `mobile`, `website`, `sports_id`, `biography`, `user_id`, `views`) VALUES
-(3, 'Egypt', 'Giza', 'Haram', '32 Eshta-st.', '0', 0, NULL, '1152892222', NULL, 2, 'Dizo Gamed Fash5', 15, 2),
-(6, 'Egypt', 'Giza', 'Mohandseen', 'Fa5ayda', '0', 4, NULL, '123214465', NULL, 2, 'Beyombroblo el masal', 23, 6),
-(13, 'Egypt', 'Giza', 'Dokki', '28 Refaa street', '0', 0, '', '1014417474', '', 2, 'Hello', 47, 0);
+INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `working_area`, `likes_count`, `rank`, `facebook`, `mobile`, `website`, `sports_id`, `biography`, `user_id`, `views`) VALUES
+(3, 'Egypt', 'Giza', 'Haram', '', '0', 0, NULL, '1152892222', NULL, 2, 'Dizo Gamed Fash5', 15, 2),
+(6, 'Egypt', 'Giza', 'Mohandseen', '', '0', 4, NULL, '123214465', NULL, 2, 'Beyombroblo el masal', 23, 6);
 
 -- --------------------------------------------------------
 
@@ -428,7 +427,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(45) CHARACTER SET latin1 NOT NULL,
   `password` varchar(128) CHARACTER SET latin1 NOT NULL,
   `user_type` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=48 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
@@ -439,7 +438,7 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `birthdate`, `em
 (23, 'youssef', 'Khory', 'Male', '1993-12-11', 'aka@gfail.com', 'fcfa68164162b0988c41faf7f2aedfb2af54ee31', 1),
 (38, 'Ahmed ', 'Abuzekry', 'Male', '1992-09-08', 'abouzekrys@hotmail.com', 'b1c76281bb95d06af628280c2b65cf154b6c4fb3', 3),
 (39, 'Mohamed', 'Hegazy', 'Male', '1986-05-19', 'moh.hegazy86@live.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 3),
-(47, 'Khaled', 'Hegazy', 'Male', '1992-02-19', 'khaled-hegazy92@hotmail.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 1);
+(79, 'Khaled', 'Hegazy', 'Male', '1992-02-19', 'khaled-hegazy92@hotmail.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 1);
 
 -- --------------------------------------------------------
 
@@ -472,7 +471,7 @@ CREATE TABLE IF NOT EXISTS `users_rating_trainers` (
   `user_id` int(11) NOT NULL,
   `rating` int(11) NOT NULL,
   `trainer_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -742,17 +741,17 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `trainers`
 --
 ALTER TABLE `trainers`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=48;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=80;
 --
 -- AUTO_INCREMENT for table `users_rating_trainers`
 --
 ALTER TABLE `users_rating_trainers`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `user_types`
 --

@@ -20,6 +20,7 @@
  */
 
 App::uses('SportopolisController', 'Controller');
+App::uses('UsersController', 'Controller');
 App::uses('Model','Model');
 /**
  * Application Controller
@@ -33,7 +34,7 @@ App::uses('Model','Model');
 class TrainersController extends SportopolisController {
  
 	public $name = 'trainers';
-	var $uses = array('Trainer');
+	var $uses = array('Trainer','User');
 	
 	public function beforeFilter()
 	{
@@ -62,28 +63,30 @@ class TrainersController extends SportopolisController {
 	}
 	
 	
-	public function add($id) 
+	public function add() 
 	{
+		$userdata = $this->Session->read('theuserdata');
 		$this->layout = 'sportopolis';
 	    if ($this->request->is('post')) {
-	        $this->Trainer->create();
-			$this->request->data['Trainer']['user_id'] = $id;
-			$this->request->data['Trainer']['likes_count'] = 0;
-			$this->request->data['Trainer']['rank'] = 0;
-			$this->request->data['Trainer']['user_id'] = $id;
-			$this->request->data['Trainer']['facebook'] = "";
-			$this->request->data['Trainer']['website'] = "";
-			$this->request->data['Trainer']['sports_id'] = 2;
-			$this->request->data['Trainer']['biography'] = "Hello";
-			$this->request->data['Trainer']['views'] = 0;
-	        // hash the password coming in from the form using Authcomponent::password       
-	        if ($this->Trainer->save($this->request->data)) {
-				$this->Session->setFlash(__('The trainer has been saved.'));
-				return $this->redirect(array('controller' => 'sportopolis' , 'action' => 'index'));
-	        } else {
-	            $this->Session->setFlash(__('The trainer could not be saved. Please, try again.'));
-	        }
-	    }
+			
+			$this->User->create();
+			if ($this->User->save($userdata)){
+				$this->Trainer->create();
+				$this->request->data['Trainer']['user_id'] = $this->User->id;
+				$this->request->data['Trainer']['likes_count'] = 0;
+				$this->request->data['Trainer']['rank'] = 0;
+				$this->request->data['Trainer']['district'] = " ";
+				$this->request->data['Trainer']['views'] = 0;
+				debug($this->request->data);
+				// hash the password coming in from the form using Authcomponent::password       
+				if ($this->Trainer->save($this->request->data)) {
+					$this->Session->setFlash(__('The trainer has been saved.'));
+					return $this->redirect(array('controller' => 'sportopolis' , 'action' => 'index'));
+				} else {
+					$this->Session->setFlash(__('The trainer could not be saved. Please, try again.'));
+				}
+			}
+		}
 
 
 	}
