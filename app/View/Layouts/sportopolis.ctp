@@ -171,7 +171,7 @@ $(document).ready(function () {
 
 <div class="write-header"><a href="/sportopolis/sportopolis/competemenu">Compete</a></div>
 <?php if($this->Session->read('Auth.User') != null){ ?>	
-<div class="write-header2"><a href="/sportopolis/sportopolis/createarticle">Write</a></div>	
+<div class="write-header2"><a href="<?php echo "/sportopolis/articles/add/".$this->Session->read('Auth.User.id'); ?>">Write</a></div>	
 <?php } ?>
 	
 

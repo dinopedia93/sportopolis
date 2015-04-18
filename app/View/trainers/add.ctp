@@ -21,7 +21,7 @@
 			echo $this->Form->input('mobile');
 			echo $this->Form->input('website');
 			echo $this->Form->input('biography');
-			$options=array('1'=>'Football','2'=>'Cycline','3'=>'Tennis','4'=>'Fitness','5'=>'Fishing');
+			$options=array('1'=>'Football','2'=>'Cycling','3'=>'Tennis','4'=>'Fitness','5'=>'Fishing');
 			$attributes=array('legend'=>false);
 			echo $this->Form->radio('sports_id',$options,$attributes);
 		?>
