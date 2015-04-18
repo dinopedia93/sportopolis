@@ -175,16 +175,28 @@ $(document).ready(function () {
 <?php } ?>
 	
 
-<?php if( ($this->Session->read('Auth.User') != null) && ($this->Session->read('Auth.User.user_type') == 5)  ){ ?>	
+<?php if( ($this->Session->read('Auth.User') != null) && ($this->Session->read('Auth.User.user_type') == 5) ){ ?>
+<div class="account">
+	<div class="accountPhoto"><?php echo $this->Html->image('boss.png', array('class' => 'circlePhoto')); ?></div>
+	
+	<ul class="accountMenu">
+					
+	<li><a class="accountName"  onmouseover="mopen('m3')" onmouseout="mclosetime()">Hisham Ahmed</a>
+	<div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+	<a href="#">Edit Profile</a>						
+	<a href="/sportopolis/users/logout">Sign Out</a>						
+	</div>
+	</li>
+    </ul>
+
+	</div>	
 <div class="popup-signup">
-<a class="initialism fade_open btn btn-success">SIGN UP</a>
+<a class="initialism fade_open btn btn-success">Add Users</a>
 </div>
 
-	<div class="popup-Login">
-<a class="initialism btn btn-success" href='/sportopolis/users/login'>LOGIN</a>
-</div>
 
-<?php } else {?>
+
+<?php } else if(  ($this->Session->read('Auth.User') != null) && ($this->Session->read('Auth.User.user_type') != 5) ) {?>
 	<div class="account">
 	<div class="accountPhoto"><?php echo $this->Html->image('boss.png', array('class' => 'circlePhoto')); ?></div>
 	
@@ -199,7 +211,11 @@ $(document).ready(function () {
     </ul>
 
 	</div>
-<?php } ?>	
+<?php } else {?>	
+	<div class="popup-Login">
+<a class="initialism btn btn-success" href='/sportopolis/users/login'>LOGIN</a>
+</div>
+<?php }?>	
 	
 </div>
 
