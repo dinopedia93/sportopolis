@@ -175,7 +175,7 @@ $(document).ready(function () {
 <?php } ?>
 	
 
-<?php if($this->Session->read('Auth.User') == null){ ?>	
+<?php if( ($this->Session->read('Auth.User') != null) && ($this->Session->read('Auth.User.user_type') == 5)  ){ ?>	
 <div class="popup-signup">
 <a class="initialism fade_open btn btn-success">SIGN UP</a>
 </div>
