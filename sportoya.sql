@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2015 at 11:39 PM
+-- Generation Time: Apr 19, 2015 at 02:16 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -66,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `article_content` longtext COLLATE utf8_bin NOT NULL,
   `sport_id` int(11) NOT NULL,
   `status` varchar(10) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `articles`
@@ -692,7 +692,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=26;
 --
 -- AUTO_INCREMENT for table `events`
 --

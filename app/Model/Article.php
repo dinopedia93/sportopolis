@@ -20,7 +20,7 @@ class Article extends AppModel {
 				'rule' => 'notEmpty',
 				'message' => 'Please enter the article content.'
 			)
-		),'sports_id' => array(
+		),'sport_id' => array(
 			'Please select the sport. ' => array(
 				'rule' => 'notEmpty',
 				'on' => 'create',

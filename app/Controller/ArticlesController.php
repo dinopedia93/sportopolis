@@ -63,11 +63,17 @@ class ArticlesController extends SportopolisController {
 		$this->layout = 'sportopolis';
 	    if ($this->request->is('post')) {
 				$this->Article->create();
-				$this->Article->saveField('article_date_time', date("Y-m-d H:i:s"));
 				$this->request->data['Article']['user_id'] = $id;
+				$this->request->data['Article']['article_date_time'] = date('Y-m-d H:i:s'); 
+				debug($this->request->data);
+				if (isset($this->request->data['btn1'])) {
+					$this->request->data['Article']['status'] = "Saved";
+				} else if (isset($this->request->data['btn2'])) {
+					$this->request->data['Article']['status'] = "Published";
+				}
 				if ($this->Article->save($this->request->data)) {
 					$this->Session->setFlash(__('The Article has been saved.'));
-					return $this->redirect(array('action' => 'index'));
+					return $this->redirect(array('controller' => 'sportopolis' , 'action' => 'index'));
 				} else {
 	            $this->Session->setFlash(__('The article could not be saved. Please, try again.'));
 				}
