@@ -181,9 +181,9 @@ $(document).ready(function () {
 	
 	<ul class="accountMenu">
 					
-	<li><a class="accountName"  onmouseover="mopen('m3')" onmouseout="mclosetime()">Hisham Ahmed</a>
+	<li><a class="accountName"  onmouseover="mopen('m3')" onmouseout="mclosetime()"><?php echo $this->Session->read('Auth.User.first_name')." ".$this->Session->read('Auth.User.last_name'); ?></a>
 	<div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
-	<a href="#">Edit Profile</a>						
+	<a href="<?php echo "/sportopolis/users/edit/".$this->Session->read('Auth.User.id'); ?>">Edit Profile</a>						
 	<a href="/sportopolis/users/logout">Sign Out</a>						
 	</div>
 	</li>
@@ -202,9 +202,9 @@ $(document).ready(function () {
 	
 	<ul class="accountMenu">
 					
-	<li><a class="accountName"  onmouseover="mopen('m3')" onmouseout="mclosetime()">Hisham Ahmed</a>
+	<li><a class="accountName"  onmouseover="mopen('m3')" onmouseout="mclosetime()"><?php echo $this->Session->read('Auth.User.first_name')." ".$this->Session->read('Auth.User.last_name'); ?></a>
 	<div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
-	<a href="#">Edit Profile</a>						
+	<a href="<?php echo "/sportopolis/users/edit/".$this->Session->read('Auth.User.id'); ?>">Edit Profile</a>						
 	<a href="/sportopolis/users/logout">Sign Out</a>						
 	</div>
 	</li>
