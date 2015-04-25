@@ -9,31 +9,26 @@ class Trainer extends AppModel {
 	'data[Trainer][country]' => array(
 		'Please select your country. ' => array(
 			'rule' => 'notEmpty',
-			'on' => 'create',
 			'message' => 'Please select your country.'
 		)
 	),'data[Trainer][city]' => array(
 		'Please select your city. ' => array(
 			'rule' => 'notEmpty',
-			'on' => 'create',
 			'message' => 'Please select your city.'
 		)
 	),'working_area' => array(
 		'Please select your location. ' => array(
 			'rule' => 'notEmpty',
-			'on' => 'create',
 			'message' => 'Please select your location.'
 		)
 	),'mobile' => array(
 		'Please enter your mobile number. ' => array(
 			'rule' => 'isUnique',
-			'on' => 'create',
 			'message' => 'Please enter your mobile number.'
 		)
 	),'sports_id' => array(
 			'Please select your sport. ' => array(
 				'rule' => 'notEmpty',
-				'on' => 'create',
 				'message' => 'Please select your sport.'
 			)
 		));

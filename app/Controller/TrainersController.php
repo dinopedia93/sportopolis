@@ -91,6 +91,37 @@ class TrainersController extends SportopolisController {
 
 	}
 	
+	
+	public function edit() {
+		
+		$theuserid = $this->Session->read('theuserid');
+		$thetrainer = $this->Trainer->find('first' , array('conditions' => array('Trainer.user_id' => $theuserid)));
+		$id = $thetrainer['Trainer']['id'];
+		$this->layout = 'sportopolis';
+		if (!$id) {
+			throw new NotFoundException(__('Invalid Trainer'));
+		}
+
+		$trainer = $this->Trainer->findById($id);
+		if (!$trainer) {
+			throw new NotFoundException(__('Invalid Trainer'));
+		}
+
+		if ($this->request->is(array('trainer', 'put'))) {
+			$this->Trainer->id = $id;
+			if ($this->Trainer->save($this->request->data)) {
+				$this->Session->setFlash(__('Trainer data has been updated.'));
+				return $this->redirect(array('controller' => 'sportopolis' , 'action' => 'index'));
+			}
+			$this->Session->setFlash(__('Unable to update trainer data.'));
+		}
+
+		if (!$this->request->data) {
+			$this->request->data = $trainer;
+		}
+}
+	
+	
 }
 
 ?>

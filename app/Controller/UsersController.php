@@ -127,16 +127,22 @@ class UsersController extends SportopolisController {
 		if ($this->request->is(array('user', 'put'))) {
 			$this->User->id = $id;
 			if ($this->User->save($this->request->data)) {
-				$this->Session->setFlash(__('Your user has been updated.'));
-				return $this->redirect(array('controller' => 'sportopolis' , 'action' => 'index'));
+				if($user['User']['user_type'] == 3){
+					$this->Session->setFlash(__('User data has been updated.'));
+					return $this->redirect(array('controller' => 'sportopolis' , 'action' => 'index'));
+				}
+				else if($user['User']['user_type'] == 1){
+					$this->Session->write('theuserid', $user['User']['id']);
+					return $this->redirect(array('controller' => 'trainers' , 'action' => 'edit'));
+				}
 			}
-			$this->Session->setFlash(__('Unable to update your user.'));
+			$this->Session->setFlash(__('Unable to update your data.'));
 		}
 
 		if (!$this->request->data) {
 			$this->request->data = $user;
 		}
-}
+	}
 	
 	
 	
