@@ -36,6 +36,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->css('DropDownMenu');
 		echo $this->Html->css('sliding-menu');
 		echo $this->Html->css('barrating');
+		echo $this->Html->css('content.min');
+		echo $this->Html->css('skin.min');
 
 		// JavaScripts
 		echo $this->Html->script('jquery');
@@ -45,6 +47,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->script('sliding-menu');
 		echo $this->Html->script('jquery.barrating');
 		echo $this->Html->script('menu');
+		echo $this->Html->script('tinymce.min');
+		echo $this->Html->script('theme.min');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -52,7 +56,13 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	?>
 	
 	
-
+<script type="text/javascript">
+$(document).ready(function(){
+	tinymce.init({
+    selector: "textarea"
+ });
+})
+</script>
 	
 </head>
 <body>
