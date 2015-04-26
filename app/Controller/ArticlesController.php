@@ -65,7 +65,6 @@ class ArticlesController extends SportopolisController {
 				$this->Article->create();
 				$this->request->data['Article']['user_id'] = $id;
 				$this->request->data['Article']['article_date_time'] = date('Y-m-d H:i:s'); 
-				debug($this->request->data);
 				if (isset($this->request->data['btn1'])) {
 					$this->request->data['Article']['status'] = "Saved";
 				} else if (isset($this->request->data['btn2'])) {
@@ -75,7 +74,7 @@ class ArticlesController extends SportopolisController {
 					$this->Session->setFlash(__('The Article has been saved.'));
 					return $this->redirect(array('controller' => 'sportopolis' , 'action' => 'index'));
 				} else {
-	            $this->Session->setFlash(__('The article could not be saved. Please, try again.'));
+	            $this->Session->setFlash(__('The article could not be saved. Please, try again with correct content.'));
 				}
 	        // hash the password coming in from the form using Authcomponent::password       
 	        
