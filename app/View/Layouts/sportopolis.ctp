@@ -58,9 +58,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	
 <script type="text/javascript">
 $(document).ready(function(){
-	tinymce.init({
-    selector: "textarea"
- });
+	// tinymce.init({
+ //    selector: "textarea"
+ // });
 })
 </script>
 	
