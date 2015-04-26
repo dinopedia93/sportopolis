@@ -253,15 +253,6 @@ class SportopolisController extends Controller {
 		
 		$this->layout = 'sportopolis';	
 	}
-	
-	
-	
-	public function signuptrainer($error = null)
-	{
-		$this->layout = 'sportopolis';
-		if($error != null)
-			$this->set('error', json_decode($error));
-	}
 
 	public function signuplocation($error = null)
 	{
@@ -347,29 +338,6 @@ class SportopolisController extends Controller {
 	}
 
  	/* ---------------------------- Signup Functions ------------------------------------------- */
-	public function RegisterTrainer()
-	{
-		$this->loadModel('User');
-		$this->loadModel('Trainer');
-
-		$this->User->set($this->request->data);	
-		if ($this->User->validates()) 
-		{
-            $this->User->create();
-            if ($this->User->save($this->request->data)) 
-            {
-            	$data['Trainer']['user_id'] = $this->User->id;
-            	$this->Trainer->create();
-            	$this->Trainer->save($data);
-            	$link = 'index';            	
-                return $this->redirect(array('action' => $link));
-            }
-        }
-        else
-        {
-        	return $this->redirect(array('action' => 'signuptrainer/'.json_encode($this->User->validationErrors)));
-        }
-	}
 
 	public function RegisterLocation()
 	{

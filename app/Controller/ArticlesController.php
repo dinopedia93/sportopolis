@@ -30,10 +30,10 @@ App::uses('Model','Model');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
-class AdminsController extends SportopolisController {
+class ArticlesController extends SportopolisController {
  
-	public $name = 'admins';
-	var $uses = array('Admin');
+	public $name = 'articles';
+	var $uses = array('Article');
 	
 	public function beforeFilter()
 	{
@@ -41,38 +41,41 @@ class AdminsController extends SportopolisController {
 		$this->Auth->allow('action' , 'add');
 	}
 	
-	public function login()
+	
+	public function view($id = null)
 	{
-		
-		$this->layout = 'sportopolis';
-		if($this->request->is('post')){
-			if($this->Auth->login()){
-				CakeSession::write('signed_in', True);
-				$this->redirect($this->Auth->redirect());
-			} else {
-				$incorrect = "The username or password are incorrect. Please try again.";
-				echo "<script type='text/javascript'>alert('$incorrect');</script>";
-			}
+		$this->Article->id = $id;
+		if(!$this->Article->exists()){
+			throw new NotFoundException('Invalid Article');
 		}
+		
+		if(!$id){
+			$this->Session->setFlash('Invalid Article');
+			$this->redirect(array('action' => 'index'));
+		}
+		$this->set('article' , $this->Article->read());
+		
 	}
 	
-	public function logout()
-	{
-		$this->redirect($this->Auth->logout());
-	}
 	
-	
-	public function add() 
+	public function add($id) 
 	{
 		$this->layout = 'sportopolis';
 	    if ($this->request->is('post')) {
-			$this->Admin->create();
-			if ($this->Admin->save($this->request->data)) {
-				$this->Session->setFlash(__('The admin has been saved.'));
-				return $this->redirect(array('action' => 'index'));
-			} else {
-			$this->Session->setFlash(__('The admin could not be saved. Please, try again.'));
-			}
+				$this->Article->create();
+				$this->request->data['Article']['user_id'] = $id;
+				$this->request->data['Article']['article_date_time'] = date('Y-m-d H:i:s'); 
+				if (isset($this->request->data['btn1'])) {
+					$this->request->data['Article']['status'] = "Saved";
+				} else if (isset($this->request->data['btn2'])) {
+					$this->request->data['Article']['status'] = "Published";
+				}
+				if ($this->Article->save($this->request->data)) {
+					$this->Session->setFlash(__('The Article has been saved.'));
+					return $this->redirect(array('controller' => 'sportopolis' , 'action' => 'index'));
+				} else {
+	            $this->Session->setFlash(__('The article could not be saved. Please, try again with correct content.'));
+				}
 	        // hash the password coming in from the form using Authcomponent::password       
 	        
 	    }

@@ -111,6 +111,41 @@ class UsersController extends SportopolisController {
 
 	}
 	
+	
+	public function edit($id = null) {
+		
+		$this->layout = 'sportopolis';
+		if (!$id) {
+			throw new NotFoundException(__('Invalid User'));
+		}
+
+		$user = $this->User->findById($id);
+		if (!$user) {
+			throw new NotFoundException(__('Invalid User'));
+		}
+
+		if ($this->request->is(array('user', 'put'))) {
+			$this->User->id = $id;
+			if ($this->User->save($this->request->data)) {
+				if($user['User']['user_type'] == 3){
+					$this->Session->setFlash(__('User data has been updated.'));
+					return $this->redirect(array('controller' => 'sportopolis' , 'action' => 'index'));
+				}
+				else if($user['User']['user_type'] == 1){
+					$this->Session->write('theuserid', $user['User']['id']);
+					return $this->redirect(array('controller' => 'trainers' , 'action' => 'edit'));
+				}
+			}
+			$this->Session->setFlash(__('Unable to update your data.'));
+		}
+
+		if (!$this->request->data) {
+			$this->request->data = $user;
+		}
+	}
+	
+	
+	
 }
 
 ?>

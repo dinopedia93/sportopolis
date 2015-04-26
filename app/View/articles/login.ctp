@@ -21,11 +21,11 @@
 <div class="signup-title2">Login with Email</div>
 <div class="signup-Desc">Please fill in your email address and password.</div>
 
-<form class="signup-email" action="/sportopolis/admins/login" id="AdminLoginForm" method="post" accept-charset="utf-8">
+<form class="signup-email" action="/sportopolis/users/login" id="UserLoginForm" method="post" accept-charset="utf-8">
 <div style="display:none;"><input type="hidden" name="_method" value="POST"/>
 </div>
-<input class="textboxStandard" name="data[Admin][email]" maxlength="45" type="email" id="AdminEmail" required="required" placeholder="Email"/>
-<input class="textboxStandard" name="data[Admin][password]" type="password" id="AdminPassword" required="required" placeholder="Password"/>
+<input class="textboxStandard" name="data[User][email]" maxlength="45" type="email" id="UserEmail" required="required" placeholder="Email"/>
+<input class="textboxStandard" name="data[User][password]" type="password" id="UserPassword" required="required" placeholder="Password"/>
 
 <div class="submit"><input class="signupSubmitBTN" type="submit" value="Login"/>
 </div>

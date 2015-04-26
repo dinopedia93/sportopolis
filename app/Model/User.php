@@ -21,25 +21,25 @@ class User extends AppModel {
 		),'gender' => array(
 			'Please select your gender. ' => array(
 				'rule' => 'notEmpty',
-				'on' => 'create',
 				'message' => 'Please select your gender.'
 			)
 		),'birthdate' => array(
 			'Please enter your birth date. ' => array(
 				'rule' => 'notEmpty',
-				'on' => 'create',
 				'message' => 'Last name must be between 2 to 15 characters.'
 			)
 		),'email' => array(
 			'Valid Email' => array(
 				'rule' => array('email'),
-				'on' => 'create',
 				'message' => 'Please enter a valid email address'
 			),
 			'Check Availability' => array(
 				'rule' => 'checkAvailability',
 				'on' => 'create',
 				'message' => 'This email is already used. Please use a different email.'
+			),
+			'Not Empty' => array(
+				'rule' => 'notEmpty'
 			)
 		),
 		'password' => array(

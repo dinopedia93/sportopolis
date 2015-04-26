@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2015 at 04:55 PM
+-- Generation Time: Apr 20, 2015 at 03:09 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -19,24 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `sportoya`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admins`
---
-
-CREATE TABLE IF NOT EXISTS `admins` (
-`id` int(11) NOT NULL,
-  `first_name` varchar(45) NOT NULL,
-  `last_name` varchar(45) NOT NULL,
-  `gender` varchar(10) NOT NULL,
-  `birthdate` date NOT NULL,
-  `email` varchar(45) NOT NULL,
-  `password` varchar(128) CHARACTER SET latin1 NOT NULL,
-  `facebook_acc` varchar(100) NOT NULL,
-  `brief` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -61,9 +43,8 @@ CREATE TABLE IF NOT EXISTS `advertisements` (
 CREATE TABLE IF NOT EXISTS `articles` (
 `id` int(11) NOT NULL,
   `title` varchar(100) COLLATE utf8_bin NOT NULL,
-  `article_date` date NOT NULL,
-  `article_time` time NOT NULL,
-  `member_id` int(11) NOT NULL,
+  `article_date_time` datetime NOT NULL,
+  `user_id` int(11) NOT NULL,
   `article_content` longtext COLLATE utf8_bin NOT NULL,
   `sport_id` int(11) NOT NULL,
   `status` varchar(10) COLLATE utf8_bin NOT NULL
@@ -73,8 +54,8 @@ CREATE TABLE IF NOT EXISTS `articles` (
 -- Dumping data for table `articles`
 --
 
-INSERT INTO `articles` (`id`, `title`, `article_date`, `article_time`, `member_id`, `article_content`, `sport_id`, `status`) VALUES
-(1, 'Men who exercise more have better erectile and sexual function', '2015-03-26', '09:27:28', 23, 'Washington: A new study has examined that men who exercise more have better erectile and sexual function, regardless of race.\r\n\r\nThe study conducted at Cedars-Sinai Medical Center is the first to link the benefits of exercise in relation to improved erectile and sexual function in a racially diverse group of patients.\r\n\r\nNearly 300 study participants self-reported their activity levels, which researchers then categorized as sedentary, mildly active, moderately active or highly active. The subjects also self-reported their sexual function, including the ability to have erections, orgasms, the quality and frequency of erections and overall sexual function.\r\n\r\nResults found that men who reported more frequent exercise, a total of 18 metabolic equivalents, or METS, per week, had higher sexual function scores, regardless of race. MET hours reflect both the total time of exercise and the intensity of exercise. A total of 18 METS can be achieved by combining exercises with different intensities, but is the equivalent of two hours of strenuous exercise, such as running or swimming, 3.5 hours of moderate exercise, or six hours of light exercise.\r\n\r\nStephen Freedland, MD, co-author on the study and director of the Center for Integrated Research in Cancer and Lifestyle in the Cedars-Sinai Samuel Oschin Comprehensive Cancer Institute, cautions that exercise should be tailored for each individual.\r\n\r\nFreedland added that when it came to exercise, there was no one-size-fits-all approach, however, they were confident that even some degree of exercise, even if less intense, was better than no exercise at all.\r\n\r\nThe study is published in the Journal of Sexual Medicine', 4, 'accepted');
+INSERT INTO `articles` (`id`, `title`, `article_date_time`, `user_id`, `article_content`, `sport_id`, `status`) VALUES
+(1, 'Men who exercise more have better erectile and sexual function', '2015-03-26 00:00:00', 23, 'Washington: A new study has examined that men who exercise more have better erectile and sexual function, regardless of race.\r\n\r\nThe study conducted at Cedars-Sinai Medical Center is the first to link the benefits of exercise in relation to improved erectile and sexual function in a racially diverse group of patients.\r\n\r\nNearly 300 study participants self-reported their activity levels, which researchers then categorized as sedentary, mildly active, moderately active or highly active. The subjects also self-reported their sexual function, including the ability to have erections, orgasms, the quality and frequency of erections and overall sexual function.\r\n\r\nResults found that men who reported more frequent exercise, a total of 18 metabolic equivalents, or METS, per week, had higher sexual function scores, regardless of race. MET hours reflect both the total time of exercise and the intensity of exercise. A total of 18 METS can be achieved by combining exercises with different intensities, but is the equivalent of two hours of strenuous exercise, such as running or swimming, 3.5 hours of moderate exercise, or six hours of light exercise.\r\n\r\nStephen Freedland, MD, co-author on the study and director of the Center for Integrated Research in Cancer and Lifestyle in the Cedars-Sinai Samuel Oschin Comprehensive Cancer Institute, cautions that exercise should be tailored for each individual.\r\n\r\nFreedland added that when it came to exercise, there was no one-size-fits-all approach, however, they were confident that even some degree of exercise, even if less intense, was better than no exercise at all.\r\n\r\nThe study is published in the Journal of Sexual Medicine', 4, 'accepted');
 
 -- --------------------------------------------------------
 
@@ -370,7 +351,7 @@ CREATE TABLE IF NOT EXISTS `trainers` (
   `biography` text COLLATE utf8_bin,
   `user_id` int(11) NOT NULL,
   `views` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `trainers`
@@ -379,7 +360,7 @@ CREATE TABLE IF NOT EXISTS `trainers` (
 INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `working_area`, `likes_count`, `rank`, `facebook`, `mobile`, `website`, `sports_id`, `biography`, `user_id`, `views`) VALUES
 (3, 'Egypt', 'Giza', 'Haram', '', '0', 0, NULL, '1152892222', NULL, 2, 'Dizo Gamed Fash5', 15, 6),
 (6, 'Egypt', 'Giza', 'Mohandseen', '', '0', 4, NULL, '123214465', NULL, 2, 'Beyombroblo el masal', 23, 7),
-(38, 'Egypt', 'Al Qahirah', ' ', 'Maadi', '0', 0, '', '110011011', '', 1, 'El 3amid', 80, 0);
+(39, 'Egypt', 'Al Jizah', ' ', 'Al Gezira sporting club', '0', 0, '', '1014417474', '', 4, '', 81, 0);
 
 -- --------------------------------------------------------
 
@@ -429,7 +410,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `email` varchar(45) CHARACTER SET latin1 NOT NULL,
   `password` varchar(128) CHARACTER SET latin1 NOT NULL,
   `user_type` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=81 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `users`
@@ -440,8 +421,8 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `birthdate`, `em
 (23, 'youssef', 'Khory', 'Male', '1993-12-11', 'aka@gfail.com', 'fcfa68164162b0988c41faf7f2aedfb2af54ee31', 1),
 (38, 'Ahmed ', 'Abuzekry', 'Male', '1992-09-08', 'abouzekrys@hotmail.com', 'b1c76281bb95d06af628280c2b65cf154b6c4fb3', 3),
 (39, 'Mohamed', 'Hegazy', 'Male', '1986-05-19', 'moh.hegazy86@live.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 3),
-(79, 'Khaled', 'Hegazy', 'Male', '1992-02-19', 'khaled-hegazy92@hotmail.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 1),
-(80, 'Hicham', 'El Sayed', 'Male', '1989-12-14', 'hisham.a.elsayed@hotmail.com', '2db7e9f1bc905c83630d097815eb5091e01678e4', 1);
+(80, 'Hicham', 'El Sayed', 'Male', '1989-12-14', 'hisham.a.elsayed@hotmail.com', '2db7e9f1bc905c83630d097815eb5091e01678e4', 5),
+(81, 'Khaled', 'Hegazy', 'Male', '1992-02-19', 'khaled-hegazy92@hotmail.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 1);
 
 -- --------------------------------------------------------
 
@@ -478,7 +459,7 @@ CREATE TABLE IF NOT EXISTS `users_rating_trainers` (
 CREATE TABLE IF NOT EXISTS `user_types` (
 `id` int(11) NOT NULL,
   `user_type` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user_types`
@@ -488,17 +469,12 @@ INSERT INTO `user_types` (`id`, `user_type`) VALUES
 (1, 'Trainer'),
 (2, 'Store'),
 (3, 'Normal'),
-(4, 'Location');
+(4, 'Location'),
+(5, 'admin');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `admins`
---
-ALTER TABLE `admins`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`);
 
 --
 -- Indexes for table `advertisements`
@@ -510,7 +486,7 @@ ALTER TABLE `advertisements`
 -- Indexes for table `articles`
 --
 ALTER TABLE `articles`
- ADD PRIMARY KEY (`id`), ADD KEY `fk_articles_members1_idx` (`member_id`), ADD KEY `fk_Articles_sports1_idx` (`sport_id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `fk_articles_members1_idx` (`user_id`), ADD KEY `fk_Articles_sports1_idx` (`sport_id`);
 
 --
 -- Indexes for table `articles_has_photos`
@@ -679,11 +655,6 @@ ALTER TABLE `user_types`
 --
 
 --
--- AUTO_INCREMENT for table `admins`
---
-ALTER TABLE `admins`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `advertisements`
 --
 ALTER TABLE `advertisements`
@@ -737,12 +708,12 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `trainers`
 --
 ALTER TABLE `trainers`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=40;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=81;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=82;
 --
 -- AUTO_INCREMENT for table `users_rating_trainers`
 --
@@ -752,7 +723,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `user_types`
 --
 ALTER TABLE `user_types`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- Constraints for dumped tables
 --
@@ -767,8 +738,8 @@ ADD CONSTRAINT `fk_advertisements_sponsors1` FOREIGN KEY (`sponsors_id`) REFEREN
 -- Constraints for table `articles`
 --
 ALTER TABLE `articles`
-ADD CONSTRAINT `fk_articles_members1` FOREIGN KEY (`member_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `fk_articles_sports1` FOREIGN KEY (`sport_id`) REFERENCES `sports` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `fk_articles_sports1` FOREIGN KEY (`sport_id`) REFERENCES `sports` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_articles_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `articles_has_photos`

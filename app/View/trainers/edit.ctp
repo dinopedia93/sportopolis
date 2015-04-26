@@ -27,5 +27,5 @@
 		?>
 	</fieldset>
 	
-<?php echo $this->Form->end('Submit');?>
+<?php echo $this->Form->end('Update my data');?>
 </div>

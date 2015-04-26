@@ -36,6 +36,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->css('DropDownMenu');
 		echo $this->Html->css('sliding-menu');
 		echo $this->Html->css('barrating');
+		echo $this->Html->css('content.min');
+		echo $this->Html->css('skin.min');
+		echo $this->Html->css('ImageLightBox');
 
 		// JavaScripts
 		echo $this->Html->script('jquery');
@@ -45,6 +48,9 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->script('sliding-menu');
 		echo $this->Html->script('jquery.barrating');
 		echo $this->Html->script('menu');
+		echo $this->Html->script('tinymce.min');
+		echo $this->Html->script('theme.min');
+		echo $this->Html->script('gallery');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
@@ -171,35 +177,51 @@ $(document).ready(function () {
 
 <div class="write-header"><a href="/sportopolis/sportopolis/competemenu">Compete</a></div>
 <?php if($this->Session->read('Auth.User') != null){ ?>	
-<div class="write-header2"><a href="/sportopolis/sportopolis/createarticle">Write</a></div>	
+<div class="write-header2"><a href="<?php echo "/sportopolis/articles/add/".$this->Session->read('Auth.User.id'); ?>">Write</a></div>	
 <?php } ?>
 	
 
-<?php if($this->Session->read('Auth.User') == null){ ?>	
+<?php if( ($this->Session->read('Auth.User') != null) && ($this->Session->read('Auth.User.user_type') == 5) ){ ?>
+<div class="account">
+	<div class="accountPhoto"><?php echo $this->Html->image('boss.png', array('class' => 'circlePhoto')); ?></div>
+	
+	<ul class="accountMenu">
+					
+	<li><a class="accountName"  onmouseover="mopen('m3')" onmouseout="mclosetime()"><?php echo $this->Session->read('Auth.User.first_name')." ".$this->Session->read('Auth.User.last_name'); ?></a>
+	<div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+	<a href="<?php echo "/sportopolis/users/edit/".$this->Session->read('Auth.User.id'); ?>">Edit Profile</a>						
+	<a href="/sportopolis/users/logout">Sign Out</a>						
+	</div>
+	</li>
+    </ul>
+
+	</div>	
 <div class="popup-signup">
-<a class="initialism fade_open btn btn-success">SIGN UP</a>
+<a class="initialism fade_open btn btn-success">Add Users</a>
 </div>
 
-	<div class="popup-Login">
-<a class="initialism btn btn-success" href='/sportopolis/users/login'>LOGIN</a>
-</div>
 
-<?php } else {?>
+
+<?php } else if(  ($this->Session->read('Auth.User') != null) && ($this->Session->read('Auth.User.user_type') != 5) ) {?>
 	<div class="account">
 	<div class="accountPhoto"><?php echo $this->Html->image('boss.png', array('class' => 'circlePhoto')); ?></div>
 	
 	<ul class="accountMenu">
 					
-	<li><a class="accountName"  onmouseover="mopen('m3')" onmouseout="mclosetime()">Hisham Ahmed</a>
+	<li><a class="accountName"  onmouseover="mopen('m3')" onmouseout="mclosetime()"><?php echo $this->Session->read('Auth.User.first_name')." ".$this->Session->read('Auth.User.last_name'); ?></a>
 	<div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
-	<a href="#">Edit Profile</a>						
+	<a href="<?php echo "/sportopolis/users/edit/".$this->Session->read('Auth.User.id'); ?>">Edit Profile</a>						
 	<a href="/sportopolis/users/logout">Sign Out</a>						
 	</div>
 	</li>
     </ul>
 
 	</div>
-<?php } ?>	
+<?php } else {?>	
+	<div class="popup-Login">
+<a class="initialism btn btn-success" href='/sportopolis/users/login'>LOGIN</a>
+</div>
+<?php }?>	
 	
 </div>
 
