@@ -1,5 +1,48 @@
 <?php echo $this->Html->script('jquery.barrating.min'); ?>
 <script type="text/javascript">
+var activityIndicatorOn = function()
+            {
+                $( '<div id="imagelightbox-loading"><div></div></div>' ).appendTo( 'body' );
+            },
+            activityIndicatorOff = function()
+            {
+                $( '#imagelightbox-loading' ).remove();
+            },
+arrowsOn = function( instance, selector )
+            {
+                var $arrows = $( '<button type="button" class="imagelightbox-arrow imagelightbox-arrow-left"></button><button type="button" class="imagelightbox-arrow imagelightbox-arrow-right"></button>' );
+
+                $arrows.appendTo( 'body' );
+
+                $arrows.on( 'click touchend', function( e )
+                {
+                    e.preventDefault();
+
+                    var $this   = $( this ),
+                        $target = $( selector + '[href="' + $( '#imagelightbox' ).attr( 'src' ) + '"]' ),
+                        index   = $target.index( selector );
+
+                    if( $this.hasClass( 'imagelightbox-arrow-left' ) )
+                    {
+                        index = index - 1;
+                        if( !$( selector ).eq( index ).length )
+                            index = $( selector ).length;
+                    }
+                    else
+                    {
+                        index = index + 1;
+                        if( !$( selector ).eq( index ).length )
+                            index = 0;
+                    }
+
+                    instance.switchImageLightbox( index );
+                    return false;
+                });
+            },
+            arrowsOff = function()
+            {
+                $( '.imagelightbox-arrow' ).remove();
+            };
 $(document).ready(function() {
 
     $('#example').barrating();
@@ -80,6 +123,16 @@ $(document).ready(function() {
             $(".userRatings").show();
         }
     });
+
+var selectorG = 'a[data-imagelightbox="g"]';
+        var instanceG = $( selectorG ).imageLightbox(
+        {
+            onStart:        function(){ arrowsOn( instanceG, selectorG ); },
+            onEnd:          function(){ arrowsOff(); activityIndicatorOff(); },
+            onLoadStart:    function(){ activityIndicatorOn(); },
+            onLoadEnd:      function(){ $( '.imagelightbox-arrow' ).css( 'display', 'block' ); activityIndicatorOff(); }
+        });
+
     $.ajax({
             dataType: "html",
             type: "post",
@@ -332,17 +385,13 @@ show more
 
 <div class="profilePhotosLargeBOTTOMContainer">
 
-<ul class="galleryUl">
-<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
-<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
-<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
-<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
-<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
-<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
-<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
-<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
-<li class= "galleryLi"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?><li>
-</ul>
+
+    <ul id = 'imagelightbox'>
+        <li><a href="/sportopolis/img/boss.png" data-imagelightbox="g"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?></a></li>
+        <li><a href="/sportopolis/img/boss.png" data-imagelightbox="g"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?></a></li>
+        <li><a href="/sportopolis/img/boss.png" data-imagelightbox="g"><?php echo $this->Html->image('boss.png', array('class' => 'galleryLiImg')); ?></a></li>
+    </ul>
+
 
 </div>
 

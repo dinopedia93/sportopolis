@@ -38,6 +38,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->css('barrating');
 		echo $this->Html->css('content.min');
 		echo $this->Html->css('skin.min');
+		echo $this->Html->css('ImageLightBox');
 
 		// JavaScripts
 		echo $this->Html->script('jquery');
@@ -49,6 +50,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->script('menu');
 		echo $this->Html->script('tinymce.min');
 		echo $this->Html->script('theme.min');
+		echo $this->Html->script('gallery');
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
