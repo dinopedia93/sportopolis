@@ -72,11 +72,11 @@ class SportopolisController extends Controller {
 	
 	public function changeLanguage($lang){
         if(!empty($lang)){
-            if($lang == 'eng'){
+            if($lang == 1){
                 $this->Session->write('Config.language', 'arabic');
             }
  
-            else if($lang == 'arabic'){
+            else if($lang == 2){
                 $this->Session->write('Config.language', 'eng');
             }
  
