@@ -20,6 +20,7 @@
  */
 
 App::uses('SportopolisController', 'Controller');
+App::uses('ImagesController', 'Controller');
 App::uses('Model','Model');
 /**
  * Application Controller
@@ -30,22 +31,30 @@ App::uses('Model','Model');
  * @package		app.Controller
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
-class ImagesController extends SportopolisController {
+class UsershasimagesController extends SportopolisController {
  
-	/**
-	 * Main index action
-	*/
-	public function add() {
-		// form posted
-		$this->layout = 'sportopolis';
-		if ($this->request->is('post')) {
-			// create
-			$this->Image->create();
+	public $uses = array('UsersHasImage','Image');
 
-			// attempt to save
-			if ($this->Image->save($this->request->data)) {
-				$this->Session->setFlash('Your profile picture has successfully changed');
-				$this->redirect(array('action' => 'index'));
+	public function add($id,$trainerid) {
+
+		$imagedata = $this->data;
+		$this->layout = 'sportopolis';
+	    if ($this->request->is('post')) {
+			
+			$this->Image->create();
+			if ($this->Image->save($imagedata)){
+				$this->UsersHasImage->create();
+				$this->request->data['UsersHasImage']['image_id'] = $this->Image->id;
+				$this->request->data['UsersHasImage']['user_id'] = $id;
+				$this->request->data['UsersHasImage']['set_date_time'] = date('Y-m-d H:i:s');
+				debug($this->request->data);
+				// hash the password coming in from the form using Authcomponent::password       
+				if ($this->UsersHasImage->save($this->request->data)) {
+					$this->Session->setFlash(__('Your profile picture is successfully updated'));
+					return $this->redirect("http://localhost/sportopolis/sportopolis/trainerprofile/".$trainerid);
+				} else {
+					$this->Session->setFlash(__('The trainer could not be saved. Please, try again.'));
+				}
 			}
 		}
 	}

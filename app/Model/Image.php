@@ -39,7 +39,7 @@ class Image extends AppModel {
 	 * Upload Directory relative to WWW_ROOT
 	 * @param string
 	 */
-	public $uploadDir = 'uploads';
+	public $uploadDir = 'img';
 
 	/**
 	 * Process the Upload
@@ -56,7 +56,7 @@ class Image extends AppModel {
 			}
 
 			// build full filename
-			$filename = WWW_ROOT . $this->uploadDir . DS . Inflector::slug(pathinfo($check['filename']['name'], PATHINFO_FILENAME)).'.'.pathinfo($check['filename']['name'], PATHINFO_EXTENSION);
+			$filename = WWW_ROOT . $this->DS . Inflector::slug(pathinfo($check['filename']['name'], PATHINFO_FILENAME)).'.'.pathinfo($check['filename']['name'], PATHINFO_EXTENSION);
 
 			// @todo check for duplicate filename
 

@@ -1,5 +1,5 @@
 <?php
-class UsersHasImages extends AppModel {
+class UsersHasImage extends AppModel {
 	public $belongsTo = array(
 				'User', 'Image'
 			);
