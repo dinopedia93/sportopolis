@@ -34,7 +34,7 @@ class Trainer extends AppModel {
 		));
 	
 	public $hasMany = array(
-				'TrainersHasReviews','TrainersHasPhotos'
+				'TrainersHasReviews'
 			);
 
 	public function IncrementViews($id)

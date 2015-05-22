@@ -186,7 +186,7 @@ var selectorG = 'a[data-imagelightbox="g"]';
 
 <div class="profileLeftLargeContainer">
 
-<div class="profilePictureLeftLargeContainer"><?php echo $this->Html->image('boss.png', array('class' => 'pictureLeftLargerContainer')); ?></div>
+<a href="http://localhost/sportopolis/images/add" class="profilePictureLeftLargeContainer"><?php echo $this->Html->image('boss.png', array('class' => 'pictureLeftLargerContainer')); ?></a>
 <div class="profileNameLeftLargeContainer"><?php echo $trainer['users']['first_name']." ".$trainer['users']['last_name']; ?></div>
 <div class="profileProfessionLeftLargeContainer"><?php echo $sport['Sport']['name']; ?> Trainer</div>
 
@@ -277,7 +277,7 @@ var selectorG = 'a[data-imagelightbox="g"]';
 
 <div class="rightLargeNav centerbtn">
 <div class="rightLargeNavTitle" >PHOTOS</div>
-<div class="rightLargeNavCount"><?php  echo $trainershasphotos?></div>
+<div class="rightLargeNavCount"><?php  //echo $trainershasphotos?></div>
 </div>
 
 <div class="rightLargeNav rightbtn">

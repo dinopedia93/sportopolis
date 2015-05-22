@@ -6,6 +6,9 @@ App::uses('AuthComponent', 'Controller/Component');
 class User extends AppModel {
      public $name = 'User';
 	 public $displayField = 'name';
+	 public $hasMany = array(
+				'UsersHasImages'
+			);
 	 
 	 public $validate = array (
 		'first_name' => array(

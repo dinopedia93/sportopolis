@@ -146,7 +146,6 @@ class SportopolisController extends Controller {
 		$this->loadModel('Sport');
 		$this->loadModel('Review');
 		$this->loadModel('TrainersHasReviews');
-		$this->loadModel('TrainersHasPhotos');
 
 		$trainers = $this->Trainer->GetTrainerData($id);
 		// little trick because the result is returned in 3D array
@@ -175,8 +174,8 @@ class SportopolisController extends Controller {
 			$this->set('rating', $rating);
 		}
 		
-		$trainershasphotos = $this->TrainersHasPhotos->find('count',array('conditions' => array('TrainersHasPhotos.trainer_id' => $id)));
-		$this->set('trainershasphotos', $trainershasphotos);
+		//$trainershasphotos = $this->TrainersHasPhotos->find('count',array('conditions' => array('TrainersHasPhotos.trainer_id' => $id)));
+		//$this->set('trainershasphotos', $trainershasphotos);
 
 		$this->layout = 'sportopolis';	
 	}
@@ -189,7 +188,6 @@ class SportopolisController extends Controller {
 		$this->loadModel('Sport');
 		$this->loadModel('Review');
 		$this->loadModel('LocationsHasReviews');
-		$this->loadModel('LocationsHasPhotos');
 
 		$location = $this->Location->findById($id);
 		$this->set('location', $location);
@@ -214,8 +212,8 @@ class SportopolisController extends Controller {
 			$this->set('rating', $rating);
 		}
 		
-		$locationshasphotos = $this->LocationsHasPhotos->find('count',array('conditions' => array('LocationsHasPhotos.location_id' => $id)));
-		$this->set('locationshasphotos', $locationshasphotos);
+		//$locationshasphotos = $this->LocationsHasPhotos->find('count',array('conditions' => array('LocationsHasPhotos.location_id' => $id)));
+		//$this->set('locationshasphotos', $locationshasphotos);
 	
 
 		$this->layout = 'sportopolis';	
@@ -231,7 +229,6 @@ class SportopolisController extends Controller {
 		$this->loadModel('Sport');
 		$this->loadModel('Review');
 		$this->loadModel('StoresHasReviews');
-		$this->loadModel('StoresHasPhotos');
 
 		$store = $this->Store->findById($id);
 		$this->set('store', $store);
@@ -248,8 +245,8 @@ class SportopolisController extends Controller {
 		$this->set('allreviews', $allreviews);
 		
 		
-		$storeshasphotos = $this->StoresHasPhotos->find('count',array('conditions' => array('StoresHasPhotos.store_id' => $id)));
-		$this->set('storeshasphotos', $storeshasphotos);
+		//$storeshasphotos = $this->StoresHasPhotos->find('count',array('conditions' => array('StoresHasPhotos.store_id' => $id)));
+		//$this->set('storeshasphotos', $storeshasphotos);
 		
 		$this->layout = 'sportopolis';	
 	}
@@ -316,7 +313,6 @@ class SportopolisController extends Controller {
 		$this->loadModel('User');
 		$this->loadModel('Review');
 		$this->loadModel('ArticlesHasReviews');
-		$this->loadModel('ArticlesHasPhotos');
 		$article = $this->Article->findById($id);
 		$articlewriter = $this->User->findById($article['Article']['user_id']);
 		

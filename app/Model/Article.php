@@ -5,7 +5,7 @@ class Article extends AppModel {
 	public $displayField = 'name';
 	
 	public $hasMany = array(
-				'ArticlesHasReviews','ArticlesHasPhotos'
+				'ArticlesHasReviews'
 			);
 			
 			

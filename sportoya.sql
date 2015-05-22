@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2015 at 03:09 PM
+-- Generation Time: May 22, 2015 at 08:53 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -45,28 +45,19 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `title` varchar(100) COLLATE utf8_bin NOT NULL,
   `article_date_time` datetime NOT NULL,
   `user_id` int(11) NOT NULL,
+  `image_id` int(11) DEFAULT NULL,
   `article_content` longtext COLLATE utf8_bin NOT NULL,
   `sport_id` int(11) NOT NULL,
   `status` varchar(10) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `articles`
 --
 
-INSERT INTO `articles` (`id`, `title`, `article_date_time`, `user_id`, `article_content`, `sport_id`, `status`) VALUES
-(1, 'Men who exercise more have better erectile and sexual function', '2015-03-26 00:00:00', 23, 'Washington: A new study has examined that men who exercise more have better erectile and sexual function, regardless of race.\r\n\r\nThe study conducted at Cedars-Sinai Medical Center is the first to link the benefits of exercise in relation to improved erectile and sexual function in a racially diverse group of patients.\r\n\r\nNearly 300 study participants self-reported their activity levels, which researchers then categorized as sedentary, mildly active, moderately active or highly active. The subjects also self-reported their sexual function, including the ability to have erections, orgasms, the quality and frequency of erections and overall sexual function.\r\n\r\nResults found that men who reported more frequent exercise, a total of 18 metabolic equivalents, or METS, per week, had higher sexual function scores, regardless of race. MET hours reflect both the total time of exercise and the intensity of exercise. A total of 18 METS can be achieved by combining exercises with different intensities, but is the equivalent of two hours of strenuous exercise, such as running or swimming, 3.5 hours of moderate exercise, or six hours of light exercise.\r\n\r\nStephen Freedland, MD, co-author on the study and director of the Center for Integrated Research in Cancer and Lifestyle in the Cedars-Sinai Samuel Oschin Comprehensive Cancer Institute, cautions that exercise should be tailored for each individual.\r\n\r\nFreedland added that when it came to exercise, there was no one-size-fits-all approach, however, they were confident that even some degree of exercise, even if less intense, was better than no exercise at all.\r\n\r\nThe study is published in the Journal of Sexual Medicine', 4, 'accepted');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `articles_has_photos`
---
-
-CREATE TABLE IF NOT EXISTS `articles_has_photos` (
-  `article_id` int(11) NOT NULL,
-  `photo_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+INSERT INTO `articles` (`id`, `title`, `article_date_time`, `user_id`, `image_id`, `article_content`, `sport_id`, `status`) VALUES
+(1, 'Men who exercise more have better erectile and sexual function', '2015-03-26 00:00:00', 23, NULL, 'Washington: A new study has examined that men who exercise more have better erectile and sexual function, regardless of race.\r\n\r\nThe study conducted at Cedars-Sinai Medical Center is the first to link the benefits of exercise in relation to improved erectile and sexual function in a racially diverse group of patients.\r\n\r\nNearly 300 study participants self-reported their activity levels, which researchers then categorized as sedentary, mildly active, moderately active or highly active. The subjects also self-reported their sexual function, including the ability to have erections, orgasms, the quality and frequency of erections and overall sexual function.\r\n\r\nResults found that men who reported more frequent exercise, a total of 18 metabolic equivalents, or METS, per week, had higher sexual function scores, regardless of race. MET hours reflect both the total time of exercise and the intensity of exercise. A total of 18 METS can be achieved by combining exercises with different intensities, but is the equivalent of two hours of strenuous exercise, such as running or swimming, 3.5 hours of moderate exercise, or six hours of light exercise.\r\n\r\nStephen Freedland, MD, co-author on the study and director of the Center for Integrated Research in Cancer and Lifestyle in the Cedars-Sinai Samuel Oschin Comprehensive Cancer Institute, cautions that exercise should be tailored for each individual.\r\n\r\nFreedland added that when it came to exercise, there was no one-size-fits-all approach, however, they were confident that even some degree of exercise, even if less intense, was better than no exercise at all.\r\n\r\nThe study is published in the Journal of Sexual Medicine', 4, 'accepted'),
+(2, 'ssssssssss', '2015-05-16 20:35:23', 80, 10957213, '<p>sssssssssss</p>', 2, 'Saved');
 
 -- --------------------------------------------------------
 
@@ -98,17 +89,6 @@ CREATE TABLE IF NOT EXISTS `events` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `events_has_photos`
---
-
-CREATE TABLE IF NOT EXISTS `events_has_photos` (
-  `event_id` int(11) NOT NULL,
-  `photo_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `events_has_reviews`
 --
 
@@ -116,6 +96,25 @@ CREATE TABLE IF NOT EXISTS `events_has_reviews` (
   `event_id` int(11) NOT NULL,
   `review_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `images`
+--
+
+CREATE TABLE IF NOT EXISTS `images` (
+`id` int(11) NOT NULL,
+  `filename` varchar(255) DEFAULT NULL,
+  `created` datetime DEFAULT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `images`
+--
+
+INSERT INTO `images` (`id`, `filename`, `created`) VALUES
+(1, 'uploads/11196226_10206775757338348_45327938841900572_n.jpg', '2015-05-22 07:21:13');
 
 -- --------------------------------------------------------
 
@@ -148,17 +147,6 @@ CREATE TABLE IF NOT EXISTS `locations` (
 
 INSERT INTO `locations` (`id`, `name`, `country`, `city`, `district`, `address`, `likes_count`, `rank`, `facebook`, `tel`, `mobile`, `email`, `website`, `views`, `user_id`, `google_map`) VALUES
 (2, 'El Dawly Stadium', 'Egypt', 'Giza', 'Haram', 'Mansoriya', 0, 2.5, NULL, '1231412', '32412', 'Awad123@Gmail.com', '', 4, 15, '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `locations_has_photos`
---
-
-CREATE TABLE IF NOT EXISTS `locations_has_photos` (
-  `location_id` int(11) NOT NULL,
-  `photo_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -196,17 +184,6 @@ CREATE TABLE IF NOT EXISTS `messages` (
   `reply` text,
   `members_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `photos`
---
-
-CREATE TABLE IF NOT EXISTS `photos` (
-`id` int(11) NOT NULL,
-  `photo_link` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
@@ -311,17 +288,6 @@ CREATE TABLE IF NOT EXISTS `stores` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `stores_has_photos`
---
-
-CREATE TABLE IF NOT EXISTS `stores_has_photos` (
-  `store_id` int(11) NOT NULL,
-  `photo_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `stores_has_reviews`
 --
 
@@ -358,9 +324,9 @@ CREATE TABLE IF NOT EXISTS `trainers` (
 --
 
 INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `working_area`, `likes_count`, `rank`, `facebook`, `mobile`, `website`, `sports_id`, `biography`, `user_id`, `views`) VALUES
-(3, 'Egypt', 'Giza', 'Haram', '', '0', 0, NULL, '1152892222', NULL, 2, 'Dizo Gamed Fash5', 15, 6),
+(3, 'Egypt', 'Giza', 'Haram', '', '0', 0, NULL, '1152892222', NULL, 2, 'Dizo Gamed Fash5', 15, 14),
 (6, 'Egypt', 'Giza', 'Mohandseen', '', '0', 4, NULL, '123214465', NULL, 2, 'Beyombroblo el masal', 23, 7),
-(39, 'Egypt', 'Al Jizah', ' ', 'Al Gezira sporting club', '0', 0, '', '1014417474', '', 4, '', 81, 0);
+(39, 'Egypt', 'Al Jizah', ' ', 'Al Gezira sporting club', '0', 0, '', '1014417474', '', 4, '', 81, 3);
 
 -- --------------------------------------------------------
 
@@ -372,17 +338,6 @@ CREATE TABLE IF NOT EXISTS `trainers_has_locations` (
   `trainer_id` int(11) NOT NULL,
   `location_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `trainers_has_photos`
---
-
-CREATE TABLE IF NOT EXISTS `trainers_has_photos` (
-  `trainer_id` int(11) NOT NULL,
-  `photo_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -423,6 +378,18 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `birthdate`, `em
 (39, 'Mohamed', 'Hegazy', 'Male', '1986-05-19', 'moh.hegazy86@live.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 3),
 (80, 'Hicham', 'El Sayed', 'Male', '1989-12-14', 'hisham.a.elsayed@hotmail.com', '2db7e9f1bc905c83630d097815eb5091e01678e4', 5),
 (81, 'Khaled', 'Hegazy', 'Male', '1992-02-19', 'khaled-hegazy92@hotmail.com', '1c01d67b05ed9d3dab9a58fa438e17bae00a0c0a', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users_has_images`
+--
+
+CREATE TABLE IF NOT EXISTS `users_has_images` (
+  `user_id` int(11) NOT NULL,
+  `image_id` int(11) NOT NULL,
+  `set_date_time` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -489,12 +456,6 @@ ALTER TABLE `articles`
  ADD PRIMARY KEY (`id`), ADD KEY `fk_articles_members1_idx` (`user_id`), ADD KEY `fk_Articles_sports1_idx` (`sport_id`);
 
 --
--- Indexes for table `articles_has_photos`
---
-ALTER TABLE `articles_has_photos`
- ADD PRIMARY KEY (`article_id`,`photo_id`), ADD KEY `fk_articles_has_photos_photos1_idx` (`photo_id`), ADD KEY `fk_articles_has_photos_articles1_idx` (`article_id`);
-
---
 -- Indexes for table `articles_has_reviews`
 --
 ALTER TABLE `articles_has_reviews`
@@ -507,28 +468,22 @@ ALTER TABLE `events`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`);
 
 --
--- Indexes for table `events_has_photos`
---
-ALTER TABLE `events_has_photos`
- ADD PRIMARY KEY (`event_id`,`photo_id`), ADD KEY `fk_events_has_photos_photos1_idx` (`photo_id`), ADD KEY `fk_events_has_photos_events1_idx` (`event_id`);
-
---
 -- Indexes for table `events_has_reviews`
 --
 ALTER TABLE `events_has_reviews`
  ADD PRIMARY KEY (`event_id`,`review_id`), ADD KEY `fk_events_has_reviews_reviews1_idx` (`review_id`), ADD KEY `fk_events_has_reviews_events1_idx` (`event_id`);
 
 --
+-- Indexes for table `images`
+--
+ALTER TABLE `images`
+ ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `locations`
 --
 ALTER TABLE `locations`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`), ADD UNIQUE KEY `name_UNIQUE` (`name`), ADD UNIQUE KEY `address_UNIQUE` (`address`), ADD KEY `fk_user_location` (`user_id`);
-
---
--- Indexes for table `locations_has_photos`
---
-ALTER TABLE `locations_has_photos`
- ADD PRIMARY KEY (`location_id`,`photo_id`), ADD KEY `fk_locations_has_photos_photos1_idx` (`photo_id`), ADD KEY `fk_locations_has_photos_locations1_idx` (`location_id`);
 
 --
 -- Indexes for table `locations_has_reviews`
@@ -547,12 +502,6 @@ ALTER TABLE `locations_has_sports`
 --
 ALTER TABLE `messages`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`), ADD KEY `fk_messages_members_idx` (`members_id`);
-
---
--- Indexes for table `photos`
---
-ALTER TABLE `photos`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`);
 
 --
 -- Indexes for table `reviews`
@@ -591,12 +540,6 @@ ALTER TABLE `stores`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`), ADD UNIQUE KEY `name_UNIQUE` (`name`), ADD UNIQUE KEY `address_UNIQUE` (`address`), ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `stores_has_photos`
---
-ALTER TABLE `stores_has_photos`
- ADD PRIMARY KEY (`store_id`,`photo_id`), ADD KEY `fk_stores_has_photos_photos1_idx` (`photo_id`), ADD KEY `fk_stores_has_photos_stores1_idx` (`store_id`);
-
---
 -- Indexes for table `stores_has_reviews`
 --
 ALTER TABLE `stores_has_reviews`
@@ -615,12 +558,6 @@ ALTER TABLE `trainers_has_locations`
  ADD PRIMARY KEY (`trainer_id`,`location_id`), ADD KEY `fk_trainers_has_locations_locations1_idx` (`location_id`), ADD KEY `fk_trainers_has_locations_trainers1_idx` (`trainer_id`);
 
 --
--- Indexes for table `trainers_has_photos`
---
-ALTER TABLE `trainers_has_photos`
- ADD PRIMARY KEY (`trainer_id`,`photo_id`), ADD KEY `fk_trainers_has_photos_photos1_idx` (`photo_id`), ADD KEY `fk_trainers_has_photos_trainers1_idx` (`trainer_id`);
-
---
 -- Indexes for table `trainers_has_reviews`
 --
 ALTER TABLE `trainers_has_reviews`
@@ -631,6 +568,12 @@ ALTER TABLE `trainers_has_reviews`
 --
 ALTER TABLE `users`
  ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`), ADD KEY `user_type` (`user_type`);
+
+--
+-- Indexes for table `users_has_images`
+--
+ALTER TABLE `users_has_images`
+ ADD PRIMARY KEY (`user_id`,`image_id`), ADD KEY `fk_users_has_images_images1_idx` (`image_id`), ADD KEY `fk_users_has_images_users1_idx` (`user_id`);
 
 --
 -- Indexes for table `users_rating_locations`
@@ -663,12 +606,17 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `images`
+--
+ALTER TABLE `images`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `locations`
 --
@@ -678,11 +626,6 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `photos`
---
-ALTER TABLE `photos`
 MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `reviews`
@@ -742,25 +685,11 @@ ADD CONSTRAINT `fk_articles_sports1` FOREIGN KEY (`sport_id`) REFERENCES `sports
 ADD CONSTRAINT `fk_articles_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `articles_has_photos`
---
-ALTER TABLE `articles_has_photos`
-ADD CONSTRAINT `fk_articles_has_photos_articles1` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `fk_articles_has_photos_photos1` FOREIGN KEY (`photo_id`) REFERENCES `photos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `articles_has_reviews`
 --
 ALTER TABLE `articles_has_reviews`
 ADD CONSTRAINT `fk_articles_has_reviews_articles1` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 ADD CONSTRAINT `fk_articles_has_reviews_reviews1` FOREIGN KEY (`review_id`) REFERENCES `reviews` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `events_has_photos`
---
-ALTER TABLE `events_has_photos`
-ADD CONSTRAINT `fk_events_has_photos_events1` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `fk_events_has_photos_photos1` FOREIGN KEY (`photo_id`) REFERENCES `photos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `events_has_reviews`
@@ -774,13 +703,6 @@ ADD CONSTRAINT `fk_events_has_reviews_reviews1` FOREIGN KEY (`review_id`) REFERE
 --
 ALTER TABLE `locations`
 ADD CONSTRAINT `locations_fbs1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `locations_has_photos`
---
-ALTER TABLE `locations_has_photos`
-ADD CONSTRAINT `fk_locations_has_photos_location` FOREIGN KEY (`location_id`) REFERENCES `locations` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `fk_locations_has_photos_photos1` FOREIGN KEY (`photo_id`) REFERENCES `photos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `locations_has_reviews`
@@ -829,13 +751,6 @@ ALTER TABLE `stores`
 ADD CONSTRAINT `stores_fbs1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `stores_has_photos`
---
-ALTER TABLE `stores_has_photos`
-ADD CONSTRAINT `fk_stores_has_photos_photos1` FOREIGN KEY (`photo_id`) REFERENCES `photos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `fk_stores_has_photos_stores1` FOREIGN KEY (`store_id`) REFERENCES `stores` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `stores_has_reviews`
 --
 ALTER TABLE `stores_has_reviews`
@@ -857,13 +772,6 @@ ADD CONSTRAINT `fk_trainers_has_locations_locations1` FOREIGN KEY (`location_id`
 ADD CONSTRAINT `fk_trainers_has_locations_trainers1` FOREIGN KEY (`trainer_id`) REFERENCES `trainers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `trainers_has_photos`
---
-ALTER TABLE `trainers_has_photos`
-ADD CONSTRAINT `fk_trainers_has_photos_photos1` FOREIGN KEY (`photo_id`) REFERENCES `photos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-ADD CONSTRAINT `fk_trainers_has_photos_trainers1` FOREIGN KEY (`trainer_id`) REFERENCES `trainers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
 -- Constraints for table `trainers_has_reviews`
 --
 ALTER TABLE `trainers_has_reviews`
@@ -875,6 +783,13 @@ ADD CONSTRAINT `fk_trainers_has_reviews_trainers1` FOREIGN KEY (`trainer_id`) RE
 --
 ALTER TABLE `users`
 ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`user_type`) REFERENCES `user_types` (`id`);
+
+--
+-- Constraints for table `users_has_images`
+--
+ALTER TABLE `users_has_images`
+ADD CONSTRAINT `fk_users_has_images_images1` FOREIGN KEY (`image_id`) REFERENCES `images` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `fk_users_has_images_users1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `users_rating_locations`

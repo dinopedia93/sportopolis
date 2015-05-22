@@ -1,7 +1,7 @@
 <?php
 class Location extends AppModel {
 	public $hasMany = array(
-				'LocationsHasReviews','LocationsHasPhotos','LocationsHasSports'
+				'LocationsHasReviews','LocationsHasSports'
 			);
 
 	public function IncrementViews($id)
