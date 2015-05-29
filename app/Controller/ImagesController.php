@@ -42,21 +42,25 @@ class ImagesController extends SportopolisController {
 		// form posted
 		Configure::write('userid', $userid);
 		$this->layout = 'sportopolis';
-		if ($this->request->is('post')) {
-			// create
-			$this->Image->create();
+		if (isset($this->request->data['btn1'])) {
+			if ($this->request->is('post')) {
+				// create
+				$this->Image->create();
 
-			// attempt to save
-			if ($this->Image->save($this->request->data)) {
-				$this->UsersHasImage->create();
-				$this->request->data['UsersHasImage']['user_id'] = $userid;
-				$this->request->data['UsersHasImage']['image_id'] = $this->Image->id;
-				$this->request->data['UsersHasImage']['set_date_time'] = date('Y-m-d H:i:s');
-				if($this->UsersHasImage->save($this->request->data)){
-					$this->Session->setFlash('Your profile picture has successfully changed');http://localhost/sportopolis/sportopolis/trainerprofile/
-					return $this->redirect('http://localhost/sportopolis/sportopolis/trainerprofile/'. $trainerid);
+				// attempt to save
+				if ($this->Image->save($this->request->data)) {
+					$this->UsersHasImage->create();
+					$this->request->data['UsersHasImage']['user_id'] = $userid;
+					$this->request->data['UsersHasImage']['image_id'] = $this->Image->id;
+					$this->request->data['UsersHasImage']['set_date_time'] = date('Y-m-d H:i:s');
+					if($this->UsersHasImage->save($this->request->data)){
+						$this->Session->setFlash('Your profile picture has successfully changed');
+						return $this->redirect('http://localhost/sportopolis/sportopolis/trainerprofile/'. $trainerid);
+					}
 				}
 			}
+		} else if (isset($this->request->data['btn2'])) {
+			return $this->redirect('http://localhost/sportopolis/sportopolis/trainerprofile/'. $trainerid);
 		}
 	}
 	

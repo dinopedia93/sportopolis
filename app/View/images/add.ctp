@@ -14,5 +14,6 @@ $(document).ready(function(){
 		?>
 	</fieldset>
 	
-<?php echo $this->Form->submit('Upload photo')?>
+<?php echo $this->Form->submit('Upload photo', array('name'=>'btn1'))?>
+<?php echo $this->Form->submit('Cancel', array('name'=>'btn2'))?>
 </div>

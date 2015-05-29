@@ -91,6 +91,9 @@ class Image extends AppModel {
 		// ignore empty file - causes issues with form validation when file is empty and optional
 		if (!empty($this->data[$this->alias]['filename']['error']) && $this->data[$this->alias]['filename']['error']==4 && $this->data[$this->alias]['filename']['size']==0) {
 			unset($this->data[$this->alias]['filename']);
+			$message = "You did not upload a photo. Please select a photo to upload";
+			echo "<script type='text/javascript'>alert('$message');</script>";
+			return false;
 		}
 
 		parent::beforeValidate($options);

@@ -48,7 +48,7 @@ class UsersController extends SportopolisController {
 		if($this->request->is('post')){
 			if($this->Auth->login()){
 				CakeSession::write('signed_in', True);
-				$this->redirect($this->Auth->redirect());
+				$this->redirect('http://localhost/sportopolis/sportopolis/index');
 			} else {
 				$incorrect = "The username or password are incorrect. Please try again.";
 				echo "<script type='text/javascript'>alert('$incorrect');</script>";
