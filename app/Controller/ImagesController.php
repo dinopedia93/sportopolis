@@ -20,6 +20,7 @@
  */
 
 App::uses('SportopolisController', 'Controller');
+App::uses('UsershasimagesController', 'Controller');
 App::uses('Model','Model');
 /**
  * Application Controller
@@ -32,11 +33,14 @@ App::uses('Model','Model');
  */
 class ImagesController extends SportopolisController {
  
+	public $name = 'images';
+	var $uses = array('Image','UsersHasImage');
 	/**
 	 * Main index action
 	*/
-	public function add() {
+	public function add($userid,$trainerid) {
 		// form posted
+		Configure::write('userid', $userid);
 		$this->layout = 'sportopolis';
 		if ($this->request->is('post')) {
 			// create
@@ -44,8 +48,14 @@ class ImagesController extends SportopolisController {
 
 			// attempt to save
 			if ($this->Image->save($this->request->data)) {
-				$this->Session->setFlash('Your profile picture has successfully changed');
-				$this->redirect(array('action' => 'index'));
+				$this->UsersHasImage->create();
+				$this->request->data['UsersHasImage']['user_id'] = $userid;
+				$this->request->data['UsersHasImage']['image_id'] = $this->Image->id;
+				$this->request->data['UsersHasImage']['set_date_time'] = date('Y-m-d H:i:s');
+				if($this->UsersHasImage->save($this->request->data)){
+					$this->Session->setFlash('Your profile picture has successfully changed');http://localhost/sportopolis/sportopolis/trainerprofile/
+					return $this->redirect('http://localhost/sportopolis/sportopolis/trainerprofile/'. $trainerid);
+				}
 			}
 		}
 	}

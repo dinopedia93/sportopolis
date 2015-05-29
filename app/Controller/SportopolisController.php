@@ -159,8 +159,20 @@ class SportopolisController extends Controller {
 		$reviewscount = $this->TrainersHasReviews->find('count',array('conditions' => array('TrainersHasReviews.trainer_id' => $id)));
 		$this->set('reviewscount', $reviewscount);
 		//$trainerpp = $this->UsersHasImage->find('first',array('conditions' => array('UsersHasImage.user_id' => $trainer['users']['id'])));
-		$trainerpps = $this->Image->query("SELECT * FROM images AS Image WHERE id = (SELECT image_id  FROM users_has_images WHERE user_id = ".$trainer['users']['id'].")");
-		$trainerpp = $trainerpps[0];
+		$trainerpps = $this->Image->query("SELECT * 
+																		FROM images AS Image WHERE created IN (
+																			SELECT MAX(created) 
+																				FROM images WHERE id IN (SELECT  image_id  FROM users_has_images WHERE user_id = ".$trainer['users']['id'].")
+																		) ORDER BY created DESC");
+		if(empty($trainerpps))
+		{
+			$trainerpp = 'default.png';
+		}
+		else
+		{
+			$trainerallpp = $trainerpps[0];	
+			$trainerpp = $trainerallpp['Image']['filename'];
+		}
 		$allreviews = $this->Review->GetTrainerReviews($id);
 		$allreviewwriters = $this->User->query("SELECT * FROM users AS User WHERE id IN (SELECT member_id FROM reviews AS Review WHERE id IN (SELECT review_id FROM trainers_has_reviews WHERE trainer_id = " .$id."))");
 		

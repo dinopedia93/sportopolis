@@ -20,7 +20,6 @@
  */
 
 App::uses('SportopolisController', 'Controller');
-App::uses('ImagesController', 'Controller');
 App::uses('Model','Model');
 /**
  * Application Controller
@@ -33,31 +32,10 @@ App::uses('Model','Model');
  */
 class UsershasimagesController extends SportopolisController {
  
-	public $uses = array('UsersHasImage','Image');
+	public $name = 'users_has_images';
+	var $uses = array('UserHasImage');
 
-	public function add($id,$trainerid) {
-
-		$imagedata = $this->data;
-		$this->layout = 'sportopolis';
-	    if ($this->request->is('post')) {
-			
-			$this->Image->create();
-			if ($this->Image->save($imagedata)){
-				$this->UsersHasImage->create();
-				$this->request->data['UsersHasImage']['image_id'] = $this->Image->id;
-				$this->request->data['UsersHasImage']['user_id'] = $id;
-				$this->request->data['UsersHasImage']['set_date_time'] = date('Y-m-d H:i:s');
-				debug($this->request->data);
-				// hash the password coming in from the form using Authcomponent::password       
-				if ($this->UsersHasImage->save($this->request->data)) {
-					$this->Session->setFlash(__('Your profile picture is successfully updated'));
-					return $this->redirect("http://localhost/sportopolis/sportopolis/trainerprofile/".$trainerid);
-				} else {
-					$this->Session->setFlash(__('The trainer could not be saved. Please, try again.'));
-				}
-			}
-		}
-	}
+	
 	
 }
 

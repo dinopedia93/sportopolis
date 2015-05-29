@@ -3,6 +3,7 @@ class Image extends AppModel {
 	
     public $name = 'Image';
 	public $displayField = 'name';
+	var $userid;
 	public $hasMany = array(
 				'UsersHasImages'
 			);
@@ -48,6 +49,13 @@ class Image extends AppModel {
 	 */
 	public function processUpload($check=array()) {
 		// deal with uploaded file
+		$userid  = Configure::read('userid');
+		if (!is_dir(WWW_ROOT . '/img/' . $userid)) 
+		// is_dir - tells whether the filename is a directory
+		{
+			//mkdir - tells that need to create a directory
+			mkdir(WWW_ROOT . '/img/' . $userid);
+		}
 		if (!empty($check['filename']['tmp_name'])) {
 
 			// check file is uploaded
@@ -56,7 +64,7 @@ class Image extends AppModel {
 			}
 
 			// build full filename
-			$filename = WWW_ROOT . $this->DS . Inflector::slug(pathinfo($check['filename']['name'], PATHINFO_FILENAME)).'.'.pathinfo($check['filename']['name'], PATHINFO_EXTENSION);
+			$filename = WWW_ROOT . '/img/' . $userid . '/' . $this->DS . Inflector::slug(pathinfo($check['filename']['name'], PATHINFO_FILENAME)).'.'.pathinfo($check['filename']['name'], PATHINFO_EXTENSION);
 
 			// @todo check for duplicate filename
 

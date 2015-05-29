@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2015 at 05:27 PM
+-- Generation Time: May 29, 2015 at 04:35 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -107,14 +107,7 @@ CREATE TABLE IF NOT EXISTS `images` (
 `id` int(11) NOT NULL,
   `filename` varchar(255) DEFAULT NULL,
   `created` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `images`
---
-
-INSERT INTO `images` (`id`, `filename`, `created`) VALUES
-(24, '11196226_10206775757338348_45327938841900572_n.jpg', '2015-05-22 17:27:17');
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -324,7 +317,7 @@ CREATE TABLE IF NOT EXISTS `trainers` (
 --
 
 INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `working_area`, `likes_count`, `rank`, `facebook`, `mobile`, `website`, `sports_id`, `biography`, `user_id`, `views`) VALUES
-(3, 'Egypt', 'Giza', 'Haram', '', '0', 0, NULL, '1152892222', NULL, 2, 'Dizo Gamed Fash5', 15, 69),
+(3, 'Egypt', 'Giza', 'Haram', '', '0', 0, NULL, '1152892222', NULL, 2, 'Dizo Gamed Fash5', 15, 116),
 (6, 'Egypt', 'Giza', 'Mohandseen', '', '0', 4, NULL, '123214465', NULL, 2, 'Beyombroblo el masal', 23, 13),
 (39, 'Egypt', 'Al Jizah', ' ', 'Al Gezira sporting club', '0', 0, '', '1014417474', '', 4, '', 81, 25);
 
@@ -390,13 +383,6 @@ CREATE TABLE IF NOT EXISTS `users_has_images` (
   `image_id` int(11) NOT NULL,
   `set_date_time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `users_has_images`
---
-
-INSERT INTO `users_has_images` (`user_id`, `image_id`, `set_date_time`) VALUES
-(15, 24, '2015-05-22 17:27:17');
 
 -- --------------------------------------------------------
 
@@ -623,7 +609,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=72;
 --
 -- AUTO_INCREMENT for table `locations`
 --
