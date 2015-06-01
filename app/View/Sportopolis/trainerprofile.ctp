@@ -185,7 +185,10 @@ var selectorG = 'a[data-imagelightbox="g"]';
 <div class="newleftList">
 
 <div class="profileLeftLargeContainer">
-<a href="<?php echo "/sportopolis/images/add/".$this->Session->read('Auth.User.id')."/".$trainer['trainers']['id']; ?>" class="profilePictureLeftLargeContainer"><?php echo $this->Html->image($trainerpp, array('class' => 'pictureLeftLargerContainer')); ?></a>
+<a href="<?php 
+					if($this->Session->read('Auth.User.id') == $trainer['users']['id']){
+						echo "/sportopolis/images/add/1/".$this->Session->read('Auth.User.id')."/".$trainer['trainers']['id'];
+					}?>" class="profilePictureLeftLargeContainer"><?php echo $this->Html->image($trainerpp, array('class' => 'pictureLeftLargerContainer')); ?></a>
 <div class="profileNameLeftLargeContainer"><?php echo $trainer['users']['first_name']." ".$trainer['users']['last_name']; ?></div>
 <div class="profileProfessionLeftLargeContainer"><?php echo $sport['Sport']['name']; ?> Trainer</div>
 
