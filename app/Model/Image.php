@@ -50,11 +50,21 @@ class Image extends AppModel {
 	public function processUpload($check=array()) {
 		// deal with uploaded file
 		$userid  = Configure::read('userid');
-		if (!is_dir(WWW_ROOT . '/img/' . $userid)) 
-		// is_dir - tells whether the filename is a directory
-		{
-			//mkdir - tells that need to create a directory
-			mkdir(WWW_ROOT . '/img/' . $userid);
+		$purposeid  = Configure::read('purposeid');
+		if($purposeid == 1){
+			if (!is_dir(WWW_ROOT . '/img/users/' . $userid)) 
+			// is_dir - tells whether the filename is a directory
+			{
+				//mkdir - tells that need to create a directory
+				mkdir(WWW_ROOT . '/img/users/' . $userid);
+			}
+		} else if ($purposeid == 2){
+			if (!is_dir(WWW_ROOT . '/img/articles/' . $userid)) 
+			// is_dir - tells whether the filename is a directory
+			{
+				//mkdir - tells that need to create a directory
+				mkdir(WWW_ROOT . '/img/articles/' . $userid);
+			}
 		}
 		if (!empty($check['filename']['tmp_name'])) {
 
@@ -64,8 +74,11 @@ class Image extends AppModel {
 			}
 
 			// build full filename
-			$filename = WWW_ROOT . '/img/' . $userid . '/' . $this->DS . Inflector::slug(pathinfo($check['filename']['name'], PATHINFO_FILENAME)).'.'.pathinfo($check['filename']['name'], PATHINFO_EXTENSION);
-
+			if($purposeid == 1){
+				$filename = WWW_ROOT . '/img/users/' . $userid . '/' . $this->DS . Inflector::slug(pathinfo($check['filename']['name'], PATHINFO_FILENAME)).'.'.pathinfo($check['filename']['name'], PATHINFO_EXTENSION);
+			} else if ($purposeid == 2){
+				$filename = WWW_ROOT . '/img/articles/' . $userid . '/' . $this->DS . Inflector::slug(pathinfo($check['filename']['name'], PATHINFO_FILENAME)).'.'.pathinfo($check['filename']['name'], PATHINFO_EXTENSION);				
+			}
 			// @todo check for duplicate filename
 
 			// try moving file

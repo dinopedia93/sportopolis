@@ -21,6 +21,7 @@
 
 App::uses('SportopolisController', 'Controller');
 App::uses('UsershasimagesController', 'Controller');
+App::uses('ArticleshasimagesController', 'Controller');
 App::uses('Model','Model');
 /**
  * Application Controller
@@ -34,13 +35,14 @@ App::uses('Model','Model');
 class ImagesController extends SportopolisController {
  
 	public $name = 'images';
-	var $uses = array('Image','UsersHasImage');
+	var $uses = array('Image','UsersHasImage','ArticlesHasImage');
 	/**
 	 * Main index action
 	*/
-	public function add($purposeid,$userid,$trainerid) {
+	public function add($purposeid,$userid,$trainerid = null) {
 		// form posted
 		Configure::write('userid', $userid);
+		Configure::write('purposeid', $purposeid);
 		$this->layout = 'sportopolis';
 		if (isset($this->request->data['btn1'])) {
 			if($purposeid == 1)
@@ -60,9 +62,28 @@ class ImagesController extends SportopolisController {
 						}
 					}
 				}
+			} else if ($purposeid == 2)
+			{
+				if ($this->request->is('post')) {
+					// create
+					$this->Image->create();
+
+					// attempt to save
+					if ($this->Image->save($this->request->data)) {
+						$this->ArticlesHasImage->create();
+						$this->request->data['ArticlesHasImage']['article_id'] = $userid;
+						$this->request->data['ArticlesHasImage']['image_id'] = $this->Image->id;
+						$this->request->data['ArticlesHasImage']['set_date_time'] = date('Y-m-d H:i:s');
+						if($this->ArticlesHasImage->save($this->request->data)){
+							return $this->redirect('http://localhost/sportopolis/sportopolis/index');
+						}
+					}
+				}
 			}
-		} else if (isset($this->request->data['btn2'])) {
+		} else if (isset($this->request->data['btn2']) && $purposeid == 1) {
 			return $this->redirect('http://localhost/sportopolis/sportopolis/trainerprofile/'. $trainerid);
+		} else if (isset($this->request->data['btn2']) && $purposeid == 2) {
+			return $this->redirect('http://localhost/sportopolis/sportopolis/index');
 		}
 	}
 	

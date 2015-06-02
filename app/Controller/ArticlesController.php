@@ -72,7 +72,7 @@ class ArticlesController extends SportopolisController {
 				}
 				if ($this->Article->save($this->request->data)) {
 					$this->Session->setFlash(__('The Article has been saved.'));
-					return $this->redirect(array('controller' => 'sportopolis' , 'action' => 'index'));
+					return $this->redirect("http://localhost/sportopolis/images/add/2/".$this->Article->id);
 				} else {
 	            $this->Session->setFlash(__('The article could not be saved. Please, try again with correct content.'));
 				}

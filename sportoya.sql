@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2015 at 03:59 PM
+-- Generation Time: Jun 02, 2015 at 06:10 PM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
   `article_content` longtext COLLATE utf8_bin NOT NULL,
   `sport_id` int(11) NOT NULL,
   `status` varchar(10) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
 -- Dumping data for table `articles`
@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `articles` (
 
 INSERT INTO `articles` (`id`, `title`, `article_date_time`, `user_id`, `image_id`, `article_content`, `sport_id`, `status`) VALUES
 (1, 'Men who exercise more have better erectile and sexual function', '2015-03-26 00:00:00', 23, NULL, 'Washington: A new study has examined that men who exercise more have better erectile and sexual function, regardless of race.\r\n\r\nThe study conducted at Cedars-Sinai Medical Center is the first to link the benefits of exercise in relation to improved erectile and sexual function in a racially diverse group of patients.\r\n\r\nNearly 300 study participants self-reported their activity levels, which researchers then categorized as sedentary, mildly active, moderately active or highly active. The subjects also self-reported their sexual function, including the ability to have erections, orgasms, the quality and frequency of erections and overall sexual function.\r\n\r\nResults found that men who reported more frequent exercise, a total of 18 metabolic equivalents, or METS, per week, had higher sexual function scores, regardless of race. MET hours reflect both the total time of exercise and the intensity of exercise. A total of 18 METS can be achieved by combining exercises with different intensities, but is the equivalent of two hours of strenuous exercise, such as running or swimming, 3.5 hours of moderate exercise, or six hours of light exercise.\r\n\r\nStephen Freedland, MD, co-author on the study and director of the Center for Integrated Research in Cancer and Lifestyle in the Cedars-Sinai Samuel Oschin Comprehensive Cancer Institute, cautions that exercise should be tailored for each individual.\r\n\r\nFreedland added that when it came to exercise, there was no one-size-fits-all approach, however, they were confident that even some degree of exercise, even if less intense, was better than no exercise at all.\r\n\r\nThe study is published in the Journal of Sexual Medicine', 4, 'accepted'),
-(2, 'ssssssssss', '2015-05-16 20:35:23', 80, 10957213, '<p>sssssssssss</p>', 2, 'Saved');
+(9, 'My first article', '2015-06-02 18:06:42', 15, NULL, '<p>Hope it works :)</p>', 2, 'Saved');
 
 -- --------------------------------------------------------
 
@@ -70,6 +70,13 @@ CREATE TABLE IF NOT EXISTS `articles_has_images` (
   `image_id` int(11) NOT NULL,
   `set_date_time` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `articles_has_images`
+--
+
+INSERT INTO `articles_has_images` (`article_id`, `image_id`, `set_date_time`) VALUES
+(9, 97, '2015-06-02 18:06:46');
 
 -- --------------------------------------------------------
 
@@ -119,15 +126,17 @@ CREATE TABLE IF NOT EXISTS `images` (
 `id` int(11) NOT NULL,
   `filename` varchar(255) DEFAULT NULL,
   `created` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=87 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=98 DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `images`
 --
 
 INSERT INTO `images` (`id`, `filename`, `created`) VALUES
-(85, '/img/15/11196226_10206775757338348_45327938841900572_n.jpg', '2015-06-01 15:50:46'),
-(86, '/img/15/11058065_10206353545183308_6843481081158816377_n.jpg', '2015-06-01 15:51:04');
+(91, '/img/users/15/11196226_10206775757338348_45327938841900572_n.jpg', '2015-06-02 18:00:09'),
+(92, '/img/users/15/11058065_10206353545183308_6843481081158816377_n.jpg', '2015-06-02 18:00:14'),
+(93, '/img/users/15/10959522_10206099440790857_1165732096573634125_n.jpg', '2015-06-02 18:00:19'),
+(97, '/img/articles/9/11391355_1641009799451488_2141033291047506682_n.png', '2015-06-02 18:06:46');
 
 -- --------------------------------------------------------
 
@@ -337,7 +346,7 @@ CREATE TABLE IF NOT EXISTS `trainers` (
 --
 
 INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `working_area`, `likes_count`, `rank`, `facebook`, `mobile`, `website`, `sports_id`, `biography`, `user_id`, `views`) VALUES
-(3, 'Egypt', 'Giza', 'Haram', '', '0', 0, NULL, '1152892222', NULL, 2, 'Dizo Gamed Fash5', 15, 167),
+(3, 'Egypt', 'Giza', 'Haram', '', '0', 0, NULL, '1152892222', NULL, 2, 'Dizo Gamed Fash5', 15, 185),
 (6, 'Egypt', 'Giza', 'Mohandseen', '', '0', 4, NULL, '123214465', NULL, 2, 'Beyombroblo el masal', 23, 13),
 (39, 'Egypt', 'Al Jizah', ' ', 'Al Gezira sporting club', '0', 0, '', '1014417474', '', 4, '', 81, 25);
 
@@ -409,8 +418,9 @@ CREATE TABLE IF NOT EXISTS `users_has_images` (
 --
 
 INSERT INTO `users_has_images` (`user_id`, `image_id`, `set_date_time`) VALUES
-(15, 85, '2015-06-01 15:50:46'),
-(15, 86, '2015-06-01 15:51:04');
+(15, 91, '2015-06-02 18:00:09'),
+(15, 92, '2015-06-02 18:00:14'),
+(15, 93, '2015-06-02 18:00:19');
 
 -- --------------------------------------------------------
 
@@ -633,7 +643,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `articles`
 --
 ALTER TABLE `articles`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `events`
 --
@@ -643,7 +653,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `images`
 --
 ALTER TABLE `images`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=87;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=98;
 --
 -- AUTO_INCREMENT for table `locations`
 --
