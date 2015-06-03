@@ -285,14 +285,14 @@ populateCountries("country", "state");
 
 <ul id='articles' class="attributeList">
 <?php if(count($articles) > 0){ ?>
-<?php foreach ($articles as $article): ?>
+<?php foreach ($articles as $index => $article): ?>
 <li>
-<a href="<?php echo $articleurl.$article['Article']['id']; ?>">
+<a href="<?php echo $articleurl.$article['articles']['id']; ?>">
 
 
-<div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
+<div class="listPic"><?php echo $this->Html->image($articlespps[$index]['Image']['filename'], array('class' => 'circleListPic')); ?></div>
 <div class="listInfo">
-<div class="listName"><?php echo $article['Article']['title']; ?></div>
+<div class="listName"><?php echo $article['articles']['title']; ?></div>
 <div class="listRank"><?php echo $this->Html->image('zerorank1.png', array('class' => 'listRankPicto')); ?></div>
 <div class="listviews"><?php echo $this->Html->image('views.png', array('class' => 'listViewsPicto')); ?>200</div>
 <div class="listReviews"><?php echo $this->Html->image('like.png', array('class' => 'listViewsPicto')); ?>200</div>
@@ -312,11 +312,11 @@ populateCountries("country", "state");
 
 <ul id='trainers' class="attributeList">
 <?php if(count($trainers) > 0){ ?>
-<?php foreach ($trainers as $trainer): ?>
+<?php foreach ($trainers as $index =>$trainer): ?>
 <li>
 <a href="<?php echo $trainerurl.$trainer['trainers']['id']; ?>">
 
-<div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>
+<div class="listPic"><?php echo $this->Html->image($trainerspps[$index]['Image']['filename'], array('class' => 'circleListPic')); ?></div>
 <div class="listInfo">
 <div class="listName"><?php echo $trainer['users']['first_name']." ".$trainer['users']['last_name']; ?></div>
 <div class="listRank">Egypt, Cairo</div>

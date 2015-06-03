@@ -20,6 +20,7 @@
  */
 
 App::uses('SportopolisController', 'Controller');
+App::uses('UsershasimagesController', 'Controller');
 App::uses('Model','Model');
 /**
  * Application Controller
@@ -33,7 +34,7 @@ App::uses('Model','Model');
 class UsersController extends SportopolisController {
  
 	public $name = 'users';
-	var $uses = array('User');
+	var $uses = array('User','UsersHasImage');
 	
 	public function beforeFilter()
 	{
@@ -92,8 +93,14 @@ class UsersController extends SportopolisController {
 				$this->User->create();
 				$this->request->data['User']['user_type'] = $id;
 				if ($this->User->save($this->request->data)) {
-					$this->Session->setFlash(__('The user has been saved.'));
-					return $this->redirect(array('action' => 'index'));
+					$this->UsersHasImage->create();
+					$this->request->data['UsersHasImage']['user_id'] = $this->User->id;
+					$this->request->data['UsersHasImage']['image_id'] = 100;
+					$this->request->data['UsersHasImage']['set_date_time'] = date('Y-m-d H:i:s');
+					if($this->UsersHasImage->save($this->request->data)){
+						$this->Session->setFlash(__('The user has been saved.'));
+						return $this->redirect(array('action' => 'index'));
+					}
 				} else {
 	            $this->Session->setFlash(__('The user could not be saved. Please, try again.'));
 				}

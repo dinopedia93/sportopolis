@@ -21,6 +21,7 @@
 
 App::uses('SportopolisController', 'Controller');
 App::uses('UsersController', 'Controller');
+App::uses('UsershasimagesController', 'Controller');
 App::uses('Model','Model');
 /**
  * Application Controller
@@ -34,7 +35,7 @@ App::uses('Model','Model');
 class TrainersController extends SportopolisController {
  
 	public $name = 'trainers';
-	var $uses = array('Trainer','User');
+	var $uses = array('Trainer','User','UsersHasImage');
 	
 	public function beforeFilter()
 	{
@@ -80,8 +81,14 @@ class TrainersController extends SportopolisController {
 				debug($this->request->data);
 				// hash the password coming in from the form using Authcomponent::password       
 				if ($this->Trainer->save($this->request->data)) {
-					$this->Session->setFlash(__('The trainer has been saved.'));
-					return $this->redirect(array('controller' => 'sportopolis' , 'action' => 'index'));
+					$this->UsersHasImage->create();
+					$this->request->data['UsersHasImage']['user_id'] = $this->User->id;
+					$this->request->data['UsersHasImage']['image_id'] = 100;
+					$this->request->data['UsersHasImage']['set_date_time'] = date('Y-m-d H:i:s');
+					if($this->UsersHasImage->save($this->request->data)){
+						$this->Session->setFlash(__('The trainer has been saved.'));
+						return $this->redirect(array('controller' => 'sportopolis' , 'action' => 'index'));
+					}
 				} else {
 					$this->Session->setFlash(__('The trainer could not be saved. Please, try again.'));
 				}

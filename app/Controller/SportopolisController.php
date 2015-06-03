@@ -119,10 +119,36 @@ class SportopolisController extends Controller {
 		$this->loadModel('Sport');
 		$this->loadModel('User');
 		$this->loadModel('LocationsHasSports');
+		$this->loadModel('Image');
+		$this->loadModel('ArticlesHasImage');
+		$this->loadModel('UsersHasImage');
 
 		$trainers = $this->Trainer->query("SELECT * FROM trainers INNER JOIN users ON trainers.user_id = users.id WHERE sports_id = ".$id);
+		
+		
+		$trainerspps = array();
+		foreach($trainers as $trainer):
+		$trainerpp = $this->Image->query("SELECT * 
+																		FROM images AS Image WHERE created IN (
+																			SELECT MAX(created) 
+																				FROM images WHERE id IN (SELECT  image_id  FROM users_has_images WHERE user_id = ".$trainer['trainers']['user_id']."
+																		)) ORDER BY created DESC");
+		array_push($trainerspps , $trainerpp[0]);
+		endforeach;
+		
+		$articles = $this->Article->query("SELECT * FROM articles WHERE sport_id = ".$id);
+		$articlespps = array();
+		foreach($articles as $article):
+		$articlepp = $this->Image->query("SELECT * 
+																		FROM images AS Image WHERE created IN (
+																			SELECT MAX(created) 
+																				FROM images WHERE id IN (SELECT  image_id  FROM articles_has_images WHERE article_id = ".$article['articles']['id']."
+																		)) ORDER BY created DESC");
+		array_push($articlespps , $articlepp[0]);
+		endforeach;
+		
+		
 		$locations = $this->Location->query("SELECT * FROM locations AS Location WHERE id IN (SELECT location_id FROM locations_has_sports WHERE sport_id = " .$id.")");
-		$articles = $this->Article->find('all' , array('conditions' => array('Article.sport_id' => $id)));
 		$events = $this->Event->find('all');
 		$stores = $this->Store->find('all');
 		$sport = $this->Sport->findById($id);
@@ -133,6 +159,8 @@ class SportopolisController extends Controller {
 		$this->set('articles',$articles);
 		$this->set('events',$events);
 		$this->set('stores',$stores);
+		$this->set('trainerspps',$trainerspps);
+		$this->set('articlespps',$articlespps);
 		$this->set('title_for_layout', 'SPORTOYA');
 
 		$this->layout = 'sportopolis';
