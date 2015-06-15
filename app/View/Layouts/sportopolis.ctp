@@ -170,7 +170,7 @@ $(document).ready(function () {
 <a href="/sportopolis/sportopolis/menu/3"><li class="tennisLink"></li></a>
 <a href="/sportopolis/sportopolis/menu/4"><li class="fitnessLink"></li></a>
 <a href="/sportopolis/sportopolis/menu/5"><li class="fishingLink"></li></a>
-
+<a href="/sportopolis/questionnaires"><li>Questionnaires</li></a>
 </ul>
     </div>
 </div>
