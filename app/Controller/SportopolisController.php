@@ -188,10 +188,10 @@ class SportopolisController extends Controller {
 		$this->set('reviewscount', $reviewscount);
 		//$trainerpp = $this->UsersHasImage->find('first',array('conditions' => array('UsersHasImage.user_id' => $trainer['users']['id'])));
 		$trainerpps = $this->Image->query("SELECT * 
-																		FROM images AS Image WHERE created IN (
-																			SELECT MAX(created) 
-																				FROM images WHERE id IN (SELECT  image_id  FROM users_has_images WHERE user_id = ".$trainer['users']['id'].")
-																		) ORDER BY created DESC");
+																		FROM images AS Image WHERE id = (
+																			SELECT image_id
+																				FROM users_has_images WHERE user_id = ".$trainer['users']['id']."
+																		ORDER BY set_date_time DESC limit 1)");
 		if(empty($trainerpps))
 		{
 			$trainerpp = 'default.png';
