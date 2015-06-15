@@ -50,17 +50,41 @@ class ImagesController extends SportopolisController {
 				if ($this->request->is('post')) {
 					// create
 					$this->Image->create();
-
-					// attempt to save
-					if ($this->Image->save($this->request->data)) {
-						$this->UsersHasImage->create();
-						$this->request->data['UsersHasImage']['user_id'] = $userid;
-						$this->request->data['UsersHasImage']['image_id'] = $this->Image->id;
-						$this->request->data['UsersHasImage']['set_date_time'] = date('Y-m-d H:i:s');
-						if($this->UsersHasImage->save($this->request->data)){
-							return $this->redirect('http://localhost/sportopolis/sportopolis/trainerprofile/'. $trainerid);
+					$allimages = $this->Image->query("SELECT * FROM images");
+					$theimagename = $this->request->data['Image']['filename']['name'];
+					$foundimage = false;
+					foreach($allimages as $eachimage):
+						if(strpos($eachimage['images']['filename'] , $theimagename) !== false){
+							$this->UsersHasImage->query("DELETE FROM users_has_images WHERE user_id = ". $userid . " AND image_id = ".$eachimage['images']['id']);
+							$this->UsersHasImage->create();
+							$this->request->data['UsersHasImage']['user_id'] = $userid;
+							$this->request->data['UsersHasImage']['image_id'] = $eachimage['images']['id'];
+							$this->request->data['UsersHasImage']['set_date_time'] = date('Y-m-d H:i:s');
+							if($this->UsersHasImage->save($this->request->data)){
+								return $this->redirect('http://localhost/sportopolis/sportopolis/trainerprofile/'. $trainerid);
+							}
+							$foundimage = true;
+							$this->Session->setFlash(__('Done editing'));
+							break;
+						}
+					
+					endforeach;
+					
+					if($foundimage == false)
+					{
+						
+						// attempt to save
+						if ($this->Image->save($this->request->data)) {
+							$this->UsersHasImage->create();
+							$this->request->data['UsersHasImage']['user_id'] = $userid;
+							$this->request->data['UsersHasImage']['image_id'] = $this->Image->id;
+							$this->request->data['UsersHasImage']['set_date_time'] = date('Y-m-d H:i:s');
+							if($this->UsersHasImage->save($this->request->data)){
+								return $this->redirect('http://localhost/sportopolis/sportopolis/trainerprofile/'. $trainerid);
+							}
 						}
 					}
+					
 				}
 			} else if ($purposeid == 2)
 			{
