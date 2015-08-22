@@ -1,0 +1,81 @@
+body{margin:0; padding:0;}
+
+@media screen and (max-width: 650px) 
+{
+	#BlackDiv
+	{
+		width:100%;
+		background: black;
+		height: 205px;
+		margin: 0;
+		padding: 0;
+	}
+	#BlackDivText
+	{
+		color: white;
+		text-align: center;
+		font-size: 100px;
+	}
+	#WhiteDiv
+	{
+		margin: 10px;
+	}
+	#WhiteDivText
+	{
+		text-align: center;
+		line-height: 140%;
+	}
+	#ContactUsForm
+	{
+		position: fixed;
+		left: 30%;
+		line-height: 140%;
+	}
+	input
+	{
+		border-radius: 25px;
+	}
+	#ContactUsBtn
+	{
+		background: red;
+		border-radius: 25px;
+	}
+	#header
+	{
+		position: relative;
+		width: 90%;
+		left: 10%;
+		height: 30px;
+	}
+	#HeaderText
+	{
+		position: relative;
+		display: inline-block;
+		left: 25%;
+		top: -30px; 
+		font-size: 40px;
+	}
+}
+
+@media screen and (min-width: 651px) 
+{
+	#BlackDiv
+	{
+		width:100%;
+		background: black;
+		height: 150px;
+		margin: 0;
+		padding: 0;
+	}
+	#BlackDivText
+	{
+		color: white;
+		text-align: center;
+		font-size: 150px;
+	}
+	#WhiteDivText
+	{
+		text-align: center;
+		line-height: 140%;
+	}
+}

@@ -96,6 +96,18 @@ class SportopolisController extends Controller {
 		$this->layout = 'sportopolis';
 		$this->set('title_for_layout', 'SPORTOYA');
 	}
+
+	public function AboutUs()
+	{
+		$this->layout = 'layout_2';
+		$this->set('title_for_layout', 'About us');
+	}
+
+	public function ContactUs()
+	{
+		$this->layout = 'layout_2';
+		$this->set('title_for_layout', 'About us');
+	}
 	
 	/*function getGeoData()
     {

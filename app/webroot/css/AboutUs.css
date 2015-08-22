@@ -1,0 +1,45 @@
+@media screen and (max-width: 650px) 
+{
+	#BlackDiv
+	{
+		width:100%;
+		background: black;
+		height: 205px;
+		margin: 0;
+		padding: 0;
+	}
+	#BlackDivText
+	{
+		color: white;
+		text-align: center;
+		font-size: 100px;
+	}
+	#WhiteDivText
+	{
+		text-align: center;
+		line-height: 140%;
+	}
+}
+
+@media screen and (min-width: 651px) 
+{
+	#BlackDiv
+	{
+		width:100%;
+		background: black;
+		height: 150px;
+		margin: 0;
+		padding: 0;
+	}
+	#BlackDivText
+	{
+		color: white;
+		text-align: center;
+		font-size: 150px;
+	}
+	#WhiteDivText
+	{
+		text-align: center;
+		line-height: 140%;
+	}
+}
