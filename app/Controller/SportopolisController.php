@@ -111,6 +111,7 @@ class SportopolisController extends Controller {
 
 	public function SendContactUsMail()
 	{
+		/* Validation is still needed */
 		$headers = 'From: '.$this->request->data['Email'];
 		mail("getready@sportoya.com","Question From".$this->request->data['Name'],$this->request->data['Message']);
 	}
