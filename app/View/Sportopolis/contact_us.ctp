@@ -13,7 +13,7 @@
 	<div id='WhiteDivText'>You have questions, and we have</br>answers. Just send a message</br>and one of our knowledgable</br>support staff will be in contact</br>with you within 48 hours</div>
 </div>
 <div>
-	<form id='ContactUsForm'>
+	<form id='ContactUsForm' action="/sportopolis/sportopolis/SendContactUsMail">
 		Your Name</br>
 		<input type='text' name='Name'/> </br>
 		Your Email </br>

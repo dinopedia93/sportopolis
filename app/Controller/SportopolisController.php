@@ -99,14 +99,20 @@ class SportopolisController extends Controller {
 
 	public function AboutUs()
 	{
-		$this->layout = 'layout_2';
+		$this->layout = 'index';
 		$this->set('title_for_layout', 'About us');
 	}
 
 	public function ContactUs()
 	{
-		$this->layout = 'layout_2';
-		$this->set('title_for_layout', 'About us');
+		$this->layout = 'index';
+		$this->set('title_for_layout', 'Contact us');
+	}
+
+	public function SendContactUsMail()
+	{
+		$headers = 'From: '.$this->request->data['Email'];
+		mail("getready@sportoya.com","Question From".$this->request->data['Name'],$this->request->data['Message']);
 	}
 	
 	/*function getGeoData()

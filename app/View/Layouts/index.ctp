@@ -36,6 +36,8 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		echo $this->Html->css('DropDownMenu');
 		echo $this->Html->css('sliding-menu');
 		echo $this->Html->css('barrating');
+		echo $this->Html->css('ContactUs');
+		echo $this->Html->css('AboutUs');
 
 		// JavaScripts
 		echo $this->Html->script('jquery');
