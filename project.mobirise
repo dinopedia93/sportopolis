@@ -1,0 +1,25 @@
+{
+  "settings": {
+    "currentPage": "page1.html",
+    "versionFirst": "2.5.2",
+    "versionPublish": "2.5.2",
+    "name": "Sportoya.com",
+    "favicon": "images/logo.png"
+  },
+  "pages": {
+    "index.html": {
+      "settings": {
+        "main": true,
+        "title": "",
+        "meta_descr": "",
+        "header_custom": "",
+        "footer_custom": ""
+      },
+      "components": []
+    },
+    "page1.html": {
+      "settings": {},
+      "components": []
+    }
+  }
+}

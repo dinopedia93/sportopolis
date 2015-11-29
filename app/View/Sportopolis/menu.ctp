@@ -142,6 +142,7 @@
 <?php $locationurl = "http://localhost/sportopolis/sportopolis/locationprofile/" ?>
 <?php $storeurl = "http://localhost/sportopolis/sportopolis/storeprofile/" ?>
 <?php $articleurl = "http://localhost/sportopolis/sportopolis/viewarticle/" ?>
+<?php $eventurl = "http://localhost/sportopolis/sportopolis/eventprofile/" ?>
 
 <div class="desktop-menu">
 
@@ -369,7 +370,7 @@ populateCountries("country", "state");
 <?php if(count($events) > 0 ){ ?>
 <?php foreach ($events as $event): ?>
 <li>
-<a href="<?php echo $trainerurl.$trainer['Trainer']['id']; ?>">
+<a href="<?php echo $eventurl.$event['Event']['id']; ?>">
 
 
 <div class="listPic"><?php echo $this->Html->image('boss.png', array('class' => 'circleListPic')); ?></div>

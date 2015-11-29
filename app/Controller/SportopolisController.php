@@ -168,7 +168,7 @@ class SportopolisController extends Controller {
 		
 		
 		$locations = $this->Location->query("SELECT * FROM locations AS Location WHERE id IN (SELECT location_id FROM locations_has_sports WHERE sport_id = " .$id.")");
-		$events = $this->Event->find('all');
+		$events = $this->Event->query("Select * FROM events AS Event WHERE sport = " .$id);
 		$stores = $this->Store->find('all');
 		$sport = $this->Sport->findById($id);
 		
@@ -314,6 +314,25 @@ class SportopolisController extends Controller {
 		$this->layout = 'sportopolis';	
 	}
 
+	public function eventprofile($id) 
+	{
+		
+		$this->loadModel('Event');	
+
+		$event = $this->Event->findById($id);
+		$this->set('event', $event);
+		$this->set('title_for_layout', $event['Event']['name']."'s Profile");
+		
+		
+		
+		//$storeshasphotos = $this->StoresHasPhotos->find('count',array('conditions' => array('StoresHasPhotos.store_id' => $id)));
+		//$this->set('storeshasphotos', $storeshasphotos);
+		
+		$this->layout = 'sportopolis';	
+	}
+	
+	
+	
 	public function signuplocation($error = null)
 	{
 		$this->layout = 'sportopolis';

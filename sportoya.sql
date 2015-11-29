@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 15, 2015 at 12:19 PM
+-- Generation Time: Nov 29, 2015 at 03:45 AM
 -- Server version: 5.6.21
 -- PHP Version: 5.6.3
 
@@ -97,12 +97,20 @@ CREATE TABLE IF NOT EXISTS `articles_has_reviews` (
 CREATE TABLE IF NOT EXISTS `events` (
 `id` int(11) NOT NULL,
   `name` varchar(45) NOT NULL,
-  `sport` varchar(45) NOT NULL,
+  `sport` int(11) NOT NULL,
   `description` text NOT NULL,
   `owner` varchar(45) NOT NULL,
   `from_day` datetime NOT NULL,
-  `to_day` datetime NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `to_day` datetime NOT NULL,
+  `views` int(11) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `name`, `sport`, `description`, `owner`, `from_day`, `to_day`, `views`) VALUES
+(1, 'Orange day', 2, 'Dutch orange day', 'Go Bike', '2015-11-20 07:00:00', '2015-11-20 12:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -348,9 +356,9 @@ CREATE TABLE IF NOT EXISTS `trainers` (
 --
 
 INSERT INTO `trainers` (`id`, `country`, `city`, `district`, `working_area`, `likes_count`, `rank`, `facebook`, `mobile`, `website`, `sports_id`, `biography`, `user_id`, `views`) VALUES
-(3, 'Egypt', 'Giza', 'Haram', '', '0', 0, NULL, '1152892222', NULL, 2, 'Dizo Gamed Fash5', 15, 247),
+(3, 'Egypt', 'Giza', 'Haram', '', '0', 0, NULL, '1152892222', NULL, 2, 'Dizo Gamed Fash5', 15, 250),
 (6, 'Egypt', 'Giza', 'Mohandseen', '', '0', 4, NULL, '123214465', NULL, 2, 'Beyombroblo el masal', 23, 16),
-(39, 'Egypt', 'Al Jizah', ' ', 'Al Gezira sporting club', '0', 0, '', '1014417474', '', 4, '', 81, 25),
+(39, 'Egypt', 'Al Jizah', ' ', 'Al Gezira sporting club', '0', 0, '', '1014417474', '', 4, '', 81, 26),
 (42, 'Egypt', 'Al Jizah', ' ', 'Al Gezira sporting club', '0', 0, '', '1279908079', '', 3, '', 88, 7);
 
 -- --------------------------------------------------------
@@ -510,7 +518,7 @@ ALTER TABLE `articles_has_reviews`
 -- Indexes for table `events`
 --
 ALTER TABLE `events`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`);
+ ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `id_UNIQUE` (`id`), ADD KEY `sport` (`sport`);
 
 --
 -- Indexes for table `events_has_reviews`
@@ -656,7 +664,7 @@ MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `images`
 --
@@ -742,6 +750,12 @@ ADD CONSTRAINT `fk_articles_has_images_images1` FOREIGN KEY (`image_id`) REFEREN
 ALTER TABLE `articles_has_reviews`
 ADD CONSTRAINT `fk_articles_has_reviews_articles1` FOREIGN KEY (`article_id`) REFERENCES `articles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
 ADD CONSTRAINT `fk_articles_has_reviews_reviews1` FOREIGN KEY (`review_id`) REFERENCES `reviews` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `events`
+--
+ALTER TABLE `events`
+ADD CONSTRAINT `event_sport_constraint` FOREIGN KEY (`sport`) REFERENCES `sports` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `events_has_reviews`
